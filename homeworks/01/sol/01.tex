@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Seite \thepage}\rhead{Blatt 1 Nicolas und Evgenij}
+\fancyfoot{}
+
+\begin{document}
+
+\paragraph{B1A1}
+Wir möchten zeigen, dass $\mu\mapsto F_\mu$ überhaupt in die Verteilungsfunktionen abbildet und dass diese Abbildung bijektiv ist.
+In der Tat ist $\mu(\emptyset)=0$, sodass $F_\mu(-\infty)=0$ und $\mu(\mathbb{R})=1$, sodass $F_\mu(\infty)=1$.
+Da $\mu$ endlich und $\sigma$-additiv ist, ist es nach Satz A.14 stetig von oben, sodass $F_\mu$ rechtsseitig stetig ist.
+Schließlich ist $F_\mu$ monoton, da $\mu$ nach Lemma A.10 monoton ist.
+Durch das oben Gesagte bildet $\mu\mapsto F_\mu$ tatsächlich in die Menge der Verteilungsfunktionen ab.
+
+Zur Injektivität, sei $F_\mu=F_\nu$ auf $\{(-\infty,x]\}_{x\in{\mathbb{Q}}}$.
+Dann gilt auch nach Definition von $F_\mu$, dass für alle $x\in \mathbb{Q}$ gilt $\mu((-\infty,x])=\nu((-\infty,x])$.
+Betrachtet man die Zuordnung als Abbildung zwischen $\{(-\infty,x]\}_{x\in{\mathbb{Q}}}\times[0,1]$ und $\mathbb{R}\times[0,1]$, so sieht man schon mal die Isomorphie der Definitionsbereiche.
+Da $\{(-\infty,x]\}_{x\in{\mathbb{Q}}}$ die Borel-$\sigma$-Algebra ${\cal B}(\mathbb{R})$ erzeugt, gilt nach dem Eindeutigkeitssatz auch die Gleichheit auf ${\cal B}(\mathbb{\mathbb{R}})$, sodass $\mu\mapsto F_\mu$ injektiv ist.
+
+Zur Surjektivität sei eine Verteilungsfunktion $F$ gegeben und wir suchen ein Maß $\mu$, sodass $F=F_\mu$.
+Betrachte zunächst die Menge der reellwertigen Abbildungen auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$ und ordne $F$ die Abbildung $\tilde{\mu}\colon(a,b]\mapsto F(b)-F(a)$ zu.
+Dann gilt $\tilde{\mu}(\emptyset)=\tilde{\mu}((a,a])=F(a)-F(a)=0$ für ein beliebiges $a$.
+Für $\{(a_i,b_i]\}_{i\leq n}$ disjunkt folgt $\tilde{\mu}(\sum^n{(a_i,b_i]})=\sum^n(F(b_i)-F(a_i))=\sum^n\tilde{\mu}((a_i,b_i])$, sodass $F$ ein Inhalt auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$ ist.
+Zudem wähle Folge $((a_n,b_n])_{n\in\mathbb{N}}$ in $\{(a,b]\}_{a,b\in\mathbb{Q}}$, dann ist, da $F$, sowie $\tilde{\mu}$ monoton sind und nicht kleiner werden, $\tilde{\mu}\bigl(\bigcup^\infty(a_i,b_i]\bigr)\leq\tilde{\mu}((\inf\{a_n\},\sup\{b_n\})\leq\sum^\infty(F(b_n)-F(a_n))$.
+$\tilde{\mu}$ ist somit $\sigma$-subadditiv und nach Lemma A.10 somit auch $\sigma$-additiv, also ein Prämaß auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$.
+Nach dem Erweiterungssatz von Carathéodory finden wir zum Prämaß $\tilde{\mu}$ ein Maß $\mu$ auf ${\cal B}(\mathbb{R})$, welches auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$ mit $\tilde{\mu}$ übereinstimmt und somit das Urbild von $F$ ist.
+Wieder nach dem Eindeutigkeitssatz ist $\mu$ auf ganz ${\cal B}(\mathbb{R})$ wohldefiniert und somit $\mu\mapsto F_\mu$ surjektiv.
+
+\paragraph{B1A3} Wir sollen für $f(x)=|x|$ die $\sigma(f)$-${\cal B}(\mathbb{R})$-messbaren Funktionen $g$ finden.
+Wir überlegen uns zunächst, was $\sigma(f)$ ist.
+$f$ bildet Intervalle $(-\infty,x]$ auf  $[-x,x]$ ab.
+Da $\{(-\infty,x]\}_{x\in\mathbb{Q}}$ die $\sigma$-Algebra ${\cal B}(\mathbb{\mathbb{R}})$ erzeugt, gilt für die von $f$ erzeugte $\sigma$-Algebra $\sigma(f)=f^{-1}({\cal B}(\mathbb{R}))=\sigma(f^{-1}(\{(-\infty,x]\}_{x\in\mathbb{Q}})=\sigma(\{[-x,x]\}_{x\in\mathbb{Q}})$.
+Hierbei muss $\sigma(\{[-x,x]\}_{x\in\mathbb{Q}})$ für alle aus $\{[-x,x]\}_{x\in\mathbb{Q}}$ die Komplemente, sowie beliebige Vereinigungen beinhalten.
+Die Komplemente sind gegeben durch die offenen Intervalle $\{(-\infty,x)\cup(x,\infty)\}_{x\in{\mathbb{Q}}}$.
+Durch beliebiges Vereinigen lassen sich in Analogie zu ${\cal B}(\mathbb{R})$ beliebige Mengen $A\in{\cal B}(\mathbb{R})$ erzeugen, mit der Einschränkung, dass für alle $x\in A$ gilt ${-}x\in A$.
+Aus dem oben Gesagten folgt, dass für $\sigma(f)$ gilt $\sigma(f)=\{A\in{\cal B}(\mathbb{R})\mid x\in A\implies{-x}\in A\}$.
+
+Damit $g$ $\sigma(f)$-${\cal B}(\mathbb{R})$-messbar ist, muss gelten $g^{-1}({\cal B}(\mathbb{R}))\subset\sigma(f)$, insbesondere muss für die einelementigen Mengen $\{x\}$ gelten $g^{-1}(\{x\})\in\sigma(f)$.
+Die kleinsten Mengen aus $\sigma(f)$, die als $g^{-1}(\{x\})$ infrage kommen, sind $\{\pm g^{-1}(x)\}$, sodass alle $\sigma(f)$-${\cal B}(\mathbb{R})$ Messbaren Funktionen die Borel-messbaren Funktionen $g$ mit $g(-x)=g(x)$ sind.
+
+\paragraph{B1A4} Für $A\in{\cal A}\cap{\cal B}$ ist $A^\mathrm{C}$ in den beiden $\sigma$-Algebren ${\cal A}$ und ${\cal B}$ enthalten und damit im Schnitt.
+Entsprechendes gilt für $\bigcup^\infty A_i$ mit $A_i$ in ${\cal A}\cap{\cal B}$.
+Damit ist ${\cal A}\cap{\cal B}$ eine $\sigma$-Algebra.
+${\cal A}\cup{\cal B}$ ist im Allgemeinen jedoch keine $\sigma$-Algebra.
+Sei nämlich $A\in {\cal A},A\notin{\cal B}$ und $B\in{\cal B},B\notin{\cal A}$, dann ist $A\cup B\notin{\cal A}\cup{\cal B}$, denn wäre $A\cup B\in{\cal A}$, müsste wegen der Schnittstabilität von ${\cal A}$ auch $B\in{\cal A}$ sein, beziehungsweise wenn $A\cup B\in{\cal B}$, müsste wegen der Schnittstabilität von ${\cal B}$ auch $A\in{\cal B}$ sein -- im Widerspruch zur Wahl von $A$ und $B$.
+
+\paragraph{B1A5} Wir sollen zeigen, dass ${\cal D}$ ein Dynkin-System, aber keine $\sigma$-Algebra ist.
+Es sind $\emptyset,\Omega\in {\cal D}$.
+Da Für alle $D\in{\cal D}$ auch $|D^\mathrm{C}|$ gerade ist, ist $D^\mathrm{C}\in{\cal D}$.
+Sind $D_1$ und $D_2$ disjunkt, so gilt $|D_1\cup D_2|=|D_1|+|D_2|$ und somit ist ${\cal D}$ ein Dynkin-System.
+Haben $D_1,D_2\in{\cal D}$ jedoch zum Beispiel einen einelementigen Schnitt, so ist $|D_1\cup D_2|=|D_1|+|D_2|-1$ ungerade und damit ${\cal D}$ keine $\sigma$-Algebra.
+
+\paragraph{B1A6}
+Hier setzen wir immer $A,B\in{\cal R}$ voraus. Wir zeigen die Äquivalenz von (a) und (b), (b) und (d) und (c) und (d).
+\subparagraph{\boldmath(a)$\implies$(b)} Es gilt $\emptyset=A\Delta A$. Da der Ring $({\cal R},\Delta,\cap)$ abgeschlossen unter den Verknüpfungen ist, folgt die Behauptung.
+\subparagraph{\boldmath(b)$\implies$(a)} Damit $({\cal R},\Delta,\cap)$ ein Ring ist, muss $({\cal R},\Delta)$ eine abelsche Gruppe sein, $({\cal R},\cap)$ eine Halbgruppe und das Distributivgesetz gelten.
+
+Zur abelschen Gruppe, $\Delta$ hat auf ${\cal R}$ das neutrale Element $\emptyset$ und für ein $A\in{\cal R}$ das Inverse Element $A^{-1}=A$.
+Zum Distributivgesetz setzen wir die Definition von $\Delta$ in die ausgeklammerte Seite des Distributivgesetzes.
+\begin{align*}
+  (A\cap B)\Delta(B\cap C)
+  &=[(a\cap C)\setminus(B\cap C)]\cup[(B\cap C)\setminus (A\cap C)]\,.
+    \shortintertext{Mit Überlegungen, die man leicht mit Venn Diagrammen sehen kann, ergibt sich}
+  &=[(A\setminus B)\cap C]\cup[(B\setminus A)\cap C]=[(A\setminus B)\cup (B\setminus A)]\cup C\,,
+    \shortintertext{und wieder durch die Definition von $\Delta$}
+    &=(A\Delta B)\cap C\,.
+\end{align*}
+Weiterhin sind $\Delta$ und $\cap$ kommutativ und assoziativ, sodass insgesamt $({\cal R},\Delta)$ eine abelsche Gruppe und $({\cal R},\cap)$ eine Halbgruppe ist.
+\subparagraph{\boldmath(b)$\implies$(d)}
+Falls $A\cap B,A\Delta B\in{\cal R}$ gilt $B\setminus A=B\Delta(A\cap B)\in{\cal R}$.
+\subparagraph{\boldmath(d)$\implies$(b)}
+Sind $B\setminus A,A\cup B\in{\cal R}$, gilt $A\Delta B\in{\cal R}$ nach Definition von $\Delta$.
+Weiterhin ist $A\cap B=(A\cup B)\setminus(A\Delta B)$.
+\subparagraph{\boldmath(c)$\implies$(d)}
+Sind $A\Delta B,A\cup B\in{\cal R}$, gilt $B\setminus A=(A\cap B)\Delta B$.
+\subparagraph{\boldmath(d)$\implies$(c)}
+Hier gilt, wie bei (d)$\implies$(b), $A\Delta B\in{\cal R}$ wieder nach Definition von $\Delta$.
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:

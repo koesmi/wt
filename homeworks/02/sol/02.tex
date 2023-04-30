@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,bbold}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Seite \thepage}\rhead{Blatt 2 Nicolas und Evgenij}
+\fancyfoot{}
+
+\begin{document}
+
+\paragraph{B2A5}
+Wir bestimmen zunächst das unbestimmte Integral
+\begin{align*}
+  I(a,b)
+  &=\int_a^b\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\mathrm{d}x\,.
+  \intertext{Substitution $z=x^\beta$, sodass $\frac{\mathrm{d}z}{\mathrm{d}x}=\beta x^{\beta-1}$ und damit $x^{\beta-1}\mathrm{d}x=\frac{\mathrm{d}z}{\beta}$ ergibt}
+  &=\int_{a^\beta}^{b^\beta}\alpha\mathrm{e}^{-\alpha z}\mathrm{d}z\,.
+    \shortintertext{Integrieren liefert}
+  &=\left.-\mathrm{e}^{-\alpha z}\right|_{z=a^\beta}^{b^\beta}=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}\,.
+\end{align*}
+Um herauszufinden was $F^Y(x)$ ist, bestimmen wir die einzelnen Wahrscheinlichkeiten für $P(Y=1)$ und $P(Y=X)$.
+Nach Definition von $Y$ ist $P(Y<1)=0$, $P(Y=1)=P(X\leq1)=I(0,1)=1-\mathrm{e}^{-\alpha}$ und $P(1<Y\leq x)=P(1<X\leq x)=I(1,x)=\mathrm{e}^{-\alpha}-\mathrm{e}^{-\alpha x^\beta}$.
+Somit ist
+\begin{align*}
+  F^Y(x)
+  &=P^Y(Y\leq x)=
+  \begin{cases}
+    0\,,&x<1\\
+    P(Y=1)\,,&x=1\\
+    P(Y=1)+P(1<Y\leq x)\,,&x>1
+  \end{cases}\\
+  &=
+  \begin{cases}
+    0\,,&x<1\\
+    1-\mathrm{e}^{-\alpha}\,,&x=1\\
+    1-\mathrm{e}^{-\alpha x^\beta}\,,&x>1
+  \end{cases}\\
+  &=\mathbb{1}_{[1,\infty)}\bigl(1-\mathrm{e}^{-\alpha x^\beta}\bigr)\,.
+\end{align*}
+
+Wir bestimmen zunächst das Maß $P^X\bigl((a,b]\bigr)$.
+Nach Satz 6 und mit Ausführen der Indikatorfunkton in $f_X(x)$ gilt
+\begin{align*}
+  P\bigl((a,b]\bigr)
+  &=
+    \begin{cases}
+      0\,,&b\leq0\\
+      \int_0^b\mathbb{1}_{(0,\infty)}(x)\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\mathrm{d}x\,&a\leq0,b>0\\
+      \int_a^b\mathbb{1}_{(0,\infty)}(x)\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\mathrm{d}x\,&a\leq0,b>0
+\end{cases}
+\end{align*}
+Nach Definition von $Y$ und $F_X(x)$ ist
+\begin{align*}
+  P(Y=1)
+  &=P^X\bigl((-\infty,1]\bigr)
+    =\int_{-\infty}^1\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
+    \shortintertext{Durch Anwendung der Indikatorfunktion}
+  &=\int_{0}^1\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
+    \shortintertext{Substitution $z=y^\beta$, sodass $\frac{\mathrm{d}z}{\mathrm{d}y}=\beta y^{\beta-1}$ und damit $y^{\beta-1}\mathrm{d}y=\frac{\mathrm{d}z}{\beta}$ ergibt}
+  &=\int_0^{1^\beta}\alpha\mathrm{e}^{-\alpha z}\mathrm{d}z\,.
+    \shortintertext{Integrieren liefert}
+  &=\left.-\mathrm{e}^{-\alpha z}\right|_{z=0}^1=1-\mathrm{e}^{-\alpha}\,.
+\end{align*}
+Es gilt für reellwertige Zufallsvariablen\vspace{-1em}
+\begin{align*}
+  F^Y(x)
+  &=P(Y\leq x)\,.
+    \shortintertext{Nach Definition von $Y=\max\{X,1\}$ ist das}
+  &=P(1\leq x,Y\leq x)=\mathbb{1}_{(1,\infty)}(x)P(Y\leq x)\,.
+  &\shortintertext{Einsetzen der Dichte $f_X(y)=\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}$ liefert}
+  &=\mathbb{1}_{(1,\infty)}(x)\int_{-\infty}^x\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
+    \shortintertext{und mit Verschieben der inneren Indikatorfunkton in die Integralgrenze}
+  &=\mathbb{1}_{(1,\infty)}(x)\int_0^x\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
+    \shortintertext{Substitution $z=y^\beta$, sodass $\frac{\mathrm{d}z}{\mathrm{d}y}=\beta y^{\beta-1}$ und damit $y^{\beta-1}\mathrm{d}y=\frac{\mathrm{d}z}{\beta}$ ergibt}
+  &=\mathbb{1}_{(1,\infty)}(x)\int_0^{x^\beta}\alpha\mathrm{e}^{-\alpha z}\mathrm{d}z\,.
+    \shortintertext{Integrieren liefert}
+  &=\left.-\mathbb{1}_{(1,\infty)}(x)\mathrm{e}^{-\alpha z}\right|_{z=0}^{x^\beta}=\mathbb{1}_{(1,\infty)}(1-\mathrm{e}^{-\alpha x^\beta})\,.
+\end{align*}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
