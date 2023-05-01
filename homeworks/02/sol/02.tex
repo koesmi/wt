@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt} 
 \pagestyle{fancy}
-\lhead{Seite \thepage}\rhead{Blatt 2 Nicolas und Evgenij}
+\lhead{Blatt 2 Nicolas und Evgenij}\rhead{Seite \thepage}
 \fancyfoot{}
 
 \begin{document}
@@ -42,8 +42,33 @@ Somit ist
     1-\mathrm{e}^{-\alpha}\,,&x=1\\
     1-\mathrm{e}^{-\alpha x^\beta}\,,&x>1
   \end{cases}\\
-  &=\mathbb{1}_{[1,\infty)}\bigl(1-\mathrm{e}^{-\alpha x^\beta}\bigr)\,.
+  &=\mathbb{1}_{[1,\infty)}(x)\bigl(1-\mathrm{e}^{-\alpha x^\beta}\bigr)\,.
 \end{align*}
+Mit $\rho\bigl((a,b]\bigr)=I(a,b)=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}$ können $P^Y$ dann wie folgt auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$ zerlegen
+\begin{align*}
+  P^Y\bigl((a,b]\bigr)
+  &=I(0,1)\delta_1\bigl((a,b]\bigr)+\rho\bigl((1,\infty)\cap(a,b]\bigr)\\
+  &=(1-\mathrm{e}^{-\alpha})\delta_1\bigl((a,b]\bigr)+\rho\bigl((1,\infty)\cap(a,b]\bigr)\,.
+\end{align*}
+Wir prüfen zunächst nach, dass die Zerlegung wirklich $F^Y(b)-F^Y(a)$ ergibt.
+Für $b<1$ verschwinden sowohl das Dirac- als auch das Lebesguemaß, sodass $P^Y\bigl((a,b]\bigr)=0$.
+Für $a<1$ und $b\geq1$ ist $(1,\infty)\cap(a,b]=(1,b]$ und somit
+\begin{align*}
+  P^Y\bigl((a,b]\bigr)
+  &=1-\mathrm{e}^{-\alpha}+\mathrm{e}^{-\alpha}-\mathrm{e}^{-\alpha b^\beta}=1-\mathrm{e}^{-\alpha b^\beta}=F^Y(b)-F^Y(a)\,.
+\end{align*}
+Für $a\geq1$, $b>1$ ist schließlich $(1,\infty)\cap(a,b]=(a,b]$, sodass wieder
+\begin{align*}
+  P^Y\bigl((a,b]\bigr)
+  &=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}=F^Y(b)-F^Y(a)\,.
+\end{align*}
+Jetzt überlegen wir uns noch, dass der Diracterm singulär und der Lebesgueterm absolut stetig bezüglich des Lebesguemaßes ist.
+Da $\lambda(\{1\})=0$ und $\delta_1(\mathbb{R}\setminus\{1\})=0$ ist der erste Term tatsächlich singulär.
+Für den zweiten Term benutzen wir Aufgabe 4.
+Sei ein $\epsilon>0$ gegeben.
+Der Lebesgueterm trägt nur für $a,b>1$ bei.
+Für große $\alpha$ und $\beta$, ist dann $\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}<\epsilon$, sobald $b-a<\epsilon$.
+Da $\lim_{\alpha\to0}\mathrm{e}^{-\alpha}=1$ und $\lim_{\beta\to 0}\mathrm{e}^{-x^\beta}=\frac{1}{e}$, gilt die obige Beziehung auch für kleine $\alpha$ und $\beta$. Somit ist $\rho\bigl(A\bigr)\leq\epsilon$ für alle $A$, mit $\mu(A)\leq \delta$, sobald ich $\delta<\epsilon$ wähle und nach Aufgabe 4 tatsächlich $\rho\ll\lambda$.
 
 Wir bestimmen zunächst das Maß $P^X\bigl((a,b]\bigr)$.
 Nach Satz 6 und mit Ausführen der Indikatorfunkton in $f_X(x)$ gilt
