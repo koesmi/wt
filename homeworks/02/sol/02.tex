@@ -69,45 +69,6 @@ Sei ein $\epsilon>0$ gegeben.
 Der Lebesgueterm trägt nur für $a,b>1$ bei.
 Für große $\alpha$ und $\beta$, ist dann $\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}<\epsilon$, sobald $b-a<\epsilon$.
 Da $\lim_{\alpha\to0}\mathrm{e}^{-\alpha}=1$ und $\lim_{\beta\to 0}\mathrm{e}^{-x^\beta}=\frac{1}{e}$, gilt die obige Beziehung auch für kleine $\alpha$ und $\beta$. Somit ist $\rho\bigl(A\bigr)\leq\epsilon$ für alle $A$, mit $\mu(A)\leq \delta$, sobald ich $\delta<\epsilon$ wähle und nach Aufgabe 4 tatsächlich $\rho\ll\lambda$.
-
-Wir bestimmen zunächst das Maß $P^X\bigl((a,b]\bigr)$.
-Nach Satz 6 und mit Ausführen der Indikatorfunkton in $f_X(x)$ gilt
-\begin{align*}
-  P\bigl((a,b]\bigr)
-  &=
-    \begin{cases}
-      0\,,&b\leq0\\
-      \int_0^b\mathbb{1}_{(0,\infty)}(x)\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\mathrm{d}x\,&a\leq0,b>0\\
-      \int_a^b\mathbb{1}_{(0,\infty)}(x)\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\mathrm{d}x\,&a\leq0,b>0
-\end{cases}
-\end{align*}
-Nach Definition von $Y$ und $F_X(x)$ ist
-\begin{align*}
-  P(Y=1)
-  &=P^X\bigl((-\infty,1]\bigr)
-    =\int_{-\infty}^1\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
-    \shortintertext{Durch Anwendung der Indikatorfunktion}
-  &=\int_{0}^1\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
-    \shortintertext{Substitution $z=y^\beta$, sodass $\frac{\mathrm{d}z}{\mathrm{d}y}=\beta y^{\beta-1}$ und damit $y^{\beta-1}\mathrm{d}y=\frac{\mathrm{d}z}{\beta}$ ergibt}
-  &=\int_0^{1^\beta}\alpha\mathrm{e}^{-\alpha z}\mathrm{d}z\,.
-    \shortintertext{Integrieren liefert}
-  &=\left.-\mathrm{e}^{-\alpha z}\right|_{z=0}^1=1-\mathrm{e}^{-\alpha}\,.
-\end{align*}
-Es gilt für reellwertige Zufallsvariablen\vspace{-1em}
-\begin{align*}
-  F^Y(x)
-  &=P(Y\leq x)\,.
-    \shortintertext{Nach Definition von $Y=\max\{X,1\}$ ist das}
-  &=P(1\leq x,Y\leq x)=\mathbb{1}_{(1,\infty)}(x)P(Y\leq x)\,.
-  &\shortintertext{Einsetzen der Dichte $f_X(y)=\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}$ liefert}
-  &=\mathbb{1}_{(1,\infty)}(x)\int_{-\infty}^x\mathbb{1}_{(0,\infty)}(y)\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
-    \shortintertext{und mit Verschieben der inneren Indikatorfunkton in die Integralgrenze}
-  &=\mathbb{1}_{(1,\infty)}(x)\int_0^x\alpha\beta y^{\beta-1}\mathrm{e}^{-\alpha y^\beta}\mathrm{d}y\,.
-    \shortintertext{Substitution $z=y^\beta$, sodass $\frac{\mathrm{d}z}{\mathrm{d}y}=\beta y^{\beta-1}$ und damit $y^{\beta-1}\mathrm{d}y=\frac{\mathrm{d}z}{\beta}$ ergibt}
-  &=\mathbb{1}_{(1,\infty)}(x)\int_0^{x^\beta}\alpha\mathrm{e}^{-\alpha z}\mathrm{d}z\,.
-    \shortintertext{Integrieren liefert}
-  &=\left.-\mathbb{1}_{(1,\infty)}(x)\mathrm{e}^{-\alpha z}\right|_{z=0}^{x^\beta}=\mathbb{1}_{(1,\infty)}(1-\mathrm{e}^{-\alpha x^\beta})\,.
-\end{align*}
 \end{document}
 
 %%% Local Variables:
