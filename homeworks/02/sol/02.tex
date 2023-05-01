@@ -15,6 +15,41 @@
 
 \begin{document}
 
+\paragraph{B2A2}
+
+\newpage
+\paragraph{B2A3}
+Zur Teilaufgabe (a), sei $\mu(A)<\varepsilon$ und $\nu(A^\mathrm{c})<\varepsilon$ für alle $\varepsilon>0$, dann ist im Limes $\varepsilon\to0$ $\mu(A)=0$ und $\nu(A^\mathrm{c})=0$, also $\mu\perp\nu$.
+
+Zur Teilaufgabe (b), da $\mu\perp\nu$, gibt es ein $A\in{\cal A}$ so, dass $\mu(A)=0$ und $\nu(A^{\mathrm{c}})=0$.
+Da $\lambda\ll\mu$, ist auch $\lambda(A)=0$ und somit $\lambda\perp\nu$.
+
+Zur Teilaufgabe (c), hier gibt es ein $A\in{\cal A}$, sodass $\mu(A)=0$ und $\mu(A^\mathrm{c})=0$, also $\mu(\Omega)=0$ und somit $\mu({\cal A})=0$ wegen der Monotonie von $\mu$.
+\newpage
+\paragraph{B2A4}
+Aus Proposition 15.5 aus dem Buch \glqq An introduction to Integration and Measure Theory\grqq von Ole A. Nielsen. Wir zeigen zunächst, dass wenn $\nu\ll\mu$, dann für jedes $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $A\in{\cal A}$ mit $\mu(A)\leq\delta$ auch $\nu(A)\leq\varepsilon$.
+Angenommen, das stimmt gar nicht. Es gibt also ein $\varepsilon>0$, sodass wie klein ich mein $\delta$ auch wähle es immer noch ein $A\in{\cal A}$ mit $\mu(A)<\delta$ gibt, jedoch $\nu(A)>\varepsilon$.
+Wähle für dieses $\varepsilon$ mein $\delta=\frac{1}{2^n}$.
+Dann gibt es zu jedem $n$ ein $A_n\in{\cal A}$ mit $\mu(A_n)<\frac{1}{2^n}$, aber $\nu(A_n)\geq\varepsilon$.
+Dann ist, für $A=\lim\sup A_n$ wegen Monotonie von $\mu$ auch
+\begin{align*}
+  \mu(A)
+  &=\mu\Bigl(\bigcap_{n=1}^\infty\bigcup_{k=n}^\infty A_k\Bigr)\leq\mu\Bigl(\bigcup_{k=n}^\infty A_k\Bigr)\,,
+    \intertext{und wiederum wegen der $\sigma$-Subadditivität von $\mu$}
+  &\leq\sum_{k=n}^\infty\mu(A_k)\leq\sum_{k=n}^\infty\frac{1}{2^k}\,.
+  \intertext{Mit der Formel für die Partialsummen der geometrischen Reihe} 
+  &=\sum_{k=0}^\infty\frac{1}{2^k}-\sum_{k=n-1}^\infty\frac{1}{2^k}=\frac{1}{1-\frac{1}{2}}-\frac{1-\frac{1}{2^{n}}}{1-\frac{1}{2}}=\frac{1}{2^{n-1}}
+\end{align*}
+Für alle $n$, sodass $\mu(A)=0$, wobei andererseits, da $\nu$ stetig von oben ist,
+\begin{align*}
+  \nu(A)=\lim_{n\to\infty}\nu\Bigl(\bigcup_{k=n}^\infty A_k\Bigr)\geq\lim_{n\to\infty}\nu(A_n)\geq\varepsilon
+\end{align*}
+Dann ist aber auch nicht mehr $\nu\ll\mu$, im Widerspruch zu unserer ursprünglichen Annahme.
+
+Nun nehmen wir andererseits an, dass für alle $\varepsilon\geq0$ es ein $\delta>0$ gibt, sodass $\nu(A)\leq\varepsilon$ falls $\mu(A)\leq\delta$.
+Sei $A\in{\cal A}$ eine $\mu$-Nullmenge.
+Dann ist $\mu(A)<\delta$, also nach Annahme auch $\nu(A)<\varepsilon$ für alle $\varepsilon>0$, also $\nu(A)=0$.
+\newpage
 \paragraph{B2A5}
 Wir bestimmen zunächst das unbestimmte Integral
 \begin{align*}
