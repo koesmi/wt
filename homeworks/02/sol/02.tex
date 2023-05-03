@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.5in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.2in,bottom=1.2in]{geometry}
 
 \usepackage{amsmath,mathtools,bbold}
 \usepackage[german]{babel}
@@ -13,10 +13,68 @@
 \lhead{Blatt 2 Nicolas und Evgenij}\rhead{Seite \thepage}
 \fancyfoot{}
 
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+\usepackage[numbers,round]{natbib}
+\bibliographystyle{alphadin}
+
 \begin{document}
 
-\paragraph{B2A2}
+\paragraph{B2A1}
+Wir wollen zunächst $\sigma\bigl(f^{-1}({\cal C}')\bigr)\subseteq f^{-1}\bigl(\sigma({\cal C}')\bigr)$ zeigen.
+Da es gilt ${\cal C}\subseteq\sigma({\cal C}')$, ist auch $f^{-1}({\cal C}')\subseteq f^{-1}\bigl(\sigma({\cal C}')\bigr)$.
+Da $\sigma({\cal C}')$ eine $\sigma$-Algebra ist, ist auch $f^{-1}\bigl(\sigma({\cal C}')\bigr)$ eine $\sigma$-Algebra.
+Damit muss $\sigma\bigl(f^{-1}({\cal C}')\bigr)\subseteq f^{-1}\bigl(\sigma({\cal C}')\bigr)$ gelten.
 
+Betrachte für die andere Inklusion das System der guten Mengen gegeben durch ${\cal F}'=\{A'\in\sigma({\cal C}')\mid f^{-1}(A')\in\sigma\bigl(f^{-1}({\cal C}')\bigr)\}$.
+Wir zeigen, dass ${\cal F}'$ eine $\sigma$-Algebra ist, denn dann wird auch $\sigma({\cal C}')\subseteq{\cal F}'$ gelten.
+Da $f$ eine Abbildung ist, also jedem Punkt aus $\Omega$ einen in $\Omega'$ zuordnet, ist $f^{-1}(\Omega')=\Omega$.
+Da $\sigma(f^{-1}({\cal C}))$ eine $\sigma$-Algebra ist, ist $\Omega\in\sigma(f^{-1}({\cal C}))$.
+Somit ist $\Omega'\in{\cal F}.$.
+Entsprechendes gilt für $\emptyset$. Allen Punkten wird einer zugeordnet, nichts bleibt ohne Bild und somit $f^{-1}(\emptyset)=\emptyset$, also $\emptyset\in{\cal F}'$.
+Sei $A'\in{\cal F}'$, dann gilt nach Definition von ${\cal F}'$, dass $f^{-1}(A')\in\sigma(f^{-1}({\cal C}'))$ und, da $\sigma(f^{-1}({\cal C}'))$ eine $\sigma$-Algebra ist, auch $(f^{-1}(A'))^\mathrm{c}=f^{-1}({A'}^\mathrm{c})\in\sigma(f^{-1}({\cal C}'))$ (haben wir uns in der letzten Übung ausführlich überlegt), was wieder nach Definition von ${\cal F}'$ bedeutet, dass ${A'}^\mathrm{c}\in{\cal F}'$.
+Sei schließlich $(A_n')$ eine Folge in ${\cal F}'$, also für alle $n$ aus der natürlichen Zahlen $f^{-1}(A_n')\in\sigma(f^{-1}({\cal C}'))$, dann gilt wieder, da $\sigma(f^{-1}({\cal C}'))$ eine $\sigma$-Algebra ist, dass $\bigcup f^{-1}(A_n')=f^{-1}\bigl(\bigcup A_n'\bigr)\in\sigma(f^{-1}({\cal C}'))$.
+Nach Definition von ${\cal F}'$ ist hierdurch auch $\bigcup A_n'\in{\cal F}'$ und insgesamt ${\cal F}'$ eine $\sigma$-Algebra. Da $f^{-1}({\cal C}')\subseteq \sigma(f^{-1}({\cal C}'))$ ist ${\cal C}'\subseteq{\cal F}'$.
+Wie schon angekündigt ist, da ${\cal F}'$ eine $\sigma$-Algebra ist, auch $\sigma({\cal C}')\subseteq{\cal F}'$ als kleinste $\sigma$-Algebra, die ${\cal C}'$ enthält.
+Schaut man auf die Definition von ${\cal F}'$, so gilt hierdurch die andere gesuchte Inklusion $f^{-1}\bigl(\sigma({\cal C}')\bigr)\subseteq\sigma\bigl(f^{-1}({\cal C}')\bigr)$.
+\newpage
+\paragraph{B2A2}
+Sei zunächst $\mu=\nu$ auf ${\cal B}(\mathbb{R})$.
+Dann kann ich statt $\int_\Omega f\mathrm{d}\mu$ auch $\int_\Omega f\mathrm{d}\nu$ schreiben.
+Somit ist $\mu[f]=\nu[f]$.
+
+Sei nun anders herum $\mu[f]=\nu[f]$.
+Ich will folgende Funktionen $f_n$ konstruieren, die $\mathbb{1}_{[a,b]}$ approximieren sollen.
+\begin{center}
+  \begin{tikzpicture}
+    \draw[->](-3,0)--(-2,0)node[below]{$a-\frac{1}{n}$}--(-1,0)node[below]{$a$}--(1,0)node[below]{$b$}--(2,0)node[below]{$b+\frac{1}{n}$}--(3,0);
+    \draw(-2,-2pt)--(-2,2pt);
+    \draw(-1,-2pt)--(-1,2pt);
+    \draw(1,-2pt)--(1,2pt);
+    \draw(2,-2pt)--(2,2pt);
+    \draw(-2,0)to node[midway,above left]{$f_n$}(-1,1)--(1,1)--(2,0);
+    \draw[decorate,decoration=brace](-2.5,0)to node[midway,left]{1}(-2.5,1);
+  \end{tikzpicture}
+\end{center}
+$f_n$ hat zwischen $a$ und $b$ die Höhe 1.
+weiterhin gilt $f_n(a-\frac{1}{n})=u\cdot(a-\frac{1}{n})+v=0$ und $f_n(a)=u\cdot a+v=1$, sodass $f_n$ links die Form $1+n(x-a)$ hat.
+Analog hat es rechts die Form $1+n(b-x)$.
+Definiere also $f_n(x)=\mathbb{1}_{[a,b]}+(1+n(x-a))\mathbb{1}_{[a-\frac{1}{n},a)}+(1+n(b-x))\mathbb{1}_{(b,b+\frac{1}{n}]}$.
+Dann ist
+\begin{align*}
+  \mu([a,b])
+  &=\int_\Omega\mathbb{1}_{[a,b]}(x)\mu(\mathrm{d}x)\,.
+    \intertext{Durch die gerade gefundene Approximation können wir schreiben}
+  &=\int_\Omega\lim_{n\to\infty}f_n(x)\mu(\mathrm{d}x)\,.
+    \intertext{Die $f_n$ konvergieren monoton gegen $\mathbb{1}_{[a,b]}$. Deshalb können wir den Satz über monotone Konvergenz anwenden und den Limes rausziehen, sodass}
+  &=\lim_{n\to\infty}\int_\Omega f_n(x)\mu(\mathrm{d}x)\,.
+    \intertext{Nun können wir unsere Annahme verwenden, dass für stetige Funktionen mit kompaktem Träger, die die $f_n$ ja sind, $\mu[f_n]$ und $\nu[f_n]$ übereinstimmen, also}
+  &=\lim_{n\to\infty}\int_\Omega f_n(x)\nu(\mathrm{d}x)\,.
+    \intertext{Gehen wir die Argumentation mit $\nu$ statt $\mu$ rückwärts durch, erhalten wir}
+  &=\nu([a,b])\,.
+\end{align*}
+Da $\mu$ und $\nu$ auf dem Erzeuger $\{[a,b]\}_{a,b\in\mathbb{Q}}$ von ${\cal B}(\mathbb{R})$ übereinstimmen, gilt $\mu=\nu$.
 \newpage
 \paragraph{B2A3}
 Zur Teilaufgabe (a), sei $\mu(A)<\varepsilon$ und $\nu(A^\mathrm{c})<\varepsilon$ für alle $\varepsilon>0$, dann ist im Limes $\varepsilon\to0$ $\mu(A)=0$ und $\nu(A^\mathrm{c})=0$, also $\mu\perp\nu$.
@@ -27,7 +85,7 @@ Da $\lambda\ll\mu$, ist auch $\lambda(A)=0$ und somit $\lambda\perp\nu$.
 Zur Teilaufgabe (c), hier gibt es ein $A\in{\cal A}$, sodass $\mu(A)=0$ und $\mu(A^\mathrm{c})=0$, also $\mu(\Omega)=0$ und somit $\mu({\cal A})=0$ wegen der Monotonie von $\mu$.
 \newpage
 \paragraph{B2A4}
-Aus Proposition 15.5 aus dem Buch \glqq An introduction to Integration and Measure Theory\grqq von Ole A. Nielsen. Wir zeigen zunächst, dass wenn $\nu\ll\mu$, dann für jedes $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $A\in{\cal A}$ mit $\mu(A)\leq\delta$ auch $\nu(A)\leq\varepsilon$.
+Aus Proposition 15.5 aus \cite{nielsen}. Wir zeigen zunächst, dass wenn $\nu\ll\mu$, dann für jedes $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $A\in{\cal A}$ mit $\mu(A)\leq\delta$ auch $\nu(A)\leq\varepsilon$.
 Angenommen, das stimmt gar nicht. Es gibt also ein $\varepsilon>0$, sodass wie klein ich mein $\delta$ auch wähle es immer noch ein $A\in{\cal A}$ mit $\mu(A)<\delta$ gibt, jedoch $\nu(A)>\varepsilon$.
 Wähle für dieses $\varepsilon$ mein $\delta=\frac{1}{2^n}$.
 Dann gibt es zu jedem $n$ ein $A_n\in{\cal A}$ mit $\mu(A_n)<\frac{1}{2^n}$, aber $\nu(A_n)\geq\varepsilon$.
@@ -40,7 +98,7 @@ Dann ist, für $A=\lim\sup A_n$ wegen Monotonie von $\mu$ auch
   \intertext{Mit der Formel für die Partialsummen der geometrischen Reihe} 
   &=\sum_{k=0}^\infty\frac{1}{2^k}-\sum_{k=n-1}^\infty\frac{1}{2^k}=\frac{1}{1-\frac{1}{2}}-\frac{1-\frac{1}{2^{n}}}{1-\frac{1}{2}}=\frac{1}{2^{n-1}}
 \end{align*}
-Für alle $n$, sodass $\mu(A)=0$, wobei andererseits, da $\nu$ stetig von oben ist,
+Für alle $n$, sodass $\mu(A)=0$, wobei andererseits, da $\nu$ endlich in $A_1$ und somit stetig von oben ist,
 \begin{align*}
   \nu(A)=\lim_{n\to\infty}\nu\Bigl(\bigcup_{k=n}^\infty A_k\Bigr)\geq\lim_{n\to\infty}\nu(A_n)\geq\varepsilon
 \end{align*}
@@ -99,11 +157,11 @@ Für $a\geq1$, $b>1$ ist schließlich $(1,\infty)\cap(a,b]=(a,b]$, sodass wieder
 \end{align*}
 Jetzt überlegen wir uns noch, dass der Diracterm singulär und der Lebesgueterm absolut stetig bezüglich des Lebesguemaßes ist.
 Da $\lambda(\{1\})=0$ und $\delta_1(\mathbb{R}\setminus\{1\})=0$ ist der erste Term tatsächlich singulär.
-Für den zweiten Term benutzen wir Aufgabe 4.
-Sei ein $\epsilon>0$ gegeben.
-Der Lebesgueterm trägt nur für $a,b>1$ bei.
-Für große $\alpha$ und $\beta$, ist dann $\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}<\epsilon$, sobald $b-a<\epsilon$.
-Da $\lim_{\alpha\to0}\mathrm{e}^{-\alpha}=1$ und $\lim_{\beta\to 0}\mathrm{e}^{-x^\beta}=\frac{1}{e}$, gilt die obige Beziehung auch für kleine $\alpha$ und $\beta$. Somit ist $\rho\bigl(A\bigr)\leq\epsilon$ für alle $A$, mit $\mu(A)\leq \delta$, sobald ich $\delta<\epsilon$ wähle und nach Aufgabe 4 tatsächlich $\rho\ll\lambda$.
+Für den zweiten Term benutzen wir den Satz von Radon--Nikodym in der Ausführung als Korollar 7.34 in \cite{klenke}.
+Demnach ist der Lebesgueterm absolut stetig bezüglich des Lebesguemaßes, wenn es eine Dichte bezüglich des Lebesguemaßes hat.
+Nach Konstruktion gilt gerade $\rho\bigl((1,\infty)\cap(a,b]\bigr)=\int_{(a,b]}\mathbb{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\lambda(\mathrm{d}x)$ für alle $(a,b]$, sodass $\mathbb{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}$ die Dichte von $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ für alle $A\in{\cal B}(\mathbb{R})$ ist. \emph{Hier müsste man wahrscheinlich noch argumentieren, warum es nicht nur für Intervalle gilt.}
+Nach dem Satz von Radon--Nikodym ist $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ somit absolut stetig bezüglich dem Lebesguemaß $\lambda$.
+\bibliography{../../../books/wt}
 \end{document}
 
 %%% Local Variables:
