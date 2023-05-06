@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[a4paper,margin=1.875in,top=1.2in,bottom=1.2in]{geometry}
 
-\usepackage{amsmath,mathtools,bbold}
+\usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage[german]{babel}
 
 \usepackage{setspace}
@@ -45,7 +45,7 @@ Dann kann ich statt $\int_\Omega f\mathrm{d}\mu$ auch $\int_\Omega f\mathrm{d}\n
 Somit ist $\mu[f]=\nu[f]$.
 
 Sei nun anders herum $\mu[f]=\nu[f]$.
-Ich will folgende Funktionen $f_n$ konstruieren, die $\mathbb{1}_{[a,b]}$ approximieren sollen.
+Ich will folgende Funktionen $f_n$ konstruieren, die $\mathbbm{1}_{[a,b]}$ approximieren sollen.
 \begin{center}
   \begin{tikzpicture}
     \draw[->](-3,0)--(-2,0)node[below]{$a-\frac{1}{n}$}--(-1,0)node[below]{$a$}--(1,0)node[below]{$b$}--(2,0)node[below]{$b+\frac{1}{n}$}--(3,0);
@@ -58,23 +58,23 @@ Ich will folgende Funktionen $f_n$ konstruieren, die $\mathbb{1}_{[a,b]}$ approx
   \end{tikzpicture}
 \end{center}
 $f_n$ hat zwischen $a$ und $b$ die Höhe 1.
-weiterhin gilt $f_n(a-\frac{1}{n})=u\cdot(a-\frac{1}{n})+v=0$ und $f_n(a)=u\cdot a+v=1$, sodass $f_n$ links die Form $1+n(x-a)$ hat.
+Zudem gilt $f_n(a-\frac{1}{n})=u\cdot(a-\frac{1}{n})+v=0$ und $f_n(a)=u\cdot a+v=1$, sodass $f_n$ links die Form $1+n(x-a)$ hat.
 Analog hat es rechts die Form $1+n(b-x)$.
-Definiere also $f_n(x)=\mathbb{1}_{[a,b]}+(1+n(x-a))\mathbb{1}_{[a-\frac{1}{n},a)}+(1+n(b-x))\mathbb{1}_{(b,b+\frac{1}{n}]}$.
+Definiere also $f_n$, was die $\mathbbm{1}[a,b]$ approximiert, als $f_n(x)=\mathbbm{1}_{[a,b]}+(1+n(x-a))\mathbbm{1}_{[a-\frac{1}{n},a)}+(1+n(b-x))\mathbbm{1}_{(b,b+\frac{1}{n}]}$.
 Dann ist
 \begin{align*}
   \mu([a,b])
-  &=\int_\Omega\mathbb{1}_{[a,b]}(x)\mu(\mathrm{d}x)\,.
+  &=\int_\Omega\mathbbm{1}_{[a,b]}(x)\mu(\mathrm{d}x)\,.
     \intertext{Durch die gerade gefundene Approximation können wir schreiben}
   &=\int_\Omega\lim_{n\to\infty}f_n(x)\mu(\mathrm{d}x)\,.
-    \intertext{Die $f_n$ konvergieren monoton gegen $\mathbb{1}_{[a,b]}$. Deshalb können wir den Satz über monotone Konvergenz anwenden und den Limes rausziehen, sodass}
+    \intertext{Die $f_n$ konvergieren monoton gegen $\mathbbm{1}_{[a,b]}$. Deshalb können wir den Satz über monotone Konvergenz anwenden und den Limes rausziehen, sodass}
   &=\lim_{n\to\infty}\int_\Omega f_n(x)\mu(\mathrm{d}x)\,.
     \intertext{Nun können wir unsere Annahme verwenden, dass für stetige Funktionen mit kompaktem Träger, die die $f_n$ ja sind, $\mu[f_n]$ und $\nu[f_n]$ übereinstimmen, also}
   &=\lim_{n\to\infty}\int_\Omega f_n(x)\nu(\mathrm{d}x)\,.
     \intertext{Gehen wir die Argumentation mit $\nu$ statt $\mu$ rückwärts durch, erhalten wir}
   &=\nu([a,b])\,.
 \end{align*}
-Da $\mu$ und $\nu$ auf dem Erzeuger $\{[a,b]\}_{a,b\in\mathbb{Q}}$ von ${\cal B}(\mathbb{R})$ übereinstimmen, gilt $\mu=\nu$.
+Da $\mu$ und $\nu$ auf dem Erzeuger $\{[a,b]\}_{a,b\in\mathbb{Q}}$ von ${\cal B}(\mathbb{R})$ übereinstimmen, gilt nach dem Eindeutigkeitssatz A.16 $\mu=\nu$.
 \newpage
 \paragraph{B2A3}
 Zur Teilaufgabe (a), sei $\mu(A)<\varepsilon$ und $\nu(A^\mathrm{c})<\varepsilon$ für alle $\varepsilon>0$, dann ist im Limes $\varepsilon\to0$ $\mu(A)=0$ und $\nu(A^\mathrm{c})=0$, also $\mu\perp\nu$.
@@ -85,28 +85,33 @@ Da $\lambda\ll\mu$, ist auch $\lambda(A)=0$ und somit $\lambda\perp\nu$.
 Zur Teilaufgabe (c), hier gibt es ein $A\in{\cal A}$, sodass $\mu(A)=0$ und $\mu(A^\mathrm{c})=0$, also $\mu(\Omega)=0$ und somit $\mu({\cal A})=0$ wegen der Monotonie von $\mu$.
 \newpage
 \paragraph{B2A4}
-Aus Proposition 15.5 aus \cite{nielsen}. Wir zeigen zunächst, dass wenn $\nu\ll\mu$, dann für jedes $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $A\in{\cal A}$ mit $\mu(A)\leq\delta$ auch $\nu(A)\leq\varepsilon$.
-Angenommen, das stimmt gar nicht. Es gibt also ein $\varepsilon>0$, sodass wie klein ich mein $\delta$ auch wähle es immer noch ein $A\in{\cal A}$ mit $\mu(A)<\delta$ gibt, jedoch $\nu(A)>\varepsilon$.
-Wähle für dieses $\varepsilon$ mein $\delta=\frac{1}{2^n}$.
-Dann gibt es zu jedem $n$ ein $A_n\in{\cal A}$ mit $\mu(A_n)<\frac{1}{2^n}$, aber $\nu(A_n)\geq\varepsilon$.
+Aus Proposition 15.5 aus \cite{nielsen}.
+Wir zeigen zunächst, dass wenn $\nu\ll\mu$, dann (b) gilt, dass also für jedes $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $A\in{\cal A}$ mit $\mu(A)\leq\delta$ auch $\nu(A)\leq\varepsilon$.
+Angenommen, (b) stimmt gar nicht, wenn (a) gilt.
+Es gibt also ein $\varepsilon>0$, sodass wie klein ich mein $\delta$ auch wähle es immer noch ein $A\in{\cal A}$ mit $\mu(A)\leq\delta$ gibt, jedoch $\nu(A)>\varepsilon$.
+Wähle für dieses $\varepsilon$ ein $n\in\mathbb{N}$ beliebig und setze $\delta=\frac{1}{2^n}$.
+Weiter soll $A_n\in{\cal A}$ die eine Menge sein, für die gilt $\mu(A_n)\leq\frac{1}{2^n}$, aber $\nu(A_n)>\varepsilon$.
 Dann ist, für $A=\lim\sup A_n$ wegen Monotonie von $\mu$ auch
 \begin{align*}
   \mu(A)
   &=\mu\Bigl(\bigcap_{n=1}^\infty\bigcup_{k=n}^\infty A_k\Bigr)\leq\mu\Bigl(\bigcup_{k=n}^\infty A_k\Bigr)\,,
     \intertext{und wiederum wegen der $\sigma$-Subadditivität von $\mu$}
   &\leq\sum_{k=n}^\infty\mu(A_k)\leq\sum_{k=n}^\infty\frac{1}{2^k}\,.
-  \intertext{Mit der Formel für die Partialsummen der geometrischen Reihe} 
-  &=\sum_{k=0}^\infty\frac{1}{2^k}-\sum_{k=n-1}^\infty\frac{1}{2^k}=\frac{1}{1-\frac{1}{2}}-\frac{1-\frac{1}{2^{n}}}{1-\frac{1}{2}}=\frac{1}{2^{n-1}}
+  \intertext{Wir wollen jetzt bestimmen, was $\sum_{k=n}^\infty\frac{1}{2^k}$ ist.
+Sei hierfür $s_{m,n}=\sum_{k=n}^m\frac{1}{2^k}$.
+Dann ist $\frac{1}{2}s_{m,n}=s_{m,n}-\frac{1}{2}s_{m,n}=\sum_{k=n}^m\bigl(\frac{1}{2^k}-\frac{1}{2^{k+1}}\bigr)=\frac{1}{2^n}-\frac{1}{2^{m+1}}$ und somit}
+    &=\lim_{m\to\infty}2\Bigl(\frac{1}{2^n}-\frac{1}{2^{m+1}}\Bigr)=\frac{1}{2^{n-1}}\,,
 \end{align*}
-Für alle $n$, sodass $\mu(A)=0$, wobei andererseits, da $\nu$ endlich in $A_1$ und somit stetig von oben ist,
-\begin{align*}
-  \nu(A)=\lim_{n\to\infty}\nu\Bigl(\bigcup_{k=n}^\infty A_k\Bigr)\geq\lim_{n\to\infty}\nu(A_n)\geq\varepsilon
-\end{align*}
-Dann ist aber auch nicht mehr $\nu\ll\mu$, im Widerspruch zu unserer ursprünglichen Annahme.
+für alle $n$, sodass $\mu(A)=0$.
+Andererseits gilt wegen der Monotonie von $\nu$, dass $\nu\bigl(\bigcup_{k=n}^\infty A_k\bigr)\geq\nu(A_n)>\varepsilon$ nach der Wahl der $A_n$, ebenfalls für alle $n$.
+Da $\nu$ endlich ist, ist $\nu(A_1)<\infty$.
+Deshalb ist $\nu$ nach Satz A.14 stetig von oben, also $\nu(A)=\lim_{n\to\infty}\nu\bigl(\bigcup_{k=n}^\infty A_k\bigr)>\varepsilon$, da ja $\nu\bigl(\bigcup_{k=n}^\infty A_k\bigr)>\varepsilon$ für beliebiges $n$.
+Da wir oben gezeigt haben, dass $\mu(A)=0$, widerspricht das $\nu\ll\mu$, also muss (b) doch gelten.
 
-Nun nehmen wir andererseits an, dass für alle $\varepsilon\geq0$ es ein $\delta>0$ gibt, sodass $\nu(A)\leq\varepsilon$ falls $\mu(A)\leq\delta$.
-Sei $A\in{\cal A}$ eine $\mu$-Nullmenge.
-Dann ist $\mu(A)<\delta$, also nach Annahme auch $\nu(A)<\varepsilon$ für alle $\varepsilon>0$, also $\nu(A)=0$.
+Nun nehmen wir andererseits an, dass für alle $\varepsilon>0$ es ein $\delta>0$ gibt, sodass $\nu(A)\leq\varepsilon$ falls $\mu(A)\leq\delta$ und wollen zeigen, dass $\nu\ll\mu$, also, dass für ein $A\in{\cal A}$ mit $\mu(A)=0$ auch $\nu(A)=0$ gilt.
+Sei hierfür $A\in{\cal A}$ mit $\mu(A)=0$ gegeben.
+Dann ist $\mu(A)\leq\delta$, für ein beliebiges $\delta>0$, also nach Annahme, dass (b) gilt, auch $\nu(A)\leq\varepsilon$ für alle $\varepsilon>0$.
+Damit muss $\nu(A)=0$ gelten.
 \newpage
 \paragraph{B2A5}
 Wir bestimmen zunächst das unbestimmte Integral
@@ -135,8 +140,13 @@ Somit ist
     1-\mathrm{e}^{-\alpha}\,,&x=1\\
     1-\mathrm{e}^{-\alpha x^\beta}\,,&x>1
   \end{cases}\\
-  &=\mathbb{1}_{[1,\infty)}(x)\bigl(1-\mathrm{e}^{-\alpha x^\beta}\bigr)\,.
+  &=\mathbbm{1}_{[1,\infty)}(x)\bigl(1-\mathrm{e}^{-\alpha x^\beta}\bigr)\,.
 \end{align*}
+Wir stellen fest, dass aufgrund der Indikatorfunktion gilt $F^Y(-\infty)=0$, und wegen $\lim_{x\to\infty}\mathrm{e}^{-x}$ gilt $F^Y(\infty)=1$.
+Zudem ist $\mathrm{e}^{-x}$ monoton fallend, sodass $F^Y(x)$ monoton wachsend ist.
+Schließlich gilt $F^Y(x)\rightarrow F^Y(1)$ für $x\searrow 1$, sodass $F^Y$ rechtsseitig stetig ist.
+Damit ist $F^Y$ eine Verteilungsfunktion.
+
 Mit $\rho\bigl((a,b]\bigr)=I(a,b)=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}$ können $P^Y$ dann wie folgt auf $\{(a,b]\}_{a,b\in\mathbb{Q}}$ zerlegen
 \begin{align*}
   P^Y\bigl((a,b]\bigr)
@@ -144,7 +154,7 @@ Mit $\rho\bigl((a,b]\bigr)=I(a,b)=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alp
   &=(1-\mathrm{e}^{-\alpha})\delta_1\bigl((a,b]\bigr)+\rho\bigl((1,\infty)\cap(a,b]\bigr)\,.
 \end{align*}
 Wir prüfen zunächst nach, dass die Zerlegung wirklich $F^Y(b)-F^Y(a)$ ergibt.
-Für $b<1$ verschwinden sowohl das Dirac- als auch das Lebesguemaß, sodass $P^Y\bigl((a,b]\bigr)=0$.
+Für $b<1$ verschwinden sowohl das Diracmaß $\delta_1$ als auch das Lebesguemaß $\rho$, sodass $P^Y\bigl((a,b]\bigr)=0$.
 Für $a<1$ und $b\geq1$ ist $(1,\infty)\cap(a,b]=(1,b]$ und somit
 \begin{align*}
   P^Y\bigl((a,b]\bigr)
@@ -155,12 +165,14 @@ Für $a\geq1$, $b>1$ ist schließlich $(1,\infty)\cap(a,b]=(a,b]$, sodass wieder
   P^Y\bigl((a,b]\bigr)
   &=\mathrm{e}^{-\alpha a^\beta}-\mathrm{e}^{-\alpha b^\beta}=F^Y(b)-F^Y(a)\,.
 \end{align*}
+Da $F^Y$, wie vorhin erklärt, eine Verteilungsfunktion ist, ist nach Satz 6 $P^Y$ ein Maß auf ganz ${\cal B}(\mathbb{R})$, $I(a,b)$ muss hierbei entsprechend auf den einzelnen Komponenten eines $A\in{\cal B}(\mathbb{R})$ ausgewertet und aufsummiert werden.
+
 Jetzt überlegen wir uns noch, dass der Diracterm singulär und der Lebesgueterm absolut stetig bezüglich des Lebesguemaßes ist.
 Da $\lambda(\{1\})=0$ und $\delta_1(\mathbb{R}\setminus\{1\})=0$ ist der erste Term tatsächlich singulär.
 Für den zweiten Term benutzen wir den Satz von Radon--Nikodym in der Ausführung als Korollar 7.34 in \cite{klenke}.
 Demnach ist der Lebesgueterm absolut stetig bezüglich des Lebesguemaßes, wenn es eine Dichte bezüglich des Lebesguemaßes hat.
-Nach Konstruktion gilt gerade $\rho\bigl((1,\infty)\cap(a,b]\bigr)=\int_{(a,b]}\mathbb{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\lambda(\mathrm{d}x)$ für alle $(a,b]$, sodass $\mathbb{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}$ die Dichte von $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ für alle $A\in{\cal B}(\mathbb{R})$ ist. \emph{Hier müsste man wahrscheinlich noch argumentieren, warum es nicht nur für Intervalle gilt.}
-Nach dem Satz von Radon--Nikodym ist $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ somit absolut stetig bezüglich dem Lebesguemaß $\lambda$.
+Nach Konstruktion gilt gerade $\rho\bigl((1,\infty)\cap(a,b]\bigr)=\int_{(a,b]}\mathbbm{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}\lambda(\mathrm{d}x)$ für alle $(a,b]$, sodass $\mathbbm{1}_{(1,\infty)}\alpha\beta x^{\beta-1}\mathrm{e}^{-\alpha x^\beta}$ die Dichte von $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ für alle $A\in{\cal B}(\mathbb{R})$ ist.
+Nach dem Satz von Radon--Nikodym ist das Maß $A\mapsto\rho\bigl((1,\infty)\cap A\bigr)$ somit absolut stetig bezüglich des Lebesguemaßes $\lambda$.
 \bibliography{../../../books/wt}
 \end{document}
 

@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.2in,bottom=1.2in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 3 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+\usepackage[numbers,round]{natbib}
+\bibliographystyle{alphadin}
+
+\begin{document}
+
+\paragraph{B3A1}
+% eventuell hilfreich https://math.stackexchange.com/questions/1904411/almost-sure-convergence-and-lim-sup
+Zur Teilaufgabe (a) gehen wir wie im Beweis von Satz 6.1.2 in \cite{hesse} vor.
+Wir zeigen, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)=0$.
+Konvergiert $(X_n)_n$ fast sicher gegen $X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder $P(\lim|X_n-X|>0)=0$.
+Mit anderen Worten gilt für ein beliebiges $\varepsilon>0$, dass $P(\lim|X_n-X|\geq\varepsilon)=0$. %, oder $P(\bigcup_\varepsilon\{\lim|X_n-X|\geq\varepsilon\})=0$.
+Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|\geq\varepsilon\}$, sowie $A=\bigcup_{\varepsilon}\limsup_nA_{n,\varepsilon}$.
+
+Es gilt $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$ genau dann, wenn für alle $\varepsilon>0$ gilt, dass $\lim_n P(\sup_{m\geq n}|X_m-X|\geq\varepsilon)=0$.
+
+Zur Teilaufgabe (b), wir bemerken, dass, wenn $(X_n)_n$ fast sicher gegen ein $X$ konvergiert, dann konvergiert $|X_n-X|\wedge1$ fast sicher gegen 0.
+Da $|X_n-X|\wedge1$ die 1 als integrierbare Majorante hat,  konvergiert mit Theorem 14 über majorisierte Konvergenz $E[|X_n-X|\wedge 1]$ fast sicher gegen 0 und schließlich nach Lemma 17 $X_n$ stochastisch gegen $X$.
+\newpage
+\paragraph{B3A2}
+Satz 6.2.2 in \cite{Hesse}
+Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$, also dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|>\varepsilon)=0$.
+Nach Dreiecksungleichung ist $|X_n-X|+|Y_n-Y|\geq|X_n-X+Y_n-Y$
+
+Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$.
+Wir zeigen, dass $|Y_n|$ gleichgradig integrierbar ist, also, dass $\lim_{k}\sup_{n}E[|Y_n|\mathbbm{1}_{|X_n|>k}]=0$.
+Nach Theorem 22 gilt dann $Y_n\xrightarrow{\mathcal{L}_1}Y$.
+\newpage
+\paragraph{B3A3}
+\newpage
+\paragraph{B2A4}
+Sei $(X_n)_{n\in\mathbb{N}}$ eine Folge stochastisch unabhängiger Zufallsvariablen mit $P(X_n=\sqrt{n})=\frac{1}{n}=1-P(X_n=0)$.
+Untersuchen Sie diese auf stochastische, $P$-fast-sichere und $L^p$-Konvergenz für alle $p\geq1$.
+Ist $(X_n)_n$ gleichgradig integrierbar?
+
+Wir fragen uns, ob $(X_n)_n$ stochastisch konvergiert, also ob für alle $\varepsilon>0$ gilt $\lim P(|X_n-X|>\varepsilon)=0$.
+Wir vermuten, dass, wenn $(X_n)_n$ konvergiert, es gegen $X=0$ konvergiert.
+Die Frage ist also, ob für alle $\varepsilon>0$ gilt $\lim P(X_n>\varepsilon)=0$.
+Sei, um das zu klären, ein $\varepsilon>0$ gegeben
+Wenn $X_n>\varepsilon$, dann gilt, weil $X_n$ nach $\{0,\sqrt{n}\}$ abbildet, $X_n=\sqrt{n}$.
+Somit ist der Limes gegeben durch $\lim P(X_n>\varepsilon)=P(X_n=\sqrt{n})=\lim\frac{1}{n}=0$.
+$(X_n)_n$ konvergiert also stochastisch gegen $X=0$.
+
+Beispiel 6.7 und 6.12 in \cite{Hesse}
+Wir fragen uns, ob $(X_n)_n$ $P$-fast sicher konvergiert, das heißt also, ob $P(\lim |X_n-X|=0)=1$.
+Wir bemerken, dass, wenn $X_n\xrightarrow{\text{f.s.}}X$, nach Aufgabe 1 (b) auch $X_n\xrightarrow{P}X$.
+Wegen Lemma 16 über die Eindeutigkeit der Grenzwerte der stochastischen Konvergenz $X=0$ sein.
+Das heißt also, wenn $(X_n)_n\xrightarrow{\text{f.s.}}X$, dann ist $X=0$.
+Wir fragen uns also, ob $P(\lim X_n=0)=1$
+\newpage
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
