@@ -1,0 +1,1380 @@
+@article{Anastasiou:2016cez,
+      author         = "Anastasiou, Charalampos and Duhr, Claude and Dulat, Falko
+                        and Furlan, Elisabetta and Gehrmann, Thomas and Herzog,
+                        Franz and Lazopoulos, Achilleas and Mistlberger, Bernhard",
+      title          = "{High precision determination of the gluon fusion Higgs
+                        boson cross-section at the LHC}",
+      journal        = "JHEP",
+      volume         = "05",
+      year           = "2016",
+      pages          = "058",
+      doi            = "10.1007/JHEP05(2016)058",
+      eprint         = "1602.00695",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "CP3-16-01, ZU-TH-27-15, NIKHEF-2016-004,
+                        CERN-TH-2016-006",
+      SLACcitation   = "%%CITATION = ARXIV:1602.00695;%%"
+}
+@article{Ita:2015tya,
+      author         = "Ita, Harald",
+      title          = "{Two-loop Integrand Decomposition into Master Integrals
+                        and Surface Terms}",
+      journal        = "Phys. Rev.",
+      volume         = "D94",
+      year           = "2016",
+      number         = "11",
+      pages          = "116015",
+      doi            = "10.1103/PhysRevD.94.116015",
+      eprint         = "1510.05626",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      reportNumber   = "FR-PHENO-2015-011",
+      SLACcitation   = "%%CITATION = ARXIV:1510.05626;%%"
+}
+@article{Catani:1998bh,
+      author         = "Catani, Stefano",
+      title          = "{The Singular behavior of QCD amplitudes at two loop
+                        order}",
+      journal        = "Phys. Lett.",
+      volume         = "B427",
+      year           = "1998",
+      pages          = "161-171",
+      doi            = "10.1016/S0370-2693(98)00332-3",
+      eprint         = "hep-ph/9802439",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "CERN-TH-98-42, LPTHE-ORSAY-97-57",
+      SLACcitation   = "%%CITATION = HEP-PH/9802439;%%"
+}
+@article{Abreu:2017idw,
+      author         = "Abreu, S. and Febres Cordero, F. and Ita, H. and Jaquier,
+                        M. and Page, B.",
+      title          = "{Subleading Poles in the Numerical Unitarity Method at
+                        Two Loops}",
+      journal        = "Phys. Rev.",
+      volume         = "D95",
+      year           = "2017",
+      number         = "9",
+      pages          = "096011",
+      doi            = "10.1103/PhysRevD.95.096011",
+      eprint         = "1703.05255",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FR-PHENO-2017-002",
+      SLACcitation   = "%%CITATION = ARXIV:1703.05255;%%"
+}
+@article{Abreu:2017xsl,
+      author         = "Abreu, S. and Febres Cordero, F. and Ita, H. and Jaquier,
+                        M. and Page, B. and Zeng, M.",
+      title          = "{Two-Loop Four-Gluon Amplitudes with the Numerical
+                        Unitarity Method}",
+      year           = "2017",
+      eprint         = "1703.05273",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FR-PHENO-2017-007, UCLA-17-TEP-103",
+      SLACcitation   = "%%CITATION = ARXIV:1703.05273;%%"
+}
+@article{Agashe:2014kda, 
+author         = "Olive, K.A. and others",
+title          = "{Review of Particle Physics}",
+collaboration  = "Particle Data Group",
+journal        = "Chin.Phys.",
+volume         = "C38",
+pages          = "090001",
+doi            = "10.1088/1674-1137/38/9/090001",
+year           = "2014"
+}
+@article{Ne'eman:1961cd,
+author         = "Ne'eman, Yuval",
+title          = "{Derivation of strong interactions from a gauge invariance}",
+journal        = "Nucl.Phys.",
+volume         = "26",
+pages          = "222-229",
+doi            = "10.1016/0029-5582(61)90134-1",
+year           = "1961"
+}
+@article{GellMann:1962xb,
+author         = "Gell-Mann, Murray",
+title          = "{Symmetries of baryons and mesons}",
+journal        = "Phys.Rev.",
+volume         = "125",
+pages          = "1067-1084",
+doi            = "10.1103/PhysRev.125.1067",
+year           = "1962"
+}
+@article{Fritzsch:1972jv,
+author         = "Fritzsch, Harald and Gell-Mann, Murray",
+title          = "{Current algebra: Quarks and what else?}",
+journal        = "eConf",
+volume         = "C720906V2",
+pages          = "135-165",
+year           = "1972",
+eprint         = "hep-ph/0208010",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph"
+}
+@article{Fritzsch:1973pi,
+      author         = "Fritzsch, H. and Gell-Mann, Murray and
+                  Leutwyler, H.",
+      title          = "{Advantages of the Color Octet Gluon
+                  Picture}",
+      journal        = "Phys. Lett.",
+      volume         = "B47",
+      year           = "1973",
+      pages          = "365-368",
+      doi            = "10.1016/0370-2693(73)90625-4",
+      reportNumber   = "CALT-68-409",
+}
+@article{Gross:1973ju,
+      author         = "Gross, D. J. and Wilczek, Frank",
+      title          = "{Asymptotically Free Gauge
+                  Theories. 1}",
+      journal        = "Phys. Rev.",
+      volume         = "D8",
+      year           = "1973",
+      pages          = "3633-3652",
+      doi            = "10.1103/PhysRevD.8.3633",
+      reportNumber   = "FERMILAB-PUB-73-049-T,
+                  FERMILAB-PUB-73-049-THY",
+}
+@article{PhysRevLett.30.1346,
+title = {Reliable Perturbative Results for Strong Interactions?},
+author = {Politzer, H. David},
+journal = {Phys. Rev. Lett.},
+volume = {30},
+issue = {26},
+pages = {1346--1349},
+numpages = {0},
+year = {1973},
+month = {Jun},
+publisher = {American Physical Society},
+doi = {10.1103/PhysRevLett.30.1346},
+}
+
+%OPP
+@article{delAguila:2004nf,
+      author         = "del Aguila, F. and Pittau, R.",
+      title          = "{Recursive numerical calculus of
+                  one-loop tensor
+                        integrals}",
+      journal        = "JHEP",
+      volume         = "07",
+      year           = "2004",
+      pages          = "017",
+      doi            = "10.1088/1126-6708/2004/07/017",
+      eprint         = "hep-ph/0404120",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "UG-FT-162-04, CAFPE-32-04",
+      SLACcitation   = "%%CITATION = HEP-PH/0404120;%%"
+}
+@article{Ossola:2006us,
+author = "Ossola, Giovanni and Papadopoulos, Costas G. and
+Pittau, Roberto",
+title = "{Reducing full one-loop amplitudes to scalar integrals
+at the integrand level}",
+journal = "Nucl. Phys.",
+volume = "B763",
+year = "2007",
+pages = "147-169",
+doi = "10.1016/j.nuclphysb.2006.11.012",
+eprint = "hep-ph/0609007",
+archivePrefix = "arXiv",
+primaryClass = "hep-ph",
+}
+
+@article{Wheeler:1937zz,
+author         = "Wheeler, John A.",
+title          = "{On the Mathematical Description of Light
+                  Nuclei by the Method of Resonating Group
+                  Structure}",
+journal        = "Phys. Rev.",
+volume         = "52",
+year           = "1937",
+pages          = "1107-1122",
+doi            = "10.1103/PhysRev.52.1107",
+}
+
+@article{Heisenberg:1943aa,
+year=1943,
+issn={0044-3328},
+journal={Zeitschrift f\"ur Physik},
+volume=120,
+number={7-10},
+doi={10.1007/BF01329800},
+title={Die beobachtbaren Gr\"o\ss en in der Theorie der Elementarteilchen},
+publisher={Springer-Verlag},
+author={Heisenberg, W.},
+pages={513-538},
+language={German}
+}
+
+@article{Heisenberg:1943ab,
+year={1943},
+issn={0044-3328},
+journal={Zeitschrift f\"ur Physik},
+volume={120},
+number={11-12},
+doi={10.1007/BF01336936},
+title={Die beobachtbaren Gr\"o\ss en in der Theorie der Elementarteilchen. II},
+publisher={Springer-Verlag},
+author={Heisenberg, W.},
+pages={673-702},
+language={German}
+}
+
+@article{Heisenberg:1944ac,
+year={1944},
+issn={0939-7922},
+journal={Zeitschrift f\"ur Physik A Hadrons and Nuclei},
+volume={123},
+number={1-2},
+doi={10.1007/BF01375146},
+title={Die beobachtbaren Gr\"o\ss en in der Theorie der Elementarteilchen. III},
+publisher={Springer-Verlag},
+author={Heisenberg, W.},
+pages={93-112},
+language={German}
+}
+
+@book{eden2002analytic,
+  title={The Analytic S-Matrix},
+  author={Eden, R.J. and Landshoff, P.V. and Olive, D.I. and Polkinghorne, J.C.},
+  isbn={9780521523363},
+  year={2002},
+  publisher={Cambridge University Press}
+}
+
+
+@article{Weinberg:1973un,
+      author         = "Weinberg, Steven",
+      title          = "{Nonabelian Gauge Theories of the Strong
+                  Interactions}",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "31",
+      year           = "1973",
+      pages          = "494-497",
+      doi            = "10.1103/PhysRevLett.31.494",
+}
+@article{Glashow:1970gm,
+author         = "Glashow, S.L. and Iliopoulos, J. and Maiani, L.",
+title          = "{Weak Interactions with Lepton-Hadron Symmetry}",
+journal        = "Phys.Rev.",
+volume         = "D2",
+pages          = "1285-1292",
+doi            = "10.1103/PhysRevD.2.1285",
+year           = "1970"
+}
+@article{Salam:1968rm,
+author         = "Salam, Abdus",
+title          = "{Weak and Electromagnetic Interactions}",
+journal        = "Conf.Proc.",
+volume         = "C680519",
+pages          = "367-377",
+year           = "1968"
+}
+@article{Weinberg:1967tq,
+author         = "Weinberg, Steven",
+title          = "{A Model of Leptons}",
+journal        = "Phys.Rev.Lett.",
+volume         = "19",
+pages          = "1264-1266",
+doi            = "10.1103/PhysRevLett.19.1264",
+year           = "1967"
+}
+@article{Stella:2010ne,
+author         = "Stella, Bruno R. and Meyer, Hans-Jurgen",
+title          = "{Y(9.46 GeV) and the gluon discovery (a critical recollection of PLUTO results)}",
+journal        = "Eur.Phys.J.",
+volume         = "H36",
+pages          = "203-243",
+doi            = "10.1140/epjh/e2011-10029-3",
+year           = "2011",
+eprint         = "1008.1869",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ex",
+reportNumber   = "DESY-10-130"
+}
+@article{Guralnik:1964eu,
+      author         = "Guralnik, G.S. and Hagen, C.R. and Kibble, T.W.B.",
+      title          = "{Global Conservation Laws and Massless Particles}",
+      journal        = "Phys.Rev.Lett.",
+      volume         = "13",
+      pages          = "585-587",
+      doi            = "10.1103/PhysRevLett.13.585",
+      year           = "1964"
+}
+@article{Higgs:1964pj,
+      author         = "Higgs, Peter W.",
+      title          = "{Broken Symmetries and the Masses of Gauge Bosons}",
+      journal        = "Phys.Rev.Lett.",
+      volume         = "13",
+      pages          = "508-509",
+      doi            = "10.1103/PhysRevLett.13.508",
+      year           = "1964"
+}
+@article{Cho2012,
+doi = {10.1126/science.337.6091.141},
+url = {http://dx.doi.org/10.1126/science.337.6091.141},
+year  = {2012},
+month = {jul},
+publisher = {American Association for the Advancement of Science ({AAAS})},
+volume = {337},
+number = {6091},
+pages = {141--143},
+author = {A. Cho},
+title = {Higgs Boson Makes Its Debut After Decades-Long Search},
+journal = {Science}
+}
+@article{cern2012-8tev,
+title         = "{Acquisition de donn\'ees pour la physique au LHC \`a une \'energie de collision record de 8 TeV}",
+number        = "CERN-PR-2012-10-FR",
+pages         = "1 p",
+year          = "2012",
+url           = "https://cds.cern.ch/record/1989686",
+note          = "Issued on 05 Apr 2012"
+}
+
+
+@article{Feynman:1969wa,
+      author         = "Feynman, R.P.",
+      title          = "{The behavior of hadron collisions at extreme energies}",
+      journal        = "Conf.Proc.",
+      volume         = "C690905",
+      pages          = "237-258",
+      year           = "1969"
+}
+
+%QCD
+@article{Brandelik:1979bd,
+      author         = "Brandelik, R. and others",
+      title          = "{Evidence for Planar Events in e+ e- Annihilation at
+                        High-Energies}",
+      collaboration  = "TASSO",
+      journal        = "Phys.Lett.",
+      volume         = "B86",
+      pages          = "243",
+      doi            = "10.1016/0370-2693(79)90830-X",
+      year           = "1979",
+      reportNumber   = "DESY-79-53"
+}
+@article{Barber:1979yr,
+      author         = "Barber, D.P. and Becker, U. and Benda, H. and Boehm, A.
+                        and Branson, J.G. and others",
+      title          = "{Discovery of Three Jet Events and a Test of Quantum
+                        Chromodynamics at PETRA Energies}",
+      journal        = "Phys.Rev.Lett.",
+      volume         = "43",
+      pages          = "830",
+      doi            = "10.1103/PhysRevLett.43.830",
+      year           = "1979",
+      reportNumber   = "MIT-LNS-106"
+}
+@article{Berger:1979cj,
+      author         = "Berger, Christoph and others",
+      title          = "{Evidence for Gluon Bremsstrahlung in e+ e- Annihilations
+                        at High-Energies}",
+      collaboration  = "PLUTO",
+      journal        = "Phys.Lett.",
+      volume         = "B86",
+      pages          = "418",
+      doi            = "10.1016/0370-2693(79)90869-4",
+      year           = "1979",
+      reportNumber   = "DESY-79-57"
+}
+@article{Bartel:1979ut,
+      author         = "Bartel, W. and others",
+      title          = "{Observation of Planar Three Jet Events in e+ e-
+                        Annihilation and Evidence for Gluon Bremsstrahlung}",
+      collaboration  = "JADE",
+      journal        = "Phys.Lett.",
+      volume         = "B91",
+      pages          = "142",
+      doi            = "10.1016/0370-2693(80)90680-2",
+      year           = "1980",
+      reportNumber   = "DESY-79-80"
+}
+
+%Higgs
+@article{Chatrchyan:2012ufa,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Observation of a new boson at a mass of 125 GeV with the
+                        CMS experiment at the LHC}",
+      collaboration  = "CMS",
+      journal        = "Phys.Lett.",
+      volume         = "B716",
+      pages          = "30-61",
+      doi            = "10.1016/j.physletb.2012.08.021",
+      year           = "2012",
+      eprint         = "1207.7235",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-HIG-12-028, CERN-PH-EP-2012-220"
+}
+@article{Aad:2012tfa,
+      author         = "Aad, Georges and others",
+      title          = "{Observation of a new particle in the search for the
+                        Standard Model Higgs boson with the ATLAS detector at the
+                        LHC}",
+      collaboration  = "ATLAS",
+      journal        = "Phys.Lett.",
+      volume         = "B716",
+      pages          = "1-29",
+      doi            = "10.1016/j.physletb.2012.08.020",
+      year           = "2012",
+      eprint         = "1207.7214",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-218"
+}
+
+@article{Gunion:1985vca,
+      author         = "Gunion, J. F. and Kunszt, Z.",
+      title          = "{Improved Analytic Techniques for Tree
+                  Graph Calculations
+                        and the G g q anti-q Lepton anti-Lepton
+                  Subprocess}",
+      booktitle      = "{Oregon Workshop on Super High-energy
+                  Physics Eugene,
+                        Oregon, March 18-August 15, 1985}",
+      journal        = "Phys. Lett.",
+      volume         = "B161",
+      year           = "1985",
+      pages          = "333",
+      doi            = "10.1016/0370-2693(85)90774-9",
+      reportNumber   = "OITS-296, UCD-85/3",
+}
+@article{Kleiss1985235,
+title = "Spinor techniques for calculating $pp \to W_\pm/Z_0 +$jets ",
+journal = "Nuclear Physics B ",
+volume = "262",
+number = "2",
+pages = "235 - 262",
+year = "1985",
+note = "",
+issn = "0550-3213",
+doi = "http://dx.doi.org/10.1016/0550-3213(85)90285-8",
+author = "R. Kleiss and W.J. Stirling"
+}
+@article{Maitre2008501,
+title = "S@M, a mathematica implementation of the spinor-helicity formalism ",
+journal = "Computer Physics Communications ",
+volume = "179",
+number = "7",
+pages = "501 - 534",
+year = "2008",
+note = "",
+issn = "0010-4655",
+doi = "http://dx.doi.org/10.1016/j.cpc.2008.05.002",
+author = "D. Ma\^itre and P. Mastrolia",
+keywords = "Spinor-helicity formalism",
+keywords = "Mathematica "
+}
+
+%General QFT, QCD
+@book{plehn2014lectures,
+  title={Lectures on LHC Physics},
+  author={Plehn, T.},
+  isbn={9783319059426},
+  series={Lecture Notes in Physics},
+   year={2014},
+  publisher={Springer International Publishing}
+}
+@book{Peskin:1995ev,
+      title={An Introduction to Quantum Field Theory},
+      author={Peskin, M.E. and Schroeder, D.V.},
+      isbn=9780201503975,
+      lccn=89027170,
+      series={Advanced book classics},
+      year=1995,
+      publisher={Addison-Wesley Publishing Company}
+}
+@book{veltman1994diagrammatica,
+  title={Diagrammatica: The Path to Feynman Rules},
+  author={Veltman, M.},
+  isbn=9780521456920,
+  lccn=95167612,
+  series={Cambridge books online},
+  year=1994,
+  publisher={Cambridge University Press}
+}
+@book{schwartz2013quantum,
+  title={Quantum Field Theory and the Standard Model},
+  author={Schwartz, M.D.},
+  isbn=9781107034730,
+  lccn=2013016195,
+  series={Quantum Field Theory and the Standard Model},
+  year=2013,
+  publisher={Cambridge University Press}
+}
+@book{aitchison2012gauge,
+  title={Gauge Theories in Particle Physics: A Practical Introduction, Volume 2: Non-Abelian Gauge Theories: QCD and The Electroweak Theory, Fourth Edition},
+  author={Aitchison, I.J.R. and Hey, A.J.G.},
+  isbn={9781466513075},
+  lccn={2012031181},
+  series={Gauge Theories in Particle Physics: A Practical Introduction},
+  year={2012},
+  publisher={Taylor \& Francis}
+}
+@book{dissertori2003quantum,
+  title={Quantum Chromodynamics: High Energy Experiments and Theory},
+  author={Dissertori, G. and Knowles, I.G. and Schmelling, M.},
+  isbn=9780198505723,
+  lccn=2002030303,
+  series={International series of monographs on physics},
+  year=2003,
+  publisher={Clarendon Press}
+}
+@book{henn2014scattering,
+  title={Scattering Amplitudes in Gauge Theories},
+  author={Henn, J.M. and Plefka, J.C.},
+  isbn={9783642540226},
+  lccn={2014932295},
+  series={Lecture Notes in Physics},
+  year={2014},
+  publisher={Springer Berlin Heidelberg}
+}
+
+
+%NV BASIS
+@article{vanNeerven:1983vr,
+      author         = "van Neerven, W. L. and Vermaseren,
+                  J. A. M.",
+      title          = "{LARGE LOOP INTEGRALS}",
+      journal        = "Phys. Lett.",
+      volume         = "B137",
+      year           = "1984",
+      pages          = "241",
+      doi            = "10.1016/0370-2693(84)90237-5",
+      reportNumber   = "NIKHEF-H/83-22",
+      SLACcitation   = "%%CITATION = PHLTA,B137,241;%%"
+}
+@article{Ita:2011hi,
+      author         = "Ita, Harald",
+      title          = "{Susy Theories and QCD: Numerical
+                  Approaches}",
+      journal        = "J. Phys.",
+      volume         = "A44",
+      year           = 2011,
+      pages          = 454005,
+      doi            = "10.1088/1751-8113/44/45/454005",
+      eprint         = "1109.6527",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      reportNumber   = "UCLA-11-TEP-120, NSF-KITP-11-175",
+      SLACcitation   = "%%CITATION = ARXIV:1109.6527;%%"
+}
+
+%Spinor helicity
+@article{DeCausmaecker:1981bg,
+      author         = "De Causmaecker, P. and Gastmans, R. and
+                  Troost, W. and
+                        Wu, Tai Tsun",
+      title          = "{Multiple Bremsstrahlung in Gauge
+                  Theories at
+                        High-Energies. 1. General Formalism for
+                  Quantum
+                        Electrodynamics}",
+      journal        = "Nucl. Phys.",
+      volume         = "B206",
+      year           = "1982",
+      pages          = "53",
+      doi            = "10.1016/0550-3213(82)90488-6",
+      reportNumber   = "DESY-81-050",
+}
+@article{Berends:1981uq,
+      author         = "Berends, Frits A. and Kleiss, R. and De
+                  Causmaecker, P.
+                        and Gastmans, R. and Troost, W. and Wu,
+                  Tai Tsun",
+      title          = "{Multiple Bremsstrahlung in Gauge
+                  Theories at
+                        High-Energies. 2. Single
+                  Bremsstrahlung}",
+      journal        = "Nucl. Phys.",
+      volume         = "B206",
+      year           = "1982",
+      pages          = "61",
+      doi            = "10.1016/0550-3213(82)90489-8",
+      reportNumber   = "KUL-TF-81/18",
+}
+@article{Dittmaier:1998nn,
+author         = "Dittmaier, Stefan",
+title          = "{Weyl-van der Waerden formalism
+for helicity amplitudes
+of massive particles}",
+journal        = "Phys. Rev.",
+volume         = "D59",
+year           =1998,
+pages          = 016007,
+doi            = "10.1103/PhysRevD.59.016007",
+eprint         = "hep-ph/9805445",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+reportNumber   = "CERN-TH-98-143",
+SLACcitation   = "%%CITATION = HEP-PH/9805445;%%"
+}
+
+%One Loop Master integrals PV
+@Article{Brown1952,
+  Title                    = {Radiative corrections to Compton
+                  scattering},
+  Author                   = {Brown, LM and Feynman, RP},
+  Journal                  = {Physical Review},
+  Year                     = {1952},
+  Number                   = {2},
+  Pages                    = {231},
+  Volume                   = {85},
+  Publisher                = {APS},
+  Timestamp                = {2015.10.06}
+}
+@article{Melrose:1965kb,
+      author         = "Melrose, D. B.",
+      title          = "{Reduction of Feynman diagrams}",
+      journal        = "Nuovo Cim.",
+      volume         = "40",
+      year           = "1965",
+      pages          = "181-213",
+      doi            = "10.1007/BF02832919",
+      SLACcitation   = "%%CITATION = NUCIA,40,181;%%"
+}
+@article{Passarino:1978jh,
+      author         = "Passarino, G. and Veltman, M. J. G.",
+      title          = "{One Loop Corrections for e+ e-
+                  Annihilation Into mu+ mu- in the Weinberg
+                  Model}",
+      journal        = "Nucl. Phys.",
+      volume         = "B160",
+      year           = "1979",
+      pages          = "151",
+      doi            = "10.1016/0550-3213(79)90234-7",
+      reportNumber   = "Print-79-0284 (UTRECHT)",
+      SLACcitation   = "%%CITATION = NUPHA,B160,151;%%"
+}
+@Article{Denner2006,
+  Title                    = {Reduction schemes for one-loop
+                  tensor integrals},
+  Author                   = {Denner, Ansgar and Dittmaier, S},
+  Journal                  = {Nuclear Physics B},
+  Year                     = {2006},
+  Number                   = {1},
+  Pages                    = {62--115},
+  Volume                   = {734},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.10.06}
+}
+@article{Ellis:2011cr,
+      author         = "Ellis, R. Keith and Kunszt, Zoltan and Melnikov, Kirill
+                        and Zanderighi, Giulia",
+      title          = "{One-loop calculations in quantum field theory: from
+                        Feynman diagrams to unitarity cuts}",
+      journal        = "Phys. Rept.",
+      volume         = "518",
+      year           = "2012",
+      pages          = "141-250",
+      doi            = "10.1016/j.physrep.2012.01.008",
+      eprint         = "1105.4319",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-PUB-11-195-T",
+      SLACcitation   = "%%CITATION = ARXIV:1105.4319;%%"
+}
+
+%One Loop master Unitarity
+@article{Bern:1994zx,
+      author         = "Bern, Zvi and Dixon, Lance J. and Dunbar, David C. and
+                        Kosower, David A.",
+      title          = "{One loop n point gauge theory amplitudes, unitarity and
+                        collinear limits}",
+      journal        = "Nucl. Phys.",
+      volume         = "B425",
+      year           = "1994",
+      pages          = "217-260",
+      doi            = "10.1016/0550-3213(94)90179-1",
+      eprint         = "hep-ph/9403226",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SLAC-PUB-6415, SACLAY-SPH-T-94-20, UCLA-TEP-94-4,
+                        SWAT-94-17",
+      SLACcitation   = "%%CITATION = HEP-PH/9403226;%%"
+}
+@article{Bern:1994cg,
+      author         = "Bern, Zvi and Dixon, Lance J. and Dunbar, David C. and
+                        Kosower, David A.",
+      title          = "{Fusing gauge theory tree amplitudes into loop
+                        amplitudes}",
+      journal        = "Nucl. Phys.",
+      volume         = "B435",
+      year           = "1995",
+      pages          = "59-101",
+      doi            = "10.1016/0550-3213(94)00488-Z",
+      eprint         = "hep-ph/9409265",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SLAC-PUB-6563, SACLAY-SPH-T-94-95, UCLA-TEP-94-29,
+                        SWAT-94-36",
+      SLACcitation   = "%%CITATION = HEP-PH/9409265;%%"
+}
+@article{Bern:1997sc,
+      author         = "Bern, Zvi and Dixon, Lance J. and Kosower, David A.",
+      title          = "{One loop amplitudes for e+ e- to four partons}",
+      journal        = "Nucl. Phys.",
+      volume         = "B513",
+      year           = "1998",
+      pages          = "3-86",
+      doi            = "10.1016/S0550-3213(97)00703-7",
+      eprint         = "hep-ph/9708239",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SLAC-PUB-7529, SACLAY-SPH-T-97-090, UCLA-97-TEP-10",
+      SLACcitation   = "%%CITATION = HEP-PH/9708239;%%"
+}
+@article{Forde:2007mi,
+      author         = "Forde, Darren",
+      title          = "{Direct extraction of one-loop integral coefficients}",
+      journal        = "Phys. Rev.",
+      volume         = "D75",
+      year           = "2007",
+      pages          = "125019",
+      doi            = "10.1103/PhysRevD.75.125019",
+      eprint         = "0704.1835",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SLAC-PUB-12455, UCLA-07-TEP-12",
+      SLACcitation   = "%%CITATION = ARXIV:0704.1835;%%"
+}
+@article{Ellis:2007br,
+      author         = "Ellis, R. Keith and Giele, W. T. and
+                  Kunszt, Z.",
+      title          = "{A Numerical Unitarity Formalism for
+                  Evaluating One-Loop
+                        Amplitudes}",
+      journal        = "JHEP",
+      volume         = "03",
+      year           = "2008",
+      pages          = "003",
+      doi            = "10.1088/1126-6708/2008/03/003",
+      eprint         = "0708.2398",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-PUB-07-419-T",
+}
+@article{Ellis:2008ir,
+      author         = "Ellis, R. Keith and Giele, Walter T. and
+                  Kunszt, Zoltan
+                        and Melnikov, Kirill",
+      title          = "{Masses, fermions and generalized
+                  $D$-dimensional
+                        unitarity}",
+      journal        = "Nucl. Phys.",
+      volume         = "B822",
+      year           = "2009",
+      pages          = "270-282",
+      doi            = "10.1016/j.nuclphysb.2009.07.023",
+      eprint         = "0806.3467",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-PUB-08-177-T, UH-511-1128-08",
+}
+@article{Giele:2008ve,
+      author         = "Giele, Walter T. and Kunszt, Zoltan and
+                  Melnikov, Kirill",
+      title          = "{Full one-loop amplitudes from tree
+                  amplitudes}",
+      journal        = "JHEP",
+      volume         = 04,
+      year           = 2008,
+      pages          = 049,
+      doi            = "10.1088/1126-6708/2008/04/049",
+      eprint         = "0801.2237",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-PUB-08-013-T, UH-511-1117-08",
+      SLACcitation   = "%%CITATION = ARXIV:0801.2237;%%"
+}
+
+
+%TWO LOOP master integrals
+@unpublished{HI,
+author= "Ita, Harald",
+title = "{Two loop integrand decomposition into master integrals
+                  and surface terms}",
+		  note="to be published."
+}
+@article{CaronHuot:2012ab,
+      author         = "Caron-Huot, Simon and Larsen, Kasper
+                  J.",
+      title          = "{Uniqueness of two-loop master
+                  contours}",
+      journal        = "JHEP",
+      volume         = "10",
+      year           = "2012",
+      pages          = "026",
+      doi            = "10.1007/JHEP10(2012)026",
+      eprint         = "1205.0801",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SACLAY-IPHT-T12-028, UUITP-13-12",
+      SLACcitation   = "%%CITATION = ARXIV:1205.0801;%%"
+}
+
+@article{Johansson:2012zv,
+      author         = "Johansson, Henrik and Kosower, David
+                  A. and Larsen,
+                        Kasper J.",
+      title          = "{Two-Loop Maximal Unitarity with
+                  External Masses}",
+      journal        = "Phys. Rev.",
+      volume         = "D87",
+      year           = "2013",
+      number         = "2",
+      pages          = "025030",
+      doi            = "10.1103/PhysRevD.87.025030",
+      eprint         = "1208.1754",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      reportNumber   = "UUITP-22-12, IPHT-T12-161",
+      SLACcitation   = "%%CITATION = ARXIV:1208.1754;%%"
+}
+
+@article{Johansson:2013sda,
+      author         = "Johansson, Henrik and Kosower, David
+                  A. and Larsen,
+                        Kasper J.",
+      title          = "{Maximal Unitarity for the Four-Mass
+                  Double Box}",
+      journal        = "Phys. Rev.",
+      volume         = "D89",
+      year           = "2014",
+      number         = "12",
+      pages          = "125010",
+      doi            = "10.1103/PhysRevD.89.125010",
+      eprint         = "1308.4632",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      reportNumber   = "CERN-PH-TH-2013-191, NIKHEF-2013-026,
+                        SACLAY-IPHT-T13-204",
+      SLACcitation   = "%%CITATION = ARXIV:1308.4632;%%"
+}
+
+@article{Sogaard:2014jla,
+      author         = "S{\o}gaard, Mads and Zhang, Yang",
+      title          = "{Elliptic Functions and Maximal
+                  Unitarity}",
+      journal        = "Phys. Rev.",
+      volume         = "D91",
+      year           = 2015,
+      number         = 8,
+      pages          = 081701,
+      doi            = "10.1103/PhysRevD.91.081701",
+      eprint         = "1412.5577",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      SLACcitation   = "%%CITATION = ARXIV:1412.5577;%%"
+}
+
+@article{Georgoudis:2015hca,
+      author         = "Georgoudis, Alessandro and Zhang, Yang",
+      title          = "{Two-loop Integral Reduction from
+                  Elliptic and
+                        Hyperelliptic Curves}",
+      year           = "2015",
+      eprint         = "1507.06310",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      SLACcitation   = "%%CITATION = ARXIV:1507.06310;%%"
+}
+
+%LSZ reduction
+@article{Lehmann:1954rq,
+      author         = "Lehmann, H. and Symanzik, K. and
+                  Zimmermann, W.",
+      title          = "{On the formulation of quantized field
+                  theories}",
+      journal        = "Nuovo Cim.",
+      volume         = "1",
+      year           = "1955",
+      pages          = "205-225",
+      doi            = "10.1007/BF02731765",
+      SLACcitation   = "%%CITATION = NUCIA,1,205;%%"
+}
+@article{Lehmann:1957zz,
+      author         = "Lehmann, H. and Symanzik, K. and
+                  Zimmermann, W.",
+      title          = "{On the formulation of quantized field
+                  theories. II}",
+      journal        = "Nuovo Cim.",
+      volume         = "6",
+      year           = "1957",
+      pages          = "319-333",
+      doi            = "10.1007/BF02832508",
+      SLACcitation   = "%%CITATION = NUCIA,6,319;%%"
+}
+
+%BCFW recursion
+@article{Britto:2005fq,
+      author         = "Britto, Ruth and Cachazo, Freddy and
+                  Feng, Bo and Witten,
+                        Edward",
+      title          = "{Direct proof of tree-level recursion
+                  relation in
+                        Yang-Mills theory}",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "94",
+      year           = "2005",
+      pages          = "181602",
+      doi            = "10.1103/PhysRevLett.94.181602",
+      eprint         = "hep-th/0501052",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      SLACcitation   = "%%CITATION = HEP-TH/0501052;%%"
+}
+@article{Feng:2011np,
+      author         = "Feng, Bo and Luo, Mingxing",
+      title          = "{An Introduction to On-shell Recursion
+                  Relations}",
+      journal        = "Front. Phys.",
+      volume         = "7",
+      year           = "2012",
+      pages          = "533-575",
+      doi            = "10.1007/s11467-012-0270-z",
+      eprint         = "1111.5759",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-th",
+      SLACcitation   = "%%CITATION = ARXIV:1111.5759;%%"
+}
+
+%Berends-Giele recursion
+@article{Berends:1987me,
+      author         = "Berends, Frits A. and Giele, W. T.",
+      title          = "{Recursive Calculations for Processes with n Gluons}",
+      journal        = "Nucl. Phys.",
+      volume         = "B306",
+      year           = "1988",
+      pages          = "759",
+      doi            = "10.1016/0550-3213(88)90442-7",
+      reportNumber   = "Print-88-0100 (LEIDEN)"
+}
+
+@article{Kosower:1989xy,
+      author         = "Kosower, David A.",
+      title          = "{Light Cone Recurrence Relations for QCD Amplitudes}",
+      journal        = "Nucl. Phys.",
+      volume         = "B335",
+      year           = "1990",
+      pages          = "23",
+      doi            = "10.1016/0550-3213(90)90167-C",
+      reportNumber   = "FERMILAB-PUB-89-192-T",
+      SLACcitation   = "%%CITATION = NUPHA,B335,23;%%"
+}
+@article{Badger:2012uz,
+author         = "Badger, Simon and Biedermann, Benedikt
+and Hackl, Lucas
+and Plefka, Jan and Schuster, Theodor
+and Uwer, Peter",
+title          = "{Comparing efficient
+computation methods for massless QCD
+tree amplitudes: Closed analytic
+formulas versus
+Berends-Giele recursion}",
+journal        = "Phys. Rev.",
+volume         = "D87",
+year           = "2013",
+number         = "3",
+pages          = "034011",
+doi            = "10.1103/PhysRevD.87.034011",
+eprint         = "1206.2381",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+reportNumber   = "HU-EP-12-16",
+		  }
+
+% Cutkosky rules
+
+@article{Mandelstam:1958xc,
+      author         = "Mandelstam, S.",
+      title          = "{Determination of the pion - nucleon
+                  scattering amplitude from dispersion relations
+                  and unitarity. General theory}",
+      journal        = "Phys. Rev.",
+      volume         = 112,
+      year           = 1958,
+      pages          = "1344-1360",
+      doi            = "10.1103/PhysRev.112.1344",
+      SLACcitation   = "%%CITATION = PHRVA,112,1344;%%"
+}
+@article{Mandelstam:1959bc,
+      author         = "Mandelstam, Stanley",
+      title          = "{Analytic properties of transition
+                  amplitudes in perturbation theory}",
+      journal        = "Phys. Rev.",
+      volume         = "115",
+      year           = "1959",
+      pages          = "1741-1751",
+      doi            = "10.1103/PhysRev.115.1741",
+      SLACcitation   = "%%CITATION = PHRVA,115,1741;%%"
+}
+@article{Landau:1959fi,
+      author         = "Landau, L. D.",
+      title          = "{On analytic properties of vertex parts
+                  in quantum field theory}",
+      journal        = "Nucl. Phys.",
+      volume         = 13,
+      year           = 1959,
+      pages          = "181-192",
+      doi            = "10.1016/0029-5582(59)90154-3",
+      SLACcitation   = "%%CITATION = NUPHA,13,181;%%"
+}
+@article{Cutkosky:1960sp,
+      author         = "Cutkosky, R. E.",
+      title          = "{Singularities and discontinuities of
+                  Feynman amplitudes}",
+      journal        = "J. Math. Phys.",
+      volume         = 1,
+      year           = 1960,
+      pages          = "429-433",
+      doi            = "10.1063/1.1703676",
+      SLACcitation   = "%%CITATION = JMAPA,1,429;%%"
+}
+
+
+%BRST quantization
+@article{Becchi:1974xu,
+      author         = "Becchi, C. and Rouet, A. and Stora, R.",
+      title          = "{The Abelian Higgs-Kibble Model. Unitarity of the S
+                        Operator}",
+      journal        = "Phys. Lett.",
+      volume         = "B52",
+      year           = "1974",
+      pages          = "344",
+      doi            = "10.1016/0370-2693(74)90058-6",
+      reportNumber   = "CPT-74/P.625-MARSEILLE",
+      SLACcitation   = "%%CITATION = PHLTA,B52,344;%%"
+}
+@article{Becchi:1974md,
+      author         = "Becchi, C. and Rouet, A. and Stora, R.",
+      title          = "{Renormalization of the Abelian Higgs-Kibble Model}",
+      journal        = "Commun. Math. Phys.",
+      volume         = "42",
+      year           = "1975",
+      pages          = "127-162",
+      doi            = "10.1007/BF01614158",
+      reportNumber   = "CPT-74-P.634-MARSEILLE, CNRS-CPT-74-P634",
+      SLACcitation   = "%%CITATION = CMPHA,42,127;%%"
+}
+@article{Becchi:1975nq,
+      author         = "Becchi, C. and Rouet, A. and Stora, R.",
+      title          = "{Renormalization of Gauge Theories}",
+      journal        = "Annals Phys.",
+      volume         = "98",
+      year           = "1976",
+      pages          = "287-321",
+      doi            = "10.1016/0003-4916(76)90156-1",
+      reportNumber   = "CPT-75-P.723-MARSEILLE",
+      SLACcitation   = "%%CITATION = APNYA,98,287;%%"
+}
+@article{Kugo:1977zq,
+      author         = "Kugo, Taichiro and Ojima, Izumi",
+      title          = "{Manifestly Covariant Canonical Formulation of Yang-Mills
+                        Field Theories: Physical State Subsidiary Conditions and
+                        Physical S Matrix Unitarity}",
+      journal        = "Phys. Lett.",
+      volume         = "B73",
+      year           = "1978",
+      pages          = "459",
+      doi            = "10.1016/0370-2693(78)90765-7",
+      reportNumber   = "Print-77-0717 (KYOTO)",
+      SLACcitation   = "%%CITATION = PHLTA,B73,459;%%"
+}
+
+%Dyson series
+@article{Dyson:1949ha,
+      author         = "Dyson, F. J.",
+      title          = "{The S matrix in quantum electrodynamics}",
+      journal        = "Phys. Rev.",
+      volume         = "75",
+      year           = "1949",
+      pages          = "1736-1755",
+      doi            = "10.1103/PhysRev.75.1736",
+      SLACcitation   = "%%CITATION = PHRVA,75,1736;%%"
+}
+@book{joachain1987quantum,
+  title={Quantum Collision Theory},
+  author={Joachain, C.J.},
+  isbn=9780444852359,
+  year=1987,
+  publisher={North-Holland Publ.}
+}
+
+%General QCD
+@book{brock1993handbook,
+  title={Handbook of Perturbative QCD},
+  author={Brock, R. and Sterman, G. and CTEQ Collaboration},
+  year={1993},
+  publisher={CTEQ Collaboration}
+}
+
+%Experiment
+@article{Schwartzman:2015ada,
+      author         = "Schwartzman, Ariel",
+      title          = "{Jet energy calibration at the LHC}",
+      year           = "2015",
+      eprint         = "1509.05459",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1509.05459;%%"
+}
+@book{barger1997collider,
+  title={Collider Physics},
+  author={Barger, V. and Phillips, R.},
+  isbn=9780201149456,
+  lccn=96039421,
+  series={Frontiers in physics},
+  year=1997,
+  publisher={Addison-Wesley Publishing Company}
+}
+
+
+%Complex analysis
+@book{freitag2009complex,
+  title={Complex Analysis},
+  author={Freitag, E. and Busam, R.},
+  isbn={9783540939832},
+  lccn={2008943985},
+  series={Universitext},
+  year={2009},
+  publisher={Springer Berlin Heidelberg}
+}
+ @article{griffiths:1969aa,
+     jstor_articletype = {research-article},
+     title = {On the Periods of Certain Rational Integrals: I},
+     author = {Griffiths, Philip A.},
+     journal = {Annals of Mathematics},
+     volume = 90,
+     number = 3,
+     series = {Second Series},
+     jstor_formatteddate = {Nov., 1969},
+     pages = {pp. 460-495},
+     ISSN = {0003486X},
+     language = {English},
+     year = 1969,
+     publisher = {Annals of Mathematics},
+    }
+@incollection{gonzalesvega:1996aa,
+year={1996},
+isbn={978-3-0348-9908-6},
+booktitle={Algorithms in Algebraic Geometry and Applications},
+volume={143},
+series={Progress in Mathematics},
+editor={González-Vega, Laureano and Recio, Tomás},
+doi={10.1007/978-3-0348-9104-2_8},
+title={Computing multidimensional residues},
+publisher={Birkhäuser Basel},
+author={Cattani, E. and Dickenstein, A. and Sturmfels, B.},
+pages={135-164},
+language={English}
+}
+
+%Parke-taylor
+@article{Parke:1986gb,
+      author         = "Parke, Stephen J. and Taylor, T. R.",
+      title          = "{An Amplitude for $n$ Gluon
+                  Scattering}",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "56",
+      year           = "1986",
+      pages          = "2459",
+      doi            = "10.1103/PhysRevLett.56.2459",
+      reportNumber   = "FERMILAB-PUB-86-042-T",
+      SLACcitation   = "%%CITATION = PRLTA,56,2459;%%"
+}
+@inproceedings{Dixon:1996wi,
+      author         = "Dixon, Lance J.",
+      title          = "{Calculating scattering amplitudes
+                  efficiently}",
+      booktitle      = "{QCD and beyond. Proceedings,
+                  Theoretical Advanced Study
+                        Institute in Elementary Particle
+                  Physics, TASI-95,
+                        Boulder, USA, June 4-30, 1995}",
+      year           = "1996",
+      eprint         = "hep-ph/9601359",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SLAC-PUB-7106, C95-06-04.1",
+      SLACcitation   = "%%CITATION = HEP-PH/9601359;%%"
+}
+
+%Gram-Schmidt
+@article{schmidt1908aa,
+year=1908,
+journal={Rendiconti del Circolo Matematico di Palermo (1884-1940)},
+volume=25,
+number=1,
+doi={10.1007/BF03029116},
+title={\"Uber die Aufl\"osung linearer Gleichungen mit Unendlich
+                  vielen unbekannten},
+publisher={Springer Milan},
+author={Schmidt, Erhard},
+pages={53-77},
+language={German}
+}
+@book{janich2012linear,
+  title={Linear Algebra},
+  author={J{\"a}nich, K.},
+  isbn=9781461242987,
+  series={Undergraduate Texts in Mathematics},
+  year=2012,
+  publisher={Springer New York}
+}
+
+%Feynman diagram software
+
+@article{Cascioli:2011va,
+      author         = "Cascioli, Fabio and Maierhofer, Philipp
+                  and Pozzorini,
+                        Stefano",
+      title          = "{Scattering Amplitudes with Open
+                  Loops}",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "108",
+      year           = "2012",
+      pages          = "111601",
+      doi            = "10.1103/PhysRevLett.108.111601",
+      eprint         = "1111.5206",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "ZU-TH-23-11, LPN11-66",
+      SLACcitation   = "%%CITATION = ARXIV:1111.5206;%%"
+}
+@article{Cullen:2011ac,
+      author         = "Cullen, Gavin and Greiner, Nicolas and
+                  Heinrich, Gudrun
+                        and Luisoni, Gionata and Mastrolia,
+                  Pierpaolo and Ossola,
+                        Giovanni and Reiter, Thomas and
+                  Tramontano, Francesco",
+      title          = "{Automated One-Loop Calculations with
+                  GoSam}",
+      journal        = "Eur. Phys. J.",
+      volume         = "C72",
+      year           = "2012",
+      pages          = "1889",
+      doi            = "10.1140/epjc/s10052-012-1889-1",
+      eprint         = "1111.2034",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "CERN-PH-TH-2011-272, MPP-2011-132,
+                  DESY-11-203,
+                        IPPP-11-72, DCPT-11-144,
+                  EDINBURGH-2011-32",
+      SLACcitation   = "%%CITATION = ARXIV:1111.2034;%%"
+}
+@article{Cullen:2014yla,
+      author         = "Cullen, Gavin and others",
+      title          =
+                  "{G$\scriptsize{O}$S$\scriptsize{AM}$-2.0: a
+                  tool for
+                        automated one-loop calculations within
+                  the Standard Model
+                        and beyond}",
+      journal        = "Eur. Phys. J.",
+      volume         = "C74",
+      year           = "2014",
+      number         = "8",
+      pages          = "3001",
+      doi            = "10.1140/epjc/s10052-014-3001-5",
+      eprint         = "1404.7096",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "DESY-14-061, MPP-2014-145",
+      SLACcitation   = "%%CITATION = ARXIV:1404.7096;%%"
+}
+@article{Actis:2013dfa,
+      author         = "Actis, Stefano and Denner, Ansgar and
+                  Hofer, Lars and
+                        Scharf, Andreas and Uccirati, Sandro",
+      title          = "{EW and QCD One-Loop Amplitudes with
+                  RECOLA}",
+      booktitle      = "{Proceedings, 11th International
+                  Symposium on Radiative
+                        Corrections "Application of Quantum
+                  Field Theory to
+                        Phenomenology" (RADCOR 2013)}",
+      journal        = "PoS",
+      volume         = "RADCOR2013",
+      year           = "2013",
+      pages          = "034",
+      eprint         = "1311.6662",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      SLACcitation   = "%%CITATION = ARXIV:1311.6662;%%"
+}
+
+%Rational reminder
+@article{Anastasiou:2006jv,
+author         = "Anastasiou, Charalampos and Britto, Ruth
+and Feng, Bo and
+Kunszt, Zoltan and Mastrolia,
+Pierpaolo",
+title          = "{D-dimensional
+unitarity cut method}",
+journal        = "Phys. Lett.",
+volume         = "B645",
+year           = "2007",
+pages          = "213-216",
+doi            = "10.1016/j.physletb.2006.12.022",
+eprint         = "hep-ph/0609191",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+reportNumber   = "ITFA-2006-35",
+}
+@article{Xiao:2006vr,
+author         = "Xiao, Zhi-Guang and Yang, Gang and Zhu,
+                  Chuan-Jie",
+title          = "{The rational parts of
+one-loop QCD amplitudes I: The
+general formalism}",
+journal        = "Nucl. Phys.",
+volume         = "B758",
+year           = "2006",
+pages          = "1-34",
+doi            = "10.1016/j.nuclphysb.2006.09.008",
+eprint         = "hep-ph/0607015",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+}
+@article{Su:2006vs,
+author         = "Su, Xun and Xiao, Zhiguang and Yang,
+Gang and Zhu,
+Chuan-Jie",
+title          = "{The Rational
+Part of QCD Amplitude. II. The Five-Gluon}",
+journal        = "Nucl. Phys.",
+volume         = "B758",
+year           = "2006",
+pages          = "35-52",
+doi            = "10.1016/j.nuclphysb.2006.09.007",
+eprint         = "hep-ph/0607016",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+SLACcitation   =
+"%%CITATION = HEP-PH/0607016;%%"
+}
+@article{Xiao:2006vt,
+author         = "Xiao, Zhiguang and Yang, Gang and Zhu,
+Chuan-Jie",
+title          = "{The Rational Part of
+QCD Amplitude. III. The Six-Gluon}",
+journal        = "Nucl. Phys.",
+volume         = "B758",
+year           = "2006",
+pages          =
+"53-89",
+doi            = "10.1016/j.nuclphysb.2006.09.006",
+eprint         = "hep-ph/0607017",
+archivePrefix  = "arXiv",
+primaryClass   = "hep-ph",
+}
