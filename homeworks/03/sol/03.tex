@@ -18,6 +18,8 @@
 
 \usepackage[numbers,round]{natbib}
 \bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -27,25 +29,82 @@ Zur Teilaufgabe (a) gehen wir wie im Beweis von Satz 6.1.2 in \cite{hesse} vor.
 Wir zeigen, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)=0$.
 Konvergiert $(X_n)_n$ fast sicher gegen $X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder $P(\lim|X_n-X|>0)=0$.
 Mit anderen Worten gilt für ein beliebiges $\varepsilon>0$, dass $P(\lim|X_n-X|\geq\varepsilon)=0$. %, oder $P(\bigcup_\varepsilon\{\lim|X_n-X|\geq\varepsilon\})=0$.
-Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|\geq\varepsilon\}$, sowie $A=\bigcup_{\varepsilon}\limsup_nA_{n,\varepsilon}$.
-
-Es gilt $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$ genau dann, wenn für alle $\varepsilon>0$ gilt, dass $\lim_n P(\sup_{m\geq n}|X_m-X|\geq\varepsilon)=0$.
+Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|\geq\varepsilon\}$.
+Existiert $\lim|X_n-X|$ fast sicher, dann gilt auch fast sicher $\lim|X_n-X|=\limsup|X_n-X|$, also
+\begin{align*}
+  P(\lim|X_n-X|\geq\varepsilon)
+  &=P(\limsup\{{|X_n-X|\geq\varepsilon}\})\,,
+    \intertext{und mit der Definition des $\limsup$}
+  &=P\Bigl(\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
+    \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
+  &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
+    \intertext{Sei $\omega\in\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, dann gilt \emph{Hier noch Argumentation einfügen}}
+  &=\lim\nolimits_n P(\sup\nolimits_{m\geq n}|X_m-X|\geq\varepsilon)=0\,.
+\end{align*}
+Da die Beziehung für beliebige $\varepsilon>0$ gilt, ist dies mit der Definition der stochastischen Konvergenz 14.ii äquivalent zu $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$.
 
 Zur Teilaufgabe (b), wir bemerken, dass, wenn $(X_n)_n$ fast sicher gegen ein $X$ konvergiert, dann konvergiert $|X_n-X|\wedge1$ fast sicher gegen 0.
 Da $|X_n-X|\wedge1$ die 1 als integrierbare Majorante hat,  konvergiert mit Theorem 14 über majorisierte Konvergenz $E[|X_n-X|\wedge 1]$ fast sicher gegen 0 und schließlich nach Lemma 17 $X_n$ stochastisch gegen $X$.
+
+\emph{Alternativ nutze Satz 6.2.2 in \cite{hesse}.}
+
+Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sicher konvergiert, wenn für alle $\varepsilon>0$ gilt, dass $\lim_n P\bigl(\bigcup_m^\infty\{|X_{m+n}-X_n|\geq\varepsilon\}\bigr)=0$.
+\emph{Auch hier fehlt Argumentation.}
 \newpage
 \paragraph{B3A2}
-Satz 6.2.2 in \cite{Hesse}
 Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$, also dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|>\varepsilon)=0$.
-Nach Dreiecksungleichung ist $|X_n-X|+|Y_n-Y|\geq|X_n-X+Y_n-Y$
+Aus \cite{tsitsiklis}.
+Wir möchten zunächst zeigen, dass wenn $a_n\to a$ und $b_n\to b$ gilt, dann auch $a_n+b_n\to a+b$ gilt.
+$a_n\to a$ bedeutet, dass für alle $\varepsilon>0$ ein $n_0\in\mathbb{N}$ existiert, sodass für alle $n\geq n_0$ gilt $|a_n-a|<\varepsilon$.
+Sei nun $\varepsilon>0$ beliebig vorgegeben und $n_0\in\mathbb{N}$ so, dass $|a_n-a|<\frac{\varepsilon}{2}$.
+Weiterhin sei $n_0'\in\mathbb{N}$ so, dass $|b_n-b|<\frac{\varepsilon}{2}$.
+Wenn nun $n\geq n_0\vee n_0'$ gilt nach Dreiecksungleichung $|a_n-a+b_n-b|\leq|a_n-a|+|b_n-b|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$, sodass $a_n+b_n\to a+b$.
+Nun möchten wir die entsprechende Aussage für stochastische Konvergenz zeigen.
+Sei wieder $\varepsilon>0$ beliebig.
+In Analogie zur Konvergenz der reellen Folgen $(a_n)_n$ und $(b_n)_n$ gilt mit der Dreiecksungleichung und der Monotonie von $P$, dass
+\begin{align*}
+  P(|X_n-X+Y_n-Y|>\varepsilon)
+  &\leq P(|X_n-X|+|Y_n-Y|>\varepsilon)\,.
+    \intertext{Nun ist die Wahrscheinlichkeit, dass $|X_n-X|+|Y_n-Y|>\varepsilon$ kleiner als die Wahrscheinlichkeit dafür, dass nur $|X_n-X|>\frac{\varepsilon}{2}$ oder nur $|Y_n-Y|>\frac{\varepsilon}{2}$.
+    Damit gilt}
+  &\leq P\Bigl(\Bigl\{|X_n-X|>\frac{\varepsilon}{2}\Bigr\}\cup\Bigl\{|Y_n-Y|>\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
+    \intertext{Da $P$ subadditiv ist, können wir abschätzen}
+  &\leq P\Bigl(\Bigl\{|X_n-X|>\frac{\varepsilon}{2}\Bigr\}\Bigr)+P\Bigl(\Bigl\{|Y_n-Y|>\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
+    \intertext{Da $X_n\xrightarrow{P}X$ und $Y_n\xrightarrow{P}Y$, sind die beiden Terme in der obigen Summe Folgen in $\mathbb{R}$, die gegen 0 konverieren.
+    Wir haben vorhin auch erklärt, dass dann die Summe der Folgen gegen 0 konvergiert.
+    Damit ist reelle Folge $P(|X_n-X+Y_n-Y|>\varepsilon)$ mit etwas nach oben abgeschätzt, dass für $n\to\infty$ gegen 0 konvergiert, sodass $\lim_nP(|X_n-X+Y_n-Y|>\varepsilon)=0$ und $X_n+Y_n\xrightarrow{P}X+Y$.}
+\end{align*}
 
 Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$.
-Wir zeigen, dass $|Y_n|$ gleichgradig integrierbar ist, also, dass $\lim_{k}\sup_{n}E[|Y_n|\mathbbm{1}_{|X_n|>k}]=0$.
-Nach Theorem 22 gilt dann $Y_n\xrightarrow{\mathcal{L}_1}Y$.
+Entsprechend dem Tipp zeigen wir, dass $(Y_n)_n$ gleichgradig integrierbar ist, also, dass $\lim_{k}\sup_{n}E[|Y_n|\mathbbm{1}_{|X_n|>k}]=0$.
+Nach Theorem 22 gilt dann $Y_n\xrightarrow{\mathcal{L}_1}Y$, also $E[Y_n]\to E[Y]$.
+Da $X_n\leq Y_n\leq Z_n$ ist $|Y_n|\leq|X_n|\vee|Z_n|$ für alle $n$ und somit auch $|Y_n|\leq|X|\vee|Z|$ \emph{wobei das nicht so richtig folgt}.
+Nach Beispiel 19.i ist $(Y_n)_n$ gleichgradig integrierbar.
 \newpage
 \paragraph{B3A3}
+Wir haben hier $K_n=\prod_{i=1}^nY_i$ mit $P\bigl(Y_i=\frac{5}{3}\bigr)=P\bigl(Y_i=\frac{1}{2}\bigr)=\frac{1}{2}$ gegeben und sollen bei Aufgabe (a) $EK_n$ bestimmen sowie zeigen, dass $\lim_n EK_n=\infty$.
+Nach der Definition der $K_n$ gilt
+\begin{align*}
+  E[K_n]
+  &=E\Bigl[\prod\nolimits_{i=1}^n Y_i\Bigr]\,.
+    \intertext{Da die $Y_i$ stochastisch unabhängig sind, erhalten wir nach Satz 27}
+  &=\Bigl(\frac{5}{3}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{2}\Bigr)^n=\Bigl(\frac{13}{12}\Bigr)^n\,.
+\end{align*}
+Da $EK_{n+1}>EK_n$ gilt $\lim_{n\to\infty}EK_n=\infty$.
+
+Bei der Teilaufgabe (b) sollen wir zeigen, dass $K_n$ dennoch stochastisch gegen 0 konvergiert.
+Hierfür nutzen wir den Tipp und betrachten $\log K_n=\sum^n\log Y_i$, auf was wir das schwache Gesetz der großen Zahlen auf die $\log Y_i$ an.
+$(\log Y_i)_i$ genügt dem schwachen Gesetz der großen Zahlen, wenn die $\log Y_i$ unabhängig identisch verteilt sind und ihr Erwartungswert sowie ihre Varianz endlich sind.
+Da die $Y_i$ unabhängig identisch verteilt sind, sind es die $\log Y_i$ auch.
+Wir rechnen nach, dass $E[\log Y_i]=\frac{1}{2}\log\frac{5}{3}+\frac{1}{2}\log\frac{1}{2}<0$ und $|E[\log Y_i]|<\infty$.
+$E[(\log Y_i)^2]=\frac{1}{2}\bigl(\log\frac{5}{3}\bigr)^2+\frac{1}{2}\bigl(\log\frac{1}{2}\bigr)^2<\infty$, sodass Erwartungswert und Varianz endlich sind.
+Somit genügt $(\log Y_i)_i$ dem schwachen Gesetz der großen Zahlen, sodass gilt $\frac{1}{n}\sum^n\log Y_i\xrightarrow{P}E[\log Y_1]<0$, also $\frac{\log K_n}{n}\xrightarrow{P}E[\log Y_1]<0$.
+Da für den Nenner von $\frac{\log K_n}{n}$ gilt $n\to\infty$ und $|E[\log Y_1]|<\infty$, muss $\log K_n\xrightarrow{P}-\infty$, also $K_n\xrightarrow{P}\mathrm{e}^{-\infty}=0$.
+\emph{Hier sollte man eventuell die $\xrightarrow{P}$ mit $\varepsilon$ ausschreiben.}
+% https://math.stackexchange.com/questions/1938662/using-the-law-of-large-numbers-to-show-that-m-n-prod-k-1n-1x-k-converge
+
 \newpage
-\paragraph{B2A4}
+\paragraph{B3A4}
 Sei $(X_n)_{n\in\mathbb{N}}$ eine Folge stochastisch unabhängiger Zufallsvariablen mit $P(X_n=\sqrt{n})=\frac{1}{n}=1-P(X_n=0)$.
 Untersuchen Sie diese auf stochastische, $P$-fast-sichere und $L^p$-Konvergenz für alle $p\geq1$.
 Ist $(X_n)_n$ gleichgradig integrierbar?
@@ -53,17 +112,41 @@ Ist $(X_n)_n$ gleichgradig integrierbar?
 Wir fragen uns, ob $(X_n)_n$ stochastisch konvergiert, also ob für alle $\varepsilon>0$ gilt $\lim P(|X_n-X|>\varepsilon)=0$.
 Wir vermuten, dass, wenn $(X_n)_n$ konvergiert, es gegen $X=0$ konvergiert.
 Die Frage ist also, ob für alle $\varepsilon>0$ gilt $\lim P(X_n>\varepsilon)=0$.
-Sei, um das zu klären, ein $\varepsilon>0$ gegeben
+Sei, um das zu klären, ein $\varepsilon>0$ gegeben.
 Wenn $X_n>\varepsilon$, dann gilt, weil $X_n$ nach $\{0,\sqrt{n}\}$ abbildet, $X_n=\sqrt{n}$.
 Somit ist der Limes gegeben durch $\lim P(X_n>\varepsilon)=P(X_n=\sqrt{n})=\lim\frac{1}{n}=0$.
 $(X_n)_n$ konvergiert also stochastisch gegen $X=0$.
 
-Beispiel 6.7 und 6.12 in \cite{Hesse}
+Wir folgen Beispiel 6.7 in \cite{hesse}.
 Wir fragen uns, ob $(X_n)_n$ $P$-fast sicher konvergiert, das heißt also, ob $P(\lim |X_n-X|=0)=1$.
 Wir bemerken, dass, wenn $X_n\xrightarrow{\text{f.s.}}X$, nach Aufgabe 1 (b) auch $X_n\xrightarrow{P}X$.
 Wegen Lemma 16 über die Eindeutigkeit der Grenzwerte der stochastischen Konvergenz $X=0$ sein.
 Das heißt also, wenn $(X_n)_n\xrightarrow{\text{f.s.}}X$, dann ist $X=0$.
-Wir fragen uns also, ob $P(\lim X_n=0)=1$
+Wir fragen uns also, ob $P(\lim X_n=0)=1$.
+Nach Aufgabe 1 können wir uns auch genauso gut fragen, ob für alle $\varepsilon>0$ gilt $\lim_nP\bigl(\bigcup_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=0$.
+Da $(A\cup B)^\mathrm{c}=A^\mathrm{c}\cap B^\mathrm{c}$ und für alle $m$ gilt $\{X_m\geq\varepsilon\}=\{X_m<\varepsilon\}^\mathrm{c}$, können wir für alle $n\in\mathbb{N}$ schreiben $P\bigl(\bigcup\nolimits_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1-P\bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\bigr)$.
+$P$ ist als Wahrscheinlichkeitsmaß endlich und somit nach Satz A.14 stetig von oben.
+Wir können somit schreiben
+\begin{align*}
+  P\Bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\Bigr)
+  &=\lim_{N\to\infty}P\Bigl(\bigcap\nolimits_{m=n}^N\{X_m<\varepsilon\}\Bigr)\,.
+  \intertext{Sei nun $n$ so gewählt, dass $\sqrt{n}\geq\varepsilon$, also zum Beispiel $n=\bigl\lceil\varepsilon^2\bigr\rceil$.
+    Dann gilt für $m\geq n$, dass $\{X_m<\varepsilon\}=\{X_m=0\}$, also}
+  &=\lim_{N\to\infty}P\Bigl(\bigcap\nolimits_{m=n}^N\{X_m=0\}\Bigr)\,.
+    \intertext{Da die $X_m$ unabhängig sind, gilt}
+  &=\lim_{N\to\infty}\prod\nolimits_{m=n}^N\frac{m-1}{m}\,.
+    \intertext{Da gilt $\prod_{m=n}^{N+1}\frac{m-1}{m}<\prod_{m=n}^N\frac{m-1}{m}$ erhalten wir}
+  &=0
+\end{align*}
+und insgesamt somit $\lim_nP\bigl(\bigcup_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1$.
+Nach Aufgabe 1 konvergiert $(X_n)_n$ also nicht fast sicher.
+
+Wir überlegen uns noch, ob $X_n\xrightarrow{L^p}X$ für $p\geq1$ und folgen hier Beispiel 6.12 aus \cite{hesse}.
+Für den Erwartungswert von $E[|X_n|^p]$ ergibt sich $E[|X_n|^p]=\sqrt{n}^p\cdot\frac{1}{n}+0\cdot\frac{n-1}{n}=n^{\frac{p}{2}-1}$.
+Somit konvergiert $E[|X_n|^p]$, falls $\frac{p}{2}-1<0$, also $p<2$.
+Bei uns ist aber $p\geq1$, sodass $(X_n)_n$ für $1\leq p<2$ bezüglich der $L_p$-Norm konvergiert.
+
+Da die Folge $(X_n)_n$ also bezüglich der $L_1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar.
 \newpage
 \bibliography{../../../books/wt}
 \end{document}
