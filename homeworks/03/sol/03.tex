@@ -26,42 +26,54 @@
 \paragraph{B3A1}
 % eventuell hilfreich https://math.stackexchange.com/questions/1904411/almost-sure-convergence-and-lim-sup
 Zur Teilaufgabe (a) gehen wir wie im Beweis von Satz 6.1.2 in \cite{hesse} vor.
-Wir zeigen, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)=0$.
+Wir zeigen, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)=0$.
 Konvergiert $(X_n)_n$ fast sicher gegen $X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder $P(\lim|X_n-X|>0)=0$.
-Mit anderen Worten gilt für ein beliebiges $\varepsilon>0$, dass $P(\lim|X_n-X|\geq\varepsilon)=0$. %, oder $P(\bigcup_\varepsilon\{\lim|X_n-X|\geq\varepsilon\})=0$.
-Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|\geq\varepsilon\}$.
+Mit anderen Worten gilt für ein beliebiges $\varepsilon>0$, dass $P(\lim|X_n-X|>\varepsilon)=0$. %, oder $P(\bigcup_\varepsilon\{\lim|X_n-X|>\varepsilon\})=0$.
+Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|>\varepsilon\}$.
 Existiert $\lim|X_n-X|$ fast sicher, dann gilt auch fast sicher $\lim|X_n-X|=\limsup|X_n-X|$, also
 \begin{align*}
-  P(\lim|X_n-X|\geq\varepsilon)
-  &=P(\limsup\{{|X_n-X|\geq\varepsilon}\})\,,
+  P(\lim|X_n-X|>\varepsilon)
+  &=P(\limsup\{{|X_n-X|\varepsilon}\})\,,
     \intertext{\emph{wobei man hier zwischen dem Abbildungen-$\limsup$ und dem Mengen-$\limsup$ unterscheiden muss} und mit der Definition des $\limsup$}
-  &=P\Bigl(\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
-    \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
-  &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
+  &=P\Bigl(\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\Bigr)\,.
+    \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
+  &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\Bigr)\,.
 \end{align*}
 Wir möchten nun noch die Äquivalenz zu $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$ zeigen.
-Da für alle $n\in\mathbb{N}$ gilt $\{\sup_{m\geq n}|X_m-X|\geq\varepsilon\}\subseteq\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$ folgt mit der Monotonie von $P$, dass
+Da für alle $n\in\mathbb{N}$ gilt $\{\sup_{m\geq n}|X_m-X|>\varepsilon\}\subseteq\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}$ folgt mit der Monotonie von $P$, dass
 \begin{align*}
-  P(\sup\nolimits_{m\geq n}|X_m-X|\geq\varepsilon)
-  &\leq P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
+  P(\sup\nolimits_{m\geq n}|X_m-X|>\varepsilon)
+  &\leq P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\Bigr)\,.
     \intertext{Andererseits gilt für alle $k\geq n$, dass $\sup_{m\geq n}|X_m-X|\geq|X_k-X|$, sodass}
-    &\leq P(\sup\nolimits_{m\geq n}|X_m-X|\geq\varepsilon)\,.
+    &\leq P(\sup\nolimits_{m\geq n}|X_m-X|>\varepsilon)\,.
 \end{align*}
-Es folgt $\lim\nolimits_nP(\sup\nolimits_{m\geq n}|X_m-X|\geq\varepsilon)=P\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)$, denn $n\in\mathbb{N}$ war beliebig gewählt.
+Es folgt $\lim\nolimits_nP(\sup\nolimits_{m\geq n}|X_m-X|>\varepsilon)=P\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)$, denn $n\in\mathbb{N}$ war beliebig gewählt.
 Da die Beziehung für beliebige $\varepsilon>0$ gilt, ist die gesuchte Äquivalenz mit der Definition der stochastischen Konvergenz 14.ii gezeigt.
 
 Zur Teilaufgabe (b), wir bemerken, dass, wenn $(X_n)_n$ fast sicher gegen ein $X$ konvergiert, dann konvergiert $|X_n-X|\wedge1$ fast sicher gegen 0.
 Da $|X_n-X|\wedge1$ die 1 als integrierbare Majorante hat,  konvergiert mit Theorem 14 über majorisierte Konvergenz $E[|X_n-X|\wedge 1]$ fast sicher gegen 0 und schließlich nach Lemma 17 $X_n$ stochastisch gegen $X$.
 
 Als alternative Lösung gehen wie im Beweis zu Satz 6.2.2 in \cite{hesse} vor.
-Nach Teilaufgabe (a) gilt $\lim_nP\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)=0$.
-Für alle $n\in\mathbb{N}$ gilt die Inklusion $\{|X_n-X|\geq\varepsilon\}\subseteq\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$.
-Aufgrund der Monotonie von $P$ gilt somit auch $\lim_{n}P(|X_n-X|\geq\varepsilon)=0$, also  $X_n\xrightarrow{P}X$.
+Nach Teilaufgabe (a) gilt $\lim_nP\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)=0$.
+Für alle $n\in\mathbb{N}$ gilt die Inklusion $\{|X_n-X|>\varepsilon\}\subseteq\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}$.
+Aufgrund der Monotonie von $P$ gilt somit auch $\lim_{n}P(|X_n-X|>\varepsilon)=0$, also  $X_n\xrightarrow{P}X$.
 
-Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sicher konvergiert, wenn gilt, dass $\lim_n P\bigl(\bigcup_m^\infty\{|X_{m+n}-X_n|\geq\varepsilon\}\bigr)=0$.
-Wir nehmen zunächst an, dass $(X_n)_n$ fast sicher gegen $X$ konvergiert.
-Mit Teilaufgabe (a) konvergiert dann $\sup_{m\geq n}|X_m-X|\xrightarrow{P}0$.
-\emph{Hier fehlt noch Argumentation.}
+Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sicher konvergiert, wenn gilt, dass $\lim_n P\bigl(\bigcup_m^\infty\{|X_{m+n}-X_n|>\varepsilon\}\bigr)=0$.
+Wir gehen wie in Satz 2.3.3.3 aus \cite{rueschendorf} vor.
+Sei $(X_n)_n$ also fast sicher konvergent.
+Analog zu Folgen in Reellen Zahlen, ist das äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist \emph{was man noch genauer prüfen sollte.}
+Das heißt, für alle $\varepsilon>0$ gilt
+\begin{align*}
+  1
+  &=P\bigl(\bigcup\nolimits_n^\infty\bigcap\nolimits_{m\geq n}\{|X_m-X_n|\leq\varepsilon\}\bigr)\,,
+    \intertext{\emph{was ebenfalls noch genauer geprüft werden sollte.}
+    Mit Stetigkeit von unten gilt}
+  &=\lim_nP\bigl(\bigcap\nolimits_{m\geq n}\{|X_m-X_n|\leq\varepsilon\}\bigr)\,,
+\end{align*}
+Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ folgt schließlich die Behauptung.
+%Wir nehmen zunächst an, dass $(X_n)_n$ fast sicher gegen $X$ konvergiert.
+%Mit Teilaufgabe (a) konvergiert dann $\sup_{m\geq n}|X_m-X|\xrightarrow{P}0$.
+%\emph{Hier fehlt noch Argumentation.}
 %https://math.stackexchange.com/questions/627005/convergence-of-sequence-of-random-variables-and-cauchy-sequences
 \newpage
 \paragraph{B3A2}
