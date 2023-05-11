@@ -66,12 +66,11 @@ Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sich
 Wir gehen wie in Satz 2.3.3.3 aus \cite{rueschendorf} vor.
 Sei $(X_n)_n$ also fast sicher konvergent.
 Analog zu Folgen in Reellen Zahlen, ist das äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist \emph{was man noch genauer prüfen sollte.}
-Das heißt, für alle $\varepsilon>0$ gilt
+Entsprechend der Argumentation aus Teilaufgabe (a) heißt das, für alle $\varepsilon>0$ gilt
 \begin{align*}
   1
   &=P\bigl(\bigcup\nolimits_n^\infty\bigcap\nolimits_{m\geq n}\{|X_m-X_n|\leq\varepsilon\}\bigr)\,,
-    \intertext{\emph{was ebenfalls noch genauer geprüft werden sollte.}
-    Mit Stetigkeit von unten gilt}
+    \intertext{Mit Stetigkeit von unten gilt}
   &=\lim_nP\bigl(\bigcap\nolimits_{m\geq n}\{|X_m-X_n|\leq\varepsilon\}\bigr)\,,
 \end{align*}
 Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ folgt schließlich die Behauptung.
