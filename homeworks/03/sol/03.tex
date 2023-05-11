@@ -27,14 +27,18 @@
 % eventuell hilfreich https://math.stackexchange.com/questions/1904411/almost-sure-convergence-and-lim-sup
 Zur Teilaufgabe (a) gehen wir wie im Beweis von Satz 6.1.2 in \cite{hesse} vor.
 Wir zeigen, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)=0$.
-Konvergiert $(X_n)_n$ fast sicher gegen $X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder $P(\lim|X_n-X|>0)=0$.
-Mit anderen Worten gilt für ein beliebiges $\varepsilon>0$, dass $P(\lim|X_n-X|>\varepsilon)=0$. %, oder $P(\bigcup_\varepsilon\{\lim|X_n-X|>\varepsilon\})=0$.
-Für gegebene $n\in\mathbb{N}$ und $\varepsilon>0$ schreiben wir $A_{n,\varepsilon}=\{|X_n-X|>\varepsilon\}$.
-Existiert $\lim|X_n-X|$ fast sicher, dann gilt auch fast sicher $\lim|X_n-X|=\limsup|X_n-X|$, also
+Konvergiert $(X_n)_n$ fast sicher gegen $X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder
 \begin{align*}
-  P(\lim|X_n-X|>\varepsilon)
-  &=P(\limsup\{{|X_n-X|\varepsilon}\})\,,
-    \intertext{\emph{wobei man hier zwischen dem Abbildungen-$\limsup$ und dem Mengen-$\limsup$ unterscheiden muss} und mit der Definition des $\limsup$}
+0
+  &=1-P(\lim\nolimits_n X_n=X)
+    \intertext{Mit der Definition von Konvergenz bedeutet das für alle $\varepsilon>0$}
+  &=1-P(\exists n\in\mathbb{N}\,\forall m\geq n~|X_n-X|<\varepsilon)\,.
+    \intertext{Wenn $\omega\in\{\exists n\in\mathbb{N}\,\forall m\geq n~|X_n-X|<\varepsilon\}$, so ist $\omega$ in irgendeiner der Mengen, sodass $\forall m\geq n~|X_n-X|<\varepsilon$.
+    Entsprechend lässt sich umschreiben}
+  &=1-P\Bigl(\bigcup\nolimits_{n\in\mathbb{N}}\bigcap\nolimits_{m\geq n}\{|X_n-X|<\varepsilon\}\Bigr)\,.
+    \intertext{Dadurch, dass $(A\cap B)^\mathrm{c}=A^\mathrm{c}\cap B^\mathrm{c}$ und $(A\cup B)^\mathrm{c}=A^\mathrm{c}\cap B^c$ folgt}
+  &=P\Bigl(\bigcap\nolimits_{n\in\mathbb{N}}\bigcup\nolimits_{m\geq n}\{|X_n-X|\geq\varepsilon\}\Bigr)\,.
+    \intertext{Es gilt also für alle $\varepsilon>0$}
   &=P\Bigl(\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\Bigr)\,.
     \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
   &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|>\varepsilon\}\Bigr)\,.
