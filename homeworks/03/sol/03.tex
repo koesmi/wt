@@ -39,7 +39,7 @@ Gilt $X_n\xrightarrow{\text{f.s.}}X$, so heißt es nach Defintion, dass $P(\lim|
     Entsprechend gilt $\omega\in\{\forall m\geq n~|X_m-X|<\varepsilon\}$ genau dann, wenn $\omega$ in all den Mengen $\{|X_n-X|<\varepsilon\},\{|X_{n+1}-X|<\varepsilon\},\dots$ vorkommt.
     Entsprechend lässt sich umschreiben}
   &=1-P\Bigl(\bigcup\nolimits_{n\in\mathbb{N}}\bigcap\nolimits_{m\geq n}\{|X_m-X|<\varepsilon\}\Bigr)\,.
-    \intertext{Dadurch, dass $(A\cap B)^\mathrm{c}=A^\mathrm{c}\cap B^\mathrm{c}$ und $(A\cup B)^\mathrm{c}=A^\mathrm{c}\cap B^c$ folgt}
+    \intertext{Dadurch, dass $\bigl(\bigcup A_i\bigr)^\mathrm{c}=\bigcap A_i^\mathrm{c}$ und $\bigl(\bigcap A_i\bigr)^\mathrm{c}=\bigcup A_i^\mathrm{c}$ folgt}
   &=P\Bigl(\bigcap\nolimits_{n\in\mathbb{N}}\bigcup\nolimits_{m\geq n}\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
     \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
   &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,,
@@ -65,8 +65,8 @@ Aufgrund der Monotonie von $P$ gilt somit auch $\lim_{n}P(|X_n-X|\geq\varepsilon
 Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sicher konvergiert, wenn gilt, dass $\lim_n P\bigl(\bigcup_m^\infty\{|X_{m+n}-X_n|\geq\varepsilon\}\bigr)=0$.
 Wir gehen wie in Satz 2.3.3.3 aus \cite{rueschendorf} vor.
 Sei $(X_n)_n$ also fast sicher konvergent.
-Insbesondere ist es punktweise konvergent, bis auf Nullmengen.
-Das heißt für alle $\omega\in\Omega$ sind $(X_n(\omega)_n$ Cauchy-Folgen in den reellen Zahlen und das ist das äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist.
+Insbesondere ist es, außer in einer $P$-Nullmenge $N\subset\Omega$, punktweise konvergent.
+Das heißt für alle $\omega\in\Omega\setminus N$ sind $\bigl(X_n(\omega)\bigr)_n$ Cauchy-Folgen in den reellen Zahlen und das ist äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist.
 Entsprechend der Argumentation aus Teilaufgabe (a) heißt das, für alle $\varepsilon>0$ gilt
 \begin{align*}
   1
@@ -81,8 +81,8 @@ Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ folgt schließlic
 %https://math.stackexchange.com/questions/627005/convergence-of-sequence-of-random-variables-and-cauchy-sequences
 \newpage
 \paragraph{B3A2}
-Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$, also dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|\geq\varepsilon)=0$.
-Aus \cite{tsitsiklis}.
+Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$. Es ist also zu zeigen, dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|\geq\varepsilon)=0$.
+Für den Beweis gehen wir entsprechend \cite{tsitsiklis} vor.
 Wir möchten zunächst zeigen, dass wenn $a_n\to a$ und $b_n\to b$ gilt, dann auch $a_n+b_n\to a+b$ gilt.
 $a_n\to a$ bedeutet, dass für alle $\varepsilon>0$ ein $n_0\in\mathbb{N}$ existiert, sodass für alle $n\geq n_0$ gilt $|a_n-a|<\varepsilon$.
 Sei nun $\varepsilon>0$ beliebig vorgegeben und $n_0\in\mathbb{N}$ so, dass $|a_n-a|<\frac{\varepsilon}{2}$.
