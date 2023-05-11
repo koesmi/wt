@@ -105,20 +105,18 @@ In Analogie zur Konvergenz der reellen Folgen $(a_n)_n$ und $(b_n)_n$ gilt mit d
 \end{align*}
 
 Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$.
-Entsprechend dem Tipp zeigen wir, dass $(Y_n)_n$ gleichgradig integrierbar ist, also, dass $\lim_{k}\sup_{n}E[|Y_n|\mathbbm{1}_{|Y_n|>k}]=0$.
-Nach Theorem 22 gilt dann $Y_n\xrightarrow{\mathcal{L}_1}Y$, also $E[Y_n]\to E[Y]$.
-Da $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$, sind $(X_n)$ und $(Z_n)$ gleichgradig integrierbar.
-Damit gilt $\lim_{k}\sup_{n}E[|X_n|\mathbbm{1}_{|X_n|>k}]=\lim_{k}\sup_{n}E[|Z_n|\mathbbm{1}_{|Z_n|>k}]=0$.
+Entsprechend dem Tipp zeigen wir, dass $(Y_n)_n$ gleichgradig integrierbar ist.
+Um die gleichgradige Integrierbarkeit von $(Y_n)_n$ zu zeigen, reicht es nach Lemma 20 zu zeigen, dass $E[|Y_n|]<\infty$ \emph{noch zu zeigen} und dass $\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Y_n|\mathbbm{1}_A]=0$.
 Da $X_n\leq Y_n\leq Z_n$ ist $|Y_n|\leq|X_n|+|Z_n|$ für alle $n$.
-Mit der Monotonie des Integrals können wir also abschätzen, dass
+Wegen der Monotonie und Linearität des Erwartungswertes erhalten wir
 \begin{align*}
-  \lim_{k}\sup_{n}E[|Y_n|\mathbbm{1}_{|Y_n|>k}]
-  &\leq\lim_k\sup_n E[|X_n|+|Z_n|]\mathbbm{1}_{|X_n|+|Z_n|\geq k}
+  &\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Y_n|\mathbbm{1}_A]\\
+  &\quad\leq\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|X_n|+|Z_n|\mathbbm{1}_A]\\
+  &\quad=\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|X_n|\mathbbm{1}_A]
+    +\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Z_n|\mathbbm{1}_A]\\
+  &\quad=0
 \end{align*}
-
-
-Da $E[X_n]\to E[X]$ und $E[Y_n]\to E[Y]$ folgt mit Satz 10.v, dass $|X_n|\vee|Z_n|$ nach oben beschränkt ist.
-Somit hat $(Y_n)_n$ eine integrierbare Majorante und ist nach Beispiel 19.i gleichgradig integrierbar.
+denn $(X_n)_n$ und $(Z_n)_n$ sind nach Theorem 22 gleichgradig integrierbar.
 Wie erwähnt, folgt mit Theorem 22, dass $E[Y_n]\to E[Y]$.
 \newpage
 \paragraph{B3A3}
