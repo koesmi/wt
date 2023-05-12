@@ -46,7 +46,7 @@ Gilt $X_n\xrightarrow{\text{f.s.}}X$, so heißt es nach Defintion, dass $P(\lim|
 \end{align*}
 womit wir schon mal die erste Äquivalenz gezeigt haben.
 
-Zur zweiten Äqui\-va\-lenz machen wir wie am Anfang wieder die Überlegung mit den Quantoren.
+Zur zweiten Äqui\-va\-lenz machen wir wie am Anfang wieder die Über\-le\-gung mit den Quantoren.
 Es gilt $\omega\in\bigcup_{m\geq n}\{|X_m-X|\geq\varepsilon\}$ genau dann, wenn $\omega$ in mindestens einer der Mengen $\{|X_n-X|\geq\varepsilon\},\{|X_{n+1}-X|\geq\varepsilon\},\dots$ liegt, also in einer Menge $\{|X_k-X|\geq\varepsilon\}$ mit $k\geq n$ so, dass für alle $m\geq n$ gilt $|X_k-X|\geq|X_m-X|$ und eventuell noch in weiteren $\{|X_m-X|\geq\varepsilon\}$, wobei $|X_m-X|\leq |X_k-X|$.
 Also genau dann, wenn $\omega\in\{\sup_{m\geq n}|X_m-X|\geq\varepsilon\}$.
 Es folgt
@@ -67,18 +67,14 @@ Wir gehen wie in Satz 2.3.3.3 aus \cite{rueschendorf} vor.
 Sei $(X_n)_n$ also fast sicher konvergent.
 Insbesondere ist es, außer in einer $P$-Nullmenge $N\subset\Omega$, punktweise konvergent.
 Das heißt für alle $\omega\in\Omega\setminus N$ sind $\bigl(X_n(\omega)\bigr)_n$ Cauchy-Folgen in den reellen Zahlen und das ist äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist.
-Entsprechend der Argumentation aus Teilaufgabe (a) heißt das, für alle $\varepsilon>0$ gilt
+Entsprechend der Argumentation mit Quantoren aus Teilaufgabe (a) heißt das, für alle $\varepsilon>0$ gilt
 \begin{align*}
   1
-  &=P\bigl(\bigcup\nolimits_n^\infty\bigcap\nolimits_{m\geq n}\{|X_m-X_n|<\varepsilon\}\bigr)\,,
-    \intertext{Mit Stetigkeit von unten gilt}
-  &=\lim_nP\bigl(\bigcap\nolimits_{m\geq n}\{|X_m-X_n|<\varepsilon\}\bigr)\,,
+  &=P\bigl(\bigcup\nolimits_n^\infty\bigcap\nolimits_{m\geq n}\{|X_n-X_m|<\varepsilon\}\bigr)\,.
+    \intertext{Mit Stetigkeit von unten folgt}
+  &=\lim\nolimits_nP\Bigl(\bigcap\nolimits_{m\geq n}\{|X_n-X_m|<\varepsilon\}\Bigr)\,.
 \end{align*}
-Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ folgt schließlich die Behauptung.
-%Wir nehmen zunächst an, dass $(X_n)_n$ fast sicher gegen $X$ konvergiert.
-%Mit Teilaufgabe (a) konvergiert dann $\sup_{m\geq n}|X_m-X|\xrightarrow{P}0$.
-%\emph{Hier fehlt noch Argumentation.}
-%https://math.stackexchange.com/questions/627005/convergence-of-sequence-of-random-variables-and-cauchy-sequences
+Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcup A_n^\mathrm{c}$ folgt mit Verschieben $m\mapsto m-n$ schließlich die Behauptung.
 \newpage
 \paragraph{B3A2}
 Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$. Es ist also zu zeigen, dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|\geq\varepsilon)=0$.
@@ -138,37 +134,37 @@ Nach der Definition der $K_n$ gilt
 Da $EK_{n+1}>EK_n$ gilt $\lim_{n\to\infty}EK_n=\infty$.
 
 Bei der Teilaufgabe (b) sollen wir zeigen, dass $K_n$ dennoch stochastisch gegen 0 konvergiert.
-Hierfür nutzen wir den Tipp und betrachten $\log K_n=\sum^n\log Y_i$, auf was wir das schwache Gesetz der großen Zahlen auf die $\log Y_i$ an.
-$(\log Y_i)_i$ genügt dem schwachen Gesetz der großen Zahlen, wenn die $\log Y_i$ unabhängig identisch verteilt sind und ihr Erwartungswert sowie ihre Varianz endlich sind.
+Hierfür nutzen wir den Tipp und betrachten $\log K_n=\sum^n\log Y_i$ und wenden das schwache Gesetz der großen Zahlen auf die $\log Y_i$ an.
+$(\log Y_i)$ genügt dem schwachen Gesetz der großen Zahlen, wenn die $\log Y_i$ unabhängig identisch verteilt sind und ihr Erwartungswert sowie ihre Varianz endlich sind.
 Da die $Y_i$ unabhängig identisch verteilt sind, sind es die $\log Y_i$ auch.
-Wir rechnen nach, dass $E[\log Y_i]=\frac{1}{2}\log\frac{5}{3}+\frac{1}{2}\log\frac{1}{2}<0$ und $|E[\log Y_i]|<\infty$.
+Wir rechnen nach, dass $E[\log Y_1]=\frac{1}{2}\log\frac{5}{3}+\frac{1}{2}\log\frac{1}{2}<0$ und $|E[\log Y_i]|<\infty$.
 $E[(\log Y_i)^2]=\frac{1}{2}\bigl(\log\frac{5}{3}\bigr)^2+\frac{1}{2}\bigl(\log\frac{1}{2}\bigr)^2<\infty$, sodass Erwartungswert und Varianz endlich sind.
 Somit genügt $(\log Y_i)_i$ dem schwachen Gesetz der großen Zahlen, sodass gilt $\frac{1}{n}\sum^n\log Y_i\xrightarrow{P}E[\log Y_1]<0$, also $\frac{\log K_n}{n}\xrightarrow{P}E[\log Y_1]<0$.
-Da für den Nenner von $\frac{\log K_n}{n}$ gilt $n\to\infty$ und $|E[\log Y_1]|<\infty$, muss $\log K_n\xrightarrow{P}-\infty$, also $K_n\xrightarrow{P}\mathrm{e}^{-\infty}=0$.
+Da für den Nenner von $\frac{\log K_n}{n}$ gilt $n\to\infty$ und $E[\log Y_1]<0$, muss gelten $\log K_n\xrightarrow{P}-\infty$, also $K_n\xrightarrow{P}\mathrm{e}^{-\infty}=0$.
 % https://math.stackexchange.com/questions/1938662/using-the-law-of-large-numbers-to-show-that-m-n-prod-k-1n-1x-k-converge
 
 \newpage
 \paragraph{B3A4}
 Sei $(X_n)_{n\in\mathbb{N}}$ eine Folge stochastisch unabhängiger Zufallsvariablen mit $P(X_n=\sqrt{n})=\frac{1}{n}=1-P(X_n=0)$.
-Untersuchen Sie diese auf stochastische, $P$-fast-sichere und $L^p$-Konvergenz für alle $p\geq1$.
-Ist $(X_n)_n$ gleichgradig integrierbar?
+Wir sollen diese auf stochastische, $P$-fast-sichere und $L^p$-Konvergenz für alle $p\geq1$ untersuchen.
+Weiterhin ist gefragt, ob $(X_n)$ gleichgradig integrierbar ist.
 
-Wir fragen uns, ob $(X_n)_n$ stochastisch konvergiert, also ob für alle $\varepsilon>0$ gilt $\lim P(|X_n-X|\geq\varepsilon)=0$.
-Wir vermuten, dass, wenn $(X_n)_n$ konvergiert, es gegen $X=0$ konvergiert.
+Wir fragen uns, ob $(X_n)$ stochastisch konvergiert, also ob für alle $\varepsilon>0$ gilt $\lim P(|X_n-X|\geq\varepsilon)=0$.
+Wir vermuten, dass, wenn $(X_n)$ konvergiert, es gegen $X=0$ konvergiert.
 Die Frage ist also, ob für alle $\varepsilon>0$ gilt $\lim P(X_n\geq\varepsilon)=0$.
 Sei, um das zu klären, ein $\varepsilon>0$ gegeben.
 Wenn $X_n\geq\varepsilon$, dann gilt, weil $X_n$ nach $\{0,\sqrt{n}\}$ abbildet, $X_n=\sqrt{n}$.
 Somit ist der Limes gegeben durch $\lim P(X_n\geq\varepsilon)=P(X_n=\sqrt{n})=\lim\frac{1}{n}=0$.
-$(X_n)_n$ konvergiert also stochastisch gegen $X=0$.
+$(X_n)$ konvergiert also stochastisch gegen $X=0$.
 
-Wir folgen Beispiel 6.7 in \cite{hesse}.
-Wir fragen uns, ob $(X_n)_n$ $P$-fast sicher konvergiert, das heißt also, ob $P(\lim |X_n-X|=0)=1$.
+Wir fragen uns nun, ob $(X_n)$ $P$-fast sicher konvergiert, das heißt also, ob $P(\lim |X_n-X|=0)=1$.
+Um das zu klären folgen wir Beispiel 6.7 in \cite{hesse}.
 Wir bemerken, dass, wenn $X_n\xrightarrow{\text{f.s.}}X$, nach Aufgabe 1 (b) auch $X_n\xrightarrow{P}X$.
-Wegen Lemma 16 über die Eindeutigkeit der Grenzwerte der stochastischen Konvergenz $X=0$ sein.
-Das heißt also, wenn $(X_n)_n\xrightarrow{\text{f.s.}}X$, dann ist $X=0$.
+Wegen Lemma 16 über die Eindeutigkeit der Grenzwerte der stochastischen Konvergenz muss $X=0$ gelten.
+Das heißt also, wenn $(X_n)\xrightarrow{\text{f.s.}}X$, dann ist $X=0$.
 Wir fragen uns also, ob $P(\lim X_n=0)=1$.
 Nach Aufgabe 1 können wir uns auch genauso gut fragen, ob für alle $\varepsilon>0$ gilt $\lim_nP\bigl(\bigcup_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=0$.
-Da $(A\cup B)^\mathrm{c}=A^\mathrm{c}\cap B^\mathrm{c}$ und für alle $m$ gilt $\{X_m\geq\varepsilon\}=\{X_m<\varepsilon\}^\mathrm{c}$, können wir für alle $n\in\mathbb{N}$ schreiben $P\bigl(\bigcup\nolimits_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1-P\bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\bigr)$.
+Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ und für alle $m$ gilt $\{X_m\geq\varepsilon\}=\{X_m<\varepsilon\}^\mathrm{c}$, können wir für alle $n\in\mathbb{N}$ schreiben $P\bigl(\bigcup\nolimits_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1-P\bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\bigr)$.
 $P$ ist als Wahrscheinlichkeitsmaß endlich und somit nach Satz A.14 stetig von oben.
 Wir können somit schreiben
 \begin{align*}
@@ -183,14 +179,14 @@ Wir können somit schreiben
   &=0
 \end{align*}
 und insgesamt somit $\lim_nP\bigl(\bigcup_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1$.
-Nach Aufgabe 1 konvergiert $(X_n)_n$ also nicht fast sicher.
+Nach Aufgabe 1 konvergiert $(X_n)$ also nicht fast sicher.
 
 Wir überlegen uns noch, ob $X_n\xrightarrow{L^p}X$ für $p\geq1$ und folgen hier Beispiel 6.12 aus \cite{hesse}.
 Für den Erwartungswert von $E[|X_n|^p]$ ergibt sich $E[|X_n|^p]=\sqrt{n}^p\cdot\frac{1}{n}+0\cdot\frac{n-1}{n}=n^{\frac{p}{2}-1}$.
 Somit konvergiert $E[|X_n|^p]$, falls $\frac{p}{2}-1<0$, also $p<2$.
-Bei uns ist aber $p\geq1$, sodass $(X_n)_n$ für $1\leq p<2$ bezüglich der $L_p$-Norm konvergiert.
+Bei uns ist aber $p\geq1$, sodass $(X_n)$ für $1\leq p<2$ bezüglich der $L_p$-Norm konvergiert.
 
-Da die Folge $(X_n)_n$ also bezüglich der $L_1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar.
+Da die Folge $(X_n)$ also bezüglich der $L_1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar.
 \newpage
 \bibliography{../../../books/wt}
 \end{document}
