@@ -104,20 +104,27 @@ In Analogie zur Konvergenz der reellen Folgen $(a_n)_n$ und $(b_n)_n$ gilt mit d
     Damit ist reelle Folge $P(|X_n-X+Y_n-Y|\geq\varepsilon)$ mit etwas nach oben abgeschätzt, dass für $n\to\infty$ gegen 0 konvergiert, sodass $\lim_nP(|X_n-X+Y_n-Y|\geq\varepsilon)=0$ und $X_n+Y_n\xrightarrow{P}X+Y$.}
 \end{align*}
 
-Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$.
-Entsprechend dem Tipp zeigen wir, dass $(Y_n)_n$ gleichgradig integrierbar ist.
-Um die gleichgradige Integrierbarkeit von $(Y_n)_n$ zu zeigen, reicht es nach Lemma 20 zu zeigen, dass $E[|Y_n|]<\infty$ \emph{noch zu zeigen} und dass $\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Y_n|\mathbbm{1}_A]=0$.
+Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$, also $Y_n\xrightarrow{\mathcal{L}^p}Y$.
+Entsprechend Tipp wollen wir Theorem 22 verwenden.
+Da laut Aufgabenstellung bereits $Y_n\xrightarrow{P}Y$ gilt, zeigen wir, dass $(Y_n)$ gleichgradig integrierbar ist.
+Dann gilt nach Theorem 22, dass $Y_n\xrightarrow{\mathcal{L}^p}Y$.
+Um die gleichgradige Integrierbarkeit von $(Y_n)$ zu zeigen, reicht es nach Lemma 20 zu zeigen, dass $E[|Y_n|]<\infty$ und dass $\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Y_n|\mathbbm{1}_A]=0$.
 Da $X_n\leq Y_n\leq Z_n$ ist $|Y_n|\leq|X_n|+|Z_n|$ für alle $n$.
-Wegen der Monotonie und Linearität des Erwartungswertes erhalten wir
+Wegen der Monotonie und Linearität des Erwartungswertes erhalten wir $E[|Y_n|]\leq E[|X_n|+|Z_n|]=E[|X_n|]+E[|Z_n|]<\infty$, da die Folgen $(E[X_n])$ und $(E[Z_n])$ konvergent und somit beschränkt sind.
+
+Nun ist noch zu zeigen, dass $(Y_n)$ den zweiten Part der Bedingung \emph{(ii)} von Lemma 20 erfüllt.
+Wieder gilt wegen der Monotonie des Erwartungswertes
 \begin{align*}
-  &\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Y_n|\mathbbm{1}_A]\\
-  &\quad\leq\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|X_n|+|Z_n|\mathbbm{1}_A]\\
-  &\quad=\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|X_n|\mathbbm{1}_A]
-    +\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n}E[|Z_n|\mathbbm{1}_A]\\
-  &\quad=0
+  \lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n\in\mathbb{N}}E[|Y_n|\mathbbm{1}_A]
+  &\leq\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n\in\mathbb{N}}E[|X_n|+|Z_n|\mathbbm{1}_A]\,.
+      \intertext{Wegen der Linearität des Erwartungswertes gilt}
+  &=\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n\in\mathbb{N}}E[|X_n|\mathbbm{1}_A]\\
+  &\quad+\lim_{\varepsilon\to0}\sup_{A:P(A)<\varepsilon}\sup_{n\in\mathbb{N}}E[|Z_n|\mathbbm{1}_A]=0\,,
 \end{align*}
-denn $(X_n)_n$ und $(Z_n)_n$ sind nach Theorem 22 gleichgradig integrierbar.
-Wie erwähnt, folgt mit Theorem 22, dass $E[Y_n]\to E[Y]$.
+da $(X_n)$ und $(Z_n)$ nach Theorem 22 gleichgradig integrierbar sind und somit Bedingung \emph{(ii)} von Lemma 20  erfüllen.
+
+Somit erfüllt $(Y_n)$ Bedingung \emph{(ii)} von Lemma 20 und ist damit gleichgradig integrierbar.
+Da $Y\xrightarrow{P}Y$ folgt mit Theorem 22, dass $E[Y_n]\to E[Y]$.
 \newpage
 \paragraph{B3A3}
 Wir haben hier $K_n=\prod_{i=1}^nY_i$ mit $P\bigl(Y_i=\frac{5}{3}\bigr)=P\bigl(Y_i=\frac{1}{2}\bigr)=\frac{1}{2}$ gegeben und sollen bei Aufgabe (a) $EK_n$ bestimmen sowie zeigen, dass $\lim_n EK_n=\infty$.
