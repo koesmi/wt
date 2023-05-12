@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.2in,bottom=1.2in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.1in,bottom=1.1in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage[german]{babel}
@@ -27,7 +27,7 @@
 % eventuell hilfreich https://math.stackexchange.com/questions/1904411/almost-sure-convergence-and-lim-sup
 Bei Teilaufgabe (a) möchten wir zwei Äquivalenzen zeigen.
 Zunächst einmal, dass $X_n\xrightarrow{\text{f.s.}}X$ äquivalent dazu ist, dass für alle $\varepsilon>0$ gilt, $\lim_n\bigl(\bigcup_{m=n}^\infty\{|X_m-X|>\varepsilon\}\bigr)=0$.
-Als zweites möchten wir zeigen, dass dies wieder Äquivalent dazu ist, dass $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$.
+Als zweites möchten wir zeigen, dass dies wieder äquivalent dazu ist, dass $\sup_{m\geq n}|X_n-X|\xrightarrow{P}0$.
 Hierfür gehen wir wie im Beweis von Satz 6.1.2 in \cite{hesse} vor.
 Gilt $X_n\xrightarrow{\text{f.s.}}X$, so heißt es nach Defintion, dass $P(\lim|X_n-X|=0)=1$, oder
 \begin{align*}
@@ -38,66 +38,67 @@ Gilt $X_n\xrightarrow{\text{f.s.}}X$, so heißt es nach Defintion, dass $P(\lim|
     \intertext{$\omega\in\{\exists n\in\mathbb{N}\,\forall m\geq n~|X_m-X|<\varepsilon\}$ gilt genau dann, wenn $\omega$ in irgendeiner der Mengen $\{\forall m\geq1|X_m-X|<\varepsilon\},\{\forall m\geq2|X_m-X|<\varepsilon\},\dots$ ist.
     Entsprechend gilt $\omega\in\{\forall m\geq n~|X_m-X|<\varepsilon\}$ genau dann, wenn $\omega$ in all den Mengen $\{|X_n-X|<\varepsilon\},\{|X_{n+1}-X|<\varepsilon\},\dots$ vorkommt.
     Entsprechend lässt sich umschreiben}
-  &=1-P\Bigl(\bigcup\nolimits_{n\in\mathbb{N}}\bigcap\nolimits_{m\geq n}\{|X_m-X|<\varepsilon\}\Bigr)\,.
+  &=1-P\Bigl(\bigcup\nolimits_{n=1}^\infty\bigcap\nolimits_{m=n}^\infty\{|X_m-X|<\varepsilon\}\Bigr)\,.
     \intertext{Dadurch, dass $\bigl(\bigcup A_i\bigr)^\mathrm{c}=\bigcap A_i^\mathrm{c}$ und $\bigl(\bigcap A_i\bigr)^\mathrm{c}=\bigcup A_i^\mathrm{c}$ folgt}
-  &=P\Bigl(\bigcap\nolimits_{n\in\mathbb{N}}\bigcup\nolimits_{m\geq n}\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
-    \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
+  &=P\Bigl(\bigcap\nolimits_{n=1}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,.
+    \intertext{Hierbei konvergiert die Folge $\bigl(\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)_n$ von oben gegen $\bigcap\nolimits_{n=1}^\infty\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$, sodass wir nach Satz A.14 den Limes herausziehen können und sich ergibt}
   &=\lim\nolimits_{n}P\Bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\Bigr)\,,
 \end{align*}
 womit wir schon mal die erste Äquivalenz gezeigt haben.
 
-Zur zweiten Äqui\-va\-lenz machen wir wie am Anfang wieder die Über\-le\-gung mit den Quantoren.
-Es gilt $\omega\in\bigcup_{m\geq n}\{|X_m-X|\geq\varepsilon\}$ genau dann, wenn $\omega$ in mindestens einer der Mengen $\{|X_n-X|\geq\varepsilon\},\{|X_{n+1}-X|\geq\varepsilon\},\dots$ liegt, also in einer Menge $\{|X_k-X|\geq\varepsilon\}$ mit $k\geq n$ so, dass für alle $m\geq n$ gilt $|X_k-X|\geq|X_m-X|$ und eventuell noch in weiteren $\{|X_m-X|\geq\varepsilon\}$, wobei $|X_m-X|\leq |X_k-X|$.
+Zur zweiten Äqui\-va\-lenz machen wir wieder die Über\-le\-gung mit den Quantoren.
+Es gilt $\omega\in\bigcup_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$ genau dann, wenn $\omega$ in mindestens einer der Mengen $\{|X_n-X|\geq\varepsilon\},\{|X_{n+1}-X|\geq\varepsilon\},\dots$ liegt, also in einer Menge $\{|X_k-X|\geq\varepsilon\}$ mit $k\geq n$ so, dass für alle $m\geq n$ gilt $|X_k-X|\geq|X_m-X|$ und eventuell noch in weiteren $\{|X_m-X|\geq\varepsilon\}$, wobei $|X_m-X|\leq |X_k-X|$.
 Also genau dann, wenn $\omega\in\{\sup_{m\geq n}|X_m-X|\geq\varepsilon\}$.
 Es folgt
     $\lim\nolimits_{n}P\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)
   =\lim\nolimits_n P(\sup\nolimits_{m\geq n}|X_m-X|\geq\varepsilon)\,.$
 Da die Beziehung für beliebige $\varepsilon>0$ gilt, ist die gesuchte Äquivalenz mit der Definition der stochastischen Konvergenz 14.ii gezeigt.
 
-Zur Teilaufgabe (b), wir bemerken, dass, wenn $(X_n)_n$ fast sicher gegen ein $X$ konvergiert, dann konvergiert $|X_n-X|\wedge1$ fast sicher gegen 0.
-Da $|X_n-X|\wedge1$ die 1 als integrierbare Majorante hat,  konvergiert mit Theorem 14 über majorisierte Konvergenz $E[|X_n-X|\wedge 1]$ fast sicher gegen 0 und schließlich nach Lemma 17 $X_n$ stochastisch gegen $X$.
+Zur Teilaufgabe (b), bemerken wir, dass, wenn $(X_n)$ fast sicher gegen ein $X$ konvergiert, dann auch $|X_n-X|\wedge1$ fast sicher gegen 0 konvergiert.
+Da $|X_n-X|\wedge1$ die 1 als integrierbare Majorante hat,  konvergiert mit Theorem 14 über majorisierte Konvergenz $E[|X_n-X|\wedge 1]$ fast sicher gegen 0 und schließlich $(X_n)$ nach Lemma 17 stochastisch gegen $X$.
 
 Als alternative Lösung gehen wie im Beweis zu Satz 6.2.2 in \cite{hesse} vor.
 Nach Teilaufgabe (a) gilt $\lim_nP\bigl(\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}\bigr)=0$.
 Für alle $n\in\mathbb{N}$ gilt die Inklusion $\{|X_n-X|\geq\varepsilon\}\subseteq\bigcup\nolimits_{m=n}^\infty\{|X_m-X|\geq\varepsilon\}$.
 Aufgrund der Monotonie von $P$ gilt somit auch $\lim_{n}P(|X_n-X|\geq\varepsilon)=0$, also  $X_n\xrightarrow{P}X$.
 
-Zur Teilaufgabe (c), hier wollen wir zeigen, dass $(X_n)_n$ genau dann fast sicher konvergiert, wenn gilt, dass $\lim_n P\bigl(\bigcup_m^\infty\{|X_{m+n}-X_n|\geq\varepsilon\}\bigr)=0$.
+Bei Teilaufgabe (c) wollen wir zeigen, dass $(X_n)$ genau dann fast sicher konvergiert, wenn gilt, dass $\lim_n P\bigl(\bigcup_{m=1}^\infty\{|X_{m+n}-X_n|\geq\varepsilon\}\bigr)=0$.
 Wir gehen wie in Satz 2.3.3.3 aus \cite{rueschendorf} vor.
-Sei $(X_n)_n$ also fast sicher konvergent.
+Sei $(X_n)$ also fast sicher konvergent.
 Insbesondere ist es, außer in einer $P$-Nullmenge $N\subset\Omega$, punktweise konvergent.
-Das heißt für alle $\omega\in\Omega\setminus N$ sind $\bigl(X_n(\omega)\bigr)_n$ Cauchy-Folgen in den reellen Zahlen und das ist äquivalent dazu, dass $(X_n)_n$ fast sicher eine Cauchy-Folge ist.
+Das heißt für alle $\omega\in\Omega\setminus N$ sind $\bigl(X_n(\omega)\bigr)_n$ Cauchy-Folgen in den reellen Zahlen und das ist äquivalent dazu, dass $(X_n)$ fast sicher eine Cauchy-Folge ist.
 Entsprechend der Argumentation mit Quantoren aus Teilaufgabe (a) heißt das, für alle $\varepsilon>0$ gilt
 \begin{align*}
   1
-  &=P\bigl(\bigcup\nolimits_n^\infty\bigcap\nolimits_{m\geq n}\{|X_n-X_m|<\varepsilon\}\bigr)\,.
+  &=P\bigl(\bigcup\nolimits_{n=1}^\infty\bigcap\nolimits_{m=n}^\infty\{|X_n-X_m|<\varepsilon\}\bigr)\,.
     \intertext{Mit Stetigkeit von unten folgt}
-  &=\lim\nolimits_nP\Bigl(\bigcap\nolimits_{m\geq n}\{|X_n-X_m|<\varepsilon\}\Bigr)\,.
+  &=\lim\nolimits_nP\Bigl(\bigcap\nolimits_{m=n}^\infty\{|X_n-X_m|<\varepsilon\}\Bigr)\,.
 \end{align*}
 Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcup A_n^\mathrm{c}$ folgt mit Verschieben $m\mapsto m-n$ schließlich die Behauptung.
 \newpage
 \paragraph{B3A2}
 Bei Teilaufgabe (a) ist zu zeigen, dass wenn $X_n\leq Y_n\leq Z_n$ für alle $n\in\mathbb{N}$ und $X_n\xrightarrow{P}X$, $Y_n\xrightarrow{P}Y$ sowie $Z_n\xrightarrow{P}Z$, dann $X_n+Y_n\xrightarrow{P}X+Y$. Es ist also zu zeigen, dass für alle $\varepsilon>0$ gilt $P(|X_n-X+Y_n-Y|\geq\varepsilon)=0$.
 Für den Beweis gehen wir entsprechend \cite{tsitsiklis} vor.
-Wir möchten zunächst zeigen, dass wenn $a_n\to a$ und $b_n\to b$ gilt, dann auch $a_n+b_n\to a+b$ gilt.
+Wir möchten uns zunächst Folgen $(a_n)$ und $(b_n)$ in den reellen Zahlen anschauen und zeigen, dass wenn $a_n\to a$ und $b_n\to b$ gilt, dann auch $a_n+b_n\to a+b$ gilt.
 $a_n\to a$ bedeutet, dass für alle $\varepsilon>0$ ein $n_0\in\mathbb{N}$ existiert, sodass für alle $n\geq n_0$ gilt $|a_n-a|<\varepsilon$.
 Sei nun $\varepsilon>0$ beliebig vorgegeben und $n_0\in\mathbb{N}$ so, dass $|a_n-a|<\frac{\varepsilon}{2}$.
 Weiterhin sei $n_0'\in\mathbb{N}$ so, dass $|b_n-b|<\frac{\varepsilon}{2}$.
 Wenn nun $n\geq n_0\vee n_0'$ gilt nach Dreiecksungleichung $|a_n-a+b_n-b|\leq|a_n-a|+|b_n-b|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$, sodass $a_n+b_n\to a+b$.
+
 Nun möchten wir die entsprechende Aussage für stochastische Konvergenz zeigen.
 Sei wieder $\varepsilon>0$ beliebig.
-In Analogie zur Konvergenz der reellen Folgen $(a_n)_n$ und $(b_n)_n$ gilt mit der Dreiecksungleichung und der Monotonie von $P$, dass
+In Analogie zur Konvergenz der reellen Folgen $(a_n)$ und $(b_n)$ gilt mit der Dreiecksungleichung und der Monotonie von $P$, dass
 \begin{align*}
   P(|X_n-X+Y_n-Y|\geq\varepsilon)
   &\leq P(|X_n-X|+|Y_n-Y|\geq\varepsilon)\,.
-    \intertext{Nun ist die Wahrscheinlichkeit, dass $|X_n-X|+|Y_n-Y|\geq\varepsilon$ kleiner als die Wahrscheinlichkeit dafür, dass nur $|X_n-X|>\frac{\varepsilon}{2}$ oder nur $|Y_n-Y|>\frac{\varepsilon}{2}$.
+    \intertext{Nun ist die Wahrscheinlichkeit, dass $|X_n-X|+|Y_n-Y|\geq\varepsilon$ kleiner als die Wahrscheinlichkeit dafür, dass nur $|X_n-X|\geq\frac{\varepsilon}{2}$ oder nur $|Y_n-Y|\geq\frac{\varepsilon}{2}$.
     Damit gilt}
-  &\leq P\Bigl(\Bigl\{|X_n-X|>\frac{\varepsilon}{2}\Bigr\}\cup\Bigl\{|Y_n-Y|>\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
+  &\leq P\Bigl(\Bigl\{|X_n-X|\geq\frac{\varepsilon}{2}\Bigr\}\cup\Bigl\{|Y_n-Y|\geq\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
     \intertext{Da $P$ subadditiv ist, können wir abschätzen}
-  &\leq P\Bigl(\Bigl\{|X_n-X|>\frac{\varepsilon}{2}\Bigr\}\Bigr)+P\Bigl(\Bigl\{|Y_n-Y|>\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
-    \intertext{Da $X_n\xrightarrow{P}X$ und $Y_n\xrightarrow{P}Y$, sind die beiden Terme in der obigen Summe Folgen in $\mathbb{R}$, die gegen 0 konverieren.
+  &\leq P\Bigl(\Bigl\{|X_n-X|\geq\frac{\varepsilon}{2}\Bigr\}\Bigr)+P\Bigl(\Bigl\{|Y_n-Y|\geq\frac{\varepsilon}{2}\Bigr\}\Bigr)\,.
+    \intertext{Da $X_n\xrightarrow{P}X$ und $Y_n\xrightarrow{P}Y$, sind die beiden Terme in der obigen Summe Folgen in $\mathbb{R}$, die gegen 0 konvergieren.
     Wir haben vorhin auch erklärt, dass dann die Summe der Folgen gegen 0 konvergiert.
-    Damit ist reelle Folge $P(|X_n-X+Y_n-Y|\geq\varepsilon)$ mit etwas nach oben abgeschätzt, dass für $n\to\infty$ gegen 0 konvergiert, sodass $\lim_nP(|X_n-X+Y_n-Y|\geq\varepsilon)=0$ und $X_n+Y_n\xrightarrow{P}X+Y$.}
+    Damit ist die reelle Folge $P(|X_n-X+Y_n-Y|\geq\varepsilon)$ mit etwas nach oben abgeschätzt, dass für $n\to\infty$ gegen 0 konvergiert, sodass $\lim_nP(|X_n-X+Y_n-Y|\geq\varepsilon)=0$ und $X_n+Y_n\xrightarrow{P}X+Y$.}
 \end{align*}
 
 Bei Teilaufgabe (b) konvergiert nun zusätzlich $E[X_n]\to E[X]$ und $E[Z_n]\to E[Z]$ und wir sollen zeigen, dass $E[Y_n]\to E[Y]$, also $Y_n\xrightarrow{\mathcal{L}^p}Y$.
@@ -164,7 +165,7 @@ Wegen Lemma 16 über die Eindeutigkeit der Grenzwerte der stochastischen Konverg
 Das heißt also, wenn $(X_n)\xrightarrow{\text{f.s.}}X$, dann ist $X=0$.
 Wir fragen uns also, ob $P(\lim X_n=0)=1$.
 Nach Aufgabe 1 können wir uns auch genauso gut fragen, ob für alle $\varepsilon>0$ gilt $\lim_nP\bigl(\bigcup_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=0$.
-Da $\bigl(\bigcap A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ und für alle $m$ gilt $\{X_m\geq\varepsilon\}=\{X_m<\varepsilon\}^\mathrm{c}$, können wir für alle $n\in\mathbb{N}$ schreiben $P\bigl(\bigcup\nolimits_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1-P\bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\bigr)$.
+Da $\bigl(\bigcup A_n\bigr)^\mathrm{c}=\bigcap A_n^\mathrm{c}$ und für alle $m$ gilt $\{X_m\geq\varepsilon\}=\{X_m<\varepsilon\}^\mathrm{c}$, können wir für alle $n\in\mathbb{N}$ schreiben $P\bigl(\bigcup\nolimits_{m=n}^\infty\{X_m\geq\varepsilon\}\bigr)=1-P\bigl(\bigcap\nolimits_{m=n}^\infty\{X_m<\varepsilon\}\bigr)$.
 $P$ ist als Wahrscheinlichkeitsmaß endlich und somit nach Satz A.14 stetig von oben.
 Wir können somit schreiben
 \begin{align*}
@@ -183,10 +184,11 @@ Nach Aufgabe 1 konvergiert $(X_n)$ also nicht fast sicher.
 
 Wir überlegen uns noch, ob $X_n\xrightarrow{L^p}X$ für $p\geq1$ und folgen hier Beispiel 6.12 aus \cite{hesse}.
 Für den Erwartungswert von $E[|X_n|^p]$ ergibt sich $E[|X_n|^p]=\sqrt{n}^p\cdot\frac{1}{n}+0\cdot\frac{n-1}{n}=n^{\frac{p}{2}-1}$.
+Nach Theorem 22 ist $X=0$, sollte $X_n\xrightarrow{L^p}X$ gelten.
 Somit konvergiert $E[|X_n|^p]$, falls $\frac{p}{2}-1<0$, also $p<2$.
-Bei uns ist aber $p\geq1$, sodass $(X_n)$ für $1\leq p<2$ bezüglich der $L_p$-Norm konvergiert.
+Bei uns ist aber $p\geq1$, sodass $(X_n)$ für $1\leq p<2$ bezüglich der $L^p$-Norm konvergiert.
 
-Da die Folge $(X_n)$ also bezüglich der $L_1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar.
+Da die Folge $(X_n)$ also bezüglich der $L^1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar.
 \newpage
 \bibliography{../../../books/wt}
 \end{document}
