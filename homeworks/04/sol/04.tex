@@ -23,8 +23,27 @@
 
 \begin{document}
 
-\paragraph{Satz 6}
-\paragraph{Satz 8}
+\paragraph{Satz 6} Hier haben wir verschiedene Ungleichungen Für Wahrscheinlichkeiten, Erwartungswerte und ${\cal L}^p$-Normen zu Verfügung.
+Seien $X$, $Y$ reellwertige Zufallsvariable.
+Dann gilt folgendes.
+\begin{description}
+\item[\emph{(i)}] Die \emph{Markov-Ungleichung} -- Sei $f\colon[0,\infty)\to[0,\infty)$ monoton wachsend, $\varepsilon>0$ so, dass $f(\varepsilon)>0$.
+  Dann gilt
+  \[P(|X|\geq\varepsilon)\leq\frac{E[f(X)]}{f(\varepsilon)}\,.\]
+\item[\emph{(ii)}] Die \emph{Tschebyscheff-Ungleichung} -- ist $E[X^2]<\infty$, so gilt
+  \[P(|X-E[X]|)>\varepsilon)\leq\frac{\operatorname{Var}(X)}{\varepsilon^2}\,.\]
+\item[\emph{(iii)}] Die \emph{Hölder-Ungleichung} -- Für $0<p,q,r\leq\infty$ so, dass $\frac{1}{p}+\frac{1}{q}=\frac{1}{r}$ gilt
+  \[\|XY\|_r\leq\|X\|_p\|Y\|_q\,.\]
+\item[\emph{iv}] Die \emph{Minkowski-Ungleichung} -- für $1\leq p\leq\infty$ gilt
+  \[\|X+Y\|_p\leq\|X\|_p+\|Y\|_p\,.\]
+\item[\emph{(v)}] Das Analogon der Minkowski-Ungleichung im konkaven Fall -- für $0<p<1$ gilt
+  \[E[|X+Y|^p]\leq E[|X|^p]+E[|Y|^p]\,.\]
+\item[\emph{(vi)}] Eine Abschätzung Normen veschrschiedener ${\cal L}^p$-Räume. Für $p\leq q$ und $X\in{\cal L}^q$ gilt
+  \[\|X\|_p\leq\|X\|_q\,.\]
+\end{description}
+\paragraph{Satz 8} Die \emph{Jensen-Ungleichung} -- sei $g\colon\mathbb{R}\to\mathbb{R}$ konvex und $X\in{\cal L}^1$, dann gilt
+\[E[g(X)]\geq g(E[X])\,.\]
+
 \paragraph{B4A1.1}
 Haben $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ die gleiche Verteilung auf $([0,1],{\cal B}([0,1]),\lambda|_{[0,1]})$?
 \paragraph{B4A1.2}
