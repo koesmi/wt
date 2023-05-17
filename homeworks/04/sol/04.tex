@@ -77,11 +77,26 @@ Dann ist $X$ stetig und somit messbar mit $P(X=0)=1$, also $P=\delta_0$.
 Da $0=\lambda(\{0\})\neq\delta_0(\{0\})=1$, ist $\delta_0$ nicht absolut stetig bezüglich $\lambda$.
 Nach dem Satz von Radon-Nikodym, so wie er als Korollar 7.34 in \cite{klenke} steht, besitzt dann $\delta_0$ keine Dichte bezüglich des Lebesgue-Maßes.
 \paragraph{B4A1.5}
-Auf $(\Omega,{\cal P}(\Omega))$ sind alle Abbildungen $(\Omega,{\cal P}(\Omega))\to(\mathbb{R},{\cal B}(\mathbb{R}))$ messbar.
+Auf $(\Omega,{\cal P}(\Omega))$ sind alle Abbildungen $(\Omega,{\cal P}(\Omega))\to(\mathbb{R},{\cal B}(\mathbb{R}))$ messbar?
 Ja.
-
+Sei $A\in{\cal B}(\mathbb{R})$, dann ist $f^{-1}(A)\in{\cal P}(\Omega)$, denn in ${\cal P}(\Omega)$ sind alle Mengen, die nach $A$ abbilden könnten, drin.
 \paragraph{B4A1.6}
-Für $X\sim{\cal N}(0,1)$ und $Y\sim{\cal N}(0,2)$ gilt $E[XY]\leq\sqrt{2}$.
+Für $X\sim{\cal N}(0,1)$ und $Y\sim{\cal N}(0,2)$ gilt $E[XY]\leq\sqrt{2}$?
+Ja, denn nach der Cauchy--Schwarz-Ungleichung, also der Hölder-Ungleichung mit $r=1$ und $p=q=2$ gilt
+\begin{align*}
+E[XY]
+  &\leq\|X\|_2\|Y\|_2\,.
+    \intertext{Mit der Definition der ${\cal L}^p$-Norm und weil Quadrate positiv sind haben wir}
+  &=\sqrt{E[X^2]}\sqrt{E[Y^2]}\,.
+    \intertext{Die Angabe $X\sim{\cal N}(0,1)$ heißt $E[X]=E[Y]=0$ und wir können schreiben}
+  &=\sqrt{E[(X-E[X])^2]}\sqrt{E[(Y-E[Y])^2]}\,.
+    \intertext{Mit der Definition der Varianz ergibt sich}
+  &=\sqrt{\operatorname{Var}(X)}\sqrt{\operatorname{Var}(Y)}\,.
+    \intertext{Die Angabe $X\sim{\cal N}(0,1)$ heißt, $\operatorname{Var}(X)=1$ und $\operatorname{Var}(Y)=2$.
+    Somit folgt}
+  &=\sqrt{2}\,.
+\end{align*}
+
 \paragraph{B4A1.7}
 $\mathbb{N}$-wertige Zufallsvariable $X$ zu sich selbst unabhängig gilt genau dann, wenn $X$ fast sicher konstant ist.
 \paragraph{B4A1.8}
@@ -91,11 +106,32 @@ Für $X$ exponentialverteilt mit $\lambda=1$ gilt $E[X^4]\geq E[X]^4$.
 \paragraph{B4A1.10}
 Gilt $\mu(A)=0$ genau dann, wenn $\nu(A)=0$, dann gibt es ein messbares $f$, sodass $\mu(A)=\int_A f(\omega)\nu(\mathrm{d}\omega)$.
 \paragraph{B4A1.11}
-Auf $(\omega,\{\Omega,\emptyset\})$ gibt es keine Borel-messbare Abbildung.
+Auf $(\omega,\{\Omega,\emptyset\})$ gibt es keine Borel-messbare Abbildung?
+Doch.
+Sei $f=0$, dann für $A\in{\cal B}(\mathbb{R})$
+\[
+  f^{-1}(A)=
+  \begin{cases}
+    \emptyset,&0\notin A\,,\\
+    \Omega,&0\in A\,.
+  \end{cases}
+\]
+Somit gilt für alle $A\in{\cal B}(\mathbb{R})$, dass $f^{-1}(A)\in\{\emptyset,\Omega\}$ und folglich ist $f$ Borel-messbar.
 \paragraph{B4A1.12}
-Seien $X\sim\operatorname{Exp}(6)$ und $Y\sim\operatorname{Exp}\bigl(\frac{1}{3}\bigr)$, dann gilt $E[XY]\leq1$, wobei für $Z\sim\operatorname{Exp}(\lambda)$ gilt $E[Z]=\frac{1}{\lambda}$ und $E[Z^2]=\frac{2}{\lambda^2}$.
+Seien $X\sim\operatorname{Exp}(6)$ und $Y\sim\operatorname{Exp}\bigl(\frac{1}{3}\bigr)$, dann gilt $E[XY]\leq1$, wobei für $Z\sim\operatorname{Exp}(\lambda)$ gilt $E[Z]=\frac{1}{\lambda}$ und $E[Z^2]=\frac{2}{\lambda^2}$?
+Ja.
+Wie bei Aufgabenteil 6 gilt mit der Cauchy-Schwarz-Ungleichung
+\begin{align*}
+  E[XY]
+  &\leq\sqrt{E[X^2]}\sqrt{E[Y^2]}\,.
+    \intertext{Mit den Angaben zu den Parametern $\lambda=6$ beziehungsweise $\lambda=\frac{1}{3}$ der Verteilungen von $X$ beziehungsweise $Y$, sowie dem Hinweis auf dem Blatt ergibt sich}
+  &=\sqrt{\frac{2}{6^2}\cdot\frac{2}{\left(\frac{1}{3}\right)^2}}=\frac{2}{\frac{6}{3}}=1\,.
+\end{align*}
 \paragraph{B4A1.13}
-Ist $q\leq p$ und $X\in L^p(\Omega,{\cal F},P)$, so ist $X\in L^q(\Omega,{\cal F},P)$.
+Ist $q\leq p$ und $X\in L^p(\Omega,{\cal F},P)$, so ist $X\in L^q(\Omega,{\cal F},P)$?
+Ja.
+Nach Satz 6.\emph{vi} gilt $\|X\|_q\leq\|X\|_p<\infty$, da nach Aufgabe $X\in L^p(\Omega,{\cal F},P)$.
+Da in $L^q(\Omega,{\cal F},P)$ alle $P$-messbaren $\overline{\mathbb{R}}$-wertigen Funktionen mit endlicher $L^q$-Norm sind, ist $X\in{\cal L}^q(\Omega,{\cal F},P)$.
 \newpage
 
 \paragraph{B4A2}
