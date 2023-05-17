@@ -34,7 +34,7 @@ Dann gilt folgendes.
   \[P(|X-E[X]|)>\varepsilon)\leq\frac{\operatorname{Var}(X)}{\varepsilon^2}\,.\]
 \item[\emph{(iii)}] Die \emph{Hölder-Ungleichung} -- Für $0<p,q,r\leq\infty$ so, dass $\frac{1}{p}+\frac{1}{q}=\frac{1}{r}$ gilt
   \[\|XY\|_r\leq\|X\|_p\|Y\|_q\,.\]
-\item[\emph{iv}] Die \emph{Minkowski-Ungleichung} -- für $1\leq p\leq\infty$ gilt
+\item[\emph{(iv)}] Die \emph{Minkowski-Ungleichung} -- für $1\leq p\leq\infty$ gilt
   \[\|X+Y\|_p\leq\|X\|_p+\|Y\|_p\,.\]
 \item[\emph{(v)}] Das Analogon der Minkowski-Ungleichung im konkaven Fall -- für $0<p<1$ gilt
   \[E[|X+Y|^p]\leq E[|X|^p]+E[|Y|^p]\,.\]
@@ -46,7 +46,23 @@ Dann gilt folgendes.
 
 \paragraph{B4A1.1}
 Haben $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ die gleiche Verteilung auf $([0,1],{\cal B}([0,1]),\lambda|_{[0,1]})$?
+Ja.
 So sehen die $X_1$ und $X_2$ auf $[0,1]$ aus
+\begin{center}
+  \begin{tikzpicture}
+    \draw[-Bar](0,0)to node[midway,below]{$\Omega$}(1,0)node[below]{1};
+    \draw[-Bar](0,-.5)--(0,1)node[left]{1};
+    \draw[->](0,1)--(0,1.5)node[left]{$X_i$};
+    \draw[thick](0,0)--(1,1)node[right]{$X_1$};
+    \draw[thick](0,1)--(1,0)node[right]{$X_2$};
+  \end{tikzpicture}
+\end{center}
+Es reicht, die Verteilung auf $\{[a,b]\}_{a,b\in\mathbb{Q}}$ zu betrachten.
+Wegen dem Eindeutigkeitssatz A.16 wird die Verteilung auf ganz ${\cal B}([0,1])$ gleich sein.
+Die Verteilung von $X_1$ ist $P_\#X_1=P\circ X_1^{-1}$.
+Aus der Skizze erkennt man, $X_1^{-1}([a,b])=[a,b]$, sodass $P_\#X_1([a,b])=\lambda|_{[0,1]}([a,b])=b-a$.
+Da auch $X_2$ monoton ist, können wir $X_2^{-1}([a,b])$ ebenfalls durch die Urbilder des Grenzen $a$ und $b$ von $[a,b]$ angeben.
+Da $X_2$ fallend ist, müssen wir lediglich die Grenzen umdrehen, also $X_2^{-1}([a,b])=[X_2^{-1}(b),X_2^{-1}(a)]=[1-b,1-a]$ und $P_\#X_2([a,b])=\lambda|_{[0,1]}([1-b,1-a])=1-a-1+b=b-a=P_\#X_1([a,b])$.
 \paragraph{B4A1.2}
 Gibt es ein Wahrscheinlichkeitsmaß $P$ auf $([0,1],{\cal B}([0,1]))$, sodass $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ nicht die gleiche Verteilung haben?
 \paragraph{B4A1.3}
