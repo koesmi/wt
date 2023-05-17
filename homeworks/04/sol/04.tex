@@ -104,7 +104,10 @@ Es gilt $E[\mathbbm{1}_A\mathbbm{1}_B]=E[\mathbbm{1}_A]E[\mathbbm{1}_B]$ genau d
 \paragraph{B4A1.9}
 Für $X$ exponentialverteilt mit $\lambda=1$ gilt $E[X^4]\geq E[X]^4$.
 \paragraph{B4A1.10}
-Gilt $\mu(A)=0$ genau dann, wenn $\nu(A)=0$, dann gibt es ein messbares $f$, sodass $\mu(A)=\int_A f(\omega)\nu(\mathrm{d}\omega)$.
+Gilt $\mu(A)=0$ genau dann, wenn $\nu(A)=0$, dann gibt es ein messbares $f$, sodass $\mu(A)=\int_A f(\omega)\nu(\mathrm{d}\omega)$?
+Ja.
+Denn wenn $\mu$ und $\nu$ dieselben Nullmengen besitzen gilt insbesondere $\mu\ll\nu$.
+Da $\mu$ und $\nu$ als Wahrscheinlichkeitsmaße $\sigma$-endlich sind, können wir den Satz von Radon-Nikodym anwenden, nachdem $\mu$ eine Dichte bezüglich $\nu$ besitzt, also gerade eine Borel-messbare Abbildung, sodass $\mu(A)=\int_A f(\omega)\nu(\mathrm{d}\omega)$.
 \paragraph{B4A1.11}
 Auf $(\omega,\{\Omega,\emptyset\})$ gibt es keine Borel-messbare Abbildung?
 Doch.
