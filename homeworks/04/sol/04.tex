@@ -66,11 +66,20 @@ Da $X_2$ fallend ist, müssen wir lediglich die Grenzen umdrehen, also $X_2^{-1}
 \paragraph{B4A1.2}
 Gibt es ein Wahrscheinlichkeitsmaß $P$ auf $([0,1],{\cal B}([0,1]))$, sodass $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ nicht die gleiche Verteilung haben?
 \paragraph{B4A1.3}
-Wenn $X\sim{\cal N}(2,2)$ verteilt ist, gilt $P[|X-2|\geq2]\leq\frac{1}{2}$.
+Wenn $X\sim{\cal N}(2,2)$ verteilt ist, gilt $P[|X-2|\geq2]\leq\frac{1}{2}$?
+Ja.
+Nach der Tschebyscheff-Ungleichung gilt $P[|X-2|\geq2]\leq\frac{2}{2^2}=\frac{1}{2}$.
 \paragraph{B4A1.4}
-Jedes $X\colon \Omega\to\mathbb{R}$ messbar hat eine Dichte bezüglich $\lambda$.
+Jede reellwertige Zufallsvariable, also $X\colon \Omega\to\mathbb{R}$ messbar hat eine Dichte bezüglich $\lambda$?
+Nein.
+Sei $X=0$.
+Dann ist $X$ stetig und somit messbar mit $P(X=0)=1$, also $P=\delta_0$.
+Da $0=\lambda(\{0\})\neq\delta_0(\{0\})=1$, ist $\delta_0$ nicht absolut stetig bezüglich $\lambda$.
+Nach dem Satz von Radon-Nikodym, so wie er als Korollar 7.34 in \cite{klenke} steht, besitzt dann $\delta_0$ keine Dichte bezüglich des Lebesgue-Maßes.
 \paragraph{B4A1.5}
 Auf $(\Omega,{\cal P}(\Omega))$ sind alle Abbildungen $(\Omega,{\cal P}(\Omega))\to(\mathbb{R},{\cal B}(\mathbb{R}))$ messbar.
+Ja.
+
 \paragraph{B4A1.6}
 Für $X\sim{\cal N}(0,1)$ und $Y\sim{\cal N}(0,2)$ gilt $E[XY]\leq\sqrt{2}$.
 \paragraph{B4A1.7}
