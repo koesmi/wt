@@ -47,7 +47,7 @@ Dann gilt folgendes.
 \paragraph{B4A1.1}
 Haben $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ die gleiche Verteilung auf $([0,1],{\cal B}([0,1]),\lambda|_{[0,1]})$?
 Ja.
-So sehen die $X_1$ und $X_2$ auf $[0,1]$ aus
+Die Zufallsvariablen $X_1$ und $X_2$ auf $[0,1]$ sehen wie in der folgenden Skizze aus.
 \begin{center}
   \begin{tikzpicture}
     \draw[-Bar](0,0)to node[midway,below]{$\Omega$}(1,0)node[below]{1};
@@ -64,7 +64,7 @@ Aus der Skizze erkennt man, $X_1^{-1}([a,b])=[a,b]$, sodass $P_\#X_1([a,b])=\lam
 Da auch $X_2$ monoton ist, können wir $X_2^{-1}([a,b])$ ebenfalls durch die Urbilder des Grenzen $a$ und $b$ von $[a,b]$ angeben.
 Da $X_2$ fallend ist, müssen wir lediglich die Grenzen umdrehen, also $X_2^{-1}([a,b])=[X_2^{-1}(b),X_2^{-1}(a)]=[1-b,1-a]$ und $P_\#X_2([a,b])=\lambda|_{[0,1]}([1-b,1-a])=1-a-1+b=b-a=P_\#X_1([a,b])$.
 \paragraph{B4A1.2}
-Gibt es ein Wahrscheinlichkeitsmaß $P$ auf $([0,1],{\cal B}([0,1]))$, sodass $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ nicht die gleiche Verteilung haben?
+Gibt es ein Wahrscheinlichkeitsmaß $P$ auf $([0,1],{\cal B}([0,1]))$, sodass $X_1(\omega)=\omega$ und $X_2(\omega)=1-\omega$ nicht die gleiche Verteilung haben? \emph{Siehe handschriftliches Blatt.}
 \paragraph{B4A1.3}
 Wenn $X\sim{\cal N}(2,2)$ verteilt ist, gilt $P[|X-2|\geq2]\leq\frac{1}{2}$?
 Ja.
@@ -99,10 +99,18 @@ E[XY]
 
 \paragraph{B4A1.7}
 $\mathbb{N}$-wertige Zufallsvariable $X$ zu sich selbst unabhängig gilt genau dann, wenn $X$ fast sicher konstant ist.
+\emph{Siehe handschriftliches Blatt.}
 \paragraph{B4A1.8}
 Es gilt $E[\mathbbm{1}_A\mathbbm{1}_B]=E[\mathbbm{1}_A]E[\mathbbm{1}_B]$ genau dann, wenn $A$ und $B$ unabhängig sind.
+Ja.
+Es gelte $E[\mathbbm{1}_A\mathbbm{1}_B]=E[\mathbbm{1}_A]E[\mathbbm{1}_B]$.
+Dann gilt auch $P(A\cap B)=E[\mathbbm{1}_{A\cap B}]=E[\mathbbm{1}_A\mathbbm{1}_B]=E[\mathbbm{1}_A]E[\mathbbm{1}_B]=P(A)P(B)$.
+Gelte andererseits, dass $A$ und $B$ unabhängig sind, dann folgt daraus, dass
+$E[\mathbbm{1}_A\mathbbm{1}_B]=E[\mathbbm{1}_{A\cap B}]=P(A\cap B)=P(A)P(B)=E[\mathbbm{1}_A]E[\mathbbm{1}_B]$.
 \paragraph{B4A1.9}
 Für $X$ exponentialverteilt mit $\lambda=1$ gilt $E[X^4]\geq E[X]^4$.
+Ja.
+Das gilt mit konvexem $g(x)=x^4$ mithilfe der Jensen-Ungleichung aus Satz 8.
 \paragraph{B4A1.10}
 Gilt $\mu(A)=0$ genau dann, wenn $\nu(A)=0$, dann gibt es ein messbares $f$, sodass $\mu(A)=\int_A f(\omega)\nu(\mathrm{d}\omega)$?
 Ja.
@@ -146,16 +154,40 @@ Seien $(X_n)$ Zufallsvariablen sodass $X_1=0$ und $X_n=\sqrt{n}\mathbbm{1}_{(\fr
 \subparagraph{B4A2.3} $(X_n)$ konvergiert in $L_2$.
 
 \subparagraph{B4A2.4} $(X_n)$ ist gleichgradig integrierbar.
+
+\emph{Siehe zur Lösung der Aufgabe 2 das handschriftliche Blatt.}
 \newpage
 
 \paragraph{B4A3} Seien $(X_n)$ Zufallsvariablen, sodass $X_n(\omega)=\omega^{\frac{1}{n}}$ auf $([0,1],{\cal B}([0,1]),P)$, wobei $P\ll\lambda|_{[0,1]}$ mit Dichte $f(\omega)=\frac{1}{2}\omega^{-\frac{1}{2}}$.
 \subparagraph{B4A2.1} $(X_n)$ konvergiert in Wahrscheinlichkeit.
-
+Wir möchten entscheiden, ob $(X_n)$ in Wahrscheinlichkeit konvergiert.
+Da die Folge $\omega^{\frac{1}{n}}$ für alle $\omega\in(0,1]$ gegen 1 konvergiert, vermuten wir, dass $X_n\xrightarrow{P}1$.
+Um das zu prüfen, sei ein $\varepsilon>0$ vorgegeben.
+Da für alle $n\in\mathbb{N}$ und alle $\omega\in[0,1]$ gilt, $X_n(\omega)\leq1$, können wir in der Definition der Konvergenz in Wahrscheinlichkeit die Betragsstriche weglassen.
+Nach Markov-Ungleichung gilt für alle $n\in\mathbb{N}$
+\begin{align*}
+\varepsilon P(1-\omega^\frac{1}{n}\geq\varepsilon)
+  &\leq E\bigl[1-\omega^\frac{1}{n}\bigr]\,.
+    \intertext{Mit einsetzen der Dichte vom Aufgabenblatt folgt}
+  &\int_{0}^1\bigl(1-\omega^\frac{1}{n}\bigr)\frac{1}{2}\omega^{-\frac{1}{2}}\mathrm{d}\omega\,.
+   \intertext{Durch Ausmultiplizieren und Integrieren von $\frac{1}{2}\omega^{-\frac{1}{2}}$ erhalten wir}
+  &=\sqrt{1}-\sqrt{0}+\int_0^1\frac{1}{2}\omega^{\frac{1}{n}-\frac{1}{2}}\mathrm{d}\omega\,.
+    \intertext{Ausführen der Wurzel und Erneutes Integrieren liefert}
+  &=1-\left.\frac{n}{n+2}\omega^\frac{n+2}{2n}\right|_0^1\,.
+    \intertext{Indem wir die Grenzen einsetzen und beide Terme auf einen gemeinsamen Nenner bringen, erhalten wir}
+  &=\frac{2}{n+2}\,.
+\end{align*}
+Da für alle $\varepsilon>0$ gilt $\lim_n\frac{1}{\varepsilon}\frac{2}{n+2}=0$ sehen wir, dass $(X_n)$ in Wahrscheinlichkeit konvergiert.
 \subparagraph{B4A2.2} $(X_n)$ konvergiert fast sicher.
+Wir möchten uns überlegen, ob $P\bigl(\lim\omega^{\frac{1}{n}}<1\bigr)=0$.
+Das einzige Problem könnte in einer Umgebung um $\omega=0$ auftauchen, denn $0^\frac{1}{n}=0$ für alle $n\in\mathbb{N}$.
+Da $\omega=0$ jedoch der einzige Punkt ist, sodass $\lim \omega^\frac{1}{n}<1$, ist $\{\lim \omega^\frac{1}{n}<1\}$ in der Tat eine $P$-Nullmenge.
+Somit konvergiert $(X_n)$ fast sicher.
 
-\subparagraph{B4A2.3} $(X_n)$ konvergiert in $L_1$.
+\subparagraph{B4A2.3} $(X_n)$ konvergiert aufgrund der Argumentation in Teilaufgabe 1 in $L^1$.
+Es gilt $E[1-\omega^{\frac{1}{n}}]=\frac{2}{n+2}$, was für $n\to\infty$ gegen 0 konvergiert.
 
-\subparagraph{B4A2.4} $(X_n)$ ist gleichgradig integrierbar.
+\subparagraph{B4A2.4} $(X_n)$ ist gleichgradig integrierbar, da es in $L^1$ konvergiert.
 \newpage
 
 \bibliography{../../../books/wt}
