@@ -24,18 +24,88 @@
 \begin{document}
 
 \paragraph{B5A1}
+%https://math.stackexchange.com/questions/2529434/x-k-uniformly-integrable-iff-lim-n-to-infty-limsup-k-to-infty-mathbb-e
+Zeigen Sie, dass eine Folge $(X_n)_{n\in\mathbb{N}}$ genau dann gleichgradig integrierbar ist, wenn
+\begin{equation}
+  \label{eq:ggiblim}
+  \lim_{k\to\infty}\limsup_{n\to\infty}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]=0\,.
+\end{equation}
+Sei zunächst $(X_n)$ gleichgradig integrierbar.
+Dann gilt nach Definition von gleichgradiger Integrierbarkeit, dass
+\begin{align*}
+  0
+  &=\lim_{k\to\infty}\sup_{n\in\mathbb{N}}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]\,.
+    \intertext{Insbesondere heißt dass, dass für ein gegebenes $n\in\mathbb{N}$ gilt, dass}
+  0
+  &=\lim_{k\to\infty}\sup_{m\geq n}E[|X_m|\mathbbm{1}_{\{|X_m|>k\}}]\,.
+    \intertext{Damit gilt auch für das Infimum über diese $n\in\mathbb{N}$, dass}
+    0
+  &=\lim_{k\to\infty}\inf_{n\in\mathbb{N}}\sup_{m\geq n}E[|X_m|\mathbbm{1}_{\{|X_m|>k\}}]\,,
+\end{align*}
+was nach der Definition des $\limsup$ Gleichung (\ref{eq:ggiblim}) liefert.
+\emph{Hier sollte man sich überlegen, ob man den Limes über $k$ ebenfalls, wie in der Argumentation unten, mittels eines $\varepsilon$ umschreiben sollte.}
+
+Genüge nun $(X_n)$ Gleichung (\ref{eq:ggiblim}).
+Wir wollen zeigen, dass $(X_n)$ gleichgradig integrierbar ist.
+Sei hierfür ein $\varepsilon>0$ gegeben.
+Da Gleichung (\ref{eq:ggiblim}) gilt, gibt es ein $k_0\in\mathbb{N}$, sodass für alle $k>k_0$
+\begin{align*}
+  \limsup_{n\to\infty}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]
+  &<\varepsilon\,.
+  \intertext{Also gibt es auch ein $n_0$, sodass für alle $n\geq n_0$ gilt}
+    E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]\,.
+  &<\varepsilon
+    \intertext{Wir nehmen an, es gilt, dass alle $X_n$ integrierbar sind
+    \emph{was nicht in der Aufgabenstellung steht.}
+    Dann gibt es für alle $X_1,\dots,X_{n_0-1}$ jeweils Schranken $k_1,\dots,k_{n_0-1}\in\mathbb{N}$, sodass für $n=1,\dots,n_0-1$ gilt}
+    E[|X_n|\mathbbm{1}_{\{|X_n|>k_n\}}]<\varepsilon\,.
+    \intertext{Setze nun $K=k_0\vee\cdots\vee k_{n_0-1}$, dann gilt für alle $k\geq K$ und alle $n\in\mathbb{N}$, dass}
+    E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]<\varepsilon\,,
+    \intertext{also insbesondere, dass}
+    \lim_{k\to\infty}\sup_{n\in\mathbb{N}}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]<\varepsilon\,.
+\end{align*}
+\emph{Hier fehlt noch die Folgerung von Korollar 27.}
 \newpage
 
 \paragraph{B5A2}
+Sei $(\Omega,{\cal F},P)$ ein Wahrscheinlichkeitsraum und $(A_n)_{n\geq 1}$ eine Folge in ${\cal F}$.
+Es sei
+\[
+  \limsup_{n\to\infty}A_n:=\bigcap_{n=1}^\infty\bigcup_{k=n}^\infty A_k\,,\qquad\liminf_{n\to\infty}A_n:=\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k\,.
+\]
+Zeigen Sie, dass gilt
+\begin{align*}
+  \liminf_{n\to\infty}A_n
+  &\subseteq\limsup_{n\to\infty}A_n\\
+  P\Bigl(\liminf_{n\to\infty}A_n\Bigr)\leq \liminf_{n\to\infty}P(A_n)
+  &\leq\limsup_{n\to\infty}P(A_n)\leq P\Bigl(\limsup_{n\to\infty}A_n\Bigr)
+\end{align*}
 \newpage
 
-\paragraph{B5A3} 
+\paragraph{B5A3}
+Sei $\lambda>0$ und für jedes $n\in\mathbb{N}_0$ sei $X_n$ eine Poisson-verteilte Zufallsvariable zum Parameter $\lambda$.
+Zeigen Sie mit Hilfe des Lemmas von Borel--Cantelli, dass
+\[
+  P(\{\text{Für unendlich viele $n$ gilt $X_n>n$}\})=0\,.
+\]
 \newpage
 
-\paragraph{B5A4} 
+\paragraph{B5A4}
+Nennen Sie jeweils ein Beispiel und ein Gegenbeispiel von reellwertigen Zufallsvariablen $(X_n)_{n\in\mathbb{N}}$ und einer Menge $A\in\mathcal{B}(\mathbb{R})$ für die folgenden Identitäten
+  \begin{alignat*}{2}
+&\text{1.~}&P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)&=P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)\\
+&\text{2.~}&P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)&=\limsup_{n\to\infty}P(\{X_n\in A\})\\
+&\text{3.~}&\limsup_{n\to\infty}P(\{X_n\in A\})&=P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)
+  \end{alignat*}
 \newpage
 
-\paragraph{B5A5} 
+\paragraph{B5A5}
+Sei $X_1,X_2,\dots$ eine Folge von reellwertigen Zufallsvariablen auf einem Wahrscheinlichkeitsraum $(\Omega,{\cal F},P)$, ${\cal F}_n:=\sigma(X_n)$ für alle $n$ und $S_n:=\sum_{k=1}^nX_k$.
+Zeigen Sie oder widerlegen Sie durch ein Gegenbeispiel, dass die folgenden Ereignisse terminale Ereignisse sind, also in der terminalen $\sigma$-Algebra liegen.
+\begin{align*}
+  \text{1.~}&\{\omega\in\Omega|X_n(\omega)=0\}\text{ für ein $n\in\mathbb{N}$,}\\
+  \text{2.~}&\{\omega\in\Omega|X_n(\omega)=0\text{ für ein $n\in\mathbb{N}$,}\}
+\end{align*}
 \newpage
 
 \bibliography{../../../books/wt}
