@@ -78,13 +78,23 @@ Es sei
 Zeigen Sie, dass gilt
 \begin{align*}
   \liminf_{n\to\infty}A_n
-  &\subseteq\limsup_{n\to\infty}A_n\\
+  &\subseteq\limsup_{n\to\infty}A_n\,,\\
   P\Bigl(\liminf_{n\to\infty}A_n\Bigr)\leq \liminf_{n\to\infty}P(A_n)
-  &\leq\limsup_{n\to\infty}P(A_n)\leq P\Bigl(\limsup_{n\to\infty}A_n\Bigr)
+  &\leq\limsup_{n\to\infty}P(A_n)\leq P\Bigl(\limsup_{n\to\infty}A_n\Bigr)\,.
 \end{align*}
 
+Wir möchten zunächst zeigen, dass $\liminf_{n\to\infty}A_n\subseteq\limsup_{n\to\infty}A_n$.
+Sei hierfür $\omega\in\liminf_{n\to\infty}A_n$. Wie wir in der Übung besprochen haben, heißt das, dass ein $n_0\in\mathbb{N}$ existiert, sodass für alle $n\geq n_0$ gilt, dass $\omega\in A_n$.
+Um zu zeigen, dass $\omega\in\limsup_{n\to\infty}A_n$, sei ein $m_0\in\mathbb{N}$ beliebig vorgegeben.
+Da für $n\geq n_0$ gilt, dass $\omega\in A_n$, ist $\omega\in A_{m_0\vee n_0}$.
+Damit gilt auch für alle $m_0\in\mathbb{N}$, dass ein $m\geq m_0$ existiert, sodass $\omega\in A_m$, nämlich $m=m_0\vee n_0$.
+Somit ist $\omega\in\limsup_{n\to\infty}A_n$.
+
+Nun überlegen wir uns, warum die Ungleichungen gelten.
 $\mathbbm{1}_{A_n}$ hat $\mathbbm{1}_\Omega$ als integrierbare Majorante.
 Damit gelten die erste und dritte Ungleichung gelten jeweils nach dem Lemma von Fatou, \emph{beziehungsweise die dritte nach majorisierter Konvergenz}.
+
+\emph{Hier fehlt noch eine Rechnung für die mittlere Ungleichung.}
 \newpage
 
 \paragraph{B5A3}
@@ -93,6 +103,15 @@ Zeigen Sie mit Hilfe des Lemmas von Borel--Cantelli, dass
 \[
   P(\{\text{Für unendlich viele $n$ gilt $X_n>n$}\})=0\,.
 \]
+
+Die Poissonverteilung ist gegeben durch $P(X_n=k)=\mathrm{e}^{-\lambda}\frac{\lambda^k}{k!}$.
+Damit ist
+\begin{align*}
+  \sum_{n=1}^\infty P(X_n>n)
+  &=\sum_{n=1}^\infty\sum_{k=n+1}^\infty \mathrm{e}^{-\lambda}\frac{\lambda^k}{k!}
+\end{align*}
+Nach dem Lemma von Borel--Cantelli folgt die Behauptung aus $\sum_{n=1}^\infty P(X_n>n)<\infty$.
+\emph{Also müsste der obige Ausdruck endlich sein.}
 \newpage
 
 \paragraph{B5A4}
@@ -101,7 +120,14 @@ Nennen Sie jeweils ein Beispiel und ein Gegenbeispiel von reellwertigen Zufallsv
 &\text{1.~}&P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)&=P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)\\
 &\text{2.~}&P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)&=\limsup_{n\to\infty}P(\{X_n\in A\})\\
 &\text{3.~}&\limsup_{n\to\infty}P(\{X_n\in A\})&=P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)
-  \end{alignat*}
+\end{alignat*}
+Es ist
+\begin{align*}
+  P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)
+  &=P(\{\omega\in\Omega\mid \inf_{n\geq1}\sup_{m\geq n}X_m(\omega) \in A\})\,,\\
+  P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)
+  &=P(\omega\in\Omega\mid \forall n\in\mathbb{N}\exists m\geq n~X_m(\omega)\in A)
+\end{align*}
 \newpage
 
 \paragraph{B5A5}
