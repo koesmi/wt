@@ -27,7 +27,7 @@
 %https://math.stackexchange.com/questions/2529434/x-k-uniformly-integrable-iff-lim-n-to-infty-limsup-k-to-infty-mathbb-e
 Zeigen Sie, dass eine Folge $(X_n)_{n\in\mathbb{N}}$ genau dann gleichgradig integrierbar ist, wenn
 \begin{equation}
-  \label{eq:ggiblim}
+  \label{eq:ggiblim}\tag{1}
   \lim_{k\to\infty}\limsup_{n\to\infty}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]=0\,.
 \end{equation}
 Sei zunächst $(X_n)$ gleichgradig integrierbar.
@@ -52,12 +52,14 @@ Da Gleichung (\ref{eq:ggiblim}) gilt, gibt es ein $k_0\in\mathbb{N}$, sodass fü
 \begin{align*}
   \limsup_{n\to\infty}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]
   &<\varepsilon\,.
-  \intertext{Also gibt es auch ein $n_0$, sodass für alle $n\geq n_0$ gilt}
-    E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]\,.
-  &<\varepsilon
-    \intertext{Wir nehmen an, es gilt, dass alle $X_n$ integrierbar sind
-    \emph{was nicht in der Aufgabenstellung steht.}
-    Dann gibt es für alle $X_1,\dots,X_{n_0-1}$ jeweils Schranken $k_1,\dots,k_{n_0-1}\in\mathbb{N}$, sodass für $n=1,\dots,n_0-1$ gilt}
+    \intertext{
+    \emph{Damit ist die Teilfolge $\bigl(\sup_{m\geq n}E[|X_m]\mathbbm{1}_{\{|X_m|>k\}}\bigr)_n$ für alle $n\in\mathbb{N}$ beschränkt.
+    Hier könnte man eventuell noch direkt ein Argument bringen, warum schon Beschränktheit durch $\varepsilon$ folgt.}
+    Also gibt es auch ein $n_0$, sodass für alle $n\geq n_0$ gilt}
+    E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]
+  &<\varepsilon\,.
+    \intertext{Nach Lemma 24 gilt, dass alle $X_n$ integrierbar sind.
+    Also gibt es für alle $X_1,\dots,X_{n_0-1}$ jeweils Schranken $k_1,\dots,k_{n_0-1}\in\mathbb{N}$, sodass für die $n=1,\dots,n_0-1$ gilt}
     E[|X_n|\mathbbm{1}_{\{|X_n|>k_n\}}]<\varepsilon\,.
     \intertext{Setze nun $K=k_0\vee\cdots\vee k_{n_0-1}$, dann gilt für alle $k\geq K$ und alle $n\in\mathbb{N}$, dass}
     E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]<\varepsilon\,,
@@ -80,6 +82,9 @@ Zeigen Sie, dass gilt
   P\Bigl(\liminf_{n\to\infty}A_n\Bigr)\leq \liminf_{n\to\infty}P(A_n)
   &\leq\limsup_{n\to\infty}P(A_n)\leq P\Bigl(\limsup_{n\to\infty}A_n\Bigr)
 \end{align*}
+
+$\mathbbm{1}_{A_n}$ hat $\mathbbm{1}_\Omega$ als integrierbare Majorante.
+Damit gelten die erste und dritte Ungleichung gelten jeweils nach dem Lemma von Fatou, \emph{beziehungsweise die dritte nach majorisierter Konvergenz}.
 \newpage
 
 \paragraph{B5A3}
