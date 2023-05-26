@@ -163,9 +163,14 @@ Sei $A=B_\varepsilon(0)$, dann ist $\limsup_{n\to\infty}P(X_n\in A)=1$, ich find
 Sei $X_1,X_2,\dots$ eine Folge von reellwertigen Zufallsvariablen auf einem Wahrscheinlichkeitsraum $(\Omega,{\cal F},P)$, ${\cal F}_n:=\sigma(X_n)$ für alle $n$ und $S_n:=\sum_{k=1}^nX_k$.
 Zeigen Sie oder widerlegen Sie durch ein Gegenbeispiel, dass die folgenden Ereignisse terminale Ereignisse sind, also in der terminalen $\sigma$-Algebra liegen.
 \begin{align*}
-  \text{1.~}&\{\omega\in\Omega|X_n(\omega)=0\}\text{ für ein $n\in\mathbb{N}$,}\\
-  \text{2.~}&\{\omega\in\Omega|X_n(\omega)=0\text{ für ein $n\in\mathbb{N}$,}\}
+  \text{1.~}&\{\omega\in\Omega\mid X_n(\omega)=0\}\text{ für ein $n\in\mathbb{N}$,}\\
+  \text{2.~}&\{\omega\in\Omega\mid X_n(\omega)=0\text{ für ein $n\in\mathbb{N}$}\}\,,\\
+  \text{3.~}&\{\omega\in\Omega\mid X_n(\omega)=0\text{ für endlich viele $n\in\mathbb{N}$}\}\,,\\
+  \text{4.~}&\{\omega\in\Omega\mid S_n(\omega)=0\text{ für endlich viele $n\in\mathbb{N}$}\}\,,\\
+  \text{5.~}&\{\omega\in\Omega\mid (X_n(\omega))_n\text{ enthält eine monoton wachsende Teilfolge}\}\,,\\
+  \text{6.~}&\{\omega\in\Omega\mid \limsup S_n(\omega)>\liminf S_n(\omega)\}\,.
 \end{align*}
+Zumindest bei Punkt 1-4. kann ich $X_n=1$ wählen, damit die Ereignisse nicht terminal sein können.
 \newpage
 
 \bibliography{../../../books/wt}
