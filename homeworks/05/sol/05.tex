@@ -104,14 +104,38 @@ Zeigen Sie mit Hilfe des Lemmas von Borel--Cantelli, dass
   P(\{\text{Für unendlich viele $n$ gilt $X_n>n$}\})=0\,.
 \]
 
+Es gilt genau dann $\omega\in\{\text{Für unendlich viele $n$ gilt $X_n>n$}\}$, wenn $\forall n\geq0~\exists m\geq n~\omega\in\{X_m>n\}$, also genau dann, wenn $\omega\in\limsup\{X_n>n\}$.
+Das Lemma von Borel--Cantelli besagt, dass $P(\limsup A_n)=0$, falls $\sum_{n\geq0}P(A_n)<\infty$.
+Die Idee ist also, zu zeigen, dass $\sum_{n\geq0}P(\{X_n>n\})<\infty$, dann folgt die Behauptung mit dem Lemma von Borel--Cantelli.
 Die Poissonverteilung ist gegeben durch $P(X_n=k)=\mathrm{e}^{-\lambda}\frac{\lambda^k}{k!}$.
 Damit ist
 \begin{align*}
-  \sum_{n=1}^\infty P(X_n>n)
-  &=\sum_{n=1}^\infty\sum_{k=n+1}^\infty \mathrm{e}^{-\lambda}\frac{\lambda^k}{k!}
+  \sum_{n=0}^\infty P(X_n>n)
+  &=\sum_{n=0}^\infty\sum_{k=n+1}^\infty \mathrm{e}^{-\lambda}\frac{\lambda^k}{k!}\,.
 \end{align*}
-Nach dem Lemma von Borel--Cantelli folgt die Behauptung aus $\sum_{n=1}^\infty P(X_n>n)<\infty$.
-\emph{Also müsste der obige Ausdruck endlich sein.}
+So, ähnlich wie wir es im Beweis zum starken Gesetz der Großen Zahlen in der Ausführung als Theorem 49 gemacht haben, können wir die Indices umschreiben.
+Die Terme haben folgende Indices
+\begin{center}
+  \begin{tabular}{cc|cccccc}
+    &$n$&&&&&&\\
+    \hline
+    $k$&0&1&2&3&4&$\cdots$\\
+    &1&&2&3&4&$\cdots$\\
+    &2&&&3&4&$\cdots$\\
+    &3&&&&4&$\cdots$\\
+    &$\vdots$&&&&&$\cdots$
+  \end{tabular}
+\end{center}
+Es kommt also der Term mit Index $n+1$ immer $n+1$ mal vor.
+Wir können für die obige Summe dann schreiben
+\begin{align*}
+  \sum_{n=0}^\infty P(X_n>n)
+  &=\sum_{n=0}^\infty(n+1)\mathrm{e}^{-\lambda}\frac{\lambda^{(n+1)}}{(n+1)!}\,.
+    \intertext{Kürzen mit $n+1$ und herausziehen von einem Faktor $\lambda\mathrm{e}^{-\lambda}$ ergibt}
+  &=\lambda\mathrm{e}^{-\lambda}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\,.
+    \intertext{Mit der Definition der Exponentialfunktion erhalten wir}
+  &=\lambda\mathrm{e}^{-\lambda}\mathrm{e}^{\lambda}=\lambda<\infty\,.
+\end{align*}
 \newpage
 
 \paragraph{B5A4}
