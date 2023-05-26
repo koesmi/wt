@@ -66,7 +66,12 @@ Da Gleichung (\ref{eq:ggiblim}) gilt, gibt es ein $k_0\in\mathbb{N}$, sodass fü
     \intertext{also insbesondere, dass}
     \lim_{k\to\infty}\sup_{n\in\mathbb{N}}E[|X_n|\mathbbm{1}_{\{|X_n|>k\}}]<\varepsilon\,.
 \end{align*}
-\emph{Hier fehlt noch die Folgerung von Korollar 27.}
+\emph{Hier fehlt noch die Folgerung von Korollar 27. Es sollte also gezeigt werden, dass falls $\|X_n\|_p\to \|X\|_p$, dann $\lim_{k\to\infty}\limsup_{n\to\infty}E[|X_n|^p\mathbbm{1}_{|X_n|^p>k}]=0$.}
+Es gelte $\|X_n\|_p\to \|X\|_p$.
+Da die Folge $E[|X_n|^p]$ dann konvergent ist, ist sie beschränkt.
+Sei $c\in\mathbb{R}$ vorgegeben.
+Angenommen, es gelte, dass $\lim_{k\to\infty}\limsup_{n\to\infty}E[|X_n|^p\mathbbm{1}_{|X_n|^p>k}]>0$.
+\emph{Eventuell kann man folgern, dass $E[|X_n|^p]$ nicht beschränkt ist.}
 \newpage
 
 \paragraph{B5A2}
