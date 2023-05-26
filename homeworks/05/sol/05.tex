@@ -145,6 +145,17 @@ Nennen Sie jeweils ein Beispiel und ein Gegenbeispiel von reellwertigen Zufallsv
 &\text{2.~}&P\Bigl(\limsup_{n\to\infty}\{X_n\in A\}\Bigr)&=\limsup_{n\to\infty}P(\{X_n\in A\})\\
 &\text{3.~}&\limsup_{n\to\infty}P(\{X_n\in A\})&=P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)
 \end{alignat*}
+Als Beispiel können wir $X_n=0$ mit $A=\{0\}$ wählen.
+Da für alle $n\in\mathbb{N}$ gilt, $X_n=0$, ist auch $\limsup X_n=\inf_{n\geq1}\sup_{m\geq n} X_n=0$.
+Somit ist $\{\omega\in\Omega\mid\limsup X_n\in A\}=\Omega$ und $P(\limsup X_n\in A)=1$.
+Genauso gilt für alle $n\in\mathbb{N}$, unabhängig von der Wahl von $\omega\in\Omega$, dass $X_n\in A$, sodass $\omega\in\limsup\{ X_n\in A\}$ für alle $\omega\in\Omega$ gilt.
+Hiermit ist $P(\limsup\{X_n\in A\})=P(\Omega)=1$.
+Schließlich gilt unabhängig von der Wahl von $n\in\mathbb{N}$, dass $P(\{\omega\in\Omega\mid X_n\in A\})=1$, sodass
+$\limsup P(X_n\in A)=1$.
+
+Als Gegenbeispiel zu Punkt 3 können wir Aufgabe 4 von Blatt 4 wählen, wo $X_n$ stochastisch, aber nicht fast sicher konvergierte.
+Sei $A=B_\varepsilon(0)$, dann ist $\limsup_{n\to\infty}P(X_n\in A)=1$, ich finde jedoch immer ein $n\in\mathbb{N}$, sodass $X_n>\varepsilon$, sodass $\limsup X_n\notin A$ und $P(\limsup X_n\in A)<1$.
+
 Es ist
 \begin{align*}
   P\Bigl(\Bigl\{\limsup_{n\to\infty}X_n\in A\Bigr\}\Bigr)
