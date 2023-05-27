@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 6 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{B6A1}
+Seien $X_1,X_2,\dots$ \emph{iid} uniform auf $[0,1]$ verteilt.
+Weiter sei $f\in L^1([0,1])$.
+Zeigen Sie, dass die Monte-Carlo Simulation $\hat{I}_n:=\frac{1}{n}\sum_{i=1}^nf(X_i)$ fast sicher gegen das Integral $\int_0^1f(x)\mathrm{d}x$ konvergiert.
+
+\emph{Siehe hierzu, was wir in der Letzten Vorlesung dazu hatten. (24.5. Minute 23)}
+Es gilt
+\begin{align*}
+  \int f(x)\mathrm{d}F(x)
+  &=\int f(x)\mathrm{d}F_n(x)\\
+  &=\int f(x)\mathrm{d}\mu(x)\\
+  &=\sum\mathrm{d}\Bigl(\frac{1}{n}\sum_{i=1}^n\delta_{X_i}\Bigr)\\
+  &=\frac{1}{n}\sum_{i=1}^n f(X_i)
+\end{align*}
+
+\newpage
+
+\paragraph{B6A2}
+Für jedes $n\in\mathbb{N}$ seien $X_1^{(n)},\dots,X_n^{(n)}$ paarweise unkorrelierte Zufallsvariablen mit endlicher Varianz (also nicht notwendig identisch verteilt) und
+\[
+\lim_{n\to\infty}\frac{1}{n^2}\sum_{i=1}^n\operatorname{Var}\bigl[X_i^{(n)}\bigr]=0\,.
+\]
+Zeigen Sie, dass die $X_i^{(n)}$ dem schwachen Gesetz der großen Zahlen genügen, d.h. beweisen Sie
+\[
+\frac{1}{n}\sum_{i=1}^n\bigl(X_i^{(n)}-E\bigl[X_i^{(n)}\bigr]\bigr)\xrightarrow{P}0,\quad n\to\infty\,.
+\]
+
+Es sei $(X_n)_{n\geq2}$ eine Folge unabhängiger Zufallsvariablen mit
+\[
+P(X_n=n)=\frac{1}{n\log n}\quad\text{und}\quad P(X_n=0)=1-\frac{1}{n\log n}\,.
+\]
+Zeigen Sie, dass die Folge dem schwachen Gesetz der großen Zahlen genügt, in dem Sinne, dass
+\[
+\frac{1}{n}\sum_{i=2}^n(X_i-E[X_i])\xrightarrow{P}0\,.
+\]
+Zeigen Sie weiter, dass die obige Folge nicht fast sicher konvergiert und sie somit nicht dem Gesetz der großen Zahlen genügt.
+Verwenden Sie dazu das Lemma von Borel--Cantelli.
+\newpage
+
+\paragraph{B6A3}
+
+\newpage
+
+\paragraph{B6A4}
+
+\newpage
+
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
