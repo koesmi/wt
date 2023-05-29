@@ -29,6 +29,17 @@ Weiter sei $f\in L^1([0,1])$.
 Zeigen Sie, dass die Monte-Carlo Simulation $\hat{I}_n:=\frac{1}{n}\sum_{i=1}^nf(X_i)$ fast sicher gegen das Integral $\int_0^1f(x)\mathrm{d}x$ konvergiert.
 
 Beispiel 5.21 in \cite{klenke}, funktioniert mit starkem Gesetz der großen Zahlen.
+Betrachte hierzu die Zufallsvariablen $f(X_i)$.
+Das Starke Gesetz der großen Zahlen gemäß Theorem 51 lautet hierfür, dass für reellwertige unabhängige und identisch verteilte Zufallsvariablen mit $E[|f(X_1)|]<\infty$ gilt, dass
+\[
+  \frac{1}{n}\sum_{i=1}^nf(X_i)\to E[f(X_1)]=\int_0^1f(x)\mathrm{d}P
+  =\int_0^1f(x)\mathrm{d}x
+\]
+Nach dem Blockungslemma 30 sind diese ebenfalls unabhängig.
+Für $A\in[0,1]$ ist $P(X_i\in A)=\int_A\mathrm{d}\lambda=\lambda(A)$.
+\emph{Was ist denn die Verteilung von $f(X_i)$?
+  Geht das mit Substitutionssatz?
+Sind diese auch identisch verteilt?}
 
 \emph{Siehe hierzu, was wir in der Letzten Vorlesung dazu hatten. (24.5. Minute 23)}
 Es gilt
