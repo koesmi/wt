@@ -36,7 +36,6 @@ Das Starke Gesetz der großen Zahlen gemäß Theorem 51 lautet hierfür, dass f�
   =\int_0^1f(x)\mathrm{d}x
 \]
 Nach dem Blockungslemma 30 sind diese ebenfalls unabhängig.
-Für $A\in[0,1]$ ist $P(X_i\in A)=\int_A\mathrm{d}\lambda=\lambda(A)$.
 Die $f(X_i)$ sind ebenfalls identisch verteilt, denn für alle $i\in\mathbb{N}$ gilt $(f\circ X_i)_\# P=P\circ X_i^{-1}\circ f^{-1}=P\circ X_1^{-1}\circ f^{-1}$, weil die $X_i$ identisch verteilt sind.
 Somit können wir das starke Gesetz der großen Zahlen mit $L^1$-Voraussetzung, quasi Theorem 51, benutzen.
 Nach diesem gilt
@@ -47,19 +46,8 @@ Nach diesem gilt
     \intertext{Mit der Definition des Erwartungswertes folgt}
   &=\int f\circ X_1\mathrm{d}P\,.
     \intertext{weil $X_1$ uniform auf $[0,1]$ verteilt ist, kriegen wir}
-  &=\int_{0}^1f\circ\mathrm{id}(x)\lambda(\mathrm{d}x)=\int_{0}^1f(x)\mathrm{d}x
+  &=\int_{0}^1f\circ\mathrm{id}(x)\lambda(\mathrm{d}x)=\int_{0}^1f(x)\mathrm{d}x\,.
 \end{align*}
-
-\emph{Siehe hierzu, was wir in der Letzten Vorlesung dazu hatten. (24.5. Minute 23)}
-Es gilt
-\begin{align*}
-  \int f(x)\mathrm{d}F(x)
-  &=\int f(x)\mathrm{d}F_n(x)\\
-  &=\int f(x)\mathrm{d}\mu(x)\\
-  &=\sum\mathrm{d}\Bigl(\frac{1}{n}\sum_{i=1}^n\delta_{X_i}\Bigr)\\
-  &=\frac{1}{n}\sum_{i=1}^n f(X_i)
-\end{align*}
-
 \newpage
 
 \paragraph{B6A2}
