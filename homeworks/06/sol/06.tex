@@ -92,13 +92,32 @@ Zeigen Sie, dass die Folge dem schwachen Gesetz der großen Zahlen genügt, in d
 
 %https://math.stackexchange.com/questions/1288502/sequence-satisfies-weak-law-of-large-numbers-but-doesnt-satisfy-strong-law-of-l
 %https://dspace.mit.edu/bitstream/handle/1721.1/70477/6-042j-fall-2002/contents/lecture-notes/cp15Msol.pdf
-
-Wir wollen die Chebycheff-Ungleichung verwenden.
-Hiernach gilt ...
-
+Wir wollen für ein festes $n\in\mathbb{N}$ die Tschebyscheff-Ungleichung für die Zufallsvariable $\frac{1}{n}\sum_{i=2}^nX_i$ verwenden.
+Hierfür brauchen wir die Varianz von $\frac{1}{n}\sum_{i=2}^nX_i$.
+Da die $X_i$ unabhängig sind, gilt für diese
+\begin{align*}
+  \operatorname{Var}\left(\frac{1}{n}\sum\nolimits_{i=2}^nX_i\right)
+  &=\frac{1}{n^2}\sum\nolimits_{i=2}^n\operatorname{Var}(X_i)\,.
+    \intertext{Nach den Rechenregeln für die Varianz können wir schreiben}
+  &=\frac{1}{n^2}\sum\nolimits_{i=2}^n\Bigl(E[X_i^2]-X[X_i]^2\Bigr)\,.
+    \intertext{Für den Erwartungswert sind nur die Wahrscheinlichkeiten mit $X_i=i$ zu betrachten, sodass sich ergibt}
+  &=\frac{1}{n^2}\sum\nolimits_{i=2}^n\left(\frac{i}{\log i}-\frac{1}{\log i}\right)=\frac{1}{n^2}\sum\nolimits_{i=1}^n\frac{i}{\log(i+1)}\,.
+    \intertext{Nun gilt für $i\geq 1$, dass $i>\log(i+1)$.
+    Deshalb gilt auch $\frac{n}{\log(n)}\geq\frac{i}{\log(i+1)}$ und ich kann abschätzen}
+    &\leq \frac{1}{n^2}\sum\nolimits_{i=1}^n\frac{n}{\log n}=\frac{1}{n^2}\cdot n\cdot\frac{n}{\log n}=\frac{1}{\log n}\,.
+\end{align*}
+Nach der Tschebyscheff-Ungleichung gilt damit für jedes $\varepsilon>0$ und jedes $n\in\mathbb{N}$, dass $P\bigl(\frac{1}{n}\sum_{i=2}^n(X_i-E[X_i])>\varepsilon\bigr)\leq\frac{1}{n^2}\frac{1}{\varepsilon^2}\operatorname{Var}(X_i)\xrightarrow{n\to\infty}0$.
 
 Zeigen Sie weiter, dass die obige Folge nicht fast sicher konvergiert und sie somit nicht dem Gesetz der großen Zahlen genügt.
 Verwenden Sie dazu das Lemma von Borel--Cantelli.
+
+Wir nutzen den Tipp und betrachten $\sum_{n=2}^\infty P(X_n=n)=\sum_{n=2}^\infty\frac{1}{n\log n}$.
+Nach dem Integraltest divergiert die Reihe, wenn das dazugehörige Integral $\int_2^\infty\frac{1}{x\log x}\mathrm{d}x$ konvergiert.
+Durch Substituieren mit $z=\log(x)$, sodass $\frac{\mathrm{d}z}{\mathrm{d}x}=\frac{1}{x}$ und somit $\mathrm{d}z=\frac{\mathrm{d}x}{x}$ gilt, dass $\int_{2}^\infty\frac{1}{x\log x}\mathrm{d}x=\int_{\log 2}^\infty\frac{\mathrm{d}z}{z}=\Bigl.\log\log x\Bigr|_2^\infty$, sodass insgesamt $\sum_{n=2}^\infty P(X_n=n)=\infty$.
+Mit dem Lemma von Borel--Cantelli gilt dann $P(\limsup\{X_n=n\})=P\bigl(\bigr)=1$.
+\emph{Hier fehlt noch irgendeine Überlegung, vermutlich unter Verwendung von einer Abschätzung für die Summe.
+Was gilt für die Summe, wenn $X_n=n$?}
+Insgesamt erhalten wir, dass $P\bigl(\lim_{n\to\infty}\frac{1}{n}\sum_{i=2}^n(X_i-E[X_i])=0\bigr)<1$.
 \newpage
 
 \paragraph{B6A3}
