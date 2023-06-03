@@ -139,7 +139,20 @@ Beweisen Sie folgende Aussagen
 \item[2.] Sei $(a_n)_{n\in\mathbb{N}}$ eine monotone Folge und es gebe eine Teilfolge $(a_{n_k})_{k\in\mathbb{N}}$, sodass $a_{n_k}\to a$, dann folgt $a_n\to a$.
 \end{enumerate}
 \emph{Hinweis: Diese zwei Aussagen wurden im Beweis von Lemma 43 verwendet.
-Es ist sinnvoll, diesen nach dem Bearbeiten der Übungsaufgabe zu wiederholen.}
+  Es ist sinnvoll, diesen nach dem Bearbeiten der Übungsaufgabe zu wiederholen.}
+
+Zu Punkt 1, es gilt für alle $k\in\mathbb{N}$, dass $\sum_{n=k}^\infty a_n=\sum_{n=1}^\infty a_n-\sum_{n=1}^{k-1}a_n$.
+Somit können wir, um zu zeigen, dass $\lim_{k\to\infty}\sum_{n=k}^\infty a_n=0$, genauso gut zeigen, dass $\lim_{k\to\infty}\sum_{n=1}^{k-1}a_n=\sum_{n=1}^\infty a_n$.
+Dies gilt aber aufgrund der Eindeutigkeit des Grenzwertes $\sum_{n=1}^\infty a_n<\infty$.
+\emph{Hier wird allerdings nicht klar, warum $a_n\geq0$ vorausgesetzt werden muss.}
+
+Zu Punkt 2, sei $\varepsilon>0$ gegeben, dann existiert ein $k\in\mathbb{N}$, sodass $|a_{n_k}-a|<\varepsilon$.
+Da die Folge monoton ist, gilt für alle $n\in\mathbb{N}$, dass $|a_{n+1}-a|<|a_{n}-a|$.
+Hiermit gilt auch für alle $n\geq k$, dass $|a_n-a|<\varepsilon$, sodass $(a_n)\to a$.
+
+Zu Lemma 43, hier wird behauptet, dass für unabhängige $X_1,X_2,\dots\in L^2$ mit  $\sum_{n=1}^\infty\operatorname{Var}(X_n)<\infty$ gilt $\sum_{k=1}^n(X_k-E[X_k])\xrightarrow{\text{f.s.}}0$.
+
+Zum Beweis betrachten wir ohne Einschränkung zentrierte Zufallsvariablen, also $E[X_k]=0$, nutzen also quasi das Blockungslemma.
 \newpage
 
 
