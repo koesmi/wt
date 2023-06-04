@@ -133,8 +133,18 @@ Dann gilt für jedes $\varepsilon>0$
 
 Das ist Satz 5.29 in \cite{klenke}.
 Zu $l(k_{n+1})/l(k_n)$ ist zu sagen, dass $l(k_{n+1})/l(k_n)>1$, denn $\log$ und $n\mapsto 2^n$ sind monoton steigend.
-
-
+Genauer gilt,
+\begin{align*}
+  \lim_{n\to\infty}l(k_{n+1})/l(k_n)
+  &=\lim_{n\to\infty}\frac{(2^{n+1})^{1/2}}{(2^n)^{1/2}}\frac{\bigl(\log(2^{n+1})\bigr)^{1/2+\varepsilon}}{\bigl(\log(2^{n})\bigr)^{1/2+\varepsilon}}\,.
+    \intertext{Durch Kürzen, sowie mit den Rechenregeln für den Logarithmus ergibt sich}
+  &=\lim_{n\to\infty}2^{1/2}\left(\frac{\log(2^n)+\log(2)}{\log(2^n)}\right)^{1/2+\varepsilon}\,.
+    \intertext{Da $\lim_n\log(2)/\log(2^n)=0$ erhalten wir}
+  &=\sqrt{2}\,,
+\end{align*}
+wobei die Folge von oben gegen den Limes strebt.
+Damit gilt für ein hinreichend großes $n\in\mathbb{N}$ sicher, dass $l(k_{n})/l(k_{n-1})\leq2$ und entsprechend auch für alle $k\in\mathbb{N}$ so, dass $k_{n-1}\leq k\leq k_n$, dass $l({k_n})/l(k)\leq2$.
+Umgestellt und mit $|S_k|$ multipliziert können wir schreiben $|S_k|/l(k)\leq2|S_k|/l(k_n)$.
 \newpage
 
 \paragraph{B6A4}
