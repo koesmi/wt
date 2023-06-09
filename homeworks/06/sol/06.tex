@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.6in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage[german]{babel}
@@ -221,8 +221,8 @@ Da auf $A$ gilt, $a_{k_i}\xrightarrow{i\to\infty}0$ und $a_k$ auch fallend ist, 
 Da wir vorhin gesagt haben, dass $P(A)=1$, ist somit auch $P\bigl(Z_k(\omega)\xrightarrow{k\to\infty}0\bigr)=1$.
 Da für $m\geq k$ gilt, dass
 \begin{align*}
-  \sup_{n\geq k}\Bigl|\sum_{i=k+1}^nX_i\Bigr|
-  &\geq\Bigl|\sum_{i=k+1}^mX_i\Bigr|\geq\sum_{i=k+1}^mX_i
+  \sup_{n\geq k}\Bigl|\sum\nolimits_{i=k+1}^nX_i\Bigr|
+  &\geq\Bigl|\sum\nolimits_{i=k+1}^mX_i\Bigr|\geq\sum\nolimits_{i=k+1}^mX_i
 \end{align*}
 wird die rechte Seite für hinreichend große $k$ und $m$ beliebig klein.
 Das heißt, $Z_k$ konvergiert also fast sicher gegen 0.
