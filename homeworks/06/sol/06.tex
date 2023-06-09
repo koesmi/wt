@@ -23,6 +23,8 @@
 
 \begin{document}
 
+Lukas, wenn irgendwas so gut ist, dass wir es vorrechnen dürfen, wäre es richtig super, wenn du das schon vor dem Tutorat kurz per Mail an koesmi@gmail.com schreibst -- dass wir bei der Aufgabe nochmal vorher drauf schauen.
+Oder du sagst es im Tutorat, das geht auch :).
 \paragraph{B6A1}
 Seien $X_1,X_2,\dots$ \emph{iid} uniform auf $[0,1]$ verteilt.
 Weiter sei $f\in L^1([0,1])$.
@@ -114,9 +116,10 @@ Verwenden Sie dazu das Lemma von Borel--Cantelli.
 Wir nutzen den Tipp und betrachten $\sum_{n=2}^\infty P(X_n=n)=\sum_{n=2}^\infty\frac{1}{n\log n}$.
 Nach dem Integraltest divergiert die Reihe, wenn das dazugehörige Integral $\int_2^\infty\frac{1}{x\log x}\mathrm{d}x$ konvergiert.
 Durch Substituieren mit $z=\log(x)$, sodass $\frac{\mathrm{d}z}{\mathrm{d}x}=\frac{1}{x}$ und somit $\mathrm{d}z=\frac{\mathrm{d}x}{x}$ gilt, dass $\int_{2}^\infty\frac{1}{x\log x}\mathrm{d}x=\int_{\log 2}^\infty\frac{\mathrm{d}z}{z}=\Bigl.\log\log x\Bigr|_2^\infty$, sodass insgesamt $\sum_{n=2}^\infty P(X_n=n)=\infty$.
-Mit dem Lemma von Borel--Cantelli gilt dann $P(\limsup\{X_n=n\})=P\bigl(\bigr)=1$.
+Mit dem Lemma von Borel--Cantelli gilt dann $P(\limsup\{X_n=n\})=1$.
 \emph{Hier fehlt noch irgendeine Überlegung, vermutlich unter Verwendung von einer Abschätzung für die Summe.
-Was gilt für die Summe, wenn $X_n=n$?}
+  Was gilt für die Summe, wenn $X_n=n$?
+  Siehe am Besten die Abgabe auf dem handschriftlichen Blatt.}
 Insgesamt erhalten wir, dass $P\bigl(\lim_{n\to\infty}\frac{1}{n}\sum_{i=2}^n(X_i-E[X_i])=0\bigr)<1$.
 \newpage
 
@@ -145,6 +148,30 @@ Genauer gilt,
 wobei die Folge von oben gegen den Limes strebt.
 Damit gilt für ein hinreichend großes $n\in\mathbb{N}$ sicher, dass $l(k_{n})/l(k_{n-1})\leq2$ und entsprechend auch für alle $k\in\mathbb{N}$ so, dass $k_{n-1}\leq k\leq k_n$, dass $l({k_n})/l(k)\leq2$.
 Umgestellt und mit $|S_k|$ multipliziert können wir schreiben $|S_k|/l(k)\leq2|S_k|/l(k_n)$.
+Die linke Seite der Ungleichung ist das, was in der Aufgabenstellung steht.
+Wenn wir nun also die Gleichung aus der Aufgabe für $k_n$ statt $n$ im Nenner zeigen, dann folgt aus der Ungleichung die Aussage auch für $n$ im Nenner, so, wie in der Aufgabe.
+Außerdem, wenn der $\limsup$ gleich 0 sein soll, können wir äquivalent zeigen, dass er für ein beliebiges $\delta>0$ kleiner ist als das gewählte $\delta$ sein soll.
+Sei also ein $\delta>0$ gegeben.
+Statt der Aufgabenstellung reicht es, wie oben erklärt, zu zeigen, das
+\[\limsup_{n\to\infty}\frac{\max_{k\leq 2^n}|S_k|}{(2^n)^{1/2}(\log(2^n))^{1/2+\varepsilon}}=0\quad\text{fast sicher.}\]
+Das zeigen wir indem wir Borell--Cantelli auf $\{\max_{k\leq k_n}|S_k|>\delta l(k_n)\}$ anwenden.
+Hierfür wiederum wollen wir die Kolmogorov'sche Ungleichung anwenden, so, wie sie als Satz 5.28 in \cite{klenke} steht.
+Hiernach gilt
+\[
+P\Bigl(\max_{k\leq m}\{|S_k|\}\geq\varepsilon\Bigr)\leq\frac{\operatorname{Var}(S_m)}{\varepsilon^2}\,.
+\]
+Wählen wir $m=2^n$ und $\varepsilon=\delta l(2^n)$ und nutzen die $\sigma$-Additivität von $P$ sowie die Linearität der Varianz unabhängiger Zufallsvariablen, sodass sich ergibt
+\begin{align*}
+  \sum_{n=1}^\infty P(\max_{k\leq 2^n}>\delta l(2^n))
+  &\leq\sum_{n=1}^\infty\frac{\operatorname{Var}(X_n)}{\delta^22^n(\log(2^n))^{1+2\varepsilon}}\,.
+    \intertext{Nun können wir jedes $\operatorname{Var}(X_n)$ mit $\sup\operatorname{Var}(X_n)<\infty$ nach Aufgabenstellung abschätzen.
+    Außerdem können wir den Ausdruck vereinfachen, wenn wir mit der Summe abschätzen, wo jeder Summand mit $2^n>0$ multipliziert ist, sodass}
+  &\leq\frac{1}{\delta^2}\sup\operatorname{Var}(X_n)\sum_{n=1}^\infty\frac{2^n}{2^n(\log(2^n))^{1+2\varepsilon}}\,.
+    \intertext{Schließlich können wir Logarithmusrechenregeln anwenden und das $n$ aus dem Exponenten vom Argument vom Logarithmus rausziehen, sodass}
+  &=\frac{\sup\operatorname{Var}(X_n)}{\delta^2(\log 2)^{1+2\varepsilon}}\sum_{n=1}^\infty\frac{1}{n^{1+2\varepsilon}}<\infty\,,
+    \intertext{denn die Varianz ist kleiner als Unendlich nach Aufgabenstellung, der Nenner verschwindet nicht und die Summe ist eine geometrische Reihe mit einem Exponent, der kleiner als $-1$ ist.}
+\end{align*}
+Wie erwähnt, liefert das Lemma von Borel--Cantelli die Aussage.
 \newpage
 
 \paragraph{B6A4}
@@ -168,6 +195,32 @@ Hiermit gilt auch für alle $n\geq k$, dass $|a_n-a|<\varepsilon$, sodass $(a_n)
 Zu Lemma 43, hier wird behauptet, dass für unabhängige $X_1,X_2,\dots\in L^2$ mit  $\sum_{n=1}^\infty\operatorname{Var}(X_n)<\infty$ gilt $\sum_{k=1}^n(X_k-E[X_k])\xrightarrow{\text{f.s.}}0$.
 
 Zum Beweis betrachten wir ohne Einschränkung zentrierte Zufallsvariablen, also $E[X_k]=0$, nutzen also quasi das Blockungslemma.
+Wir greifen direkt auf die Maximal-Ungleichung aus dem Satz davor zurück und wenden sie auf die Folge $Y_i=X_{i+k}$ an.
+Diese lautet für ein gegebenes $\varepsilon>0$ dann
+\begin{align*}
+  P\Bigl(\sup_{n\in \mathbb{N}}\Bigl|\sum_{i=1}^nY_i\Bigr|>\varepsilon\Bigr)
+  &\leq\frac{1}{\varepsilon^2}\sum_{n=1}^\infty E[Y_n^2]
+    \intertext{Setzt man $Y_i=X_{i+k}$ ein und betrachtet auf beiden Seiten den Limes $k\to\infty$, so ergibt sich mit $S_n=\sum_{i=1}^n S_i$}
+    \lim_{k\to\infty}P\Bigl(\sup_{n\geq k}|S_n-S_k|>\varepsilon\Bigr)
+  &\leq\lim_{k\to\infty}\frac{1}{\varepsilon^2}\sum_{n=k+1}^\infty E[X_n^2]\,.
+    \intertext{Nun nutzen wir das, was wir in Punkt 1 bewiesen haben, angewendet auf die Folge $a_n=\operatorname{Var}(X_n)$.
+    In der Tat ist laut Aufgabenstellung $\sum_{n=1}^\infty\operatorname{Var}(X_n)<\infty$.
+    Aus Punkt 1 folgt $\lim_{k\to\infty}\sum_{n=k+1}^\infty a_n=0$.
+    Eingesetzt in unsere Rechnung erhalten wir}
+  &=0\,.
+\end{align*}
+Mit der Definition von stochastischer Konvergenz heißt das, die Folge $(Z_k)_k$ mit $Z_k=\sup_{n\geq k}|S_n-S_k|$ konvergiert stochastisch gegen 0.
+Wo wir die unterschiedlichen Konvergenzen eingeführt haben (Definition 14), haben wir gleichzeitig besprochen, dass dies bedeutet, dass es eine Teilfolge $(k_i)_i$ gibt, sodass $(Z_{k_i})_i$ fast sicher gegen 0 konvergiert.
+Wir schauen uns $Z_k$ an dieser Stelle genauer an.
+Es gilt $Z_k=\sup_{n\geq k}\bigl|\sum_{i=k+1}^n X_i\bigr|$.
+Die Folgenglieder haben also mit steigendem $k$ immer weniger Summanden, sodass die Folge fallend ist.
+\emph{Damit diese Argumentation stimmt, müsste allerdings $X_i\geq 0$ vorausgesetzt werden.}
+Es gilt also $P(A)=1$ mit $A=\{\omega\in\Omega\mid Z_{k_i}(\omega)\xrightarrow{i\to\infty}0\}$.
+Nun benutzen wir das, was wir in Punkt 2 bewiesen haben, nämlich punktweise für $a_k=Z_k(\omega)$ für alle $\omega\in A$.
+Da auf $A$ gilt, $a_{k_i}\xrightarrow{i\to\infty}0$ und $a_k$ auch fallend ist, gilt mit Punkt 2 für die gleichen $\omega\in A$, dass $Z_k(\omega)\xrightarrow{k\to\infty}0$.
+Da wir vorhin gesagt haben, dass $P(A)=1$, ist somit auch $P\bigl(Z_k(\omega)\xrightarrow{k\to\infty}0\bigr)=1$.
+Das heißt, $Z_k$ konvergiert also fast sicher gegen 0.
+\emph{Hier fehlt noch eine letzte Überlegung, warum dann $\sum_{k=1}^n X_k\xrightarrow{n\to\infty}0$.}
 \newpage
 
 
