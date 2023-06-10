@@ -23,10 +23,35 @@
 
 \begin{document}
 
+Im Folgenden sei $(\Omega,{\cal A},P)$ ein Wahrscheinlichkeitsraum und $X\in L^1(\Omega,{\cal A},P)$.
+
+\emph{Definition 1.} Sei ${\cal F}\subset{\cal A}$ eine $\sigma$-Algebra.
+Eine Zufallsvariable $Y$ heißt bedingte Erwartung von $X$ gegeben ${\cal F}$, symbolisch $E[X|{\cal F}]:=Y$, falls gilt:
+\begin{itemize}
+\item[i)] $Y$ ist ${\cal F}$-messbar.
+\item[ii)] Für jedes $A\in{\cal F}$ gilt $E[X\mathbbm{1}_A]=E[Y\mathbbm{1}_A]$
+\end{itemize}
 \paragraph{B7A1}
+Zeigen Sie, $E[X,{\cal F}]$ existiert und ist eindeutig (bis auf Gleichheit fast sicher).
+Gehen Sie dabei wie folgt vor:
+\begin{itemize}
+\item[i)] Eindeutigkeit: Nehmen Sie an, dass $Y$ und $Y'$ Definition 1 erfüllen und betrachten Sie die Menge $A:=\{Y-Y'>0\}$.
+\item[ii)] Existenz: Definieren Sie das Maß $Q^+$ auf $(\Omega,{\cal F})$ durch $Q^+[A]:=E[\mathbbm{1}_AX^+]$ und analog $Q^-$.
+  Konstruieren Sie nun die bedingte Erwartung mit dem Satz von Radon--Nikodym.
+\end{itemize}
 \newpage
 
 \paragraph{B7A2}
+Welche der folgenden Teilmengen des Raumes der reellen Folgen
+\[
+\mathbb{R}^\mathbb{N}=\bigtimes_{i\in\mathbb{N}}\mathbb{R}
+\]
+sind messbar bezüglich ${\cal B}^\mathbb{N}:=\bigotimes_{i\in\mathbb{N}}{\cal B}(\mathbb{R})$?
+
+\begin{alignat*}{2}
+  &\text{(a)}~&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sup_{n\in\mathbb{N}}x_n>3\Bigr\}\\
+  &\text{(b)}~&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sum_{k=1}^n\Bigr\}\\
+\end{alignat*}
 \newpage
 
 \paragraph{B7A3}
