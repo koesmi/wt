@@ -47,17 +47,58 @@ Welche der folgenden Teilmengen des Raumes der reellen Folgen
 \mathbb{R}^\mathbb{N}=\bigtimes_{i\in\mathbb{N}}\mathbb{R}
 \]
 sind messbar bezüglich ${\cal B}^\mathbb{N}:=\bigotimes_{i\in\mathbb{N}}{\cal B}(\mathbb{R})$?
-
 \begin{alignat*}{2}
-  &\text{(a)}~&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sup_{n\in\mathbb{N}}x_n>3\Bigr\}\\
-  &\text{(b)}~&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sum_{k=1}^n\Bigr\}\\
+  &\text{(a)}~&&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sup_{n\in\mathbb{N}}x_n>3\Bigr\}\\
+  &\text{(b)}~&&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|\sum_{k=1}^nx_k=0\text{ für mindestens ein $n\in\mathbb{N}$}\Bigr\}\\
+  &\text{(c)}~&&\Bigl\{(x_n)_{n\in\mathbb{N}}\in\mathbb{R}^{\mathbb{N}}\Bigm|(x_n)_{n\in\mathbb{N}}\text{ konvergiert gegen 3}\Bigr\}
 \end{alignat*}
+
+Generell ist eine Menge $A$ genau dann messbar bezüglich $\bigotimes_{\in\in\mathbb{N}}\mathcal{B}(\mathbb{R})$, wenn $A\in\bigotimes_{\in\in\mathbb{N}}\mathcal{B}(\mathbb{R})$.
+Hierbei gilt $\bigotimes_{\in\in\mathbb{N}}\mathcal{B}(\mathbb{R})=\sigma\bigl(A_J\times\Omega_{\mathbb{N}\setminus J}\mid J=\{j_1,\dots,j_n\},A_{j_k}\in\mathcal{B}(\mathbb{R})\bigr)$.
 \newpage
 
 \paragraph{B7A3}
+Sei $(\Omega_i,\mathcal{A}_i)=\bigl([0,1],\mathcal{B}([0,1])\bigr)$ für $i=1,2$ und $(\Omega,\mathcal{A})=(\Omega_1\times\Omega_2,\mathcal{A}_1\otimes\mathcal{A}_2)$ der Produktraum.
+\begin{enumerate}
+\item[(a)] Geben Sie ein Beispiel für eine Menge
+  $A\subset\Omega$, für die für alle $\omega_i\in[0,1]$ der
+  $\omega_i$-Schnitt $A_{\omega_i}\in\mathcal{A}_j$ ist (für
+  $i,j=1,2$ und $i\neq j$), aber $A\in\mathcal{A} gilt$.
+
+  \emph{Hinweis: Der $\omega_1$-Schnitt der Menge $A$ ist definiert als $A_{\omega_1}=\bigl(\{\omega_1\}\times\Omega_2\bigr)\cap A=\{(\omega_1,\omega_j)\in A\}$ und der $\omega_2$-Schnitt analog.}
+  
+\item[(b)] Sie $D=\{(x,x)\mid x\in[0,1]\}$ die Diagonale in $\Omega$, $\lambda$ das Lebesguemaß auf $\Omega_1$ und $\mu$ das Zählmaß auf $\Omega_2$, das heißt
+  \[
+    \mu(A)=
+    \begin{cases}
+      |A|,&\text{falls $A$ endlich ist,}\\
+      \infty&\text{sonst.}
+    \end{cases}
+  \]
+  Zeigen Sie $D\in\mathcal{A}$ und berechnen Sie
+  \[
+    \int_{\Omega_2}\int_{\Omega_1}\mathbbm{1}_{D}(x,y)\mathrm{d}\lambda(x)\mathrm{d}\mu(y)\quad\text{und}\int_{\Omega_1}\int_{\Omega_2}\mathbbm{1}_{D}(x,y)\mathrm{d}\mu(y)\mathrm{d}\lambda(x)\,.
+  \]
+\item[(c)] Ist das Ergebnis in Teil (b) ein Widerspruch zum Satz von Fubini?
+\end{enumerate}
 \newpage
 
 \paragraph{B7A4}
+Beweisen Sie mit dem Satz von Fubini die Regel der partiellen Integration.
+Seien $f,g\colon [a,b]\to\mathbb{R}$ zwei Lebesgue-integrierbare Funktionen und für $x\in[a,b]$ seien
+\[
+  F(x):=\int_a^xf(y)\mathrm{d}y\quad\text{und}\quad G(x):=\int_a^xg(y)\mathrm{d}y\,.
+\]
+Dann gilt
+\[
+  \int_a^bF(x)g(x)\mathrm{d}x=F(b)G(b)-\int_a^bG(x)f(x)\mathrm{d}x\,.
+\]
+\emph{Hinweis: Wenden Sie den Satz von Fubini auf die Funktion $h\colon (x,y)\mapsto f(y)g(x)\mathbbm{1}_E(x,y)$ an, mit $E=\{(x,y)\in[a,b]^2:y<x\}$.}
+Der Satz von Fubini lautet, 
+\[
+  \int h\mathrm{d}(\lambda\otimes\kappa_1)=\int\Bigl(\int h(x,y)\kappa_1(x,\mathrm{d}y)\Bigr)\lambda(\mathrm{d}x)
+\]
+\emph{Hier ist noch unklar, was das Produkt der Übergangskern ist.}
 \newpage
 
 
