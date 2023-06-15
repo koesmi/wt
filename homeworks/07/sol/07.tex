@@ -80,9 +80,10 @@ Damit ist $C$ nicht messbar, denn wir können $C$ nicht als abzählbare Vereinig
 Sei nun $A=\{(x,x)\mid x\in C\}$.
 Dann gilt entweder $A_{\omega_i}=\{\omega_i\}$, falls $\omega_i\in C$, oder aber $A_{\omega_i}=\emptyset$, falls $\omega_i\notin C$.
 Das sind alles messbare Mengen.
-Andererseits ist aber $\pi_i^{-1}(A)=C\times\Omega$.
-Damit $A$ Messbar wäre, müsste nach Definition der Produkt-$\sigma$-Algebra $A\in\sigma(\pi_i^{-1}(A_i)|A_i\in\mathcal{A}_i)$ gelten.
-Da aber $\pi_i(A)=C$ geht das aber nicht, da $C$ nicht messbar ist.
+Auch $x\mapsto(x,x)$ ist messbar, denn auf dem Erzeuger von $\mathcal{A}_1\otimes\mathcal{A}_2$ sind Urbilder von $A_i\times\Omega_j$ jeweils $A_i$.
+Angenommen $A$ wäre nun messbar, dann wäre auch dessen Urbild unter der messbaren Einbettung $x\mapsto(x,x)$ messbar.
+Dieses Urbild ist aber gerade $C$, welches, wie eingangs erwähnt, nicht messbar ist.
+Damit ist auch $A$ wie gewünscht nicht messbar.
 \newpage
 \begin{enumerate}
 \item[(b)] Sie $D=\{(x,x)\mid x\in[0,1]\}$ die Diagonale in $\Omega$, $\lambda$ das Lebesguemaß auf $\Omega_1$ und $\mu$ das Zählmaß au $\Omega_2$, das heißt
