@@ -63,10 +63,15 @@ Sei $(\Omega_i,\mathcal{A}_i)=\bigl([0,1],\mathcal{B}([0,1])\bigr)$ für $i=1,2$
 \item[(a)] Geben Sie ein Beispiel für eine Menge
   $A\subset\Omega$, für die für alle $\omega_i\in[0,1]$ der
   $\omega_i$-Schnitt $A_{\omega_i}\in\mathcal{A}_j$ ist (für
-  $i,j=1,2$ und $i\neq j$), aber $A\in\mathcal{A} gilt$.
+  $i,j=1,2$ und $i\neq j$), aber $A\notin\mathcal{A}$ gilt.
 
   \emph{Hinweis: Der $\omega_1$-Schnitt der Menge $A$ ist definiert als $A_{\omega_1}=\bigl(\{\omega_1\}\times\Omega_2\bigr)\cap A=\{(\omega_1,\omega_j)\in A\}$ und der $\omega_2$-Schnitt analog.}
-  
+\end{enumerate}
+% https://www.math.tugraz.at/~ganster/lv_masstheorie_ss_11/16_masse_auf_produktraeumen.pdf
+% https://mathoverflow.net/questions/320019/is-this-a-known-question-about-the-expression-of-a-function-on-bbb-r2-as-an/320076#320076
+% https://math.stackexchange.com/questions/1870235/construct-a-subset-in-mathbbr2-that-is-not-lebesgue-measurable
+% auch für (b)
+\begin{enumerate}
 \item[(b)] Sie $D=\{(x,x)\mid x\in[0,1]\}$ die Diagonale in $\Omega$, $\lambda$ das Lebesguemaß auf $\Omega_1$ und $\mu$ das Zählmaß auf $\Omega_2$, das heißt
   \[
     \mu(A)=
@@ -99,6 +104,7 @@ Der Satz von Fubini lautet,
   \int h\mathrm{d}(\lambda\otimes\kappa_1)=\int\Bigl(\int h(x,y)\kappa_1(x,\mathrm{d}y)\Bigr)\lambda(\mathrm{d}x)
 \]
 \emph{Hier ist noch unklar, was das Produkt der Übergangskern ist.}
+Satz 14.19 in \cite{Klenke}
 \newpage
 
 
