@@ -68,11 +68,24 @@ Sei $(\Omega_i,\mathcal{A}_i)=\bigl([0,1],\mathcal{B}([0,1])\bigr)$ für $i=1,2$
   \emph{Hinweis: Der $\omega_1$-Schnitt der Menge $A$ ist definiert als $A_{\omega_1}=\bigl(\{\omega_1\}\times\Omega_2\bigr)\cap A=\{(\omega_1,\omega_j)\in A\}$ und der $\omega_2$-Schnitt analog.}
 \end{enumerate}
 % https://www.math.tugraz.at/~ganster/lv_masstheorie_ss_11/16_masse_auf_produktraeumen.pdf
+% - auch für (b)
 % https://mathoverflow.net/questions/320019/is-this-a-known-question-about-the-expression-of-a-function-on-bbb-r2-as-an/320076#320076
 % https://math.stackexchange.com/questions/1870235/construct-a-subset-in-mathbbr2-that-is-not-lebesgue-measurable
-% auch für (b)
+% https://math.stackexchange.com/questions/590251/non-measurable-set-in-product-sigma-algebra-s-t-every-section-is-measurable
+% - diagonale
+
+Sei $C$ die Cantor-Menge, die wir aus Analysis 1 kennen.
+Für diese gilt, dass sowohl $C$ als auch $[0,1]\setminus C$ überabzählbar sind.
+Damit ist $C$ nicht messbar, denn wir können $C$ nicht als abzählbare Vereinigung von Mengen aus $\mathcal{A}_i$ schreiben.
+Sei nun $A=\{(x,x)\mid x\in C\}$.
+Dann gilt entweder $A_{\omega_i}=\{\omega_i\}$, falls $\omega_i\in C$, oder aber $A_{\omega_i}=\emptyset$, falls $\omega_i\notin C$.
+Das sind alles messbare Mengen.
+Andererseits ist aber $\pi_i^{-1}(A)=C\times\Omega$.
+Damit $A$ Messbar wäre, müsste nach Definition der Produkt-$\sigma$-Algebra $A\in\sigma(\pi_i^{-1}(A_i)|A_i\in\mathcal{A}_i)$ gelten.
+Da aber $\pi_i(A)=C$ geht das aber nicht, da $C$ nicht messbar ist.
+\newpage
 \begin{enumerate}
-\item[(b)] Sie $D=\{(x,x)\mid x\in[0,1]\}$ die Diagonale in $\Omega$, $\lambda$ das Lebesguemaß auf $\Omega_1$ und $\mu$ das Zählmaß auf $\Omega_2$, das heißt
+\item[(b)] Sie $D=\{(x,x)\mid x\in[0,1]\}$ die Diagonale in $\Omega$, $\lambda$ das Lebesguemaß auf $\Omega_1$ und $\mu$ das Zählmaß au $\Omega_2$, das heißt
   \[
     \mu(A)=
     \begin{cases}
@@ -84,8 +97,25 @@ Sei $(\Omega_i,\mathcal{A}_i)=\bigl([0,1],\mathcal{B}([0,1])\bigr)$ für $i=1,2$
   \[
     \int_{\Omega_2}\int_{\Omega_1}\mathbbm{1}_{D}(x,y)\mathrm{d}\lambda(x)\mathrm{d}\mu(y)\quad\text{und}\int_{\Omega_1}\int_{\Omega_2}\mathbbm{1}_{D}(x,y)\mathrm{d}\mu(y)\mathrm{d}\lambda(x)\,.
   \]
+\end{enumerate}
+Es gilt
+\begin{align*}
+  \int_{\Omega_2}\int_{\Omega_1}\mathbbm{1}_D(x,y)\mathrm{d}\lambda(x)\mathrm{d}\mu(y)
+  &=\int_{\Omega_2}\int_{\{y\}}\mathrm{d}\lambda(x)\mathrm{d}\mu(y)\\
+  &=\int_{\Omega_2}\lambda(\{y\})\mathrm{d}\mu(y)\\
+  &=\int_{\Omega_2}0\mathrm{d}\mu(y)\\
+  &=0\,,
+    \intertext{sowie}
+  \int_{\Omega_1}\int_{\Omega_2}\mathbbm{1}_D(x,y)\mathrm{d}\mu(y)\mathrm{d}\lambda(x)
+  &=\int_{\Omega_1}\int_{\{x\}}\mathrm{d}\mu(y)\mathrm{d}\lambda(x)\\
+  &=\int_{\Omega_1}\mu(\{y\})\mathrm{d}\lambda(x)\\
+  &=\int_{\Omega_1}1\mathrm{d}\lambda(x)\\
+  &=\lambda(\Omega_1)=1\,.
+\end{align*}
+\begin{enumerate}
 \item[(c)] Ist das Ergebnis in Teil (b) ein Widerspruch zum Satz von Fubini?
 \end{enumerate}
+Nein, der kann hier gar nicht angewendet werden, weil $\mu$ auf $[0,1]$ nicht $\sigma$-endlich ist.
 \newpage
 
 \paragraph{B7A4}
