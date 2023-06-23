@@ -31,8 +31,56 @@ Untersuchen Sie die folgenden Verteilungsklassen auf Faltungsstabilität.
 % https://math.stackexchange.com/questions/2342797/finding-the-convolution-of-two-independent-standard-normal-distributed-random-v
 % https://www.youtube.com/watch?v=345SOnIN6z4
 \begin{enumerate}
-\item[(b)] $\{\operatorname{Exp(\lambda):}\}$...
+\item[(b)] $\{\operatorname{Exp}(\lambda):\lambda>0\}$ die Klasse der Exponentialverteilungen.
 \end{enumerate}
+\emph{Eine Klasse $M$ von Verteilungen heißt stabil unter Faltung, wenn für alle $\mu,\nu\in M$ gilt, dass $\mu*\nu\in M$.}
+  
+\emph{Zur Erinnerung: Die oben genannten Verteilungen sind gegeben durch ihre Dichten}
+\begin{align*}
+  f_{{\cal N}(\mu,\sigma^2)}(x)&=\Bigl(\sqrt{2\pi\sigma^2}\Bigr)^{-1}\exp\Bigl(-\frac{(x-\mu)^2}{2\sigma^2}\Bigr)\quad\text{und}\\
+f_{\operatorname{Exp}(\lambda)}(x)&=\lambda\exp(-\lambda x)\mathbbm{1}_{[0,\infty)}(x)\,.
+\end{align*}
+
+Zur (a), wir sollen also zeigen, dass es ein $\sigma_3$ existiert, sodass ${\cal N}(0,\sigma_1^2)*{\cal N}(0,\sigma_2^2)={\cal N}(0,\sigma_3^2)$.
+In Aufgabe 5 zeigen wir, dass die Dichte zu ${\cal N}(0,\sigma_3^2)$ dann gegeben sein muss durch
+\begin{align*}
+  f_{3}(x)
+  &=\int f_1(y)f_2(x-y)\lambda(\mathrm{d}y)\,.
+    \intertext{wir setzen die einzelnen Dichten ein und erhalten}
+  &=\int\Bigl(\sqrt{2\pi\sigma_1^2}\Bigr)^{-1}\exp\Bigl(-\frac{y^2}{2\sigma_1^2}\Bigr)\Bigl(\sqrt{2\pi\sigma_2^2}\Bigr)^{-1}\exp\Bigl(-\frac{(x-y)^2}{2\sigma_2^2}\Bigr)\lambda(\mathrm{d}y)\,.
+    \intertext{Faktoren, die nicht von $y$ abhängen, können wir herausziehen, sodass}
+  &=\Bigl(2\pi\sqrt{\sigma_1^2\sigma_2^2}\Bigr)^{-1}\exp\Bigl(-\frac{x^2}{2\sigma_2^2}\Bigr)\int\exp\Bigl(-\frac{y^2}{2\sigma_1^2}+\frac{xy}{\sigma_2^2}-\frac{y^2}{2\sigma_2^2}\Bigr)\lambda(\mathrm{d}y)
+\end{align*}
+Nun wollen wir den Exponenten im Integral quadratisch ergänzen.
+Dazu fassen wir zunächst den Term proportional zu $y$ zusammen, also
+\begin{align*}
+  -\frac{y^2}{2\sigma_1^2}+\frac{xy}{\sigma_2^2}-\frac{y^2}{2\sigma_2^2}
+  &=-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}y^2+\frac{xy}{\sigma_2^2}\,.
+    \intertext{wir erweiter so, dass man den Vorfaktor von $y^2$ aus dem zweiten Term ausklammern kann, sodass}
+  &=-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\Bigl(y^2-2\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}y\Bigr)\,.
+    \intertext{Nun machen wir eine quadratische Ergänzung zu}
+  &=-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\Bigl(y^2-2\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}y+\Bigl[\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr]^2-\Bigl[\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr]^2\Bigr)\,.
+    \intertext{Jetzt können wir die zweite binomische Formel nutzen und kriegen}
+  &=-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\Bigl(\Bigl[y-\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr]^2-\Bigl[\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr]^2\Bigr)\,.
+    \intertext{Wir können den letzten Term auch noch aus der runden Klammer ziehen, sodass}
+  &=-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\Bigl(y-\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr)^2+\frac{\sigma_1^2x^2}{2\sigma_2^2(\sigma_1^2+\sigma_2^2)}\,.
+\end{align*}
+Eingesetzt in die Rechnung für $f_3(x)$ ergibt sich
+\begin{align*}
+  f_3(x)
+  &=\Bigl(2\pi\sqrt{\sigma_1^2\sigma_2^2}\Bigr)^{-1}\exp\Bigl(-\frac{x^2}{2\sigma_2^2}\Bigl[1-\frac{\sigma_1^2}{\sigma_1^2+\sigma_2^2}\Bigr]\Bigr)\\
+  &\quad\times\int\exp\Bigl(-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\Bigl[y-\frac{\sigma_1^2x}{\sigma_1^2+\sigma_2^2}\Bigr]^2\Bigr)\lambda(\mathrm{d}y)
+    \intertext{In der ersten Exponentialfunktion können wir die Terme auf einen gemeinsamen Nenner bringen und etwas zusammenfassen.
+    Das Integral was wir haben ist translationsinvariant, sodass wir den zweiten Term weglassen können und insgesamt erhalten}
+  &=\Bigl(2\pi\sqrt{\sigma_1^2\sigma_2^2}\Bigr)^{-1}\exp\Bigl(-\frac{x^2}{2(\sigma_1^2+\sigma_2^2)}\Bigr)\int\exp\Bigl(-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}y^2\Bigr)\lambda(\mathrm{d}y)\,.
+    \intertext{Das Integral lässt sich zum Beispiel mittels Übergang zu Polarkoordinaten bestimmen.
+    Im Allgemeinen gilt $\int_{-\infty}^\infty\exp(-\alpha x^2)=\sqrt{\frac{\pi}{\alpha}}$.
+    Wir erhalten}
+  &=\Bigl(2\pi\sqrt{\sigma_1^2\sigma_2^2}\Bigr)^{-1}\sqrt{\pi}\sqrt{\frac{2\sigma_1^2\sigma_2^2}{\sigma_1^2+\sigma_2^2}}\exp\Bigl(-\frac{x^2}{2(\sigma_1^2+\sigma_2^2)}\Bigr)\,.
+    \intertext{Zusammenfassen der ersten beiden Terme ergibt}
+  &=\Bigl(\sqrt{2\pi\bigl(\sigma_1^2+\sigma_2^2\bigr)}\Bigr)^{-1}\exp\Bigl(-\frac{x^2}{2(\sigma_1^2+\sigma_2^2)}\Bigr)\,.
+\end{align*}
+Das ist die Dichte einer Zufallsvariable mit Verteilung ${\cal N}(0,\sigma_1^2+\sigma_2^2)$.
 \newpage
 
 
