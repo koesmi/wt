@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 9 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+% 2 ist übung 13.3.2 im Klenke
+
+\paragraph{B9A4}
+Sei $(P_i)_{i\in I}$ eine Familie von Wahrscheinlichkeitsmaßen auf $\mathbb{R}^d$.
+Zeigen Sie, dass die folgenden Aussagen äquivalent sind:
+\begin{enumerate}
+\item $(P_i)_{i\in I}$ ist straff
+\item Für alle Projektionen $\pi_1,\dots,\pi_d$ ist $(P_i^{\pi_k})_{i\in I}$ straff.
+\end{enumerate}
+Sei zunächst $(P_i)_{i\in I}$ straff.
+Dann gibt es für alle $\varepsilon>0$ eine kompakte Menge $K\in\mathbb{R}^d$, sodass für alle $i\in I$ gilt $P_i(K)>1-\varepsilon$.
+Da für alle $k\leq d$ gilt, dass $K\subset \pi_k^{-1}\bigl(\pi_k(K)\bigr)$, gilt aufgrund der Monotonie des Maßes auch für alle $\varepsilon>0$ und alle $i\in I$ dass $P_i^{\pi_k}\bigl(\pi_k(K)\bigr)>1-\varepsilon$.
+Damit ist für $(P_i^{\pi_k})_{i\in I}$ für alle Projektionen $\pi_1,\dots,\pi_d$ straff.
+
+Seien nun für alle Projektionen $\pi_1,\dots,\pi_d$ die Familien der Bildmaße $(P_i^{\pi_k})_{i\in I}$ straff.
+Dann gibt es für alle $\varepsilon>0$ Kompakta $K_1,\dots,K_d$, sodass für alle $i\in I$ gilt $P_i^{\pi_k}(K_k)=P_i\bigl(\pi_k^{-1}\bigr(K_k)\bigr)>1-\varepsilon$.
+%Betrachte $K=\bigtimes_{k=1}^dK_k$.
+%Für alle $k\leq d$ gilt $K\subset\pi_k^{-1}(K_k)$.
+% Tipp: https://math.stackexchange.com/questions/2915057/if-the-coordinates-of-random-vectors-are-tight-are-the-random-vectors-tight
+\newpage
+
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
