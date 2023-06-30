@@ -25,6 +25,18 @@
 
 % 2 ist übung 13.3.2 im Klenke
 
+\paragraph{B9A2}
+Wir wollen zeigen, dass $\{{\cal N}(\mu,\sigma^2)\mid (\mu,\sigma^2)\in L\subset\mathbb{R}\times(0,\infty)\}$ genau dann straff ist, wenn $L$ beschränkt ist.
+Angenommen $L$ ist beschränkt.
+Wir wollen zeigen, dass für alle $\varepsilon>0$ ein $r>0$ existiert, sodass für alle $(\mu,\sigma)\in L$ gilt ${\cal N}(\mu,\sigma)([-r,r])>1-\varepsilon$.
+Sei also $\varepsilon>0$ gegeben.
+Es gilt
+\begin{align*}
+  {\cal N}(\mu,\sigma)([-r,r])
+  &=\frac{1}{\sqrt{2\pi\sigma^2}}\int_{-r}^r\exp\Bigl[-\frac{1}{2}\Bigl(\frac{x-\mu}{\sigma}\Bigr)^2\Bigr]\mu(\mathrm{d}x)\,.
+    \intertext{Substitution mit $z=(x-\mu)/\sigma$ liefert}
+  &=\frac{1}{\sqrt{2\pi\sigma^2}}\int_{(-r-\mu)/\sigma}^{(r-\mu)/\sigma}\exp\Bigl[-\frac{1}{2}z^2\Bigr]\mu(\mathrm{d}x)\,.
+\end{align*}
 \paragraph{B9A4}
 Sei $(P_i)_{i\in I}$ eine Familie von Wahrscheinlichkeitsmaßen auf $\mathbb{R}^d$.
 Zeigen Sie, dass die folgenden Aussagen äquivalent sind:
