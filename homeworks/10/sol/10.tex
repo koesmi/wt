@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 10 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{B10A1}
+Seien $Y$ und $Y_n$ für alle $n\in\mathbb{N}$ Zufallsvariablen mit Werten in $\mathbb{Z}$.
+Zeigen Sie
+\[
+Y_n\Rightarrow Y\quad\Longleftrightarrow\quad\forall j\in\mathbb{Z}\colon P(Y_n=j)\xrightarrow{n\to\infty}P(Y=j).
+\]
+Wir verwenden die Rücktransformation der charakteristischen Funktionen $\varphi_n$ und $\varphi$ von $Y_n$ und $Y$.
+Für $\varphi$ gilt
+\[
+  P(X=j)=\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}tj}\varphi(t)\mathrm{d}t\,.
+\]
+In der Tat gilt mit der Definition der charakteristischen Funktion
+\begin{align*}
+  \frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}tj}\varphi(t)\mathrm{d}t
+  &=\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}jt}E_k\bigl[\mathrm{e}^{\mathrm{i}kt}\bigr]\mathrm{d}t\,.
+    \intertext{Da $E_k$ nur Masse bei $X=k$ hat erhalten wir}
+  &=\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}jt}\sum_{k\in\mathbb{Z}}\mathrm{e}^{\mathrm{i}kt}P(X=k)\mathrm{d}t
+    \intertext{Zusammenfassen liefert, \emph{wobei man sich eventuell überlegen sollte, ob man die Summe und das Integral vertauschen darf}}
+  &=\sum_{k\in\mathbb{Z}}P(X=k)\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{\mathrm{i}(k-j)t}\mathrm{d}t\,.
+\end{align*}
+Wenn $k-j=0$, so ist der Integrand 1.
+Wenn $k-j=\ell\neq0$, gilt
+\begin{align*}
+  \int_{-\pi}^\pi\mathrm{e}^{\mathrm{i}\ell t}\mathrm{d}t
+  &=\frac{1}{\mathrm{i}\ell}\bigl(\mathrm{e}^{\mathrm{i}\ell\pi}-\mathrm{e}^{-\mathrm{i}\ell\pi}\bigr)=\frac{1}{\mathrm{i}\ell}\bigl((\pm1)-(\pm1)\bigr)=0\,.
+\end{align*}
+Eingesetzt in die obige Rechnung verschwinden somit alle Summanden mit $k\neq j$ und wir erhalten die Darstellung für die Rücktransformation der charakteristischen Funktion.
+Entsprechendes gilt dann auch für $Y_n$ und $\varphi_n$.
+Mithilfe dieser Rücktransformationen erhalten wir die gesuchte Konvergenz.
+Für den Abstand von $P(Y_n=j)$ und $P(Y=j)$ gilt mithilfe Rücktransformation
+\begin{align*}
+  |P(Y_n=j)-P(Y=j)|
+  &=\left|\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}tj}\varphi_n\mathrm{d}t-\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}tj}\varphi\mathrm{d}t\right|\,.
+    \intertext{Mit Zusammenfassen und der \glqq Dreiecksungleichung\grqq{} des Integrals können wir abschätzen}
+  &\leq\frac{1}{2\pi}\int_{-\pi}^\pi\bigl|\mathrm{e}^{\mathrm{i}tj}\bigl(\varphi_n(t)-\varphi(t)\bigr)\bigr|\mathrm{d}t\,.
+    \intertext{Das vereinfacht sich, weil $\bigl|\mathrm{e}^{\mathrm{i}tj}\bigr|=1$.
+    Weiterhin konvergiert $\varphi_n(t)$ gegen $\varphi(t)$ nach dem Portmanteau-Theorem, denn $\mathrm{e}^{\mathrm{i}tj}$ ist Lipschitz-stetig.
+    Da $|\varphi_n(t)|\leq1$ können wir schließlich den Satz über majorisierte Konvergenz verwenden und erhalten}
+  &\xrightarrow{n\to\infty}0\,.
+\end{align*}
+
+Wenn andererseits für alle \emph{Rückrichtung anfügen}
+\newpage
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
