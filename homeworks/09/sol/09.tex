@@ -35,8 +35,18 @@ Es gilt
   {\cal N}(\mu,\sigma)([-r,r])
   &=\frac{1}{\sqrt{2\pi\sigma^2}}\int_{-r}^r\exp\Bigl[-\frac{1}{2}\Bigl(\frac{x-\mu}{\sigma}\Bigr)^2\Bigr]\mu(\mathrm{d}x)\,.
     \intertext{Substitution mit $z=(x-\mu)/\sigma$ liefert}
-  &=\frac{1}{\sqrt{2\pi\sigma^2}}\int_{(-r-\mu)/\sigma}^{(r-\mu)/\sigma}\exp\Bigl[-\frac{1}{2}z^2\Bigr]\mu(\mathrm{d}x)\,.
+  &=\frac{1}{\sqrt{2\pi}}\int_{(-r-\mu)/\sigma}^{(r-\mu)/\sigma}\exp\Bigl[-\frac{1}{2}z^2\Bigr]\mu(\mathrm{d}x)\,.
 \end{align*}
+Es gilt ${\cal N}(\mu,\sigma)([-r,r]))$
+
+Sei $L$ beschränkt und seien $\hat{\mu}$, $\hat{\sigma}$ die Schranken.
+Sei zudem $\varepsilon>0$ gegeben.
+Mit der Tschebyscheffschen Ungleichung gilt
+\begin{align*}
+  {\cal N}(\mu,\sigma)(|X-\mu|<r)
+  &\geq1-\frac{\sigma^2}{r^2}
+\end{align*}
+Dann ist 
 \paragraph{B9A4}
 Sei $(P_i)_{i\in I}$ eine Familie von Wahrscheinlichkeitsmaßen auf $\mathbb{R}^d$.
 Zeigen Sie, dass die folgenden Aussagen äquivalent sind:
