@@ -67,6 +67,18 @@ Für den Abstand von $P(Y_n=j)$ und $P(Y=j)$ gilt mithilfe Rücktransformation
 Wenn andererseits für alle $j\in\mathbb{Z}$ gilt, dass $P(Y_n=j)\xrightarrow{n\to\infty}P(Y=j)$, dann gilt auch $\sum_{j\in\mathbb{Z}}f(j)P(Y_n=j)\xrightarrow{n\to\infty}\sum_{j\in\mathbb{Z}}f(j)P(Y=j)$ für alle $f\in{\cal C}_\mathrm{b}$ und somit $Y_n\Rightarrow Y$.
 \newpage
 
+\paragraph{B10A2}
+Zeigen Sie, dass jedes Wahrscheinlichkeitsmaß auf $\mathbb{R}$ schwacher Limes einer Folge von diskreten Wahrscheinlichkeitsmaßen ist.
+
+Sei hierfür ein Wahrscheinlichkeitsmaß $P\in{\cal P}_1(\mathbb{R})$ und ein $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ gegeben.
+Dann gilt
+\[
+\int f\mathrm{d}P=\sup\left\{\int g\mathrm{d}P~\middle\vert~ g\leq f\text{ einfach}\right\}\,
+\]
+wobei einfach heißt, dass Folgen $(\alpha_n)$ in $\mathbb{R}$ und $(A_n)\in{\cal B}(\mathbb{R})$ existieren, sodass $g=\sum\alpha_n \mathbbm{1}_{A_n}$ und $\int g\mathrm{d}P=\sum\alpha_n P(A_n)$.
+Gebe es eine Folge diskreter Wahrscheinlichkeitsmaße $(P_n)$, sodass $P$ schwacher Limes von $(P_n)$ ist, dann wäre $\int f\mathrm{d}P_n=\sum_{j\in\mathbb{Z}}f(j)P_n(X=j)$.
+Eventuell kann man auch die Konstruktion $\frac{1}{n}\sum\delta_{k/n}$ aus Aufgabe 1 von Blatt 9 verwenden.
+
 \bibliography{../../../books/wt}
 \end{document}
 
