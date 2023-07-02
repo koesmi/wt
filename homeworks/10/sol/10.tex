@@ -23,7 +23,7 @@
 
 \begin{document}
 
-\paragraph{B10A1}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
 Seien $Y$ und $Y_n$ für alle $n\in\mathbb{N}$ Zufallsvariablen mit Werten in $\mathbb{Z}$.
 Zeigen Sie
 \[
@@ -67,10 +67,10 @@ Für den Abstand von $P(Y_n=j)$ und $P(Y=j)$ gilt mithilfe Rücktransformation
 Wenn andererseits für alle $j\in\mathbb{Z}$ gilt, dass $P(Y_n=j)\xrightarrow{n\to\infty}P(Y=j)$, dann gilt auch $\sum_{j\in\mathbb{Z}}f(j)P(Y_n=j)\xrightarrow{n\to\infty}\sum_{j\in\mathbb{Z}}f(j)P(Y=j)$ für alle $f\in{\cal C}_\mathrm{b}$ und somit $Y_n\Rightarrow Y$.
 \newpage
 
-\paragraph{B10A2}
+\paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
 Zeigen Sie, dass jedes Wahrscheinlichkeitsmaß auf $\mathbb{R}$ schwacher Limes einer Folge von diskreten Wahrscheinlichkeitsmaßen ist.
 
-Sei hierfür ein Wahrscheinlichkeitsmaß $P\in{\cal P}_1(\mathbb{R})$ und ein $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ gegeben.
+\emph{Sei hierfür ein Wahrscheinlichkeitsmaß $P\in{\cal P}_1(\mathbb{R})$ und ein $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ gegeben.
 Dann gilt
 \[
 \int f\mathrm{d}P=\sup\left\{\int g\mathrm{d}P~\middle\vert~ g\leq f\text{ einfach}\right\}\,
@@ -78,7 +78,41 @@ Dann gilt
 wobei einfach heißt, dass Folgen $(\alpha_n)$ in $\mathbb{R}$ und $(A_n)\in{\cal B}(\mathbb{R})$ existieren, sodass $g=\sum\alpha_n \mathbbm{1}_{A_n}$ und $\int g\mathrm{d}P=\sum\alpha_n P(A_n)$.
 Gebe es eine Folge diskreter Wahrscheinlichkeitsmaße $(P_n)$, sodass $P$ schwacher Limes von $(P_n)$ ist, dann wäre $\int f\mathrm{d}P_n=\sum_{j\in\mathbb{Z}}f(j)P_n(X=j)$.
 Eventuell kann man auch die Konstruktion $\frac{1}{n}\sum\delta_{k/n}$ aus Aufgabe 1 von Blatt 9 verwenden.
+Außerdem gibt es die einfache Funktion $S_J:=\sum_{j=-J}^Jf(j)\mathbbm{1}_{X^{-1}\{j\}}$, die $g$ approximiert, vergleiche \cite{217980}.}
+% https://math.stackexchange.com/questions/217974/equivalence-of-lebesgue-expectation-to-discrete-expectation-for-discrete-random
+\newpage
 
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.} Sei $(\alpha_n)_{n\in\mathbb{N}}$ eine Folge mit $\alpha_n\in(0,\infty)$.
+Weiter sei $(X_n)_{n\in\mathbb{N}}$ eine Folge von Zufallsvariablen, sodass $X_n$ exponentialverteilt mit Parameter $\alpha_n$ ist, das heißt, $X_n$ besitzt die Dichte
+\[
+  f_n(x)=\mathbbm{1}_{\{x\geq0\}}\alpha_n\mathrm{e}^{-\alpha_n x}\,.
+\]
+Zeigen Sie die schwache Konvergenz von $(X_n)_{n\in\mathbb{N}}$ für $n\to\infty$, falls $\alpha_n\to\infty$ für $n\to\infty$.
+
+Wir wollen den Satz von Lévy verwenden.
+Demnach konvergiert $X_n$ in Verteilung gegen eine Zufallsvariable $X$, wenn $\varphi_n\xrightarrow{n\to\infty}\varphi$.
+Es gilt $\varphi_n(t)=\frac{\alpha_n}{\alpha_n-\mathrm{i}t}$ und mit dem Satz von de L'Hospital $\lim_{n\to\infty}\frac{\alpha_n}{\alpha_n-\mathrm{i}t}=1$.
+Da 1 stetig in 0 ist, konvergiert also auch $(X_n)$.
+
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+Zeigen Sie, dass es einen Homöomorphismus zwischen $\mathbb{R}$ und den Dirac Maßen auf $\mathbb{R}$ mit der schwachen Konvergenz gibt.
+
+Es gilt,
+\[
+\delta_x(A)=
+\begin{cases}
+  1,&x\in A\,,\\
+  0,&x\notin A\,.
+\end{cases}
+\]
+Die Topologie auf den Dirac Maßen ist die gröbste Topologie, sodass für alle $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ die Abbildung $\delta_x\mapsto\int f\delta_x(\mathrm{d}y)=f(x)$ stetig ist.
+Wir nehmen an, dass der Homöomorphismus $x\mapsto\delta_x$ ist.
+Da $x$ der einzige Parameter von $\delta_x$ ist, ist dieser schon mal bijektiv.
+Die Prohorov-Metrik $d_\mathrm{P}$ ist in Bemerkung 13.14. in \cite{klenke} definiert.
+In \cite{4438264} steht, $d_\mathrm{P}(\delta_x,\delta_y)=d(x,y)\wedge1$.
+\emph{Das sollte noch nachgerechnet werden.}
+Eine Menge $U$ im metrischen Raum $(E,d)$ ist offen, wenn für alle $x\in U$ ein $\varepsilon>0$ existiert, sodass für alle $y\in E$ mit $d(x,y)<\varepsilon$ gilt $y\in U$.
+\emph{Es sollte gezeigt werden, dass wenn $U$ offen bezüglich $d$ auf $\mathbb{R}$ ist, auch $\delta_U$ offen bezüglich $d_\mathrm{P}$ ist.}
 \bibliography{../../../books/wt}
 \end{document}
 
