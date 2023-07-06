@@ -108,11 +108,26 @@ Es gilt,
 Die Topologie auf den Dirac Maßen ist die gröbste Topologie, sodass für alle $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ die Abbildung $\delta_x\mapsto\int f\delta_x(\mathrm{d}y)=f(x)$ stetig ist.
 Wir nehmen an, dass der Homöomorphismus $x\mapsto\delta_x$ ist.
 Da $x$ der einzige Parameter von $\delta_x$ ist, ist dieser schon mal bijektiv.
-Die Prohorov-Metrik $d_\mathrm{P}$ ist in Bemerkung 13.14. in \cite{klenke} definiert.
+
+Die Prohorov-Metrik $d_\mathrm{P}$ ist in Bemerkung 13.14.iii in \cite{klenke} definiert.
+Sei $d'_\mathrm{P}(\mu,\nu):=\inf\{\varepsilon>0:\mu(B)\leq\nu(B^\varepsilon)+\varepsilon\text{ für jedes }B\in{\cal B}(E)\}$.
+Dann ist $d_\mathrm{P}(\mu,\nu):=\max\{d'_\mathrm{P}(\mu,\nu),d'_\mathrm{P}(\nu,\mu)\}$.
+
 In \cite{4438264} steht, $d_\mathrm{P}(\delta_x,\delta_y)=d(x,y)\wedge1$.
 \emph{Das sollte noch nachgerechnet werden.}
-Eine Menge $U$ im metrischen Raum $(E,d)$ ist offen, wenn für alle $x\in U$ ein $\varepsilon>0$ existiert, sodass für alle $y\in E$ mit $d(x,y)<\varepsilon$ gilt $y\in U$.
-\emph{Es sollte gezeigt werden, dass wenn $U$ offen bezüglich $d$ auf $\mathbb{R}$ ist, auch $\delta_U$ offen bezüglich $d_\mathrm{P}$ ist.}
+
+Wir zeigen noch, dass $x\mapsto\delta_x$ und $\delta_x\mapsto x$ stetig sind, also, dass Bilder und Urbilder offener Mengen offen sind.
+Sei $U\subset\mathbb{R}$ offen.
+Sei $\delta_x$ in $\delta_U$ gegeben.
+Sei $\varepsilon>0$ so, dass $B_\varepsilon(x)\subset U$.
+Dann gilt für ein $\delta_y\in \delta_U$, dass $|x-y|<\varepsilon$, also auch $d_\mathrm{P}(\delta_x,\delta_y)=|x-y|\wedge1<\varepsilon$.
+Somit ist $\delta_U$ offen.
+Sei nun andererseits $\delta_U$ offen.
+Sei $x\in U$ gegeben.
+Sei $0<\varepsilon<1$ so, dass $B_\varepsilon\bigl(\delta(x)\bigr)\subset \delta_U$.
+Dann gilt für ein $y\in U$, dass $d_\mathrm{P}(x,y)=|x-y|\wedge1<\varepsilon$, also auch, dass $|x-y|<\varepsilon$, denn, $\varepsilon<1$.
+Das heißt, $B_\varepsilon(x)\subset U$, also ist $U$ offen.
+
 \bibliography{../../../books/wt}
 \end{document}
 
