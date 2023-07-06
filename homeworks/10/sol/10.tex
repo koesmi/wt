@@ -14,7 +14,7 @@
 \fancyfoot{}
 
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+\usetikzlibrary{decorations.pathreplacing,arrows}
 
 \usepackage[numbers]{natbib}
 \bibliographystyle{alphadin}
@@ -97,26 +97,51 @@ Da 1 stetig in 0 ist, konvergiert also auch $(X_n)$.
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Zeigen Sie, dass es einen Homöomorphismus zwischen $\mathbb{R}$ und den Dirac Maßen auf $\mathbb{R}$ mit der schwachen Konvergenz gibt.
 
-Es gilt,
-\[
-\delta_x(A)=
-\begin{cases}
-  1,&x\in A\,,\\
-  0,&x\notin A\,.
-\end{cases}
-\]
-Die Topologie auf den Dirac Maßen ist die gröbste Topologie, sodass für alle $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ die Abbildung $\delta_x\mapsto\int f\delta_x(\mathrm{d}y)=f(x)$ stetig ist.
 Wir nehmen an, dass der Homöomorphismus $x\mapsto\delta_x$ ist.
 Da $x$ der einzige Parameter von $\delta_x$ ist, ist dieser schon mal bijektiv.
 
-Die Prohorov-Metrik $d_\mathrm{P}$ ist in Bemerkung 13.14.iii in \cite{klenke} definiert.
-Sei $d'_\mathrm{P}(\mu,\nu):=\inf\{\varepsilon>0:\mu(B)\leq\nu(B^\varepsilon)+\varepsilon\text{ für jedes }B\in{\cal B}(E)\}$.
-Dann ist $d_\mathrm{P}(\mu,\nu):=\max\{d'_\mathrm{P}(\mu,\nu),d'_\mathrm{P}(\nu,\mu)\}$.
-
-In \cite{4438264} steht, $d_\mathrm{P}(\delta_x,\delta_y)=d(x,y)\wedge1$.
-\emph{Das sollte noch nachgerechnet werden.}
-
 Wir zeigen noch, dass $x\mapsto\delta_x$ und $\delta_x\mapsto x$ stetig sind, also, dass Bilder und Urbilder offener Mengen offen sind.
+In Bemerkung 13.14.iii in \cite{klenke} steht, dass die Prohorov-Metrik $d_\mathrm{P}$ eine Topologie auf dem Raum der endlichen Maße induziert.
+Wir zeigen Stetigkeit bezüglich dieser Topologie.
+Sei $d'_\mathrm{P}(\mu,\nu):=\inf\{\varepsilon>0:\mu(B)\leq\nu(B_\varepsilon)+\varepsilon\text{ für jedes }B\in{\cal B}(\mathbb{R})\}$, wobei $B_\varepsilon$ die offene $\varepsilon$-Umgebung um $B$ ist.
+Dann ist $d_\mathrm{P}(\mu,\nu):=\max\{d'_\mathrm{P}(\mu,\nu),d'_\mathrm{P}(\nu,\mu)\}$.
+In unserem Fall haben wir $\mu=\delta_x$ und $\nu=\delta_y$ für $x,y\in\mathbb{R}$.
+Da die Situation symmetrisch in $x$ und $y$ ist, ist $d'_\mathrm{P}(\delta_x,\delta_y)=d'_\mathrm{P}(\delta_y,\delta_x)$ und es reicht $d_\mathrm{P}(\delta_x,\delta_y)=\mathrm{d}'_\mathrm{P}(\delta_x,\delta_y)$ anzuschauen.
+Seien $x,y\in\mathbb{R}$ also gegeben.
+Es gilt
+\[
+\delta_x(B)=
+\begin{cases}
+  1,&x\in B\,,\\
+  0,&x\notin B
+\end{cases}
+\quad\text{und entsprechend }
+\delta_y(B_\varepsilon)+\varepsilon=
+\begin{cases}
+  1+\varepsilon,&y\in B_\varepsilon\,,\\
+  0,&y\notin B_\varepsilon\,.
+\end{cases}
+\]
+Nach der Definition der Prohorov-Metrik suchen wir das Infimum von den $\varepsilon>0$, sodass für jedes $B\in {\cal B}(\mathbb{R})$ gilt $\delta_x(B)\leq\delta_y(B_\varepsilon)+\varepsilon$.
+Falls $x\notin B$, ist diese Bedingung für alle $\varepsilon$ erfüllt, da $\delta_y>0$ und $\varepsilon>0$.
+Falls $x\in B$ und $y\in B_\varepsilon$, ist die Bedingung ebenfalls trivial erfüllt, denn $\varepsilon>0$.
+Falls $x\in B$ und $y\notin B_\varepsilon$, haben wir einen Fall, wie unten dargestellt
+\begin{center}
+  \begin{tikzpicture}
+    \draw[-|](-3,0)--(-2.5,0)node[below]{$y$};
+    \draw[-|](-2.5,0)--(-0,0)node[below]{$x$};
+    \draw[->](0,0)--(3,0);
+    \draw[{[-]}](-1,.5)to node[fill=white,midway]{$B$}(1,.5);
+    \draw[{(-)}](-2,1)to node[fill=white,midway]{$B_\varepsilon$}(2,1);
+    \draw[|-|](-2,1.5)to node[fill=white,midway]{$\varepsilon$}(-1,1.5);
+\end{tikzpicture}
+\end{center}
+Wie ersichtlich ist $\varepsilon$ dann am größten, wenn $B=\{x\}$, es reicht uns also das Infimum der $\varepsilon$ für den Fall $B=\{x\}$ zu finden.
+Dieses $\varepsilon$ wird die Ungleichung auch für alle anderen $B$ erfüllen.
+Im Falle $B=\{x\}$ ist $B_\epsilon=B_\epsilon(x)$ und $y\notin B_\epsilon$ entspricht $|x-y|\geq\varepsilon$.
+Somit ist die Ungleichung $\delta_x(B)\leq\delta_y(B_\varepsilon)+\varepsilon$ genau dann erfüllt, wenn entweder $\varepsilon\leq|x-y|$ oder $\varepsilon\geq1$.
+Damit ist $d_\mathrm{P}(\delta_x,\delta_y)=|x-y|\wedge1$.
+
 Sei $U\subset\mathbb{R}$ offen.
 Sei $\delta_x$ in $\delta_U$ gegeben.
 Sei $\varepsilon>0$ so, dass $B_\varepsilon(x)\subset U$.
@@ -128,6 +153,12 @@ Sei $0<\varepsilon<1$ so, dass $B_\varepsilon\bigl(\delta(x)\bigr)\subset \delta
 Dann gilt für ein $y\in U$, dass $d_\mathrm{P}(x,y)=|x-y|\wedge1<\varepsilon$, also auch, dass $|x-y|<\varepsilon$, denn, $\varepsilon<1$.
 Das heißt, $B_\varepsilon(x)\subset U$, also ist $U$ offen.
 
+Damit ist $x\mapsto\delta_x$ stetig bezüglich der durch die Prohorov-Metrik induzierten Topologie.
+
+In Bemerkung 13.14.ii in \cite{klenke} steht allerdings auch, dass man auf den endlichen Maßen die gröbste Topologie, bezüglich welcher $\mu\mapsto\int f\mathrm{d}\mu$ stetig ist wählen kann.
+\emph{Eventuell kann man das auch benutzen, um die Stetigkeit einfacher zu sehen.}
+
+Insgesamt ist $x\mapsto \delta_x$ ein Homöomorphismus.
 \bibliography{../../../books/wt}
 \end{document}
 
