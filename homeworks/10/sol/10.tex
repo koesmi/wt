@@ -40,10 +40,10 @@ In der Tat gilt mit der Definition der charakteristischen Funktion
   &=\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}jt}E_k\bigl[\mathrm{e}^{\mathrm{i}kt}\bigr]\mathrm{d}t\,.
     \intertext{Da $E_k$ nur Masse bei $X=k$ hat erhalten wir}
   &=\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{-\mathrm{i}jt}\sum_{k\in\mathbb{Z}}\mathrm{e}^{\mathrm{i}kt}P(X=k)\mathrm{d}t
-    \intertext{Zusammenfassen liefert, \emph{wobei man sich eventuell überlegen sollte, ob man die Summe und das Integral vertauschen darf}}
-  &=\sum_{k\in\mathbb{Z}}P(X=k)\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{\mathrm{i}(k-j)t}\mathrm{d}t\,.
+    \intertext{Zusammenfassen liefert das}
+  &=\sum_{k\in\mathbb{Z}}P(X=k)\frac{1}{2\pi}\int_{-\pi}^\pi\mathrm{e}^{\mathrm{i}(k-j)t}\mathrm{d}t\,,
 \end{align*}
-Wenn $k-j=0$, so ist der Integrand 1.
+\emph{wobei man sich eventuell überlegen sollte, ob man die Summe und das Integral vertauschen darf}. Wenn $k-j=0$, so ist der Integrand 1.
 Wenn $k-j=\ell\neq0$, gilt
 \begin{align*}
   \int_{-\pi}^\pi\mathrm{e}^{\mathrm{i}\ell t}\mathrm{d}t
@@ -67,21 +67,6 @@ Für den Abstand von $P(Y_n=j)$ und $P(Y=j)$ gilt mithilfe Rücktransformation
 Wenn andererseits für alle $j\in\mathbb{Z}$ gilt, dass $P(Y_n=j)\xrightarrow{n\to\infty}P(Y=j)$, dann gilt auch $\sum_{j\in\mathbb{Z}}f(j)P(Y_n=j)\xrightarrow{n\to\infty}\sum_{j\in\mathbb{Z}}f(j)P(Y=j)$ für alle $f\in{\cal C}_\mathrm{b}$ und somit $Y_n\Rightarrow Y$.
 \newpage
 
-\paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
-Zeigen Sie, dass jedes Wahrscheinlichkeitsmaß auf $\mathbb{R}$ schwacher Limes einer Folge von diskreten Wahrscheinlichkeitsmaßen ist.
-
-\emph{Sei hierfür ein Wahrscheinlichkeitsmaß $P\in{\cal P}_1(\mathbb{R})$ und ein $f\in{\cal C}_\mathrm{b}(\mathbb{R})$ gegeben.
-Dann gilt
-\[
-\int f\mathrm{d}P=\sup\left\{\int g\mathrm{d}P~\middle\vert~ g\leq f\text{ einfach}\right\}\,
-\]
-wobei einfach heißt, dass Folgen $(\alpha_n)$ in $\mathbb{R}$ und $(A_n)\in{\cal B}(\mathbb{R})$ existieren, sodass $g=\sum\alpha_n \mathbbm{1}_{A_n}$ und $\int g\mathrm{d}P=\sum\alpha_n P(A_n)$.
-Gebe es eine Folge diskreter Wahrscheinlichkeitsmaße $(P_n)$, sodass $P$ schwacher Limes von $(P_n)$ ist, dann wäre $\int f\mathrm{d}P_n=\sum_{j\in\mathbb{Z}}f(j)P_n(X=j)$.
-Eventuell kann man auch die Konstruktion $\frac{1}{n}\sum\delta_{k/n}$ aus Aufgabe 1 von Blatt 9 verwenden.
-Außerdem gibt es die einfache Funktion $S_J:=\sum_{j=-J}^Jf(j)\mathbbm{1}_{X^{-1}\{j\}}$, die $g$ approximiert, vergleiche \cite{217980}.}
-% https://math.stackexchange.com/questions/217974/equivalence-of-lebesgue-expectation-to-discrete-expectation-for-discrete-random
-\newpage
-
 \paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.} Sei $(\alpha_n)_{n\in\mathbb{N}}$ eine Folge mit $\alpha_n\in(0,\infty)$.
 Weiter sei $(X_n)_{n\in\mathbb{N}}$ eine Folge von Zufallsvariablen, sodass $X_n$ exponentialverteilt mit Parameter $\alpha_n$ ist, das heißt, $X_n$ besitzt die Dichte
 \[
@@ -93,6 +78,7 @@ Wir wollen den Satz von Lévy verwenden.
 Demnach konvergiert $X_n$ in Verteilung gegen eine Zufallsvariable $X$, wenn $\varphi_n\xrightarrow{n\to\infty}\varphi$.
 Es gilt $\varphi_n(t)=\frac{\alpha_n}{\alpha_n-\mathrm{i}t}$ und mit dem Satz von de L'Hospital $\lim_{n\to\infty}\frac{\alpha_n}{\alpha_n-\mathrm{i}t}=1$.
 Da 1 stetig in 0 ist, konvergiert also auch $(X_n)$.
+\newpage
 
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Zeigen Sie, dass es einen Homöomorphismus zwischen $\mathbb{R}$ und den Dirac Maßen auf $\mathbb{R}$ mit der schwachen Konvergenz gibt.
@@ -154,11 +140,11 @@ Dann gilt für ein $y\in U$, dass $d_\mathrm{P}(x,y)=|x-y|\wedge1<\varepsilon$, 
 Das heißt, $B_\varepsilon(x)\subset U$, also ist $U$ offen.
 
 Damit ist $x\mapsto\delta_x$ stetig bezüglich der durch die Prohorov-Metrik induzierten Topologie.
-
-In Bemerkung 13.14.ii in \cite{klenke} steht allerdings auch, dass man auf den endlichen Maßen die gröbste Topologie, bezüglich welcher $\mu\mapsto\int f\mathrm{d}\mu$ stetig ist wählen kann.
-\emph{Eventuell kann man das auch benutzen, um die Stetigkeit einfacher zu sehen.}
-
 Insgesamt ist $x\mapsto \delta_x$ ein Homöomorphismus.
+
+\emph{In Bemerkung 13.14.ii in \cite{klenke} steht allerdings auch, dass man auf den endlichen Maßen die gröbste Topologie, bezüglich welcher $\mu\mapsto\int f\mathrm{d}\mu$ stetig ist wählen kann.
+Eventuell kann man das auch benutzen, um die Stetigkeit einfacher zu sehen.}
+
 \bibliography{../../../books/wt}
 \end{document}
 
