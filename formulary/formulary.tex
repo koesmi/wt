@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+%\usepackage{fancyhdr}
+%\renewcommand{\headrulewidth}{0pt} 
+%\pagestyle{fancy}
+%\lhead{Blatt 10 Nicolas und Evgenij}\rhead{Seite \thepage}
+%\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Verschiedene Konvergenzarten}
+Wir betrachten den Wahrscheinlichkeitsraum $([0,1],{\cal B}([0,1]),P)$, wobei $P$ das Lebesgue-Maß $\lambda$ eingeschränkt auf $[0,1]$ sei.
+Wir betrachten die Folge von Zufallsvariablen
+\[
+  X_1\equiv0,~X_n=\sqrt{n}\mathbbm{1}_{(\frac{1}{n},\frac{2}{n})}\,.
+\]
+Untersuchen Sie diese auf 1. stochastische Konvergenz, 2. $P$-fast-sichere Konvergenz, 3. $L^2$-Konvergenz und 4. gleichgradige  Integrierbarkeit.
+
+
+1, 4. Wir prüfen $L^1$-Konvergenz.
+Es gilt $E[|X_n|]=\frac{\sqrt{n}}{n}\to0$.
+\emph{nochmal nachrechnen}. Benutze Konvergenzsatz von Vitali -- Stochastisch konvergent gegen 0 und gleichgradig integrierbar.
+2. Wähle $x\in(0,1)$.
+Dann existiert ein $N\in\mathbb{N}$ sodass $x\geq\frac{2}{n}$ für alle $n\in N$.
+Also $X_n(x)=0$ für  alle $n>N$.
+Weiter gilt $X_n(0)=0$ für alle $n\in\mathbb{N}$.
+Also Konvergenz fast sicher gegen 0.
+\emph{warum?}
+3. $L^2$-Konvergenz folgt stochastische Konvergenz, also Grenzwert 0 wenn konvergent.
+$E[|X_n|^2]=\frac{\sqrt{n}^2}{n}=1$.
+\emph{nochmal nachrechnen}.
+Also nicht konvergent.
+
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
