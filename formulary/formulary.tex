@@ -124,6 +124,19 @@ Sei $f=0$, dann für $A\in{\cal B}(\mathbb{R})$ gilt $f^{-1}(A)=\emptyset$, fall
 Sei $X$ exponentialverteilt mit $\lambda=6$ und $Y$ mit $\lambda=1/3$. Dann ist nach Cauchy-Schwarz $E[XY]\leq E[X^2]^{1/2}E[Y^2]^{1/2}=\frac{2}{\lambda_X^2}\frac{2}{\lambda_Y^2}=1$.
 
 $X\in L^p\Rightarrow X\in L^q$ für $q\leq p$, da $\|X\|_q=\|1\cdot X\|_q\leq\|X\|_p\|1\|_r$ mit $r$ so, dass $\frac{1}{q}=\frac{1}{p}+\frac{1}{r}$.
+
+\paragraph{Maßtheorie}
+$\sigma(f^{-1}({\cal C}))=f^{-1}(\sigma({\cal C}))$
+Zeige zunächst ``$\subseteq$''.
+Es ist ${\cal C}\subset\sigma({\cal C})$, also auch $f^{-1}({\cal C})\subset f^{-1}(\sigma({\cal C}))$.
+$f^{-1}$ von einer $\sigma$-Algebra ist wieder $\sigma$-Algebra und da ist $\sigma(f^{-1}({\cal C}))$ als kleinste $\sigma$-Algebra drin.
+Nun ``$supseteq$''.
+Betrachte ${\cal F}=\{A\in\sigma({\cal C})\mid f^{-1}(A)\in\sigma(f^{-1}({\cal C}))\}$.
+Zeige ,${\cal F}$ ist $\sigma$-Algebra.
+$f^{-1}(\emptyset)=\emptyset\in\sigma(f^{-1}{\cal C})$, $f^{-1}(\Omega)=\Omega'\in\sigma(f^{-1}({\cal C}))$.
+Entsprechend $f^{-1}(A^c)=f^{-1}(A)^c\in\sigma(f^{-1}({\cal C}))$ und so weiter.
+Da $f^{-1}({\cal C})\subset\sigma(f^{-1}({\cal C}))$ ist ${\cal C}\subset{\cal F}$, also auch $\sigma({\cal C})\subset{\cal F}$.
+Damit ist $f^{-1}(\sigma({\cal C}))\subset\sigma(f^{-1}({\cal C}))$.
 \bibliography{../../../books/wt}
 \end{document}
 
