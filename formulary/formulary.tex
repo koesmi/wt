@@ -31,22 +31,41 @@ Wir betrachten die Folge von Zufallsvariablen
 \]
 Untersuchen Sie diese auf 1. stochastische Konvergenz, 2. $P$-fast-sichere Konvergenz, 3. $L^2$-Konvergenz und 4. gleichgradige  Integrierbarkeit.
 
-
 1, 4. Wir prüfen $L^1$-Konvergenz.
 Es gilt $E[|X_n|]=\frac{\sqrt{n}}{n}\to0$.
-\emph{nochmal nachrechnen}. Benutze Konvergenzsatz von Vitali -- Stochastisch konvergent gegen 0 und gleichgradig integrierbar.
-2. Wähle $x\in(0,1)$.
-Dann existiert ein $N\in\mathbb{N}$ sodass $x\geq\frac{2}{n}$ für alle $n\in N$.
-Also $X_n(x)=0$ für  alle $n>N$.
-Weiter gilt $X_n(0)=0$ für alle $n\in\mathbb{N}$.
+Benutze Konvergenzsatz von Vitali -- Stochastisch konvergent gegen 0 und gleichgradig integrierbar.
+2. Zu zeigen ist, dass für alle $\omega\in[0,1]$ gilt, dass $\forall\varepsilon>0\exists N\in\mathbb{N}\forall n\geq N X_n(\omega)<\varepsilon$, bis auf $P$-Nullmengen.
+Zeige Aussage für $\omega\in(0,1)$.
+Das reicht, denn $\{0\}$ und $\{1\}$ sind $P$-Nullmengen.
+Wähle $N$ so, dass $\frac{2}{n}<\varepsilon$, also $N>\frac{2}{\varepsilon}$, dann ist $\mathbbm{1}_{(\frac{1}{n},\frac{2}{n})}=0$ und somit $X_n(\omega)=0$ für alle $n\geq N$.
 Also Konvergenz fast sicher gegen 0.
-\emph{warum?}
 3. $L^2$-Konvergenz folgt stochastische Konvergenz, also Grenzwert 0 wenn konvergent.
 $E[|X_n|^2]=\frac{\sqrt{n}^2}{n}=1$.
-\emph{nochmal nachrechnen}.
 Also nicht konvergent.
 
+Wir betrachten den Wahrscheinlichkeitsraum $([0,1]{\cal B}([0,1]),P)$.
+Das Maß $P$ sei absolut stetig bezüglich des Lebesgue-Maßes $\lambda|_{[0,1]}$ mit Dichte $f(\omega)=\frac{1}{2}\omega^{-1/2}$. Es gelte $X_n(\omega)=\omega^{1/n}$.
+Zeigen Sie oder widerlegen Sie  1. $P$-Konvergenz, 2. f.s. Konvergenz, 3. $L^1$-Konvergenz, 4. gleichgradige Integrierbarkeit.
+2. Für alle $\omega\in(0,1]$ gilt $\omega^{1/n}\to1$.
+$\{0\}$ ist Nullmenge, also f.s. Konvergenz.
+1. folgt aus 2.
+3. Es gilt $\omega^{1/n}\leq1$, also $E[|X_n-1|]=E[|1-X_n|]=\int_0^1(1-\omega^{1/n})\frac{1}{2}\omega^{-1/2}=1+\int_0^1\frac{1}{2}\omega^{1/n-1/2}=1-\left.\frac{n}{n+2}\omega^{\frac{n+2}{2n}}\right|_0^1=\frac{2}{n+2}\to0$, also $L^1$-Konvergenz.
+4. folgt aus 2. mit Vitali.
 
+Für jede Zahl $n\in\mathbb{N}$ gibt es eine eindeutige Darstellung $n=2^{k_n}+m_n$ mit $0\leq m_n<2^{k_n}$.
+Es sei $P$ die Gleichverteilung auf $([0,1],{\cal B}([0,1]))$ -- das heißt, $P$ hat Lebesgue-Dichte $\mathbbm{1}_{[0,1]}$ -- und außerdem $X_n\colon [0,1]\to\mathbb{R}, \omega\mapsto k_n$ für $\frac{m_n}{2^{k_n}}\leq\omega\leq\frac{m_n+1}{2^{k_n}}$ und $\omega\mapsto 0$ sonst.
+Untersuchen Sie die Folge der $X_n$ bezüglich $P$ auf schwache, stochastische, fast sichere und $L^p$-Konvergenz für $p\geq1$ sowie auf gleichgradige Integrierbarkeit.
+
+Es gilt $X_n=k_n\mathbbm{1}_{\left[\frac{m_n}{2^{k_n}},\frac{m_n+1}{2^{k_n}}\right]}$, also $X_1=1$, $X_2=1\mathbbm{1}_{\left[0,\frac{1}{2}\right]}$, $X_3=1\mathbbm{1}_{\left[\frac{1}{2},1\right]}$, $X_4=2\mathbbm{1}_{\left[0,\frac{1}{4}\right]}$, $X_5=2\mathbbm{1}_{\left[\frac{1}{4},\frac{1}{2}\right]}$, $\dots$.
+$L^p$-Konvergenz: finde zunächst den Kandidaten für den Grenzwert.
+Da die Folge $(X_n)$ also bezüglich der $L^1$-Norm konvergiert, ist sie nach Theorem 22 auch gleichgradig integrierbar. Folge wird immer kleiner, also Kandidat 0.
+Es gilt $E[|X_n|^p]=\int_0^1 X_n(\omega)^p=\frac{k_n^p}{2^{k_n}}\to0$ mit L'Hospital.
+Damit $L^p$, stochastische, schwache Konvergenz und gleichgradige Integrierbarkeit.
+Für f.s. müsste Grenzwert auch 0 sein.
+Möchte Divergenz zeigen, also $P(A)>0$ für $A=\{\omega\in\Omega\mid\forall c\in\mathbb{R}\exists N\in\mathbb{N}\forall n>N X_n>c\}$.
+Sei $\omega\in\Omega$ und $c\in\mathbb{R}$ gegeben, wähle $N$ so, dass $k_N>c$ und $\frac{m_n}{2^{k_n}}\leq\omega\leq\frac{m_n+1}{2^{k_n}}$.
+Dann gilt $X_n(\omega)>c$, also $\omega\in A$.
+Da $\omega$ beliebig war, gilt $A=\Omega$ und $P(X_n$ konvergiert nicht $)=1$.
 \bibliography{../../../books/wt}
 \end{document}
 
