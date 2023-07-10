@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 11 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 1.}
+Sei $(\Omega,\mathscr{F},P)$ ein Wahrscheinlichkeitsraum und $\mathscr{A}=\{\emptyset,\Omega\}$ die triviale $\sigma$-Algebra.
+Zeigen Sie $E[X|\mathscr{A}]=E[X]$ für alle $X\in L^1(\Omega,\mathscr{F},P)$.
+
+Zunächst einmal ist $E[X]$ irgendeine konstante Zahl.
+Das Urbild davon ist also ganz $\Omega$.
+Somit ist $E[X]$ $\mathscr{A}$-messbar.
+Weiterhin gilt $\int_{\Omega}E[X]\mathrm{d}P=E[X]\int_{\Omega}\mathrm{d}P=E[X]\cdot1=\int_\Omega X\mathrm{d}P$, sodass $E[X|\mathscr{A}]=E[X]$ gilt.
+
+\paragraph{Aufgabe 2.} Zeigen Sie die folgenden Aussagen
+\begin{enumerate}
+\item[ii)] Ist $X\in L^1(\Omega,{\cal A},P)$, dann ist $(E[X|{\cal F}_j])_{j\in J}$ gleichgradig integrierbar.
+\end{enumerate}
+%https://math.stackexchange.com/questions/3731917/uniform-integrability-of-all-conditional-expectations-of-a-fixed-l1-function
+Für ein $k\in\mathbb{R}$ und ein $j\in J$ sei $Y=E[X|{\cal F}_j]$ und $Z=E\bigl[|X|\bigm|{\cal F}_j\bigr]$.
+Dann gilt wegen der Monotonie der bedingten Erwartung
+\begin{align*}
+  E[|Y|\mathbbm{1}_{|Y|>k}]
+  &\leq E[Z\mathbbm{1}_{Z>k}]\,.
+    \intertext{Folglich gilt, \emph{wobei unklar ist, warum,}}
+  &=E[|X|\mathbbm{1}_{Z>k}]\,.
+\end{align*}
+Sei nun  $k$ hinreichend groß, dass $E[|Z|]<k\delta$.
+Dann gilt mit der Markov-Ungleichung  $P(Z>k)\leq\frac{E[Z]}{k}=\frac{E[|X|]}{k}<\delta$.
+Da $X\in L^1$ ist, gilt dann $E[|Y|\mathbbm{1}_{|Y|>k}]<\varepsilon$.
+\emph{Eventuell genauer zeigen, warum das gilt.}
+\newpage
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
