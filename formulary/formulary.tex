@@ -138,6 +138,16 @@ $f^{-1}(\emptyset)=\emptyset\in\sigma(f^{-1}{\cal C})$, $f^{-1}(\Omega)=\Omega'\
 Entsprechend $f^{-1}(A^c)=f^{-1}(A)^c\in\sigma(f^{-1}({\cal C}))$ und so weiter.
 Da $f^{-1}({\cal C})\subset\sigma(f^{-1}({\cal C}))$ ist ${\cal C}\subset{\cal F}$, also auch $\sigma({\cal C})\subset{\cal F}$.
 Damit ist $f^{-1}(\sigma({\cal C}))\subset\sigma(f^{-1}({\cal C}))$.
+
+\paragraph{Starkes Gesetz der großen Zahlen}
+Seien $X_1,X_2,\dots$ \emph{iid} uniform auf $[0,1]$ verteilt.
+Weiter sei $f\in L^1([0,1])$.
+Zeigen Sie, dass die Monte-Carlo Simulation $\hat{I}_n:=\frac{1}{n}\sum_{i=1}^nf(X_i)$ fast sicher gegen das Integral $\int_0^1f(x)\mathrm{d}x$ konvergiert.
+
+Sei $Y_i=f(X_i)$, nach Blockungslemma unabhängig.
+Da $(f\circ X_i)_\star P=(f\circ X_1)_\star P$ identisch verteilt.
+$f\in L^1$, sodass $E[|Y_1|]<\infty$.
+SGGZ $\frac{1}{n}\sum_{i=1}^nf(X_i)\xrightarrow{\text{f.s.}}E[Y_1]=\int_{[0,1]}f(X_1)\mathrm{d}P=\int_0^1f(x)\mathrm{d}x$, da $X_i$ uniform sind und somit konstante Dichte haben.
 \bibliography{../../../books/wt}
 \end{document}
 
