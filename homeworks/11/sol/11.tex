@@ -35,20 +35,35 @@ Weiterhin gilt $\int_{\Omega}E[X]\mathrm{d}P=E[X]\int_{\Omega}\mathrm{d}P=E[X]\c
 
 \paragraph{Aufgabe 2.} Zeigen Sie die folgenden Aussagen
 \begin{enumerate}
+\item[i)] Ist $(X_i)_{i\in I}$ gleichgradig integrierbar und $({\cal F}_j)_{j\in J}$ eine Familie von Unter-$\sigma$-Algebren von ${\cal A}$.
+  Dann ist die Familie $(E[X_i,{\cal F}_j])_{i\in I,j\in J}$ gleichgradig integrierbar.
+\end{enumerate}
+% https://planetmath.org/conditionalexpectationsareuniformlyintegrable
+
+Da $(X_i)$ gleichgradig integrierbar ist gibt es ein $L>0$, sodass für alle $i\in I$ gilt $E[|X_i|]\leq L$, \emph{wobei man sich überlegen müsste, warum genau}.
+Zudem gilt, da $(X_i)$ gleichgradig integrierbar ist, dass für alle $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $i\in I$ und alle $A\in{\cal A}$ mit $P(A)\leq\delta$ gilt $E[|X|\mathbbm{1}_A]<\varepsilon$.
+Sei nun $k=L/\delta$ und $Y=E[X\mid{\cal G}]$
+Dann gilt für alle $i\in I$ und $j\in J$ mit der Jensen'schen Ungleichung $|Y|\leq E[|X|\mid{\cal F}_j]$.
+Mit der Markov-Ungleichung kriegen wir nun
+\[
+P(|Y|>k)\leq\frac{E[|Y|]}{k}\leq\frac{E[|X|]}{k}\leq L/k\leq\delta\,.
+\]
+Damit folgt, nach der obigen Erklärung, $E[|Y|\mathbbm{1}_{|Y|>k}]\leq E[|X|\mathbbm{1}_{|Y|>k}]<\varepsilon$, also ist $(E[X_i,{\cal F}_j])_{ij}$ gleichgradig integrierbar.
+\begin{enumerate}
 \item[ii)] Ist $X\in L^1(\Omega,{\cal A},P)$, dann ist $(E[X|{\cal F}_j])_{j\in J}$ gleichgradig integrierbar.
 \end{enumerate}
 %https://math.stackexchange.com/questions/3731917/uniform-integrability-of-all-conditional-expectations-of-a-fixed-l1-function
-Für ein $k\in\mathbb{R}$ und ein $j\in J$ sei $Y=E[X|{\cal F}_j]$ und $Z=E\bigl[|X|\bigm|{\cal F}_j\bigr]$.
-Dann gilt wegen der Monotonie der bedingten Erwartung
+Für ein $k\in\mathbb{R}$ und ein $j\in J$ sei $Y=E[X|{\cal F}_j]$ und $Z=E\bigl[|X|\mid{\cal F}_j\bigr]$.
+Dann gilt wegen der Jensen'schen Ungleichung der bedingten Erwartung
 \begin{align*}
-  E[|Y|\mathbbm{1}_{|Y|>k}]
-  &\leq E[Z\mathbbm{1}_{Z>k}]\,.
+  E[|E[X|{\cal F}_j]|\mathbbm{1}_{|E[X|{\cal F}_j]|>k}]
+  &\leq E[E[|X|\mid{\cal F}_j]\mathbbm{1}_{E[|X|\mid{\cal F}_j]>k}]\,.
     \intertext{Folglich gilt, \emph{wobei unklar ist, warum,}}
-  &=E[|X|\mathbbm{1}_{Z>k}]\,.
+  &=E[|X|\mathbbm{1}_{E[|X|\mid{\cal F}_j]>k}]\,.
 \end{align*}
-Sei nun  $k$ hinreichend groß, dass $E[|Z|]<k\delta$.
-Dann gilt mit der Markov-Ungleichung  $P(Z>k)\leq\frac{E[Z]}{k}=\frac{E[|X|]}{k}<\delta$.
-Da $X\in L^1$ ist, gilt dann $E[|Y|\mathbbm{1}_{|Y|>k}]<\varepsilon$.
+Sei nun  $k$ hinreichend groß, dass $E[|E[|X|\mid{\cal F}_j]|]<k\delta$.
+Dann gilt mit der Markov-Ungleichung  $P(E[|X|\mid{\cal F}_j]>k)\leq\frac{E[E[|X|\mid{\cal F}_j]]}{k}=\frac{E[|X|]}{k}<\delta$.
+Da $X\in L^1$ ist, gilt dann $E[|E[X|{\cal F}_j]|\mathbbm{1}_{|E[X|{\cal F}_j]|>k}]<\varepsilon$.
 \emph{Eventuell genauer zeigen, warum das gilt.}
 \newpage
 
