@@ -28,43 +28,40 @@
 Sei $(\Omega,\mathscr{F},P)$ ein Wahrscheinlichkeitsraum und $\mathscr{A}=\{\emptyset,\Omega\}$ die triviale $\sigma$-Algebra.
 Zeigen Sie $E[X|\mathscr{A}]=E[X]$ für alle $X\in L^1(\Omega,\mathscr{F},P)$.
 
-Zunächst einmal ist $E[X]$ irgendeine konstante Zahl.
+Zunächst einmal ist $E[X]$ als Zufallsvariable die Abbildung auf irgendeine konstante Zahl.
 Das Urbild davon ist also ganz $\Omega$.
 Somit ist $E[X]$ $\mathscr{A}$-messbar.
 Weiterhin gilt $\int_{\Omega}E[X]\mathrm{d}P=E[X]\int_{\Omega}\mathrm{d}P=E[X]\cdot1=\int_\Omega X\mathrm{d}P$, sodass $E[X|\mathscr{A}]=E[X]$ gilt.
+\newpage
 
 \paragraph{Aufgabe 2.} Zeigen Sie die folgenden Aussagen
 \begin{enumerate}
-\item[i)] Ist $(X_i)_{i\in I}$ gleichgradig integrierbar und $({\cal F}_j)_{j\in J}$ eine Familie von Unter-$\sigma$-Algebren von ${\cal A}$.
-  Dann ist die Familie $(E[X_i,{\cal F}_j])_{i\in I,j\in J}$ gleichgradig integrierbar.
+\item[i)] Ist $(X_i)_{i\in I}$ gleichgradig integrierbar und $(\mathscr{F}_j)_{j\in J}$ eine Familie von Unter-$\sigma$-Algebren von $\mathscr{A}$.
+  Dann ist die Familie $(E[X_i,\mathscr{F}_j])_{i\in I,j\in J}$ gleichgradig integrierbar.
 \end{enumerate}
 % https://planetmath.org/conditionalexpectationsareuniformlyintegrable
 
-Da $(X_i)$ gleichgradig integrierbar ist gibt es ein $L>0$, sodass für alle $i\in I$ gilt $E[|X_i|]\leq L$, \emph{wobei man sich überlegen müsste, warum genau}.
-Zudem gilt, da $(X_i)$ gleichgradig integrierbar ist, dass für alle $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $i\in I$ und alle $A\in{\cal A}$ mit $P(A)\leq\delta$ gilt $E[|X|\mathbbm{1}_A]<\varepsilon$.
-Sei nun $k=L/\delta$ und $Y=E[X\mid{\cal G}]$
-Dann gilt für alle $i\in I$ und $j\in J$ mit der Jensen'schen Ungleichung $|Y|\leq E[|X|\mid{\cal F}_j]$.
+Nach Lemma 24 gilt, wenn $(X_i)$ gleichgradig integrierbar ist, äquivalent $\sup_{i\in I}E[|X_i|]<\infty$ und $\lim_{\delta\to 0}\sup_{A:P(A)<\varepsilon}\sup_{i\in I}E[|X_i|\mathbbm{1}_A]=0$.
+Man kann auch sagen, dass für alle $\varepsilon>0$ ein $\delta>0$ existiert, sodass für alle $i\in I$ und alle $A\in\mathscr{A}$ mit $P(A)\leq\delta$ gilt $E[|X_i|\mathbbm{1}_A]<\varepsilon$.
+Wir schreiben kurz $Y_{ij}=E[X_i\mid\mathscr{F}_j]$.
+Sei nun $k=\sup_{i\in I}E[|X_i|]/\delta$.
 Mit der Markov-Ungleichung kriegen wir nun
-\[
-P(|Y|>k)\leq\frac{E[|Y|]}{k}\leq\frac{E[|X|]}{k}\leq L/k\leq\delta\,.
-\]
-Damit folgt, nach der obigen Erklärung, $E[|Y|\mathbbm{1}_{|Y|>k}]\leq E[|X|\mathbbm{1}_{|Y|>k}]<\varepsilon$, also ist $(E[X_i,{\cal F}_j])_{ij}$ gleichgradig integrierbar.
+\begin{align*}
+  P(|Y_{ij}|>k)
+  &\leq\frac{E[|Y_{ij}|]}{k}\,.
+    \intertext{Für alle $i\in I$ und $j\in J$ gilt mit der Jensen'schen Ungleichung des bedingten Erwartungswertes, dass $|Y_{ij}|\leq E[|X_i|\mid\mathscr{F}_j]$, also}
+  &\leq\frac{E[|X_i|]}{k}\,.
+    \intertext{Da, wie erwähnt, $(X_i)$ beschränkt in $L^1$ ist, gilt}
+  &\leq\sup_{i\in I}\frac{E[|X_i|]}{k}
+   \intertext{und nach der Wahl des $\delta$ schließlich} 
+  &\leq\delta\,.                %
+\end{align*}
+Damit folgt, wie oben erklärt, $E[|Y_{ij}|\mathbbm{1}_{|Y_{ij}|>k}]\leq E[|X_i|\mathbbm{1}_{|Y_{ij}|>k}]<\varepsilon$, also ist $(E[X_i,\mathscr{F}_j])_{ij}$ gleichgradig integrierbar.
 \begin{enumerate}
-\item[ii)] Ist $X\in L^1(\Omega,{\cal A},P)$, dann ist $(E[X|{\cal F}_j])_{j\in J}$ gleichgradig integrierbar.
+\item[ii)] Ist $X\in L^1(\Omega,\mathscr{A},P)$, dann ist $(E[X|\mathscr{F}_j])_{j\in J}$ gleichgradig integrierbar.
 \end{enumerate}
 %https://math.stackexchange.com/questions/3731917/uniform-integrability-of-all-conditional-expectations-of-a-fixed-l1-function
-Für ein $k\in\mathbb{R}$ und ein $j\in J$ sei $Y=E[X|{\cal F}_j]$ und $Z=E\bigl[|X|\mid{\cal F}_j\bigr]$.
-Dann gilt wegen der Jensen'schen Ungleichung der bedingten Erwartung
-\begin{align*}
-  E[|E[X|{\cal F}_j]|\mathbbm{1}_{|E[X|{\cal F}_j]|>k}]
-  &\leq E[E[|X|\mid{\cal F}_j]\mathbbm{1}_{E[|X|\mid{\cal F}_j]>k}]\,.
-    \intertext{Folglich gilt, \emph{wobei unklar ist, warum,}}
-  &=E[|X|\mathbbm{1}_{E[|X|\mid{\cal F}_j]>k}]\,.
-\end{align*}
-Sei nun  $k$ hinreichend groß, dass $E[|E[|X|\mid{\cal F}_j]|]<k\delta$.
-Dann gilt mit der Markov-Ungleichung  $P(E[|X|\mid{\cal F}_j]>k)\leq\frac{E[E[|X|\mid{\cal F}_j]]}{k}=\frac{E[|X|]}{k}<\delta$.
-Da $X\in L^1$ ist, gilt dann $E[|E[X|{\cal F}_j]|\mathbbm{1}_{|E[X|{\cal F}_j]|>k}]<\varepsilon$.
-\emph{Eventuell genauer zeigen, warum das gilt.}
+Nach Beispiel 23.i ist, wenn $X\in L^1(\Omega,\mathscr{A},P)$ ist, die Folge $(X)$ gleichgradig integrierbar, sodass $(E[X|\mathscr{F}_j])_{j\in J}$ nach Teilaufgabe (i) gleichgradig integrierbar ist.
 \newpage
 
 \bibliography{../../../books/wt}
