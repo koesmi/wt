@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage[german]{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 12 Nicolas und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 1.}
+Zeigen Sie, dass für alle quadratintegrierbaren Martingale $M$, das heißt $E[M_n^2]<\infty$ für alle $n\in\mathbb{N}$ und $m\leq n$ folgende Aussagen gelten:
+\begin{enumerate}
+\item[i)] $E[(M_n-M_m)^2]\mid{\cal F}_m]=E[M_n^2-M_m^2\mid {\cal F}_m]$
+\end{enumerate}
+Durch Ausquadrieren erhalten wir
+\begin{align*}
+  E[(M_n-M_m)^2]\mid{\cal F}_m]
+  &=E[M_n^2-2M_nM_m+M_m^2\mid{\cal F}_m]\,.
+    \intertext{Da $M$ ein Martingal ist, ist es adaptiert.
+    Damit ist $M_m$ ist ${\cal F}_m$ messbar und wir können es aus der bedingten Erwartung rausziehen.
+    Zudem gilt dafür $E[M_m\mid {\cal F}_m]=M_m$, sodass}
+  &=E[M_n^2\mid{\cal F}_m]-2M_mE[M_n\mid{\cal F}_m]+M_m^2\,.
+    \intertext{Mit der Martingaleigenschaft folgt}
+  &=E[M_n^2\mid{\cal F}_m]-2M_m^2+M_m^2\,.
+    \intertext{Zusammenfassen der letzten beiden Terme liefert}
+  &=E[M_n^2\mid{\cal F}_m]-M_m^2\,.    
+    \intertext{wieder aufgrund der ${\cal F}_m$-Messbarkeit von $M_m$ erhalten wir}
+  &=E[M_n^2-M_m^2\mid{\cal F}_m].
+\end{align*}
+\newpage
+\begin{enumerate}
+\item[ii)] $E[(M_n-M_m)^2]=E[M_n^2]-E[M_m^2]$
+\end{enumerate}
+Mit der definierenden Eigenschaft (ii) vom bedingten Erwartungswert ausgewertet auf $\Omega$ können wir schreiben
+\begin{align*}
+  E[(M_n-M_m)^2]
+  &=E\bigl[E[(M_n-M_m)^2\mid{\cal F}_m]\bigr]
+    \intertext{Einsetzten von Teilaufgabe (a) liefert}
+  &=E\bigl[E[M_n^2-M_m^2\mid{\cal F}_m]\bigr]
+    \intertext{und wieder die Eigenschaft (ii) auf $\Omega$ schließlich}
+  &=E[M_n^2-M_m^2]\,.
+\end{align*}
+\newpage
+\paragraph{Aufgabe 3.}
+%https://math.stackexchange.com/questions/2029863/central-limit-theorem-and-convergence-in-probability-from-durrett
+Seien $X_1,X_2,\dots$ i.i.d. Zufallsvariablen mit $E[X_1]=0$ und $0<E[X_1^2]<\infty$.
+Verwenden Sie das 0-1-Gesetz von Kolmogorov und den zentralen Grenzwertsatz, um zu zeigen, dass fast sicher
+\[
+\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty
+\]
+gilt, wobei $S_n:=\sum_{k=1}^n X_k$.
+
+\emph{Hinweis: Verwenden Sie das Lemma von Fatou.}
+
+Mit der Definition des $\limsup$ gilt \emph{hier sollte der zentrale Grenzwertsatz angewendet werden}
+\begin{align*}
+  \Bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\Bigr\}
+  &=\Bigl\{\inf_{n\geq 1}\sup_{m\geq n}\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,.
+    \intertext{Das können wir äquivalent schreiben als}
+  &=\Bigl\{\forall n\geq 1~\exists m\geq n~\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,,
+    \intertext{oder}
+  &=\bigcap_{n\geq 1}\bigcup_{m\geq n}\Bigl\{\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,.
+    \intertext{Die ersten Terme ausgeschrieben erhalten wir}
+  &=\Bigl\{\frac{S_1}{\sqrt{1}}=\infty\Bigr\}\cup\Bigl\{\frac{S_2}{\sqrt{2}}=\infty\Bigr\}\cup\Bigl\{\frac{S_3}{\sqrt{3}}=\infty\Bigr\}\cup\dots\\
+  &\quad\cap\Bigl\{\frac{S_2}{\sqrt{2}}=\infty\Bigr\}\cup\Bigl\{\frac{S_3}{\sqrt{3}}=\infty\Bigr\}\cup\dots\\
+  &\quad\cap\dots
+\end{align*}
+Somit gilt für alle $k\in\mathbb{N}$, dass $\bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr\}\in\sigma(X_k,X_{k+1},\dots)$, es ist also ein terminales Ereignis.
+Nach dem 0-1-Gesetz von Kolmogorov ist $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr)\in\{0,1\}$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
