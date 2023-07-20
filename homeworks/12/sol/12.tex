@@ -69,7 +69,7 @@ gilt, wobei $S_n:=\sum_{k=1}^n X_k$.
 
 \emph{Hinweis: Verwenden Sie das Lemma von Fatou.}
 
-Mit der Definition des $\limsup$ gilt \emph{hier sollte der zentrale Grenzwertsatz angewendet werden}
+Mit der Definition des $\limsup$ gilt
 \begin{align*}
   \Bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\Bigr\}
   &=\Bigl\{\inf_{n\geq 1}\sup_{m\geq n}\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,.
@@ -84,6 +84,18 @@ Mit der Definition des $\limsup$ gilt \emph{hier sollte der zentrale Grenzwertsa
 \end{align*}
 Somit gilt für alle $k\in\mathbb{N}$, dass $\bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr\}\in\sigma(X_k,X_{k+1},\dots)$, es ist also ein terminales Ereignis.
 Nach dem 0-1-Gesetz von Kolmogorov ist $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr)\in\{0,1\}$.
+Äquivalent können wir sagen, dass für ein beliebiges $N\in\mathbb{N}$ gilt $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}>N\bigr)\in\{0,1\}$.
+Mit Stetigkeit von oben folgt, dass
+\begin{align*}
+  P\Bigl(\limsup\frac{S_n}{\sqrt{n}}=\infty\Bigr)
+  &=\lim_{n\to\infty}P\Bigl(\bigcup_{m\geq n}\Bigl\{\frac{S_m}{\sqrt{m}}>N\Bigr\}\Bigr)\,.
+  \intertext{Aufgrund der Monotonie von $P$ erhalten wir}
+  &\geq\lim_{n\to\infty}P(\frac{S_n}{\sqrt{n}}>N)\,.
+    \intertext{Da schließlich nach dem zentralen Grenzwertsatz $\frac{S_n}{\sqrt{n}}\Rightarrow Y$ mit $Y\sim{\cal N}(0,1)$, erhalten wir}
+  &=1-P(Y\leq N)>0
+\end{align*}
+Damit muss $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr)=1$ gelten.
+\emph{Wahrscheinlich muss hier irgendwo noch entsprechend Hinweis mit dem Lemma von Fatou argumentiert werden.}
 \bibliography{../../../books/wt}
 \end{document}
 
