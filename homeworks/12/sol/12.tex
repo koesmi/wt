@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage{mathrsfs}
@@ -71,38 +71,55 @@ Verwenden Sie das 0-1-Gesetz von Kolmogorov und den zentralen Grenzwertsatz, um 
 \]
 gilt, wobei $S_n:=\sum_{k=1}^n X_k$.
 
-\emph{Hinweis: Verwenden Sie das Lemma von Fatou.}
+\noindent\emph{Hinweis: Verwenden Sie das Lemma von Fatou.}
 
-Mit der Definition des $\limsup$ gilt
-\begin{align*}
-  \Bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\Bigr\}
-  &=\Bigl\{\inf_{n\geq 1}\sup_{m\geq n}\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,.
-    \intertext{Das können wir äquivalent schreiben als}
-  &=\Bigl\{\forall n\geq 1~\exists m\geq n~\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,,
-    \intertext{oder}
-  &=\bigcap_{n\geq 1}\bigcup_{m\geq n}\Bigl\{\frac{S_m}{\sqrt{m}}=\infty\Bigr\}\,.
-    \intertext{Die ersten Terme ausgeschrieben erhalten wir}
-  &=\Bigl\{\frac{S_1}{\sqrt{1}}=\infty\Bigr\}\cup\Bigl\{\frac{S_2}{\sqrt{2}}=\infty\Bigr\}\cup\Bigl\{\frac{S_3}{\sqrt{3}}=\infty\Bigr\}\cup\dots\\
-  &\quad\cap\Bigl\{\frac{S_2}{\sqrt{2}}=\infty\Bigr\}\cup\Bigl\{\frac{S_3}{\sqrt{3}}=\infty\Bigr\}\cup\dots\\
-  &\quad\cap\dots
-\end{align*}
-Somit gilt für alle $k\in\mathbb{N}$, dass $\bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr\}\in\sigma(X_k,X_{k+1},\dots)$, es ist also ein terminales Ereignis.
+Da die Inklusion gilt $\bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr\}\subseteq\{(S_n)\text{ konvergiert nicht}\}$, ist $\bigl\{\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr\}$ nach Blatt 5 Aufgabe 5.6. ein terminales Ereignis.
 Nach dem 0-1-Gesetz von Kolmogorov ist $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr)\in\{0,1\}$.
 Äquivalent können wir sagen, dass für ein beliebiges $N\in\mathbb{N}$ gilt $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}>N\bigr)\in\{0,1\}$.
-Mit Stetigkeit von oben folgt, dass
+Das heißt wiederum, dass
 \begin{align*}
-  P\Bigl(\limsup\frac{S_n}{\sqrt{n}}=\infty\Bigr)
-  &=\lim_{n\to\infty}P\Bigl(\bigcup_{m\geq n}\Bigl\{\frac{S_m}{\sqrt{m}}>N\Bigr\}\Bigr)\,.
-  \intertext{Aufgrund der Monotonie von $P$ erhalten wir}
-  &\geq\lim_{n\to\infty}P(\frac{S_n}{\sqrt{n}}>N)\,.
+  P\Bigl(\limsup\frac{S_n}{\sqrt{n}}>N\Bigr)
+  &=P\Bigl(\frac{S_n}{\sqrt{n}}>N\text{ für unendlich viele $n$}\Bigr),
+  \intertext{also}
+  &=P\Bigl(\limsup_{n\to\infty}\Bigl\{\frac{S_n}{\sqrt{n}}>N\Bigr\}\Bigr)\,.
+    \intertext{Mit Blatt 5 Aufgabe 2 \emph{oder eventuell auch mit dem Lemma von Fatou} erhalten wir}
+  &\geq\limsup_{n\to\infty}P\Bigl(\frac{S_n}{\sqrt{n}}>N\Bigr)\,.
     \intertext{Da schließlich nach dem zentralen Grenzwertsatz $\frac{S_n}{\sqrt{n}}\Rightarrow Y$ mit $Y\sim{\cal N}(0,1)$, erhalten wir}
-  &=1-P(Y\leq N)>0
+  &=1-P(Y\leq N)>0\,.
 \end{align*}
 Damit muss $P\bigl(\limsup_{n\to\infty}\frac{S_n}{\sqrt{n}}=\infty\bigr)=1$ gelten.
-\emph{Wahrscheinlich muss hier irgendwo noch entsprechend Hinweis mit dem Lemma von Fatou argumentiert werden.}
 
 \paragraph{Aufgabe 4.}
 % https://johnthickstun.com/docs/coinflip.pdf
+Geben Sie für einen wiederholten Münzwurf (mit fairer Münze) einen Wahrscheinlichkeitsraum an und zeigen Sie, dass der Prozess $(M_n)_{n\in\mathbb{N}}$, der die Summe der Auszahlung $X=(X_n)_{n\in\mathbb{N}}$ von $1$, beziehungsweise $-1$ beschreibt ein Martingal bezüglich seiner Filtration ist.
+Das Spiel endet, wenn die Auszahlung von $a\in\mathbb{N}$ erreicht ist.
+Ist das gestoppte Spiel immer noch ein Martingal?
+Was lässt sich über die Konvergenz (fast sicher und $L^1$) des gestoppten Spiels aussagen?
+
+Bei jedem einzelnen Münzwurf sind die verschiedenen Auskommen $\Omega_1=\{\mathrm{K},\mathrm{Z}\}$ für Kopf oder Zahl.
+Der Grundraum von $X$ ist dann $\Omega=\Omega_1^\mathbb{N}$, sodass für alle $\omega\in \Omega$ gilt $\omega_n\in \Omega_1$.
+Die Filtration ist $\mathbb{F}=({\cal F}_n)$ mit ${\cal F}_n={\cal P}(\Omega_1)^{\otimes n}$.
+Auf ${\cal P}(\Omega_1)$ ist ein Wahrscheinlichkeitsmaß $P_1$ gegeben durch $P_1(\emptyset)=0$, $P_1(\mathrm{K})=P_1(\mathrm{Z})=\frac{1}{2}$ und $P_1(\Omega_1)=1$.
+Das die Würfe unabhängig sind, können wir definieren $P_n(\omega)=\prod_{k=1}^nP_1(\omega_k)$ setzen.
+Da $\Omega$ polnisch ist, gibt es einen projektiven Limes $P$ zu $(P_n)$ auf $\Omega$, was $(\Omega,{\cal F},P)$ zu einem Wahrscheinlichkeitsraum macht.
+Sei $A\in\mathbb{Z}$, dann ist $M_n^{-1}(A)\in{\cal F}_n$, da ${\cal F}_n$ aus den Potenzmengen von $\Omega_1$ besteht.
+Somit ist $M_n$ adaptiert.
+\emph{Es sollte noch geprüft werden, dass $\mathbb{F}$ tatsächlich die natürliche Filtration von $(M_n)$ ist.}
+Wir sollen noch prüfen, ob $(M_n)$ ein Martingal ist.
+Sei hierfür $m<n$.
+Dann gilt mit der Definition von $(M_n)$
+\begin{align*}
+  E[M_n\mid{\cal F}_m]
+  &=E\Bigl[\sum\nolimits_{k=1}^nX_k\mid{\cal F}_m\Bigr]\,.
+    \intertext{Wegen der Linearität der bedingten Erwartung gilt}
+  &=E[M_m\mid {\cal F}_m]+E\Bigl[\sum\nolimits_{k=m+1}^nX_k\mid{\cal F}_m\Bigr]\,.
+    \intertext{Da $M_m$ ${\cal F}_m$-messbar und für $k>m$ $X_k$ unabhängig von ${\cal F}_m$ ist, gilt}
+  &=M_m+\sum_{k=m+1}^nE[X_k]=M_m\,,
+\end{align*}
+Denn $E[X_k]=1\cdot\frac{1}{2}-1\cdot\frac{1}{2}=0$.
+Somit ist $(M_n)$ ein Martingal.
+Nach Satz 189 ist auch der gestoppte Prozess ein Martingal.
+Da auch $\sup E[|M_n|]=0$, gilt nach dem Doobschen Martingalkonvergenzsatz, dass $M_n$ fast sicher und in $L^1$ konvergiert.
 \bibliography{../../../books/wt}
 \end{document}
 
