@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 1 Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(5 Punkte)}.}
+\begin{itemize}
+\item [i)] Sind $X$ und $Y$ zwei ununterscheidbare Prozesse, dann sind $X$ und $Y$ Modifikationen voneinander.
+\end{itemize}
+Zu zeigen ist nach Definition 4.iii, dass $P(X_t\neq Y_t)=0$ für alle $t\geq 0$.
+Sei also $t\geq0$ beliebig gewählt.
+Wenn $\{X_t\neq Y_t\}$ leer ist, ist die Behauptung schon gezeigt.
+Sei andernfalls $\omega\in\{X_t\neq Y_t\}$.
+Dann gibt es für $\omega$ ein $s\geq0$, sodass $X_s(\omega)\neq Y_s(\omega)$, nämlich $s=t$.
+Somit ist $\omega\in \{\exists s\geq 0~X_s\neq Y_s\}$.
+Das heißt, $\{X_t\neq Y_t\}\subseteq\{\exists s\geq 0~X_s\neq Y_s\}$.
+Da $X$ und $Y$ ununterscheidbar sind, gilt für sie nach Definition 4.i und 4.ii, dass $P(\exists s\geq 0~X_s\neq Y_s)=0$.
+Somit gilt auch $P(X_t\neq Y_t)=0$, was zu zeigen war.
+\begin{itemize}
+\item [ii)]
+  Ist die Indexmenge $I$, in welcher die Prozesse indiziert sind, höchstens abzählbar, dann sind die Eigenschaften Ununterscheidbar und Modifikation äquivalent.
+\end{itemize}
+Nach der vorigen Teilaufgabe ist nur noch zu zeigen, dass eine Modifikation $X$ von $Y$ von $Y$ ununterscheidbar ist, wenn $I$ höchstens abzählbar ist.
+Sei ohne Beschränkung der Allgemeinheit $I=\mathbb{N}$.
+Es gilt
+\begin{align*}
+  P(\exists n\geq0~X_n\neq Y_n)
+  &=P\Bigl(\bigcup\nolimits_{n\geq0}\{X_n\neq Y_n\}\Bigr)\,.
+    \intertext{Mit $\sigma$-Subadditivität von $P$ haben wir}
+  &\leq\sum\nolimits_{n\geq0}P(X_m\neq Y_n)=0\,,
+\end{align*}
+denn für alle $n\in\mathbb{N}$ gilt $P(X_n\neq Y_n)=0$, da $X$ eine Modifikation von $Y$ ist.
+Somit sind $X$ und $Y$ ununterscheidbar.
+
+\paragraph{Aufgabe 2 \textnormal{(3 Punkte)}.}
+\begin{itemize}
+\item [i)] Die $\sigma$-Algebra der $T$-Vergangenheit, definiert durch
+  \[
+    \mathscr{F}_T:=\bigl\{A\in\mathscr{A}\mid A\cap\{T\leq t\}\in\mathscr{F}_t\text{ für alle }t\in\mathbb{R}_+\bigr\}
+  \]
+  ist eine $\sigma$-Algebra.
+\end{itemize}
+Da $\emptyset\cap\{T\leq t\}=\emptyset\in\mathscr{F}_t$ und $\Omega\cap\{T\leq t\}=\{T\leq t\}\in\mathscr{F}_t$, sind $\emptyset$ und $\Omega$ in $\mathscr{F}_T$.
+\begin{itemize}
+\item [ii)] 
+  Für die Stoppzeit $T\equiv t$ stimmt diese mit $\mathscr{F}_t$ überein für alle $t\geq 0$.
+\end{itemize}
+Hier gilt $\mathscr{F}_T=\bigl\{A\in\mathscr{A}\mid A\cap\{t\leq t\}\in\mathscr{F}_t\bigr\}=\{A\in\mathscr{A}\mid A\in\mathscr{F}_t\}=\mathscr{F}_t$.
+\begin{itemize}
+\item [iii)] Sind $T$ und $S$ Stoppzeiten mit $T\leq S$, so gilt $\mathscr{F}_T\subset\mathscr{F}_S$.
+\end{itemize}
+
+Sei $A\in\mathscr{F}_T$, es gelte also für alle $t\geq0$, dass $A\cap\{T\leq t\}\in\mathscr{F}_t$.
+Da $T\leq S$, gilt $\{S\leq t\}\subseteq\{T\leq t\}$.
+Hierdurch ist $A\cap\{S\leq t\}=(A\cap\{T\leq t\})\cap\{S\leq t\}$.
+Da $A\in \mathscr{F}_T$ ist $A\cap\{T\leq t\}\in\mathscr{F}_t$.
+Da $S$ eine Stoppzeit ist, ist $\{S\leq t\}\in\mathscr{F}_t$.
+Da $\mathscr{F}_t$ eine $\sigma$-Algebra ist, ist dann auch $(A\cap\{T\leq t\})\cap\{S\leq t\}\in\mathscr{F}_t$.
+Somit ist $A\cap\{S\leq t\}\in\mathscr{F}_t$, also $A\in\mathscr{F}_S$.
+
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [i)] Zeigen Sie: Ist $X$ ein adaptierter càdlàg Prozess, dann sind $X_-$ und $\Delta X$ ebenfalls adaptiert.
+\end{itemize}
+Zu zeigen ist, dass für alle $A\in{\cal A}'$ gilt $(\lim_{s\uparrow t}X_s)^{-1}(A)\in{\cal A}$, wobei $|\lim_{s\uparrow t}X_s|<\infty$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:

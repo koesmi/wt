@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Anwesenheitsblatt Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1.}
+\begin{itemize}
+\item [i)] Seien $(X_t)_{t\geq0}$ und $(Y_t)_{t\geq0}$ zwei unabhängige Poisson Prozesse zu den Parametern $\lambda>0$ und $\mu>0$.
+  Zeigen Sie, dass $(X_t+Y_t)_{t\geq0}$ ein Poisson Prozess zum Parameter $\lambda+\mu$ ist.
+\end{itemize}
+Nach Definition 5.ii müsste $\Delta(X+Y)_t\in\{0,1\}$ sein, ist aber $X=Y$, so ist $\Delta(X+Y)_t\in\{0,2\}$, sodass wir davon ausgehen, dass zu zeigen ist, dass $\frac{1}{2}(X_t+Y_t)$ ein Poissonprozess ist.
+Sind $X,Y$ unabhängig von $\mathscr{F}$, so ist auch $X+Y$ unabhängig von $\mathscr{F}$.
+\emph{Dies sollte eventuell noch gezeigt werden.}
+Hierdurch ist $X_t+Y_t-X_s-Y_s$ unabhängig von $\mathscr{F}_s$, sodass Bedingung iv der Definition 5 erfüllt ist.
+Bedingungen i und iii sind klar.
+Somit ist $((X_t+Y_t)/2)$ ein erweiterter Poissonprozess.
+Da zudem gilt $E[(X_t+Y_t)/2]=E[X_t]/2+E[Y_t]/2=(\lambda+\mu)t/2$, ist $((X_t+Y_t)/2)$ ein Poissonprozess zum Parameter $(\lambda+\mu)/2$.
+
+\paragraph{Aufgabe 2.} Sei $(B_t)_{t\geq0}$ eine Brown'sche Bewegung mit $B_0=0$.
+Zeigen Sie, dass $(X_t)_{0\leq t\leq1}:=(B_t-tB_1)_{0\leq t\leq1}$ ein Gauß'scher Prozess ist und berechnen Sie die Kovarianz-Struktur $\operatorname{Cov}(X_s,X_t)$, $0\leq s,t\leq1$.
+
+Nach Definition der Covarianz gilt, dass
+\begin{align*}
+  \operatorname{Cov}(X_s,X_t)
+  &=E[(X_s-E[X_s])(X_t-E[X_t])]\,.
+    \intertext{Da $E[X_s]=E[B_s-sB_1]=0$, gilt}
+  &=E[(B_s-sB_1)(B_t-tB_1)]\,,\\
+  &=E[B_sB_t]-sE[B_1B_t]-tE[B_sB_1]+stE[B_1^2]\,.
+    \intertext{Bei Wikipedia standen die Kovarianzen $\operatorname{Cov}(B_s,B_t)=E[B_sB_t]=\min(s,t)$ des Wiener Prozesses, sodass}
+  &=\min(s,t)-st-st+st=\min(s,t)-st\,.
+\end{align*}
+
+\paragraph{Aufgabe 3.}
+Zeigen Sie, dass jede Stoppzeit eine optionale Zeit ist.
+
+Das wird in Gleichung  (11) in Skript gezeigt.
+Nach Definition 10.iv der optionalen Zeit muss für alle $t\geq0$ gelten, dass $\{T<t\}\in\mathscr{F}_t$.
+Es gilt $\{T<t\}=\bigcup_{n\in \mathbb{N}}\bigl\{T\leq t-\frac{1}{n}\bigr\}$.
+Für alle $n\in\mathbb{N}$ gilt nach Definition 10.iii der Stoppzeit $T$, dass $\bigl\{T\leq t-\frac{1}{n}\bigr\}\in\mathscr{F}_{t-\frac{1}{n}}$.
+Da $\mathscr{F}_{t-\frac{1}{n}}$ eine $\sigma$-Algebra ist, ist auch $\bigcup_{n\in \mathbb{N}}\bigl\{T\leq t-\frac{1}{n}\bigr\}\in\mathscr{F}_{t-\frac{1}{n}}$.
+Nach Definition 2.i der Filtration $\mathbb{F}$ gilt für alle $t\geq0$, dass $\mathscr{F}_{t-\frac{1}{n}}\in\mathscr{F}_t$.
+Somit ist $\{T<t\}\in\mathscr{F}_t$ und $T$ eine optionale Zeit.
+
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+Nenn Sie ein Beispiel für einen  Prozess $X=(X_t)_{t\in[0,\infty)}$ mit stetigen Pfaden und eine zufällige Zeit $T$, die bezüglich der natürlichen Filtration von $X$ eine Options- aber keine Stoppzeit bildet.
+
+\noindent\emph{Hinweis:} Betrachten Sie $X_t=(t-S)^+$ für eine geeignete nicht-negative Zufallsvariable $S$.
+
+Betrachte zum Beispiel $X_t=t$ und $T=\inf\{s\geq0\mid X_s>1\}$.
+Nach Satz 16.ii ist $T$ eine optionale Zeit.
+Es bleibt noch zu zeigen, dass $T$ keine Stoppzeit ist.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
