@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt} 
 \pagestyle{fancy}
-\lhead{Blatt 1 Evgenij}\rhead{Seite \thepage}
+\lhead{Blatt 1 Nicole und Evgenij}\rhead{Seite \thepage}
 \fancyfoot{}
 
 \usepackage{tikz}
@@ -51,7 +51,28 @@ Es gilt
 \end{align*}
 denn für alle $n\in\mathbb{N}$ gilt $P(X_n\neq Y_n)=0$, da $X$ eine Modifikation von $Y$ ist.
 Somit sind $X$ und $Y$ ununterscheidbar.
-
+\begin{itemize}
+\item [iii)] Gilt $I=\mathbb{R}_+$ und sind $X$ und $Y$ rechtsstetige (linksstetige) Prozesse, dann sind die Eigenschaften Ununterscheidbar und Modifikation äquivalent.
+\end{itemize}
+Seien $X$ und $Y$ ohne Beschränkung der Allgemeinheit rechtsstetig, $X$ Modifikation von $Y$.
+Wieder ist nur zu zeigen, dass sie ununterscheidbar sind.
+Es gilt
+\begin{align*}
+  P(\exists t\geq 0 X_t\neq Y_t)
+  &=P\Bigl(\bigcup\nolimits_{t\geq0}\{X_t\neq Y_t\}\Bigr)\,.
+    \intertext{Da $X_t$ und $Y_t$ rechtsstetig sind und $\mathbb{Q}_+$ dicht in $\mathbb{R}_+$ liegt, gibt es für alle $t\geq0$ eine Folge $(q_n)$ in $\mathbb{Q}_+$, sodass $\lim_{n\to\infty}X_{q_n}-Y_{q_n}\neq0$, sodass}
+  &=P\Bigl(\bigcup\nolimits_{t\in\mathbb{Q}_+}\{X_t\neq Y_t\}\Bigr)\,.
+    \intertext{Da auch $\mathbb{Q}_+$ abzählbar ist, können wir mit dem gleichen Argument wie bei Teilaufgabe ii erkennen, dass}
+  &=0\,.
+\end{align*}
+\begin{itemize}
+\item [iv)] Sei $I=\mathbb{R}_+$ und die Prozesse $X$ und $Y$ gegeben durch $X_t=0$ und $Y_t=\mathbbm{1}_{Z=t}$ für alle $t\in\mathbb{R}_+$ und eine Zufallsvariable $Z\sim\operatorname{Exp}(\lambda)$.
+  Welche Aussagen bezüglich Modifikation und Ununterscheidbarkeit lassen sich treffen? 
+\end{itemize}
+Wir wollen zunächst zeigen, dass $X$ eine Modifikation von $Y$ ist.
+Sei hierfür $t\geq0$ beliebig.
+Einsetzen der Definitionen von $X$ und $Y$ liefert $P(X_t\neq Y_t)=P(\mathbbm{1}_{Z=t}\neq0)=P(Z=t)=0$, denn $\{Z=t\}$ ist eine $P$-Nullmenge.
+$Y$ und $Y$ sind allerdings unterscheidbar, denn $P(\exists s\geq0~Z=s)=P(\Omega)=1$, da $Z$ als Funktion auf ganz $\Omega$ definiert ist.
 \paragraph{Aufgabe 2 \textnormal{(3 Punkte)}.}
 \begin{itemize}
 \item [i)] Die $\sigma$-Algebra der $T$-Vergangenheit, definiert durch
@@ -61,6 +82,11 @@ Somit sind $X$ und $Y$ ununterscheidbar.
   ist eine $\sigma$-Algebra.
 \end{itemize}
 Da $\emptyset\cap\{T\leq t\}=\emptyset\in\mathscr{F}_t$ und $\Omega\cap\{T\leq t\}=\{T\leq t\}\in\mathscr{F}_t$, sind $\emptyset$ und $\Omega$ in $\mathscr{F}_T$.
+Für ein $B\in\mathscr{F}_T$ ist $B^C\in\mathscr{A}$, denn $\mathscr{A}$ ist eine $\sigma$-Algebra.
+Außerdem ist $B^C\cap\{T\leq t\}=\{T\leq t\}\setminus(B\cap\{T\leq t\})\in\mathscr{F}_t$, denn $\{T\leq t\}\in\mathscr{F}_t$, da $T$ eine Stoppzeit ist und $B\cap\{T\leq t\}$ nach Voraussetzung. Also gilt $B^C\in\mathscr{F}_T$.
+Schließlich gilt für $A_1,A_2,\dots\in\mathscr{F}_T$, dass $\bigcup_{n\in\mathbb{N}}A_n\in\mathscr{A}$, denn $\mathscr{A}$ ist eine $\sigma$-Algebra.
+Weiterhin ist $\bigcup_{n\in\mathbb{N}}A_n\cap\{T\leq t\}=\bigcup_{n\in\mathbb{N}}(A_n\cap\{T\leq t\})\in\mathscr{F}_t$, denn für alle $n\in\mathbb{N}$ ist $A_n\cap\{T\leq t\}\in\mathscr{F}_t$ nach Voraussetzung und die $\sigma$-Algebra $\mathscr{F}_t$ ist abgeschlossen unter abzählbaren Vereinigungen.
+Insgesamt ist $\mathscr{F}_T$ also eine $\sigma$-Algebra.
 \begin{itemize}
 \item [ii)] 
   Für die Stoppzeit $T\equiv t$ stimmt diese mit $\mathscr{F}_t$ überein für alle $t\geq 0$.
@@ -82,7 +108,8 @@ Somit ist $A\cap\{S\leq t\}\in\mathscr{F}_t$, also $A\in\mathscr{F}_S$.
 \begin{itemize}
 \item [i)] Zeigen Sie: Ist $X$ ein adaptierter càdlàg Prozess, dann sind $X_-$ und $\Delta X$ ebenfalls adaptiert.
 \end{itemize}
-Zu zeigen ist, dass für alle $A\in{\cal A}'$ gilt $(\lim_{s\uparrow t}X_s)^{-1}(A)\in{\cal A}$, wobei $|\lim_{s\uparrow t}X_s|<\infty$.
+Zu zeigen ist, dass für alle $A\in\mathscr{A}'$ gilt $(\lim_{s\uparrow t}X_s)^{-1}(A)\in\mathscr{A}$, wobei $|\lim_{s\uparrow t}X_s|<\infty$.
+\emph{Hier fehlt der Beweis.}
 \bibliography{../../../books/wt}
 \end{document}
 
