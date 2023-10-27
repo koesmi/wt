@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.5in,bottom=1.5in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.3in,bottom=1.3in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage{mathrsfs}
@@ -38,7 +38,7 @@ Da $X$ und $Y$ ununterscheidbar sind, gilt für sie nach Definition 4.i und 4.ii
 Somit gilt auch $P(X_t\neq Y_t)=0$, was zu zeigen war.
 \begin{itemize}
 \item [ii)]
-  Ist die Indexmenge $I$, in welcher die Prozesse indiziert sind, höchstens abzählbar, dann sind die Eigenschaften Ununterscheidbar und Modifikation äquivalent.
+  Ist die Indexmenge $I$, in welcher die Prozesse indiziert sind, höchstens abzählbar, dann sind die Eigenschaften Ununterscheidbar und Mo\-di\-fi\-ka\-tion äqui\-va\-lent.
 \end{itemize}
 Nach der vorigen Teilaufgabe ist nur noch zu zeigen, dass eine Modifikation $X$ von $Y$ von $Y$ ununterscheidbar ist, wenn $I$ höchstens abzählbar ist.
 Sei ohne Beschränkung der Allgemeinheit $I=\mathbb{N}$.
@@ -51,10 +51,11 @@ Es gilt
 \end{align*}
 denn für alle $n\in\mathbb{N}$ gilt $P(X_n\neq Y_n)=0$, da $X$ eine Modifikation von $Y$ ist.
 Somit sind $X$ und $Y$ ununterscheidbar.
+\pagebreak
 \begin{itemize}
-\item [iii)] Gilt $I=\mathbb{R}_+$ und sind $X$ und $Y$ rechtsstetige (linksstetige) Prozesse, dann sind die Eigenschaften Ununterscheidbar und Modifikation äquivalent.
+\item [iii)] Gilt $I=\mathbb{R}_+$ und sind $X$ und $Y$ rechtsstetige (linksstetige) Prozesse, dann sind die Eigenschaften Ununterscheidbar und Modifikation äqui\-va\-lent.
 \end{itemize}
-Seien $X$ und $Y$ ohne Beschränkung der Allgemeinheit rechtsstetig, $X$ Modifikation von $Y$.
+Seien $X$ und $Y$ ohne Beschränkung der Allgemeinheit rechtsstetig, $X$ Mo\-di\-fi\-ka\-tion von $Y$.
 Wieder ist nur zu zeigen, dass sie ununterscheidbar sind.
 Es gilt
 \begin{align*}
@@ -73,6 +74,12 @@ Wir wollen zunächst zeigen, dass $X$ eine Modifikation von $Y$ ist.
 Sei hierfür $t\geq0$ beliebig.
 Einsetzen der Definitionen von $X$ und $Y$ liefert $P(X_t\neq Y_t)=P(\mathbbm{1}_{Z=t}\neq0)=P(Z=t)=0$, denn $\{Z=t\}$ ist eine $P$-Nullmenge.
 $Y$ und $Y$ sind allerdings unterscheidbar, denn $P(\exists s\geq0~Z=s)=P(\Omega)=1$, da $Z$ als Funktion auf ganz $\Omega$ definiert ist.
+\begin{itemize}
+\item [v)] Geben Sie ein Beispiel von zwei stetigen Prozessen an, die zwar un\-un\-ter\-scheid\-bar, aber nicht gleich sind.
+\end{itemize}
+Sei $\Omega=[0,1]$ mit $P=\delta_0$ und $X_t(\omega)=\sin(\omega t)$ und $Y_t(\omega)=0$.
+Es gilt $X_t(0)=0=Y_t(0)$, wodurch $P(\exists t\geq0~X_t\neq Y_t)=1-P(\forall t\geq0 X_t=Y_t)\leq1-\delta_0(\{0\})=0$, sodass $X$ und $Y$ zwar ununterscheidbar, aber nicht gleich sind.
+\pagebreak
 \paragraph{Aufgabe 2 \textnormal{(3 Punkte)}.}
 \begin{itemize}
 \item [i)] Die $\sigma$-Algebra der $T$-Vergangenheit, definiert durch
@@ -103,13 +110,6 @@ Da $A\in \mathscr{F}_T$ ist $A\cap\{T\leq t\}\in\mathscr{F}_t$.
 Da $S$ eine Stoppzeit ist, ist $\{S\leq t\}\in\mathscr{F}_t$.
 Da $\mathscr{F}_t$ eine $\sigma$-Algebra ist, ist dann auch $(A\cap\{T\leq t\})\cap\{S\leq t\}\in\mathscr{F}_t$.
 Somit ist $A\cap\{S\leq t\}\in\mathscr{F}_t$, also $A\in\mathscr{F}_S$.
-
-\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
-\begin{itemize}
-\item [i)] Zeigen Sie: Ist $X$ ein adaptierter càdlàg Prozess, dann sind $X_-$ und $\Delta X$ ebenfalls adaptiert.
-\end{itemize}
-Zu zeigen ist, dass für alle $A\in\mathscr{A}'$ gilt $(\lim_{s\uparrow t}X_s)^{-1}(A)\in\mathscr{A}$, wobei $|\lim_{s\uparrow t}X_s|<\infty$.
-\emph{Hier fehlt der Beweis.}
 \bibliography{../../../books/wt}
 \end{document}
 
