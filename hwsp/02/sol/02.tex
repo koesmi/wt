@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 2 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [i)] Sei $W$ eine Brownsche Bewegung.
+  Dann ist $W$ ein Martingal.
+\end{itemize}
+$W$ ist adaptiert und stetig, also insbesondere càdlàg.
+Weiterhin gilt $0=E[|X_t|]<\infty$.
+Sei schließlich $0\leq s\leq t$.
+Alle $F\in{\cal F}_s$ sind unabhängig von den Zuwächsen $X_t-X_s$.
+Somit gilt $E[\mathbbm{1}_F(X_t-X_s)]=P(F)E[X_t-X_s]=0$, denn $E[X_t]=E[X_s]=0$.
+Somit ist $W$ ein Martingal.
+\begin{itemize}
+\item [ii)] Sei $N$ ein Poisson-Prozess mit Intensität $\Lambda(t)=\mathbb{E}[N_t]$.
+  Dann ist der kompensierte Poisson-Prozess $N_t-\Lambda(t)_t$ ein Martingal.
+\end{itemize}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
