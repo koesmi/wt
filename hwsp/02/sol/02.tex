@@ -31,7 +31,7 @@
 $W$ ist adaptiert und stetig, also insbesondere càdlàg.
 Weiterhin gilt $0=E[|X_t|]<\infty$.
 Sei schließlich $0\leq s\leq t$.
-Alle $F\in{\cal F}_s$ sind unabhängig von den Zuwächsen $X_t-X_s$.
+Alle $F\in\mathscr{F}_s$ sind unabhängig von den Zuwächsen $X_t-X_s$.
 Somit gilt $E[\mathbbm{1}_F(X_t-X_s)]=P(F)E[X_t-X_s]=0$, denn $E[X_t]=E[X_s]=0$.
 Somit ist $W$ ein Martingal.
 \begin{itemize}
@@ -44,36 +44,37 @@ Da für den kompensierten Poisson-Prozess wie für eine Brownsche Bewegung für 
 \paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
 Zeigen Sie, dass für alle quadratintegrierbaren Martingale $M$, dh. $E[M_t^2]<\infty$ für alle $t\in\mathbb{R}_+$, und $s\leq t$ folgende Aussagen gelten:
 \begin{itemize}
-\item [i)] $E[(M_t-M_s)^2\mid{\cal F}_s]=E[M_t^2-M_s^2\mid{\cal F}_s]$.
+\item [i)] $E[(M_t-M_s)^2\mid\mathscr{F}_s]=E[M_t^2-M_s^2\mid\mathscr{F}_s]$.
 \end{itemize}
 Durch Ausquadrieren erhalten wir
 \begin{align*}
-  E[(M_t-M_s)^2]\mid{\cal F}_s]
-  &=E[M_t^2-2M_tM_s+M_s^2\mid{\cal F}_s]\,.
+  E[(M_t-M_s)^2]\mid\mathscr{F}_s]
+  &=E[M_t^2-2M_tM_s+M_s^2\mid\mathscr{F}_s]\,.
     \intertext{Da $M$ ein Martingal ist, ist es adaptiert.
-    Damit ist $M_s$ ist ${\cal F}_s$ messbar und wir können es aus der bedingten Erwartung rausziehen.
-    Zudem gilt dafür $E[M_s\mid {\cal F}_s]=M_s$, sodass}
-  &=E[M_t^2\mid{\cal F}_s]-2M_sE[M_t\mid{\cal F}_s]+M_s^2\,.
+    Damit ist $M_s$ ist $\mathscr{F}_s$ messbar und wir können es aus der bedingten Erwartung rausziehen.
+    Zudem gilt dafür $E[M_s\mid \mathscr{F}_s]=M_s$, sodass}
+  &=E[M_t^2\mid\mathscr{F}_s]-2M_sE[M_t\mid\mathscr{F}_s]+M_s^2\,.
     \intertext{Mit der Martingaleigenschaft folgt}
-  &=E[M_t^2\mid{\cal F}_s]-2M_s^2+M_s^2\,.
+  &=E[M_t^2\mid\mathscr{F}_s]-2M_s^2+M_s^2\,.
     \intertext{Zusammenfassen der letzten beiden Terme liefert}
-  &=E[M_t^2\mid{\cal F}_s]-M_s^2\,.    
-    \intertext{wieder aufgrund der ${\cal F}_s$-Messbarkeit von $M_s$ erhalten wir}
-  &=E[M_t^2-M_s^2\mid{\cal F}_s].
+  &=E[M_t^2\mid\mathscr{F}_s]-M_s^2\,.    
+    \intertext{wieder aufgrund der $\mathscr{F}_s$-Messbarkeit von $M_s$ erhalten wir}
+  &=E[M_t^2-M_s^2\mid\mathscr{F}_s].
 \end{align*}
+\pagebreak
 \begin{itemize}
 \item [ii)] $E[(M_t-M_s)^2]=E[M_t^2]-E[M_s^2]$.
 \end{itemize}
 Mit der definierenden Eigenschaft (ii) vom bedingten Erwartungswert ausgewertet auf $\Omega$ können wir schreiben
 \begin{align*}
   E[(M_t-M_s)^2]
-  &=E\bigl[E[(M_t-M_s)^2\mid{\cal F}_s]\bigr]
+  &=E\bigl[E[(M_t-M_s)^2\mid\mathscr{F}_s]\bigr]
     \intertext{Einsetzten von Teilaufgabe (i) liefert}
-  &=E\bigl[E[M_t^2-M_s^2\mid{\cal F}_s]\bigr]
+  &=E\bigl[E[M_t^2-M_s^2\mid\mathscr{F}_s]\bigr]
     \intertext{und wieder die Eigenschaft (ii) auf $\Omega$ schließlich}
   &=E[M_t^2-M_s^2]\,.
 \end{align*}
-
+\pagebreak
 \paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
 Zeigen Sie folgende Aussagen:
 \begin{itemize}
@@ -83,17 +84,33 @@ Sei $X$ ein nicht-negatives lokales Martingal, $(T_n)$ die dazugehörige lokalis
 Da $(T_n)$ fast sicher gegen unendlich konvergiert, konvergiert für jedes $t\geq0$ die Folge $(X^{T_n}_t)_{n\in\mathbb{N}}$ fast sicher gegen $X_t$.
 Somit gilt
 \begin{align*}
-  E[X_t|{\cal F}_s]
-  &=E[\liminf_{n\to\infty}X_t^{T_n}\mid{\cal F}_s]\,.
+  E[X_t|\mathscr{F}_s]
+  &=E[\liminf_{n\to\infty}X_t^{T_n}\mid\mathscr{F}_s]\,.
     \intertext{Es gilt $X_t\geq0$ für alle $t\geq0$.
     Somit können wir das Lemma von Fatou für den bedingten Erwartungswert anwenden und erhalten}
-  &\leq\liminf_{n\to\infty}E[X_t^{T_n}\mid{\cal F}_s]\,.
+  &\leq\liminf_{n\to\infty}E[X_t^{T_n}\mid\mathscr{F}_s]\,.
     \intertext{Da $X$ ein lokales Martingal ist, ist $(X_t^{T_n})_{t\geq0}$ ein Martingal.
     Somit kriegen wir}
   &=\liminf_{n\to\infty}X_s^{T_n}=X_s\,,
 \end{align*}
 wieder weil $(T_n)$ fast sicher gegen unendlich konvergiert.
 Durch eine analoge Argumentation für $E[|X_t|]$ erhalten wir zudem die Integrabilität von $X_t$, sodass $X$ ein Supermartingal ist.
+\pagebreak
+\begin{itemize}
+\item [ii)] Sei $X$ ein Martingal (Submartingal) und $\varphi\colon\mathbb{R}\to\mathbb{R}$ konvex (konvex und nicht fallend), so dass $E[|\varphi(X_t)|]<\infty$ für alle $t\in\mathbb{R}_+$.
+  Dann ist $\varphi(X)$ ein Submartingal.
+\end{itemize}
+Sei $X$ ein Martingal und $\varphi$ konvex.
+Dann können wir die Jensenschen Ungleichung anwenden und erhalten
+\begin{align*}
+  E[\varphi(X_t)\mid\mathscr{F}_s]
+  &\geq\varphi(E[X_t\mid\mathscr{F}_s])\,.
+    \intertext{Da $X$ ein Martingal ist, folgt}
+  &=\varphi(X_s)\,.
+\end{align*}
+Sei $X$ nun ein Submartingal, so folgt $E[X_t\mid\mathscr{F}_s]\geq X_s$.
+Ist $\varphi$ nicht-fallend, so erhalten wir $\varphi(E[X_t\mid \mathscr{F}_s])\geq\varphi(X_s)$.
+Die Behauptung folgt wie im Fall, wo $X$ ein Martingal ist, mit der Jensenschen Ungleichung.
 \bibliography{../../../books/wt}
 \end{document}
 
