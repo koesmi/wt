@@ -73,6 +73,27 @@ Mit der definierenden Eigenschaft (ii) vom bedingten Erwartungswert ausgewertet 
     \intertext{und wieder die Eigenschaft (ii) auf $\Omega$ schließlich}
   &=E[M_t^2-M_s^2]\,.
 \end{align*}
+
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Zeigen Sie folgende Aussagen:
+\begin{itemize}
+\item [i)] Jedes nicht-negative lokale Martingal ist ein Supermartingal.
+\end{itemize}
+Sei $X$ ein nicht-negatives lokales Martingal, $(T_n)$ die dazugehörige lokalisierende Folge.
+Da $(T_n)$ fast sicher gegen unendlich konvergiert, konvergiert für jedes $t\geq0$ die Folge $(X^{T_n}_t)_{n\in\mathbb{N}}$ fast sicher gegen $X_t$.
+Somit gilt
+\begin{align*}
+  E[X_t|{\cal F}_s]
+  &=E[\liminf_{n\to\infty}X_t^{T_n}\mid{\cal F}_s]\,.
+    \intertext{Es gilt $X_t\geq0$ für alle $t\geq0$.
+    Somit können wir das Lemma von Fatou für den bedingten Erwartungswert anwenden und erhalten}
+  &\leq\liminf_{n\to\infty}E[X_t^{T_n}\mid{\cal F}_s]\,.
+    \intertext{Da $X$ ein lokales Martingal ist, ist $(X_t^{T_n})_{t\geq0}$ ein Martingal.
+    Somit kriegen wir}
+  &=\liminf_{n\to\infty}X_s^{T_n}=X_s\,,
+\end{align*}
+wieder weil $(T_n)$ fast sicher gegen unendlich konvergiert.
+Durch eine analoge Argumentation für $E[|X_t|]$ erhalten wir zudem die Integrabilität von $X_t$, sodass $X$ ein Supermartingal ist.
 \bibliography{../../../books/wt}
 \end{document}
 
