@@ -112,6 +112,45 @@ Sei $X$ nun ein Submartingal, so folgt $E[X_t\mid\mathscr{F}_s]\geq X_s$.
 Ist $\varphi$ nicht-fallend, so erhalten wir $\varphi(E[X_t\mid \mathscr{F}_s])\geq\varphi(X_s)$.
 Die Behauptung folgt wie im Fall, wo $X$ ein Martingal ist, mit der Jensenschen Ungleichung.
 \pagebreak
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+Geben Sie für einen wiederholten Münzwurf (mit fairer Münze) einen Wahrscheinlichkeitsraum an und zeigen Sie, dass der Prozess $(M_n)_{n\in\mathbb{N}}$, der die Summe der Auszahlung $X=(X_n)_{n\in\mathbb{N}}$ von $1$ bzw. $-1$ beschreibt, ein Martingal bzgl. seiner Filtration ist.
+Das Spiel endet, wenn die Auszahlung von $a\in\mathbb{N}$ erreicht ist.
+Ist das gestoppte Spiel immer noch ein Martingal?
+Was lässt sich über die Konvergenz (fast sicher und $L^1$) des gestoppten Spiels aussagen?
+
+\noindent\emph{Hinweis: Sie dürfen für die Konvergenz ohne Beweis annehmen, dass\linebreak$\limsup_{n\to\infty} M_n=\infty$ fast sicher.
+  Diese Aussage finden Sie zum Beispiel in [1, Aufgabe 2.3.1].}
+
+\noindent\emph{Lösung: }
+Bei jedem einzelnen Münzwurf sind die verschiedenen Auskommen $\Omega_1=\{\mathrm{K},\mathrm{Z}\}$ für Kopf oder Zahl.
+Der Grundraum von $X$ ist dann $\Omega=\Omega_1^\mathbb{N}$, sodass für alle $\omega\in \Omega$ gilt $\omega_n\in \Omega_1$.
+Die Filtration ist $\mathbb{F}=({\cal F}_n)$ mit ${\cal F}_n={\cal P}(\Omega_1)^{\otimes n}$.
+Auf ${\cal P}(\Omega_1)$ ist ein Wahrscheinlichkeitsmaß $P_1$ gegeben durch $P_1(\emptyset)=0$, $P_1(\mathrm{K})=P_1(\mathrm{Z})=\frac{1}{2}$ und $P_1(\Omega_1)=1$.
+Das die Würfe unabhängig sind, können wir definieren $P_n(\omega)=\prod_{k=1}^nP_1(\omega_k)$ setzen.
+Da $\Omega$ polnisch ist, gibt es einen projektiven Limes $P$ zu $(P_n)$ auf $\Omega$, was $(\Omega,{\cal F},P)$ zu einem Wahrscheinlichkeitsraum macht.
+Sei $A\in\mathbb{Z}$, dann ist $M_n^{-1}(A)\in{\cal F}_n$, da ${\cal F}_n$ aus den Potenzmengen von $\Omega_1$ besteht.
+Somit ist $M_n$ adaptiert.
+\emph{Es sollte noch geprüft werden, dass $\mathbb{F}$ tatsächlich die natürliche Filtration von $(M_n)$ ist.}
+Wir sollen noch prüfen, ob $(M_n)$ ein Martingal ist.
+Sei hierfür $m<n$.
+Dann gilt mit der Definition von $(M_n)$
+\begin{align*}
+  E[M_n\mid{\cal F}_m]
+  &=E\Bigl[\sum\nolimits_{k=1}^nX_k\mid{\cal F}_m\Bigr]\,.
+    \intertext{Wegen der Linearität der bedingten Erwartung gilt}
+  &=E[M_m\mid {\cal F}_m]+E\Bigl[\sum\nolimits_{k=m+1}^nX_k\mid{\cal F}_m\Bigr]\,.
+    \intertext{Da $M_m$ ${\cal F}_m$-messbar und für $k>m$ $X_k$ unabhängig von ${\cal F}_m$ ist, gilt}
+  &=M_m+\sum_{k=m+1}^nE[X_k]=M_m\,,
+\end{align*}
+Denn $E[X_k]=1\cdot\frac{1}{2}-1\cdot\frac{1}{2}=0$.
+Somit ist $(M_n)$ ein Martingal.
+Sei $T:=\inf\{n\in\mathbb{N}\mid M_n\geq a\}$.
+Nach Satz 16 ist $T$ tatsächlich eine Stoppzeit.
+Nach dem optional stopping theorem ist auch der gestoppte Prozess $M^T$ ein Martingal.
+Mit dem Satz aus dem Hinweis gilt $M^T\to a$ fast sicher.
+Somit konvergiert $M_n$ in $L^1$ wenn, dann gegen $a$, es würde also gelten $E[|M_n-a|]\to0$ und auch $E[M_n]\to a\neq0=E[M_1]=E[M_n^T]$, da $M_n^T$ ein Martingal ist.
+Somit konvergiert $M^T$ nicht in $L^1$.
+\pagebreak
 \paragraph{Aufgabe 5 \textnormal{(Bonus 4 Punkte)}.}
 Es sei $f\colon\mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion.
 Wir definieren die Folge $(f_n)_{n\in\mathbb{N}}$ von rechtsstetigen Funktionen $f_n\colon\mathbb{R}^+\to\mathbb{R}$ durch
@@ -126,7 +165,7 @@ Dann gilt $f_n\to f$ und $g_n\to f$ punktweise.
 Was folgern Sie aus dieser Aufgabe?
 Kann man eine analoge Aussage für rechtsstetige Funktionen formulieren?
 
-\paragraph{\emph{\textnormal{Lösung:}}} Sei $f\colon \mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion, $t\geq0$, $(t_m)$ eine Folge, die von oben gegen $t$ konvergiert.
+\noindent\emph{Lösung:} Sei $f\colon \mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion, $t\geq0$, $(t_m)$ eine Folge, die von oben gegen $t$ konvergiert.
 Da $f_n$ rechtsstetig sind, gilt $f_n(t)=\lim_{s_m\downarrow t}f_n(t_m)=f\left(\frac{k_n-1}{2^n}\right)$,
 \emph{wobei man das letzte Gleichheitszeichen noch genauer erklären sollte,}
 mit $k_n=\max\left\{k\in\mathbb{N}:\frac{k-1}{2^n}\leq t\right\}$.
