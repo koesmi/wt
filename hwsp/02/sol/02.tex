@@ -111,6 +111,30 @@ Dann können wir die Jensenschen Ungleichung anwenden und erhalten
 Sei $X$ nun ein Submartingal, so folgt $E[X_t\mid\mathscr{F}_s]\geq X_s$.
 Ist $\varphi$ nicht-fallend, so erhalten wir $\varphi(E[X_t\mid \mathscr{F}_s])\geq\varphi(X_s)$.
 Die Behauptung folgt wie im Fall, wo $X$ ein Martingal ist, mit der Jensenschen Ungleichung.
+\pagebreak
+\paragraph{Aufgabe 5 \textnormal{(Bonus 4 Punkte)}.}
+Es sei $f\colon\mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion.
+Wir definieren die Folge $(f_n)_{n\in\mathbb{N}}$ von rechtsstetigen Funktionen $f_n\colon\mathbb{R}^+\to\mathbb{R}$ durch
+\[
+f_n:=\sum_{k\in\mathbb{N}}f\left(\frac{k-1}{2^n}\right)\mathbbm{1}_{[\frac{k-1}{2^n},\frac{k}{2^n})}\,,
+\]
+und  die Folge $(g_n)_{n\in\mathbb{N}}$ von linksstetigen Funktionen $f_n\colon\mathbb{R}^+\to\mathbb{R}$ durch
+\[
+g_n:=f(0)\mathbbm{1}_{\{0\}}+\sum_{k\in\mathbb{N}}f\left(\frac{k-1}{2^n}\right)\mathbbm{1}_{(\frac{k-1}{2^n},\frac{k}{2^n}]}\,.
+\]
+Dann gilt $f_n\to f$ und $g_n\to f$ punktweise.
+Was folgern Sie aus dieser Aufgabe?
+Kann man eine analoge Aussage für rechtsstetige Funktionen formulieren?
+
+\paragraph{\emph{\textnormal{Lösung:}}} Sei $f\colon \mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion, $t\geq0$, $(t_m)$ eine Folge, die von oben gegen $t$ konvergiert.
+Da $f_n$ rechtsstetig sind, gilt $f_n(t)=\lim_{s_m\downarrow t}f_n(t_m)=f\left(\frac{k_n-1}{2^n}\right)$,
+\emph{wobei man das letzte Gleichheitszeichen noch genauer erklären sollte,}
+mit $k_n=\max\left\{k\in\mathbb{N}:\frac{k-1}{2^n}\leq t\right\}$.
+Da $f$ linksstetig ist und $\frac{k_n-1}{2^n}\uparrow t$ folgt $\lim f_n(t)=f(t)$.
+Sei $(s_m)$ eine Folge, die von unten gegen $t$ konvergiert, dann gilt $g_n(t)=\lim_{s_m\uparrow t}g_n(s_m)=g(\frac{\ell_n-1}{2^n})$ mit $\ell_n=\min\{k\in\mathbb{N}:\frac{k}{2^n}\geq t\}$.
+Da auch $\frac{\ell_n-1}{2^n}\uparrow t$, folgt $\lim g_n(t)=g(t)$.
+Da Grenzwerte messbarer Funktionen wieder messbar sind, gilt ${\cal P}\subseteq{\cal O}$.
+Ist $f$ allerdings eine rechtsstetige Funktion, so konvergieren $f_n$ und $g_n$ im Allgemeinen nicht punktweise gegen $f$, da $\frac{k_n-1}{2^n}$ und $\frac{\ell_n-1}{2^n}$ nicht von oben gegen $t$ konvergieren. \emph{Hier müsste noch überlegt werden, ob es nicht eine andere Möglichkeit der Approximation gibt, sodass rechtsstetige Funktionen doch durch linksstetige approximiert werden können.}
 \bibliography{../../../books/wt}
 \end{document}
 
