@@ -51,7 +51,7 @@ Durch Ausquadrieren erhalten wir
   E[(M_t-M_s)^2]\mid\mathscr{F}_s]
   &=E[M_t^2-2M_tM_s+M_s^2\mid\mathscr{F}_s]\,.
     \intertext{Da $M$ ein Martingal ist, ist es adaptiert.
-    Damit ist $M_s$ ist $\mathscr{F}_s$ messbar und wir können es aus der bedingten Erwartung rausziehen.
+    Damit ist $M_s$ $\mathscr{F}_s$ messbar und wir können es aus der bedingten Erwartung rausziehen.
     Zudem gilt dafür $E[M_s\mid \mathscr{F}_s]=M_s$, sodass}
   &=E[M_t^2\mid\mathscr{F}_s]-2M_sE[M_t\mid\mathscr{F}_s]+M_s^2\,.
     \intertext{Mit der Martingaleigenschaft folgt}
@@ -166,14 +166,15 @@ Was folgern Sie aus dieser Aufgabe?
 Kann man eine analoge Aussage für rechtsstetige Funktionen formulieren?
 
 \noindent\emph{Lösung:} Sei $f\colon \mathbb{R}^+\to\mathbb{R}$ eine linksstetige Funktion, $t\geq0$, $(t_m)$ eine Folge, die von oben gegen $t$ konvergiert.
-Da $f_n$ rechtsstetig sind, gilt $f_n(t)=\lim_{s_m\downarrow t}f_n(t_m)=f\left(\frac{k_n-1}{2^n}\right)$,
-\emph{wobei man das letzte Gleichheitszeichen noch genauer erklären sollte,}
-mit $k_n=\max\left\{k\in\mathbb{N}:\frac{k-1}{2^n}\leq t\right\}$.
+Da $f_n$ rechtsstetig sind, gilt $f_n(t)=\lim_{t_m\downarrow t}f_n(t_m)=f\left(\frac{k_n-1}{2^n}\right)$,
+mit $k_n=\max\left\{k\in\mathbb{N}:\frac{k-1}{2^n}\leq t\right\}=\lfloor 2^nt+1\rfloor$.
 Da $f$ linksstetig ist und $\frac{k_n-1}{2^n}\uparrow t$ folgt $\lim f_n(t)=f(t)$.
-Sei $(s_m)$ eine Folge, die von unten gegen $t$ konvergiert, dann gilt $g_n(t)=\lim_{s_m\uparrow t}g_n(s_m)=g(\frac{\ell_n-1}{2^n})$ mit $\ell_n=\min\{k\in\mathbb{N}:\frac{k}{2^n}\geq t\}$.
-Da auch $\frac{\ell_n-1}{2^n}\uparrow t$, folgt $\lim g_n(t)=g(t)$.
-Da Grenzwerte messbarer Funktionen wieder messbar sind, gilt ${\cal P}\subseteq{\cal O}$.
-Ist $f$ allerdings eine rechtsstetige Funktion, so konvergieren $f_n$ und $g_n$ im Allgemeinen nicht punktweise gegen $f$, da $\frac{k_n-1}{2^n}$ und $\frac{\ell_n-1}{2^n}$ nicht von oben gegen $t$ konvergieren. \emph{Hier müsste noch überlegt werden, ob es nicht eine andere Möglichkeit der Approximation gibt, sodass rechtsstetige Funktionen doch durch linksstetige approximiert werden können.}
+Sei $(t_m)$ nun eine Folge, die von unten gegen $t$ konvergiert, dann gilt $g_n(t)=\lim_{t_m\uparrow t}g_n(t_m)=g(\frac{\ell_n-1}{2^n})$ mit $k_n=\lceil 2^nt\rceil$.
+Da auch $\frac{k_n-1}{2^n}\uparrow t$, folgt $\lim g_n(t)=g(t)$.
+Da Grenzwerte messbarer Funktionen wieder messbar sind, gilt hierdurch ${\cal P}\subseteq{\cal O}$.
+Ist $f$ allerdings eine rechtsstetige Funktion, so konvergieren $f_n$ und $g_n$ im Allgemeinen nicht punktweise gegen $f$, da $\frac{k_n-1}{2^n}$ und $\frac{k_n-1}{2^n}$ nicht von oben gegen $t$ konvergieren.
+Somit müssten wir für die Approximation stattdessen $f_n:=\sum_{k\in\mathbb{N}}f\left(\frac{k}{2^n}\right)\mathbbm{1}_{[\frac{k-1}{2^n},\frac{k}{2^n})}$ und $g_n:=f(0)\mathbbm{1}_{\{0\}}+\sum_{k\in\mathbb{N}}f\left(\frac{k}{2^n}\right)\mathbbm{1}_{(\frac{k-1}{2^n},\frac{k}{2^n}]}$ wählen.
+\emph{Hier fehlt der Widerspruchsbeweis zu entweder $f_n\to f$ oder $g_n\to f$ punktweise, wenn $f$ rechtsstetig ist, sodass ${\cal P}\subsetneq{\cal O}.}
 \bibliography{../../../books/wt}
 \end{document}
 
