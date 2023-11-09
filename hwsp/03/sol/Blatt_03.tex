@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 3 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+Lieber Moritz, es wäre super, wenn du deine Musterlösung für das Blatt direkt hochladen könntest.
+Dann könnten wir sie uns vor der Übung anschauen und hätten es einfacher zu folgen \smiley
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+Sei $(\Omega,\mathscr{A},\mathbb{F},P)$ ein filtrierter Wahrscheinlichkeitsraum und $T$ und $S$ Stoppzeiten.
+Zeigen Sie
+\begin{itemize}
+\item [i)] $\mathscr{F}_T\cap\mathscr{F}_S=\mathscr{F}_{T\wedge S}$.
+\end{itemize}
+Sei zunächst $A\in\mathscr{F}_{T\wedge S}$.
+Da $T\wedge S\leq S,T$ gilt nach Lemma 12 $A\in\mathscr{F}_T\cap\mathscr{F}_S$.
+Sei nun $A\in\mathscr{F}_T\cap\mathscr{F}_S$.
+Nach Definition von $\mathscr{F}_T$ und $\mathscr{F}_S$ gilt $A\cap\{S\leq t\}\in\mathscr{F}_t$ und $A\cap\{T\leq t\}\in\mathscr{F}_t$.
+Da $\mathscr{F}_t$ eine $\sigma$-Algebra ist, gilt $A\cap\bigl(\{S\leq t\}\cup \{S\leq t\}\bigr)\in\mathscr{F}_t$.
+Die Behauptung folgt, denn $\{S\leq t\}\cup \{S\leq t\}=\bigl\{S\leq t\text{ oder }T\leq t\bigr\}=\{S\wedge T\leq t\}$.
+\begin{itemize}
+\item [ii)] Für $Y\in L^1$ gilt $E[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_S]=E[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_T]$
+\end{itemize}
+Nach Definition des bedingten Erwartungswertes müssen wir zwei Sachen zeigen. Erstens, dass $E[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_T]$ $\mathscr{F}_S$-messbar ist und zweitens, die definierende Eigenschaft des bedingten Erwartungswertes, die besagt, dass für alle $F_S\in\mathscr{F}_S$ gilt $E[\mathbbm{1}_{F_S}\bigl[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_T]\bigr]=E[\mathbbm{1}_{F_S}Y\mathbbm{1}_{\{S=T\}}]$.
+\emph{Die Messbarkeit ist noch zu zeigen.}
+Um die definierende Eigenschaft zu zeigen betrachte ein $F_S\in\mathscr{F}_S$.
+Nach Lemma 12.vi gilt $\mathscr{F}_S\cap\{S=T\}\in\mathscr{F}_T$.
+Da jedes $Y$ einen bedingten Erwartungswertes bezüglich $\mathscr{F}_T$ hat erhalten wir $E[\mathbbm{1}_{F_S\cap\{S=T\}}Y]=E\bigl[\mathbbm{1}_{F_S\cap\{S=T\}}E[Y|\mathscr{F}_T]\bigr]=E\bigl[\mathbbm{1}_{F_S}E[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_T]\bigr]$, denn $\{S=T\}\in\mathscr{F}_T$ nach Lemma 15.
+
+\paragraph{\normalfont{\itshape Definition} 1.} Ein \emph{einfacher Prozess} $H$ (in Finanzmathe auch: \emph{einfache Handelsstrategie}) ist ein $\mathbb{R}^d$-wertiger adaptierter stochastischer Prozess der Form
+\[
+H=\sum_{i=1}^nh_i\mathbbm{1}_{\rrbracket\tau_{i-1},\tau_i\rrbracket}
+\]
+für endliche Stoppzeiten $0\leq\tau_0\leq\tau_1\leq\cdots\leq\tau_n<\infty$ und $h_i\in L^\infty(\mathscr{F}_{\tau_{i-1}})$ für alle $i=1,\dots,n$.
+\paragraph{\normalfont{\itshape Definition} 2.} Sei $S$ ein $\mathbb{R}^d$-wertiger stochastischer Prozess und $H$ ein einfacher Prozess nach Definition 1.
+Das \emph{stochastische Integral für einfache Prozesse $H\cdot S$ ist definiert durch}
+\[
+  (H\cdot S)_t:=\int_0^tH_sdS_s:=\sum_{i=1}^n\langle h_i,S_t^{\tau_i}-S_t^{\tau_{i-1}}\rangle_{\mathbb{R}^d}\,.
+\]
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [iii)] Zeigen Sie: Für ein Martingal $S$ und einen einfachen Prozess $H$ ist das stochastische Integral $H\cdot S$ auch ein Martingal.
+\end{itemize}
+
+\noindent\emph{Hinweis: Zeigen Sie  die Aussage iii) für $d=1$ und $H\cdot S=h(S^{T_2}-S^{T_1})$ für eine $\mathscr{F}_{T_1}$-messbare Zufallsvariable $h\in L^\infty$ und Stoppzeiten $T_2\geq T_1$.
+Wieso genügt das?
+Um die vereinfachte Aussage zu zeigen, ist die Fallunterscheidung $1=\mathbbm{1}_{\{T_1>s\}}+\mathbbm{1}_{\{T_1\leq s<T_2\}}+\mathbbm{1}_{\{T_2\leq s\}}$ sehr hilfreich.}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
