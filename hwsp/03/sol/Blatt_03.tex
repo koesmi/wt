@@ -45,6 +45,24 @@ Um die definierende Eigenschaft zu zeigen betrachte ein $F_S\in\mathscr{F}_S$.
 Nach Lemma 12.vi gilt $\mathscr{F}_S\cap\{S=T\}\in\mathscr{F}_T$.
 Da jedes $Y$ einen bedingten Erwartungswertes bezüglich $\mathscr{F}_T$ hat erhalten wir $E[\mathbbm{1}_{F_S\cap\{S=T\}}Y]=E\bigl[\mathbbm{1}_{F_S\cap\{S=T\}}E[Y|\mathscr{F}_T]\bigr]=E\bigl[\mathbbm{1}_{F_S}E[Y\mathbbm{1}_{\{S=T\}}|\mathscr{F}_T]\bigr]$, denn $\{S=T\}\in\mathscr{F}_T$ nach Lemma 15.
 
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.} Zeigen Sie das \emph{Optional Stopping Theorem}: Sei $T$ eine Stoppzeit und $X$ ein $\mathbb{F}$-Supermartingal.
+Dann ist der gestoppte Prozess $X^T$ wieder ein Supermartingal bzgl. der Filtrationen $\mathbb{F}$ und $\mathbb{F}^T=(\mathscr{F}_{T\wedge t})_{t\in\mathbb{R}_+}$.
+
+\noindent\emph{Hinweis: Dieses Resultat gilt analog für Submartingale und Martingale.}
+
+Wir gehen anhand des Beweises von Theorem 18 in \cite{protter2005stochastic} vor.
+Da $t\wedge T\leq T$ gilt mit dem Optional Sampling Theorem
+\begin{align*}
+  X_{t\wedge T}
+  &\geq E[X_T|\mathscr{F}_{t\wedge T}]\,.
+    \intertext{wir benutzen die Zerlegung $1=\mathbbm{1}_{\{T<t\}}+\mathbbm{1}_{\{T\geq t\}}$ und erhalten}
+  &=E[X_T\mathbbm{1}_{\{T<t\}}+X_T\mathbbm{1}_{\{T\geq t\}}|\mathscr{F}_{t\wedge T}]\,.
+    \intertext{Auf $\{T<t\}$ ist $t\wedge T=T$.
+    Daher ist $X_T\mathbbm{1}_{\{T<t\}}$ $\mathscr{F}_{t\wedge T}$-messbar, wodurch}
+  &=X_T\mathbbm{1}_{\{T<t\}}+E[X_T\mathbbm{1}_{\{T\geq t\}}|\mathscr{F}_{t\wedge T}]\,.
+    \intertext{Nun gilt für ein $H\in\mathscr{F}_t$, dass $H\mathbbm{1}_{\{T\geq t\}}\in\mathscr{F}_T$, \emph{was noch genauer gezeigt werden sollte.}}
+\end{align*}
+
 \paragraph{\normalfont{\itshape Definition} 1.} Ein \emph{einfacher Prozess} $H$ (in Finanzmathe auch: \emph{einfache Handelsstrategie}) ist ein $\mathbb{R}^d$-wertiger adaptierter stochastischer Prozess der Form
 \[
 H=\sum_{i=1}^nh_i\mathbbm{1}_{\rrbracket\tau_{i-1},\tau_i\rrbracket}
