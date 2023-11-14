@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 4 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
+Sei $X$ ein Submartingal.
+Zeigen Sie die Äquivalenz folgender Aussagen
+\begin{enumerate}
+\item Es gilt $X^+$ ist gleichgradig integrierbar.
+\item Es existiert eine Zufallsvariable $X_\infty\in L^1(\mathscr{F}_\infty)$, sodass $E[X_\infty|\mathscr{F}_t]\geq X_t$ für alle $t\in\mathbb{R}_+$.
+\end{enumerate}
+Wir gehen nach dem Beweis von Theorem 9.30 in \cite{Kallenberg2021}.
+Sei zunächst $X^+$ gleichgradig integrierbar.
+Nach Lemma 24 aus Wahrscheinlichkeitstheorie 1 gilt $\sup_{t\geq0}E[X_t^+]<\infty$.
+Mit Satz 57, dem Doob'schen Grenzwertsatz, gibt es ein $X_\infty$, sodass $X_t^+\xrightarrow{\text{f.s.}}X_\infty^+$.
+Nach dem Satz 60, dem Satz von Vitaly, gilt auch $X_t^+\xrightarrow{L^1}X_\infty^+$.
+Mit majorisierter Konvergenz erhalten wir
+\begin{equation}
+  \label{eq:xinfplus}
+  E[X_t^+|\mathscr{F}_s]\rightarrow E[X_\infty^+|\mathscr{F}_s]\,.
+\end{equation}
+Da $X$ ein Submartingal ist, können wir für alle $\geq 0\leq t\leq s$ schreiben $X_t\leq E[X_s|\mathscr{F}_t]$ und damit auch
+\begin{align*}
+  X_t
+  &\leq\lim_{s\to\infty}E[X_s^+]-\liminf_{s\to\infty}E[X_s^-|\mathscr{F}_t]\,.
+  \intertext{Mit Gleichung (\ref{eq:xinfplus}) im ersten Term und dem Lemma von Fatou im zweiten kriegen wir}
+  &\leq E[X_\infty^+]-E[\liminf X_s^-|\mathscr{F}_t]=E[X_\infty|\mathscr{F}_t]\,.
+\end{align*}
+
+Gibt es andererseits ein $X_\infty$, sodass für alle $t\geq0$ gilt $X_t\leq E[X_\infty|\mathscr{F}_t]$, so gilt nach Blatt 2 Aufgabe 3.ii, dass $X_t^+\leq E[X_\infty^+|\mathscr{F}_t]$, denn $\cdot^+$ ist konvex.
+Mit Korollar 8.22 aus \cite{klenke} erhalten wir schließlich, dass $X^+$ gleichgradig integrierbar ist.
+\pagebreak
+\paragraph{}
+Formulieren Sie eine analoge Aussage für Supermartingale.
+
+Sei $X$ ein Supermartingal, dann ist $-X$ ein Submartingal.
+Somit gibt es genau dann ein $-X_\infty\in L^1(\mathscr{F}_\infty)$, sodass $E[-X_\infty|\mathscr{F}_t]\geq -X_t$ für alle $t\in\mathbb{R}_+$, wenn $(-X)^+$ gleichgradig integrierbar ist.
+Das heißt, die folgenden Aussagen sind äquivalent.
+\begin{enumerate}
+\item $X^-$ ist gleichgradig integrierbar.
+\item Es existiert eine Zufallsvariable $X_\infty\in L^1(\mathscr{F}_\infty)$, sodass $E[X_\infty|\mathscr{F}_t]\leq X_t$ für alle $t\in\mathbb{R}_+$.
+\end{enumerate}
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
