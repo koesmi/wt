@@ -34,7 +34,16 @@ Sei zunächst $X^+$ gleichgradig integrierbar.
 Nach Lemma 24 aus Wahrscheinlichkeitstheorie 1 gilt $\sup_{t\geq0}E[X_t^+]<\infty$.
 Mit Satz 57, dem Doob'schen Grenzwertsatz, gibt es ein $X_\infty$, sodass $X_t^+\xrightarrow{\text{f.s.}}X_\infty^+$.
 Nach dem Satz 60, dem Satz von Vitaly, gilt auch $X_t^+\xrightarrow{L^1}X_\infty^+$.
-Mit majorisierter Konvergenz erhalten wir
+Sei nun $A\in\mathscr{F}_t$.
+Dann kriegen wir für $t\leq s$
+\begin{align*}
+  E[(X^+_\infty-X^+_s)\mathbbm{1}_A]
+  &=E[(X^+_\infty-X^+_t)\mathbbm{1}_A]+E[(X^+_t-X^+_s)\mathbbm{1}_A]\,.
+    \intertext{Da $X$ ein Submartingal ist, ist der zweite Term negativ.
+    Somit kriegen wir}
+  &\leq E[(X^+_\infty-X^+_t)\mathbbm{1}_A]\leq E[|X^+_\infty-X^+_t|]\to0\,,
+\end{align*}
+sodass auch
 \begin{equation}
   \label{eq:xinfplus}
   E[X_t^+|\mathscr{F}_s]\rightarrow E[X_\infty^+|\mathscr{F}_s]\,.
@@ -49,7 +58,6 @@ Da $X$ ein Submartingal ist, können wir für alle $\geq 0\leq t\leq s$ schreibe
 
 Gibt es andererseits ein $X_\infty$, sodass für alle $t\geq0$ gilt $X_t\leq E[X_\infty|\mathscr{F}_t]$, so gilt nach Blatt 2 Aufgabe 3.ii, dass $X_t^+\leq E[X_\infty^+|\mathscr{F}_t]$, denn $\cdot^+$ ist konvex.
 Mit Korollar 8.22 aus \cite{klenke} erhalten wir schließlich, dass $X^+$ gleichgradig integrierbar ist.
-\pagebreak
 \paragraph{}
 Formulieren Sie eine analoge Aussage für Supermartingale.
 
