@@ -69,6 +69,28 @@ Das heißt, die folgenden Aussagen sind äquivalent.
 \item Es existiert eine Zufallsvariable $X_\infty\in L^1(\mathscr{F}_\infty)$, sodass $E[X_\infty|\mathscr{F}_t]\leq X_t$ für alle $t\in\mathbb{R}_+$.
 \end{enumerate}
 
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [ii)] Sei $(Z_n)_{n\geq1}$ eine Folge unabhängiger Zufallsvariablen mit $P(Z_n=1)=\frac{1}{n}=1-P(Z_n=0)$.
+  Zeigen Sie, dass die Folge in $L^1$ konvergiert, aber nicht fast sicher.
+\end{itemize}
+Es gilt $E[|Z_n-0|]=1\cdot\frac{1}{n}+0\cdot(1-\frac{1}{n})=\frac{1}{n}\rightarrow0$, sodass $Z_n\xrightarrow{L^1}0$.
+Da die $Z_n$ unabhängig sind, sind auch die Mengen $\{Z_n=1\}$ unabhängig.
+Außerdem gilt $\sum_{n\geq1}P(Z_n=1)=\sum_{n\geq1}\frac{1}{n}=\infty$.
+Somit können wir Borel-Cantelli zwei anwenden.
+Hiernach folgt, $1=P(\limsup\{Z_n=1\})=P(\forall n\geq 1\exists m\geq n~Z_m=1)$.
+Angenommen, es gilt $1=P(\lim_{n\to\infty}Z_n=0)=P(\exists k\geq1\forall l\geq k~Z_l=0)$, dann würde aber auch für alle $m\geq k$ $P$-fast-sicher gelten, dass $Z_m=0$.
+Somit kann $Z_n$ nicht fast sicher gegen 0 konvergieren und auch nicht gegen etwas anderes, denn $Z_n\xrightarrow{L^1}0$ impliziert $Z_n\xrightarrow{P}0$ und $Z_n\xrightarrow{\text{f.s.}}Z$ impliziert $Z_n\xrightarrow{P}Z$, sodass $Z=0$ sein muss.
+
+\begin{itemize}
+\item [iii)] Gibt es ein Martingal $X=(X_n)_{n\geq1}$, dass in $L^1$, aber nicht fast sicher konvergiert?
+\end{itemize}
+Nein, denn Konvergenz in $L^1$ impliziert für Martingale fast sicherere Kon\-ver\-genz.
+Angenommen, $X_n\xrightarrow{L^1}X_\infty$, also insbesondere auch $X_n\xrightarrow{P}X_\infty$.
+Dann gilt $\sup_n E[|X_n|]<\infty$, also auch $\sup_n E[X_n^+]<\infty$.
+Somit können wir den Doobschen Konvergenzsatz, Satz 57, anwenden.
+Demnach gibt es ein $X_\infty'$, sodass $X_n\xrightarrow{\text{f.s.}}X_\infty'$.
+Da hierdurch auch gilt $X_n\xrightarrow{P}X_\infty'$, muss folgen $X_\infty=X_\infty'$.
 \bibliography{../../../books/wt}
 \end{document}
 
