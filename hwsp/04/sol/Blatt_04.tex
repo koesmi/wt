@@ -71,6 +71,22 @@ Das heißt, die folgenden Aussagen sind äquivalent.
 
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 \begin{itemize}
+\item [i)] Seien $Y_i$, $i=1,2,\dots$ unabhängig identisch verteilt mit $P(Y_i=0)=1-P(Y_i=1)=\frac{1}{2}$.
+  Zeigen Sie, dass ${\cal X}=(X_n)_{n\geq1}$ mit $X_n:=2^n\prod_{i=1}^n Y_i$ ein Martingal ist bzgl. einer geeigneten Filtration.
+\end{itemize}
+Sei $\mathbb{F}=(\mathscr{F}_n)$ mit $\mathscr{F}_n=\sigma(Y_1,\dots,Y_n)$.
+Dann sind $Y_1,\dots,Y_n$ $\mathscr{F}_n$-messbar, sodass gilt
+\begin{align*}
+  E[X_{n+1}|\mathscr{F}_n]
+  &=E\Bigl[2^{n+1}\prod\nolimits_{i=1}^{n+1}Y_i\Bigm|\mathscr{F}_n\Bigr]=2^{n+1}\prod\nolimits_{i=1}^nY_i E[Y_{n+1}|\mathscr{F}_n]\,.
+    \intertext{Da $Y_{n+1}$ unabhängig von $Y_1,\dots,Y_n$ und damit von $\mathscr{F}_n$ ist, kriegen wir}
+  &=2^{n+1}\prod\nolimits_{i=1}^nY_i E[Y_{n+1}]=2^{n+1}\prod\nolimits_{i=1}^nY_i E[Y_1]\,,
+    \intertext{Denn alle $Y_i$ sind ja identisch verteilt.
+    Mit $E[Y_1]=0\cdot\frac{1}{2}+1\cdot\frac{1}{2}=\frac{1}{2}$ kriegen wir schließlich}
+  &=2^n\prod\nolimits_{i=1}^nY_i=X_n\,,
+\end{align*}
+sodass ${\cal X}$ ein Martingal ist.
+\begin{itemize}
 \item [ii)] Sei $(Z_n)_{n\geq1}$ eine Folge unabhängiger Zufallsvariablen mit $P(Z_n=1)=\frac{1}{n}=1-P(Z_n=0)$.
   Zeigen Sie, dass die Folge in $L^1$ konvergiert, aber nicht fast sicher.
 \end{itemize}
