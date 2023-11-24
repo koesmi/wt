@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 5 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [i)] Beschreiben Sie, welche Voraussetzungen nachzurechnen sind, um die Wohldefiniertheit von Definition 2 zu gewährleisten (Sie müssen diese nicht zeigen!).
+\end{itemize}
+Sei $f$ eine rechtsstetige monoton wachsende Funktion.
+Wir wollen Satz 2 auf $\mu_f$ auf $\{(s,t]_{s,t\in\mathbb{R}_+}\}$ anwenden.
+Wir wissen schon aus Wahrschein\-lich\-keits\-the\-o\-rie 1, dass $\sigma(\{(s,t]\}_{s,t\in\mathbb{R}_+})=\mathscr{B}(\mathbb{R}_+)$.
+Wenn $f$ monoton wachsend ist, ist das Bild von $\mu_f$ auch in $[0,\infty]$.
+Dann ist noch zu überprüfen, ob $\mu_f$ eine additive, $\sigma$-subadditive, $\sigma$-endliche Mengenfunktion mit  $\mu(\emptyset)=0$ ist.
+Dann wäre nach Satz 2 $\mu_f$ auf $(\mathbb{R}_+,\mathscr{B}(\mathbb{R})_+)$ eindeutig gegeben.
+\begin{itemize}
+\item [ii)] Sei $f$ zusätzlich differenzierbar.
+  Zeigen Sie, dass für messbare Ab\-bil\-dun\-gen $h\colon\mathbb{R}_+\to\mathbb{R}$ gilt, dass
+  \[
+    \int_{\mathbb{R}_+}h(u)\mu_f(du)=\int_{\mathbb{R}_+}h(u)f'(u)du,
+  \]
+  falls eines der beiden Integrale existiert.
+\end{itemize}
+\emph{Hinweis: Verwenden Sie für ii) den Satz über monotone Klassen.
+  Sie brauchen das Argument nicht im Detail auszuführen.}
+
+Wie wir in der Übung gesehen haben und auch im Hinweis steht, verwenden wir das Moonotone-Klassen Theorem.
+Sei $\mathscr{H}$ der Vektorraum aller Abbildungen $h$, für die Formel gilt.
+Wir wollen zeigen, dass die Formel für $h=\mathbbm{1}_{(a,b]}$ mit $a\leq b\in\mathbb{R}_+$ gilt.
+Dann gilt sie nach dem Monotone-Klassen Theorem auch für alle $\mathscr{B}(\mathbb{R}_+)$-messbaren Abbildungen, denn $\sigma(\{(a,b]\}_{a,b\in\mathbb{R}_+})=\mathscr{B}(\mathbb{R}_+)$.
+Nach der Definition des Lebesgue-Integrals gilt
+\begin{align*}
+  \int_{\mathbb{R}_+}\mathbbm{1}_{(a,b]}\mu_f(du)
+  &=\mu_f\bigl((a,b]\bigr)\,.
+    \intertext{Nach der Definition 2 von $\mu_f$ gilt}
+  &=f(b)-f(a)\,.
+    \intertext{Nach dem Hauptsatz der Differential- und Integralrechnung folgt}
+  &=\int_{\mathbb{R}_+}\mathbbm{1}_{(a,b]}f'(u)du\,.
+\end{align*}
+Somit gilt die Formel für $h=\mathbbm{1}_{(a,b]}$ und mit dem Monotone-Klassen Theorem auch für alle $\mathscr{B}(\mathbb{R}_+)$-messbaren Funktionen $h$.
+\emph{Damit das Monotone-Klassen Theorem angewendet werden kann, müsste noch gezeigt werden, dass die Formel für $h=1$ gilt.
+  Außerdem wäre zu zeigen, dass sie für ein $h$ mit $h_n\uparrow h$ gilt, wenn sie für jedes $h_n$ gilt, was bestimmt mit monotoner Konvergenz geht.}
+\begin{itemize}
+\item [iii)] Berechnen Sie $\int_{(0,t]}h(u)df(u):=\int_{\mathbb{R}_+}\mathbbm{1}_{(0,t]}h(u)\mu_f(du)$ für
+  \begin{itemize}
+  \item [a)] $h(t)=t$ und $f(t)=\exp(t)$.
+  \end{itemize}
+\end{itemize}
+Nach Teilaufgabe (ii) gilt
+\begin{align*}
+  \int_{\mathbb{R}_+}\mathbbm{1}_{(0,t]}(u)u\mu_{\exp}(du)
+  &=\int_{\mathbb{R}_+}\mathbbm{1}_{(0,t]}(u)u\exp(u)du=\int_0^tu\exp(u)du\\
+  &=\Bigl.\exp(u)(u-1)\Bigr|_{u=0}^t=\exp(t)(t-1)+1\,.
+\end{align*}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
