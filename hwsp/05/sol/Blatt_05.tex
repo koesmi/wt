@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.575in,bottom=1.575in]{geometry}
 \usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
 \usepackage{mathrsfs}
 \usepackage{babel}
@@ -43,8 +43,9 @@ Dann wäre nach Satz 2 $\mu_f$ auf $(\mathbb{R}_+,\mathscr{B}(\mathbb{R})_+)$ ei
 \emph{Hinweis: Verwenden Sie für ii) den Satz über monotone Klassen.
   Sie brauchen das Argument nicht im Detail auszuführen.}
 
-Wie wir in der Übung gesehen haben und auch im Hinweis steht, verwenden wir das Moonotone-Klassen Theorem.
-Sei $\mathscr{H}$ der Vektorraum aller Abbildungen $h$, für die Formel gilt.
+\pagebreak
+Wie wir in der Übung gesehen haben und auch im Hinweis steht, ver\-wen\-den wir das Moonotone-Klassen Theorem.
+Sei $\mathscr{H}$ der Vektorraum aller Ab\-bil\-dun\-gen $h$, für die Formel gilt.
 Wir wollen zeigen, dass die Formel für $h=\mathbbm{1}_{(a,b]}$ mit $a\leq b\in\mathbb{R}_+$ gilt.
 Dann gilt sie nach dem Monotone-Klassen Theorem auch für alle $\mathscr{B}(\mathbb{R}_+)$-messbaren Abbildungen, denn $\sigma(\{(a,b]\}_{a,b\in\mathbb{R}_+})=\mathscr{B}(\mathbb{R}_+)$.
 Nach der Definition des Lebesgue-Integrals gilt
@@ -57,8 +58,18 @@ Nach der Definition des Lebesgue-Integrals gilt
   &=\int_{\mathbb{R}_+}\mathbbm{1}_{(a,b]}f'(u)du\,.
 \end{align*}
 Somit gilt die Formel für $h=\mathbbm{1}_{(a,b]}$ und mit dem Monotone-Klassen Theorem auch für alle $\mathscr{B}(\mathbb{R}_+)$-messbaren Funktionen $h$.
-\emph{Damit das Monotone-Klassen Theorem angewendet werden kann, müsste noch gezeigt werden, dass die Formel für $h=1$ gilt.
-  Außerdem wäre zu zeigen, dass sie für ein $h$ mit $h_n\uparrow h$ gilt, wenn sie für jedes $h_n$ gilt, was bestimmt mit monotoner Konvergenz geht.}
+Damit das Monotone-Klassen Theorem angewendet werden kann, müsste noch gezeigt werden, dass die Formel für $h=1$ gilt.
+Durch Einsetzen erhalten wir
+\begin{align*}
+  \int_{\mathbb{R}_+}\mu_f(du)
+  &=\mu_f(\mathbb{R}_+)
+    =\mu_f\Bigl(\bigcup_{n\in\mathbb{N}}[0,n)\Bigr)=\lim_{n\to\infty}\mu_f((0,n])\,,
+    \intertext{mit Stetigkeit von unten.}
+  &=\lim_{n\to\infty}f(n)-f(0)=\lim_{n\to\infty}\int_{0}^nf'(u)du=\int_{\mathbb{R}_+}f'(u)du\,,
+\end{align*}
+wieder mit dem Hauptsatz der Differential- und Integralrechnung.
+  \emph{Außerdem wäre zu zeigen, dass sie für ein $h$ mit $h_n\uparrow h$ gilt, wenn sie für jedes $h_n$ gilt, was bestimmt mit monotoner Konvergenz geht.}
+\pagebreak
 \begin{itemize}
 \item [iii)] Berechnen Sie $\int_{(0,t]}h(u)df(u):=\int_{\mathbb{R}_+}\mathbbm{1}_{(0,t]}h(u)\mu_f(du)$ für
   \begin{itemize}
