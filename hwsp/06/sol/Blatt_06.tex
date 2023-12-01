@@ -22,6 +22,13 @@
 \usepackage{hyperref}
 
 \begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+\begin{itemize}
+\item [4.] Es existierten eindeutig bestimmte monoton wachsende càdlàg Funktionen $b,c\colon\mathbb{R}_+\to\mathbb{R}$ mit $b_0=c_0=0$, so dass $a=b-c$ und $\operatorname{Var}(a)=b+c$.
+  Diese sind gegeben durch $b=(a+\operatorname{Var}(a))/2$ und $c=b-a$.
+\end{itemize}
+Das ist Proposition 3.3 in \cite{jacod2013limit}.
+
 \paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
 Zeigen Sie $\mathscr{M}_{\text{loc}}\cap\mathcal{V}\subset\mathscr{A}_{\text{loc}}$
 
@@ -40,6 +47,14 @@ Es gilt $A\in\mathscr{M}$.
 Nach dem Doobschen Grenzwertsatz gilt $E[|A_{T_n}|]<\infty$.
 Mit der gefundenen Abschätzung gilt auch $E[|\operatorname{Var}(A)_{T_n}|]<\infty$, also $\operatorname{Var}(A)\in\mathscr{A}_{\text{loc}}^+$.
 Das heißt $A\in\mathscr{A}_{\text{loc}}$.
+
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Zeigen Sie: Jedes $A\in\mathscr{A}^+$ ist ein Submartingal der Klasse (D).
+
+Sei $A\in\mathscr{A}^+$.
+Da $A$ wachsend ist, gilt $A_s=E[A_s|\mathscr{F}_s]\leq A_t$.
+Aufgrund der Monotonie der bedingten Erwartung ist $A$ ein Submartingal.
+Da $A$ gleichgradig integrierbar ist, ist $A$ nach Satz 65 der Klasse (D).
 
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Zeigen Sie die Eindeutigkeit in Satz 104.
