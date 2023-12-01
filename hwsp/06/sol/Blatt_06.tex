@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.575in,bottom=1.575in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 5 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
+Zeigen Sie $\mathscr{M}_{\text{loc}}\cap\mathcal{V}\subset\mathscr{A}_{\text{loc}}$
+
+\noindent\emph{Hinweis: Betrachten Sie für $A\in\mathscr{M}\cap\mathcal{V}$ die Stoppzeitenfolge $T_n:=\inf\{t\in\mathbb{R}_+\mid\operatorname{Var}(A)>n\}$}
+
+Das ist Lemma 3.11 in \cite{jacod2013limit}.
+Es reicht zu zeigen, dass für jedes $A\in\mathscr{M}\cap{\cal V}$ gilt $A\in\mathscr{A}_{\text{loc}}$.
+\emph{Hierfür fehlt die Begründung}.
+Entsprechend Hinweis wählen wir $T_n:=\inf\{t\in\mathbb{R}_+\mid\operatorname{Var}(A)_t>n\}$.
+Damit gilt $T_n\uparrow\infty$.
+Für jedes $t\in\mathbb{R}_+$ gilt nach Aufgabe 1.1, dass $|A_{t^-}|\leq\operatorname{Var}(A)_{t^-}$.
+Weiterhin gilt nach Aufgabe 1.2 und 1.3, dass $\Delta[\operatorname{Var}(A)]_t=|\Delta A_t|\leq|A_{t^-}|+|A_t|$.
+Das heißt, $\operatorname{Var}(A)_{T_n}\leq 2n+|A_{T_n}|$.
+\emph{Hier fehlt ebenfalls die Begründung.}
+Es gilt $A\in\mathscr{M}$.
+Nach dem Doobschen Grenzwertsatz gilt $E[|A_{T_n}|]<\infty$.
+Mit der gefundenen Abschätzung gilt auch $E[|\operatorname{Var}(A)_{T_n}|]<\infty$, also $\operatorname{Var}(A)\in\mathscr{A}_{\text{loc}}^+$.
+Das heißt $A\in\mathscr{A}_{\text{loc}}$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
