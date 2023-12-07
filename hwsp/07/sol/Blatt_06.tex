@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.575in,bottom=1.575in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 7 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+Es seien $(H_1,d_1)$ und $(H_2,d_2)$ metrische Räume, $(H_2,d_2)$ vollständig und $D\subset H_1$ eine dichte Teilmenge von $H_1$.
+Weiter sei $f\colon D\subset H_1\to H_2$ eine gleichmäßig stetige Abbildung.
+Zeigen Sie, dass es eine eindeutige Abbildung $\tilde{f}\colon H_1\to H_2$ gibt, sodass $\tilde{f}$ stetig ist und $\tilde{f}|_D=f$ gilt.
+
+Wir orientieren uns an \cite{proofwiki1}.
+Wenn $H_1$ abgeschlossen ist, dann ist $D=H_1$ und wir können $\tilde{f}=f$ wählen.
+Sei also $H_1$ nicht abgeschlossen.
+Sei $(a_n)$ eine konvergente Folge in $D$.
+Dann ist der Limes von $(f(a_n))$ nur von dem Limes von $(a_n)$ abhängig, das heißt, es gibt eine Funktion $L\colon H_1\to H_2$, sodass $\lim_{n\to\infty}f(a_n)=L(\lim_{n\to\infty} a_n)$ für jede konvergente Folge $(a_n)$.
+Sei nun $\tilde{f}=f(a)\mathbbm{1}_{D}+L(a)\mathbbm{1}_{H_1\setminus D}$.
+Wir möchten zeigen, dass $g$ gleichmäßig stetig ist.
+Sei hierfür $\varepsilon>0$.
+Wir möchten zeigen, dass es ein $\delta'>0$ gibt, sodass aus $a,b\in D$ und $d_1(a,b)<\delta'$ folgt $d_2(\tilde{f}(a,\tilde{f}(b)))<\varepsilon$.
+Da $D$ dicht in $H_1$ liegt, gibt es Folgen $(a_n)$ und $(b_n)$ in $D$, sodass $a_n\to a$ und $b_n\to b$.
+Nach Dreiecksungleichung erhalten wir $d_2(\tilde{f}(a,\tilde{f}(b)))\leq d_2(g_a,f(a_n))+d_2(f(a_n),f(b_n))+d_2(f(b_n),\tilde{f}(b))$.
+Da nach Definition von $\tilde{f}$ gilt $f(a_n)\to \tilde{f}(a)$ und $f(b_n)\to \tilde{f}(b)$, können wir ein $N_1\in\mathbb{N}$ finden, sodass für alle $n> N_1$ gilt $d_2(\tilde{f}(a),f(a_n))<\varepsilon/3$, sowie ein $N_2\in\mathbb{N}$, sodass für alle $n>N_2$ gilt, dass $d_2(\tilde{f}(b),f(b_n))<\varepsilon/3$.
+Wir suchen nun ein $N_3\in\mathbb{N}$, sodass für alle $n>N_3$ gilt $d_2(f(a_n),f(b_n))<\varepsilon/3$.
+Da $f$ gleichmäßig stetig ist, können wir ein $\delta>0$ finden, sodass aus $d_1(a_n,b_n)<\delta$ folgt $d_2(f(a_n),f(b_n))<\varepsilon/3$.
+Wieder durch Dreiecksun\-gleic\-hung erhalten wir $d_1(a_n,b_n)\leq d(a_n,a)+d(a,b)+d(b,b_n)$.
+Da $a_n\to a$, können wir ein $M_1\in\mathbb{N}$ wählen, sodass $d(a_n,a)<\delta/3$ für alle $n>M_1$.
+Da $b_n\to b$, können wir ein $M_2\in\mathbb{N}$ wählen, sodass $d(b_n,b)<\delta/3$ für alle $n>M_2$.
+Somit gilt, aus $d_1(a,b)<\delta/3$ und $n> M_1\vee M_2=:N_3$ folgt $d_1(a_n,b_n)<\delta$ und somit $d_2(f(a_n),f(b_n))<\varepsilon/3$.
+Sei nun $N=N_1\vee N_2\vee N_3$, dann gilt für alle $n>N$ wann immer $d_1(a,b)<\delta/3$, dass $d_2(\tilde{f}(a),\tilde{f}(b))\leq d_2(\tilde{f}(a),f(a_n))+d_2(f(a_n),f(b_n))+d_2(f(b_n),\tilde{f}(b))<\varepsilon$, sodass $d_2(\tilde{f}(a),\tilde{f}(b))<\varepsilon$, wann immer $d_1(a,b)<\delta/3$ und $\tilde{f}$ schließlich gleichmäßig stetig ist.
+\pagebreak
+
+Zur Eindeutigkeit, sei $f'$ eine andere stetige Funktion, die die Be\-din\-gun\-gen an $\tilde{f}$ erfüllt.
+Dann haben wir für jedes $a\in D$ und jede Folge $(a_n)$ mit $a_n\to a$, dass $f'(a_n)\to f'(a)$ und $f(a_n)\to \tilde{f}(a)$.
+Da $h|_D=f$, erhalten wir $f(a_n)\to f'(a)$.
+Da der Limes der Konvergenz eindeutig ist, erhalten wir $f'(a)=\tilde{f}(a)$.
+
+\noindent Zeigen Sie mit 3 Gegenbeispielen, dass folgende Annahmen notwendig sind
+\begin{itemize}
+\item [i)] $(H_2,d_2)$ ist vollständig.
+\end{itemize}
+Seien $H_1=[0,1]$, $D=\mathbb{Q}\cap[0,1]$, $H_2=[0,1]\setminus\{\pi^{-1}\}$, $f=\mathbbm{1}_{(\pi^{-1},1]}$.
+Dann ist $f$ stetig auf $D$, kann aber nicht zu einer Funktion auf $[0,1]$, die stetig in $\pi^{-1}$ ist, erweitert werden.
+\begin{itemize}
+\item [ii)] $f$ ist gleichmäßig stetig.
+\end{itemize}
+Sei $H_1=H_2=[0,\infty)$, $D=(0,\infty)$, $f\colon x\mapsto \frac{1}{x}$.
+Dann ist $f$ nicht gleichmäßig stetig, es existiert aber auch nicht der Limes $\lim_{x\downarrow 0}f(x)$, sodass $f$ nicht auf $H_1$ erweitert werden kann.
+\begin{itemize}
+\item [iii)] $D$ ist dicht in $H_1$.
+\end{itemize}
+Sei $H_1=H_2=\mathbb{R}$, $D=[0,\infty)$, $f=\operatorname{id}$, dann sind $\tilde{f}_1=\operatorname{id}$ und $\tilde{f}_2=\operatorname{id}\mathbbm{1}_{[0,\infty)}$ zwei Erweiterungen von $f$, die die geforderten Eigenschaften erfüllen.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
