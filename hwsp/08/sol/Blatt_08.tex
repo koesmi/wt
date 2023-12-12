@@ -23,6 +23,31 @@
 
 \begin{document}
 
+\paragraph{\normalfont{\itshape Definition} 1 (ucp-Metrik).}
+Sei ${\cal D}$ die Menge aller adaptierten càdlàg Prozesse von $\Omega\times\mathbb{R}_+$ nach $\mathbb{R}$.
+Wir definieren die Metrik $d_{ucp}\colon {\cal D}\times {\cal D}\to[0,\infty)$ durch
+\begin{equation}
+(X,Y)\mapsto \sum_{n\in\mathbb{N}}2^{-n}E[(X-Y)^*_n\wedge 1]\,,
+\end{equation}
+wobei $X^*_n:=\sup_{s\leq n}|X_s|$.
+Ebenso definiert $d_{ucp}$ eine Metrik auf dem Raum aller adaptierten càglàd Prozesse.
+
+\paragraph{Aufgabe 1 \textnormal{(3 Punkte)}.}
+Zeigen Sie folgende Aussagen:
+\begin{enumerate}
+\item [i)] Für Zufallsvariablen $X,X^1,X^2,\dots$ gilt stochastische Konvergenz $X^m\to X$ genau dann, wenn $E[|X^m-X|\wedge 1]\rightarrow0$.
+\end{enumerate}
+Das ist Lemma 17 aus dem Skript zur Wahrscheinlichkeitstheorie.
+Es gelte zunächst $X^m\xrightarrow{P}X$ und sei $0<\varepsilon<1$ beliebig.
+Dann gilt
+\begin{align*}
+  \lim_{n\to\infty}E[|X^m-X|\wedge1]
+  &=\lim_{n\to\infty}\bigl(E[|X^m-X|\wedge1]\mathbbm{1}_{\{|X^m-X|>\varepsilon\}}\\
+  &\quad+E[|X^m-X|]\mathbbm{1}_{\{|X^m-X|\leq\varepsilon\}}\bigr)\\
+  &\leq\lim_{n\to\infty}\bigl(\mathbbm{1}_{\{|X^m-X|>\varepsilon\}}+\varepsilon\bigr)=\varepsilon\,,
+\end{align*}
+denn $X^m$ konvergiert stochastisch gegen $X$.
+Gilt umgekehrt $0<\varepsilon\leq 1$ und $E[|X^m-X|\wedge 1]\to0$, so gilt $P(|X^m-X|>\varepsilon)\leq\frac{E[|X^m-X|\wedge1]}{\varepsilon}\to0$ nach Anwendung der Markov-Ungleichung.
 \paragraph{Aufgabe 5 \textnormal{(4 Punkte)}.}
 Es sei $X\in\mathscr{H}_{\text{loc}}^2$ beliebig.
 Dann liegt jeder lokal beschränkte, previsible Prozess in $L_{\text{loc}}^2(X)$.
