@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.575in,bottom=1.575in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 8 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 5 \textnormal{(4 Punkte)}.}
+Es sei $X\in\mathscr{H}_{\text{loc}}^2$ beliebig.
+Dann liegt jeder lokal beschränkte, previsible Prozess in $L_{\text{loc}}^2(X)$.
+
+Zunächst einmal gilt für $X\in\mathscr{H}_{\text{loc}}^2$, dass $\langle X,X\rangle\in\mathscr{V}$.
+Es gilt sogar, dass $\langle X,X\rangle\in\mathscr{A}_{\text{loc}}^+$, \emph{wobei das noch gezeigt werden sollte}.
+Somit reicht es zu zeigen, dass für $X\in\mathscr{A}_{\text{loc}}^+$ und $H$ lokal beschränkt und previsibel gilt, dass $H\cdot X\in\mathscr{A}_{\text{loc}}^+$.
+Seien $H$ und $X$ entsprechend gewählt, dann existiert eine Folge von Stoppzeiten $T_n$ mit $T_n\uparrow\infty$, sodass $X^{T_n}\in\mathscr{V}$ und $E[(X^{T_n})_\infty]<\infty$.
+Nach Theorem 93 gilt auch $H\cdot X^{T_n}\in\mathscr{V}$.
+\emph{Hier müsste noch gefolgert werden, dass es auch eine Folge $S_n\uparrow\infty$ von Stoppzeiten gibt, sodass $(H\cdot X)^{S_n}\in\mathscr{V}$.}
+Da $H\mapsto H\cdot X$ linear ist, ist außerdem $E[(H\cdot X)^{S_n}]<\infty$.
+Somit ist $H\cdot X\in\mathscr{A}_{\text{loc}}^+$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
