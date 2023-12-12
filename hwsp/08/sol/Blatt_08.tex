@@ -48,6 +48,35 @@ Dann gilt
 \end{align*}
 denn $X^m$ konvergiert stochastisch gegen $X$.
 Gilt umgekehrt $0<\varepsilon\leq 1$ und $E[|X^m-X|\wedge 1]\to0$, so gilt $P(|X^m-X|>\varepsilon)\leq\frac{E[|X^m-X|\wedge1]}{\varepsilon}\to0$ nach Anwendung der Markov-Ungleichung.
+
+\paragraph{\normalfont{\itshape Definition} 2.}
+\begin{itemize}
+\item [i)] Eine \emph{adaptierte Zerlegung} ist eine Folge $\tau=(T_n)_{n\in\mathbb{N}_0}$ von Stoppzeiten mit $T_0=0$, $\sup_{n\in\mathbb{N}}T_n=\infty$ und $T_n<T_{n+1}$ auf $\{T_n<\infty\}$ für alle $n\in\mathbb{N}_0$.
+\item [ii)] Es seien $X\in{\cal S}$ ein Semimartingal, $H$ ein adaptierter Prozess und $\tau=(T_n)_{n\in\mathbb{N}_0}$ eine adaptierte Zerlegung.
+  Dann nennen wir den Prozess $\tau(H\cdot X)$ definiert durch
+  \[
+    \tau(H\cdot X)_t:=\sum_{m\in\mathbb{N}_0}H_{T_m}(X_{T_{m+1}\wedge t}-X_{T_m\wedge t})\,,\quad t\in\mathbb{R}_+
+  \]
+  die \emph{$\tau$-Riemann'sche Approximation} von $H\cdot X$.
+\item [iii)] Eine Folge $(\tau_n)_{n\in\mathbb{N}}$ von adaptierten Zerlegungen $\tau_n=(T_{n,m})_{m\in\mathbb{N}_0}$ heißt eine \emph{Riemann'sche Zerlegungsfolge}, falls für alle $t\in\mathbb{R}_+$
+  \[
+    \sup_{m\in\mathbb{N}_0}|T_{n,m+1}\wedge t-T_{n,m}\wedge t|\to0\quad\text{für }n\to\infty\,.
+  \]
+\end{itemize}  
+
+\paragraph{Aufgabe 3 \textnormal{(3 Punkte)}.}
+Sei $X\in\mathscr{S}$ ein Semimartingal, $H$ ein càg Prozess.
+Weiter sei $(\tau_n)_{n\in\mathbb{N}}$ eine Riemann'sche Zerlegungsfolge.
+\begin{itemize}
+\item [i)] Geben Sie den einfachen previsiblen Prozess $H^n$ an, sodass $\tau_n(H\cdot X)_t=H^n\cdot X$.
+  Dieser darf hier auch als Reihe dargestellt werden
+\end{itemize}
+Das ist Proposition 4.44 in \cite{jacod2013limit}.
+Es gilt
+\[
+  H^n=\sum_{m\in\mathbb{N}}H_{T_{n,m}}\mathbbm{1}_{\rrbracket T_{n,m},T_{n,m+1}\rrbracket}\,.
+\]
+
 \paragraph{Aufgabe 5 \textnormal{(4 Punkte)}.}
 Es sei $X\in\mathscr{H}_{\text{loc}}^2$ beliebig.
 Dann liegt jeder lokal beschränkte, previsible Prozess in $L_{\text{loc}}^2(X)$.
