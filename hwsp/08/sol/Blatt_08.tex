@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.575in,bottom=1.575in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.375in,bottom=1.375in]{geometry}
 \usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
 \usepackage{mathrsfs}
 \usepackage{babel}
@@ -48,7 +48,7 @@ Dann gilt
 \end{align*}
 denn $X^m$ konvergiert stochastisch gegen $X$.
 Gilt umgekehrt $0<\varepsilon\leq 1$ und $E[|X^m-X|\wedge 1]\to0$, so gilt $P(|X^m-X|>\varepsilon)\leq\frac{E[|X^m-X|\wedge1]}{\varepsilon}\to0$ nach Anwendung der Markov-Ungleichung.
-
+\pagebreak
 \paragraph{\normalfont{\itshape Definition} 2.}
 \begin{itemize}
 \item [i)] Eine \emph{adaptierte Zerlegung} ist eine Folge $\tau=(T_n)_{n\in\mathbb{N}_0}$ von Stoppzeiten mit $T_0=0$, $\sup_{n\in\mathbb{N}}T_n=\infty$ und $T_n<T_{n+1}$ auf $\{T_n<\infty\}$ für alle $n\in\mathbb{N}_0$.
@@ -69,13 +69,23 @@ Sei $X\in\mathscr{S}$ ein Semimartingal, $H$ ein càg Prozess.
 Weiter sei $(\tau_n)_{n\in\mathbb{N}}$ eine Riemann'sche Zerlegungsfolge.
 \begin{itemize}
 \item [i)] Geben Sie den einfachen previsiblen Prozess $H^n$ an, sodass $\tau_n(H\cdot X)_t=H^n\cdot X$.
-  Dieser darf hier auch als Reihe dargestellt werden
+  Dieser darf hier auch als Reihe dargestellt werden.
 \end{itemize}
 Das ist Proposition 4.44 in \cite{jacod2013limit}.
 Es gilt
 \[
   H^n=\sum_{m\in\mathbb{N}}H_{T_{n,m}}\mathbbm{1}_{\rrbracket T_{n,m},T_{n,m+1}\rrbracket}\,.
 \]
+\begin{itemize}
+\item [ii)] Zeigen Sie, dass $H^n$ punktweise gegen $H$ konvergiert.
+\end{itemize}
+Das folgt, da $H$ càg ist.
+\begin{itemize}
+\item [iii)] Folgern Sie, dass die $\tau_n$-Riemann'schen Approximationen $\tau_n(H\cdot X)_t$ gegen $H\cdot X$ in $\emph{ucp}$ konvergieren.
+\end{itemize}
+Sei $K_t=\sup_{s\leq t}|H_s|$, dann ist $K$ adaptiert, càg, lokal beschränkt und es gilt $|H^n|\leq K$.
+Außerdem gilt nach (i) $\tau_n(H\cdot X)=H^n\cdot X$.
+Die Behauptung folgt mit Theorem 123 und Aufgabe 2.
 
 \paragraph{Aufgabe 5 \textnormal{(4 Punkte)}.}
 Es sei $X\in\mathscr{H}_{\text{loc}}^2$ beliebig.
