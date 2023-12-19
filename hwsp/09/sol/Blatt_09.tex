@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.375in,bottom=1.375in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 8 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+Zeigen Sie die Polarisierungsformel $[X,Y]=\frac{1}{4}([X+Y]-[X-Y])$.
+
+Es gilt
+\begin{align*}
+  [X+Y]-[X-Y]
+  &=(X+Y)^2-(X_0+Y_0)^2-2(X_-+Y_-)\cdot(X+Y)
+  \\&\quad-(X-Y)^2+(X_0-Y_0)^2+2(X_--Y_-)\cdot(X-Y)\\
+  &=4XY-4X_0Y_0-4X_-\cdot Y-4Y_-\cdot X=4[X,Y]\,.
+\end{align*}
+\paragraph{\normalfont{\itshape Definition} 1 (Die Differentielle Schreibweise).}
+Wir vereinbaren folgende Notation, unter der Bedingung, dass alle Ausdrücke wohldefiniert sind.
+Wir schreiben
+\[
+dX_t=H_tdt+K_tdY_t\,,
+\]
+falls folgende Integraldarstellung gilt
+\[
+X_t=X_o+\int_{0}^tH_sds+\int_0^tK_sdY_s\,.
+\]
+
+\paragraph{Aufgabe 5 \textnormal{(4 Punkte)}.}
+Sei $W$ eine Standard Brown'sche Bewegung.
+Zeigen Sie, dass der Prozess
+\[
+B_t=(1-t)\int_0^t\frac{1}{1-s}dW_s
+\]
+folgende Gleichung erfüllt
+\[
+dB_t=-\frac{B_t}{1-t}dt+dW_t
+\]
+und zeigen Sie, dass $\lim_{t\nearrow 1}E[B_t]=0$.
+
+Da $\frac{B_t}{1-t}=\int_0^t\frac{1}{1-s}dW_s$ gilt $d\Bigl(\frac{B_t}{1-t}\Bigr)=K_tdW_t$ mit $K_t=\frac{1}{1-t}$, wobei
+\begin{align*}
+  d\Bigl(\frac{B_t}{1-t}\Bigr)
+  &=\frac{dB_t}{1-t}+B_td\frac{1}{1-t}
+    \intertext{und mit Kettenregel}
+  &=\frac{d B_t}{1-t}+B_t\frac{dt}{(1-t)^2}=\frac{1}{1-t}dW_t\,.
+\end{align*}
+Multiplikation mit $1-t$ liefert die Behauptung.
+
+\paragraph{Aufgabe 6 \textnormal{(4 Punkte)}.}
+Es seien $F$ und $G$ stetige Funktionen und $f$ die Lösung der gewöhnlichen Differentialgleichung $f'(t)=F(t)f(t)$ mit $f(0)=1$.
+Ferner sei $W$ eine Brown'sche Bewegung.
+Zeigen Sie, dass der Prozess $X$ gegeben durch
+\[
+X_t:=f(t)\Bigl(x+\int_0^t f(s)^{-1}G(s)dW_s\Bigr)
+\]
+folgende Darstellung besitzt
+\[
+dX_t=F(t)X_tdt+G(t)dW_t,\quad X_0=x\,.
+\]
+
+$X_0=x$ folgt mit Definition 1.
+Es gilt $\frac{X_t}{f(t)}=x+\int_0^tK_sdW_s$ mit $K_s=f(s)^{-1}G(s)$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
