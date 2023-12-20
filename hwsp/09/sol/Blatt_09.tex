@@ -33,6 +33,14 @@ Es gilt
   \\&\quad-(X-Y)^2+(X_0-Y_0)^2+2(X_--Y_-)\cdot(X-Y)\\
   &=4XY-4X_0Y_0-4X_-\cdot Y-4Y_-\cdot X=4[X,Y]\,.
 \end{align*}
+
+\paragraph{Aufgabe 3 \textnormal{(1 Punkt)}.}
+Sei $X\in\mathscr{S}$ ein reellwertiger Prozess mit stetig differenzierbaren Pfaden.
+Wenden Sie die Itô-Formel auf $f(X)$ mit $f=\operatorname{id}$ an.
+Was fällt Ihnen auf?
+
+Es gilt $D_i X=e_i$ und $D_{ij}X=0$, sodass $X=X_0+\sum_{i\leq d}e_i\cdot X^i+\sum_{s\leq t}\Bigl(X_s-X_{s-}-\sum_{i\leq d}e_i\Delta X_s^i\Bigr)$.
+
 \paragraph{\normalfont{\itshape Definition} 1 (Die Differentielle Schreibweise).}
 Wir vereinbaren folgende Notation, unter der Bedingung, dass alle Ausdrücke wohldefiniert sind.
 Wir schreiben
@@ -79,6 +87,12 @@ dX_t=F(t)X_tdt+G(t)dW_t,\quad X_0=x\,.
 
 $X_0=x$ folgt mit Definition 1.
 Es gilt $\frac{X_t}{f(t)}=x+\int_0^tK_sdW_s$ mit $K_s=f(s)^{-1}G(s)$.
+Wie in Aufgabe 5 rechnen mittels Einsetzen in die differentielle Schreibweise, dass
+  $K_tdW_t
+  =\frac{G(t)}{f(t)}dW_t
+  =d\frac{X_t}{f(t)}
+  =\frac{dX_t}{f(t)}-\frac{X_t}{f(t)^2}f'(t)dt$.
+Einsetzen der Differentialgleichung für $f$, multiplizieren mit $f$ und Umstellen ergibt $dX_t=F(t)X_tdt+G(t)dW_t$.
 \bibliography{../../../books/wt}
 \end{document}
 
