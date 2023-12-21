@@ -39,7 +39,13 @@ Sei $X\in\mathscr{S}$ ein reellwertiger Prozess mit stetig differenzierbaren Pfa
 Wenden Sie die Itô-Formel auf $f(X)$ mit $f=\operatorname{id}$ an.
 Was fällt Ihnen auf?
 
-Es gilt $D_i X=e_i$ und $D_{ij}X=0$, sodass $X=X_0+\sum_{i\leq d}e_i\cdot X^i+\sum_{s\leq t}\Bigl(X_s-X_{s-}-\sum_{i\leq d}e_i\Delta X_s^i\Bigr)$.
+Es gilt $D_i X=e_i$ und $D_{ij}X=0$, sodass
+\begin{align*}
+  X
+  &=X_0+\sum_{i\leq d}e_i\cdot X^i+\sum_{s\leq t}\Bigl(X_s-X_{s-}-\sum_{i\leq d}e_i\Delta X_s^i\Bigr)\\
+  &=X_0+X+\sum_{s\leq t}\Bigl(\Delta X_s-\sum_{i\leq d}e_i\Delta X_s^i\Bigr)=X_0+X\,,
+\end{align*}
+sodass die Itô-Formel konsistent ist.
 
 \paragraph{\normalfont{\itshape Definition} 1 (Die Differentielle Schreibweise).}
 Wir vereinbaren folgende Notation, unter der Bedingung, dass alle Ausdrücke wohldefiniert sind.
