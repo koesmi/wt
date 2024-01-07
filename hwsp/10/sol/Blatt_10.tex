@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.375in,bottom=1.375in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 10 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 1 \textnormal{(Black-Scholes-Modell; 4 Punkte)}.}
+Zeigen Sie, dass das Semimartingal
+\[X_t=X_0e^{\sigma W_t+t(\mu-\sigma^2/2)}\]
+für $\mu\in\mathbb{R}$, $\sigma\in\mathbb{R}_+$ und einer Standard Brown'schen Bewegung $W$ folgende Darstellung besitzt
+\[dX_t=\mu X_tdt+\sigma X_tdW_t=X_td(\mu t+\sigma W_t)\,.\]
+
+Da $W_t$ stetig ist, gilt $W_-=W$ und $\langle W^c,W^c\rangle=\langle W\rangle$.
+\emph{Es sollte noch gezeigt werden, warum $\langle W\rangle=t$.}
+Nach den Definitionen von Blatt 9 besitzt $X_t$ die gegebene Darstellung, wenn $X_t=X_0+\int_0^t\mu X_sds+\int_0^t\sigma X_sdW_s$.
+Anwenden der Itô-Formel liefert
+%https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
