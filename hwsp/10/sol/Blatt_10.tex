@@ -64,6 +64,7 @@ Formulieren Sie die ökonomische Interpretation dieser Aussage.
 
 \noindent\emph{Hinweis: Verwenden Sie Aufgabe 5.}
 
+Entsprechend Proposition 5.1.7 in \cite{Delbaen2006} ist dies eine direkte Konsequenz von Aufgabe 5, denn für $Q\sim P$ und eine nichtnegative Funktion $f\geq0$, die nicht fast sicher verschwindet, haben wir $E_Q[f]>0$.
 Das ist eine Richtung des Fundamental Theorem of Asset Pricing -- Existiert ein äquivalentes Martingalmaß $Q$, so ist der Markt frei von Arbitrage.
 
 \paragraph{Aufgabe 5 \textnormal{(Bonus 4 Punkte)}.}
@@ -96,13 +97,16 @@ Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-li
 %\emph{Das sollte noch genauer ausgeführt werden}.
 %Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot X)_0=0$.
 
-Es gelte andererseits $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
+Für die Rückrichtung gehen wir entsprechend Lemma 5.1.3 in \cite{Delbaen2006} vor.
+Es gelte nun $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
 Wir wollen zeigen, dass $S$ ein lokales Martingal ist, also eine Folge von Stoppzeiten $(T_n)_{n\in\mathbb{N}}$ finden, sodass $S^{T_n}$ für jedes $n\in\mathbb{N}$ ein Martingal ist.
 Da $S$ lokal beschränkt ist gibt es eine Folge $(T_n)_{n\in\mathbb{N}}$, sodass $S^{T_n}$ beschränkt ist.
 Gilt nun $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $\sigma_1\leq\sigma_2\leq T_n$, so gilt auch $E[S^{T_n}_t\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $t>T_n$, denn hier gilt $S^{T_n}_t=S_{T_n}$.
 Somit ist $S^{T_n}$ dann ein Martingal.
 \emph{Es sollte noch gezeigt werden, dass $S^{T_n}$ Prozess gleichgradig integrierbar ist.}
 \emph{Außerdem sollte noch gezeigt werden, dass wenn für alle einfachen Prozesse $H$ sodass $S^{\tau_n}$ beschränkt ist gilt $E[(H\cdot S)_\infty]=0$, wir $E[S^{T_n}_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ erhalten.}
+
+\bibliography{../../../books/wt}
 \end{document}
 
 %%% Local Variables:
