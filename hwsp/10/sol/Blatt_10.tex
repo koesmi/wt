@@ -77,8 +77,23 @@ für alle einfachen Prozesse $H=\sum_{i=1}^nh_i\mathbbm{1}_{\rrbracket \tau_{i-1
 Die Martingaleigenschaft von $S^{T_n}$ folgt nun, falls $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S_{\sigma_1}^{T_n}$ für alle Stoppzeiten $\sigma_1\leq\sigma_2\leq T_n$ (Diese Aussage muss ebenfalls gezeigt werden).}
 
 Sei zunächst $S$ ein lokales Martingal, $H$ ein einfacher Prozess, sodass $S^{\tau_n}$ beschränkt ist.
-Dann ist $(H\cdot S)$ auch ein lokales Martingal, denn $S^{\tau_n}$ ist beschränkt. \emph{Das sollte noch genauer ausgeführt werden}.
-Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot X)_0=0$.
+Dann ist für die lokalisierende Folge $(T_k)_{k\in \mathbb{N}}$ von $S$ der Prozess $S^{T_k}$ ein Martingal.
+Sei $k\in\mathbb{N}$ so, dass $T_k>\tau_n$, dann sind auch die $S^{\tau_i}$ Martingale.
+Nach Definition 2 von Blatt 3 gilt $(H\cdot S)_t=\sum_{i=1}^nh_i(S_t^{\tau_i}-S_t^{\tau_{i-1}})$ mit $h_i\in L^\infty(\mathscr{F}_{\tau_{i-1}})$.
+Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-lich\-keits\-the\-o\-rie gilt wegen der Definition des stochastischen Integrals für einfache Prozesse
+\begin{align*}
+  E[(H\cdot S)_\infty]
+  &=\sum_{i=1}^nE_Q[h_i(S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}})]\,.
+    \intertext{Mit der Turmeigenschaft der bedingten Erwartung erhalten wir}
+  &=\sum_{i=1}^nE\bigl[E[h_i(S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}})\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
+    \intertext{Da die $h_i$ jeweils $\mathscr{F}_{\tau_{i-1}}$-messbar sind, folgt}
+  &=\sum_{i=1}^nE\bigl[h_iE[S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}}\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
+    \intertext{Da $S$ ein Martingal ist, erhalten wir}
+  &=\sum_{i=1}^nE\bigl[h_i(S_{\tau_{i-1}}^{\tau_i}-S_{\tau_{i-1}}^{\tau_{i-1}})\bigr]=0\,.
+\end{align*}
+% Dann ist $(H\cdot S)$ auch ein lokales Martingal, denn $S^{\tau_n}$ ist beschränkt.
+%\emph{Das sollte noch genauer ausgeführt werden}.
+%Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot X)_0=0$.
 
 Es gelte andererseits $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
 Wir wollen zeigen, dass $S$ ein lokales Martingal ist, also eine Folge von Stoppzeiten $(T_n)_{n\in\mathbb{N}}$ finden, sodass $S^{T_n}$ für jedes $n\in\mathbb{N}$ ein Martingal ist.
