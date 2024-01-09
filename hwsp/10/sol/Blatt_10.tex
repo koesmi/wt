@@ -44,6 +44,49 @@ Mit $f'(Y_t)=f''(Y_t)=e^{Y_t}=X_t$ erhalten wir
 \end{align*}
 Nach Definition 1 von Blatt 9 mit $H_t=\mu X_t$ und $K_t=\sigma X_t$ besitzt $X_t$ dann die angegebene Darstellung.
 
+\paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
+Sei $S$ ein lokal beschränkter càdlàg Prozess.
+Die Menge $K^\text{simple}\subset L^\infty(\Omega,\mathscr{A},P)$ sei gegeben durch
+\[
+  K^\text{simple}:=\{(H\cdot S)_\infty\mid H=\sum_{i=1}^n h_i\mathbbm{1}_{\rrbracket\tau_{i-1},\tau_i\rrbracket}\text{ einfacher Prozess, $S^{\tau_n}$ beschränkt}\}.
+\]
+Weiter existiere ein Maß $Q$ mit den Eigenschaften
+\begin{enumerate}
+\item $Q\sim P$, d.h. $Q$ ist äquivalent zu $P$, und
+\item der Prozess $S$ ist ein lokales Martingal unter $Q$.
+\end{enumerate}
+Sei weiter $L_+^\infty(\Omega,\mathscr{A},P):=\{f\in L^\infty(\Omega,\mathscr{A},P\mid f\geq0)\}$.
+Zeigen Sie
+\[
+K^\text{simple}\cap L^\infty_+(\Omega,\mathscr{A},P)=\{0\}.
+\]
+Formulieren Sie die ökonomische Interpretation dieser Aussage.
+
+\noindent\emph{Hinweis: Verwenden Sie Aufgabe 5.}
+
+Das ist eine Richtung des Fundamental Theorem of Asset Pricing -- Existiert ein äquivalentes Martingalmaß $Q$, so ist der Markt frei von Arbitrage.
+
+\paragraph{Aufgabe 5 \textnormal{(Bonus 4 Punkte)}.}
+Zeigen Sie: Ein lokal beschränkter càdlàg Prozess $S$ ist ein lokales Martingal genau dann, wenn
+\[
+  E[(H\cdot S)_\infty]=0\,,
+\]
+für alle einfachen Prozesse $H=\sum_{i=1}^nh_i\mathbbm{1}_{\rrbracket \tau_{i-1},\tau_i\rrbracket}$, sodass $S^{\tau_n}$ beschränkt ist.
+
+\noindent\emph{Hinweis: Betrachten Sie eine lokalisierende Folge von Stoppzeiten $(T_n)_{n\in\mathbb{N}}$, sodass $S^{T_n}$ ein beschränkter Prozess ist.
+Die Martingaleigenschaft von $S^{T_n}$ folgt nun, falls $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S_{\sigma_1}^{T_n}$ für alle Stoppzeiten $\sigma_1\leq\sigma_2\leq T_n$ (Diese Aussage muss ebenfalls gezeigt werden).}
+
+Sei zunächst $S$ ein lokales Martingal, $H$ ein einfacher Prozess, sodass $S^{\tau_n}$ beschränkt ist.
+Dann ist $(H\cdot S)$ auch ein lokales Martingal, denn $S^{\tau_n}$ ist beschränkt. \emph{Das sollte noch genauer ausgeführt werden}.
+Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot X)_0=0$.
+
+Es gelte andererseits $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
+Wir wollen zeigen, dass $S$ ein lokales Martingal ist, also eine Folge von Stoppzeiten $(T_n)_{n\in\mathbb{N}}$ finden, sodass $S^{T_n}$ für jedes $n\in\mathbb{N}$ ein Martingal ist.
+Da $S$ lokal beschränkt ist gibt es eine Folge $(T_n)_{n\in\mathbb{N}}$, sodass $S^{T_n}$ beschränkt ist.
+Gilt nun $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $\sigma_1\leq\sigma_2\leq T_n$, so gilt auch $E[S{T_n}_t\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $t>T_n$, denn hier gilt $S^{T_n}_t=S^{T_n}_{T_n}$.
+Somit ist $S^{T_n}$ dann ein Martingal.
+\emph{Es sollte noch gezeigt werden, dass $S^{T_n}$ Prozess gleichgradig integrierbar ist.}
+\emph{Außerdem sollte noch gezeigt werden, dass wenn für alle einfachen Prozesse $H$ sodass $S^{\tau_n}$ beschränkt ist gilt $E[(H\cdot S)_\infty]=0$, wir $E[S^{T_n}_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ erhalten.}
 \end{document}
 
 %%% Local Variables:
