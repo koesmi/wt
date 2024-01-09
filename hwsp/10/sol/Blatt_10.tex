@@ -78,18 +78,19 @@ Die Martingaleigenschaft von $S^{T_n}$ folgt nun, falls $E[S_{\sigma_2}^{T_n}\mi
 
 Sei zunächst $S$ ein lokales Martingal, $H$ ein einfacher Prozess, sodass $S^{\tau_n}$ beschränkt ist.
 Dann ist für die lokalisierende Folge $(T_k)_{k\in \mathbb{N}}$ von $S$ der Prozess $S^{T_k}$ ein Martingal.
-Sei $k\in\mathbb{N}$ so, dass $T_k>\tau_n$, dann sind auch die $S^{\tau_i}$ Martingale.
+Sei $k\in\mathbb{N}$ so, dass $T_k\geq\tau_n$, dann sind auch die $S^{\tau_i}$ Martingale.
 Nach Definition 2 von Blatt 3 gilt $(H\cdot S)_t=\sum_{i=1}^nh_i(S_t^{\tau_i}-S_t^{\tau_{i-1}})$ mit $h_i\in L^\infty(\mathscr{F}_{\tau_{i-1}})$.
+Somit gilt für $t=\infty$, dass $(H\cdot S)_\infty=\sum_{i=1}^nh_i(S_{\tau_i}-S_{\tau_{i-1}})$.
 Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-lich\-keits\-the\-o\-rie gilt wegen der Definition des stochastischen Integrals für einfache Prozesse
 \begin{align*}
   E[(H\cdot S)_\infty]
-  &=\sum_{i=1}^nE_Q[h_i(S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}})]\,.
+  &=\sum_{i=1}^nE_Q[h_i(S_{\tau_i}-S_{\tau_{i-1}})]\,.
     \intertext{Mit der Turmeigenschaft der bedingten Erwartung erhalten wir}
-  &=\sum_{i=1}^nE\bigl[E[h_i(S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}})\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
+  &=\sum_{i=1}^nE\bigl[E[h_i(S_{\tau_i}-S_{\tau_{i-1}})\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
     \intertext{Da die $h_i$ jeweils $\mathscr{F}_{\tau_{i-1}}$-messbar sind, folgt}
-  &=\sum_{i=1}^nE\bigl[h_iE[S_\infty^{\tau_i}-S_\infty^{\tau_{i-1}}\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
-    \intertext{Da $S$ ein Martingal ist, erhalten wir}
-  &=\sum_{i=1}^nE\bigl[h_i(S_{\tau_{i-1}}^{\tau_i}-S_{\tau_{i-1}}^{\tau_{i-1}})\bigr]=0\,.
+  &=\sum_{i=1}^nE\bigl[h_iE[S_{\tau_i}-S_{\tau_{i-1}}\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
+    \intertext{Da $S^{T_k}$ ein Martingal ist, erhalten wir schließlich}
+  &=\sum_{i=1}^nE\bigl[h_i(S_{\tau_{i-1}}-S_{\tau_{i-1}})\bigr]=0\,.
 \end{align*}
 % Dann ist $(H\cdot S)$ auch ein lokales Martingal, denn $S^{\tau_n}$ ist beschränkt.
 %\emph{Das sollte noch genauer ausgeführt werden}.
@@ -98,7 +99,7 @@ Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-li
 Es gelte andererseits $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
 Wir wollen zeigen, dass $S$ ein lokales Martingal ist, also eine Folge von Stoppzeiten $(T_n)_{n\in\mathbb{N}}$ finden, sodass $S^{T_n}$ für jedes $n\in\mathbb{N}$ ein Martingal ist.
 Da $S$ lokal beschränkt ist gibt es eine Folge $(T_n)_{n\in\mathbb{N}}$, sodass $S^{T_n}$ beschränkt ist.
-Gilt nun $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $\sigma_1\leq\sigma_2\leq T_n$, so gilt auch $E[S{T_n}_t\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $t>T_n$, denn hier gilt $S^{T_n}_t=S^{T_n}_{T_n}$.
+Gilt nun $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $\sigma_1\leq\sigma_2\leq T_n$, so gilt auch $E[S^{T_n}_t\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $t>T_n$, denn hier gilt $S^{T_n}_t=S_{T_n}$.
 Somit ist $S^{T_n}$ dann ein Martingal.
 \emph{Es sollte noch gezeigt werden, dass $S^{T_n}$ Prozess gleichgradig integrierbar ist.}
 \emph{Außerdem sollte noch gezeigt werden, dass wenn für alle einfachen Prozesse $H$ sodass $S^{\tau_n}$ beschränkt ist gilt $E[(H\cdot S)_\infty]=0$, wir $E[S^{T_n}_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ erhalten.}
