@@ -59,7 +59,13 @@ Zeigen Sie, dass es zu fixem $T>0$ ein zu $P_T$ äquivalentes Maß $Q_T$ gibt, s
 
 \noindent\emph{Hinweis: Verwenden Sie die Aussage aus Aufgabe 16 aus dem Skript (ohne Beweis).}
 
-\noindent\emph{Lösung:} die 1 in der ersten Komponente ist schon mal ein lokales Martingal bezüglich jedem Maß, betrachte also $\tilde{S}^1/\tilde{S}^0\sim e^{\sigma W_t+t[(\mu-r)-\sigma^2/2]}$
+\noindent\emph{Lösung:} die 1 in der ersten Komponente ist schon mal ein lokales Martingal bezüglich jedem Maß, betrachte also $\tilde{S}^1/\tilde{S}^0=\tilde{S}^1_0/\tilde{S}^0_0e^{\sigma W_t+t[(\mu-r)-\sigma^2/2]}=:\tilde{S}^1_0/\tilde{S}^0_0 X_t$.
+Wählen wir $\theta=-(\mu-r)/\sigma$ in Aufgabe 16 (und $W=B$), dann kommt heraus, dass $M'_t=B_t+\frac{\mu-r}{\sigma}t$ eine Brown'sche Bewegung unter $Q$ ist.
+Somit ist $X_t=e^{\sigma M'_t-\frac{\sigma^2}{2}t}$ mit $M'_t$ einer Brown'schen Bewegung bezüglich $Q$, also eine geometrische Brown'sche Bewegung ohne Drift.
+In diesem Fall ist $X_t$ ein Martingal \emph{was noch gezeigt werden sollte.}
+% , insbesondere ist $M'_t-M'_s$ unabhängig von $\mathscr{F}_s$.
+%Sei für $T\geq0$ und $0\leq t\leq T$ $Z_t=\exp(\theta W_t-\theta^2t/2)$.
+
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Sei $S$ ein lokal beschränkter càdlàg Prozess.
 Die Menge $K^\text{simple}\subset L^\infty(\Omega,\mathscr{A},P)$ sei gegeben durch
