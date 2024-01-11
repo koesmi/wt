@@ -101,7 +101,7 @@ Somit gilt für $t=\infty$, dass $(H\cdot S)_\infty=\sum_{i=1}^nh_i(S_{\tau_i}-S
 Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-lich\-keits\-the\-o\-rie gilt wegen der Definition des stochastischen Integrals für einfache Prozesse
 \begin{align*}
   E[(H\cdot S)_\infty]
-  &=\sum_{i=1}^nE_Q[h_i(S_{\tau_i}-S_{\tau_{i-1}})]\,.
+  &=\sum_{i=1}^nE[h_i(S_{\tau_i}-S_{\tau_{i-1}})]\,.
     \intertext{Mit der Turmeigenschaft der bedingten Erwartung erhalten wir}
   &=\sum_{i=1}^nE\bigl[E[h_i(S_{\tau_i}-S_{\tau_{i-1}})\mid\mathscr{F}_{\tau_{i-1}}]\bigr]\,.
     \intertext{Da die $h_i$ jeweils $\mathscr{F}_{\tau_{i-1}}$-messbar sind, folgt}
@@ -111,7 +111,7 @@ Entsprechend dem Beweis von Theorem 216 im Skript zur Vorlesung Wahr\-schein\-li
 \end{align*}
 % Dann ist $(H\cdot S)$ auch ein lokales Martingal, denn $S^{\tau_n}$ ist beschränkt.
 %\emph{Das sollte noch genauer ausgeführt werden}.
-%Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot X)_0=0$.
+%Somit ist $E_Q[(H\cdot S)_\infty]=E_Q[(H\cdot S)_\infty\mid \mathscr{F}_0]=(H\cdot S)_0=0$.
 
 Für die Rückrichtung gehen wir entsprechend Lemma 5.1.3 in \cite{Delbaen2006} vor.
 Es gelte nun $E[(H\cdot S)_\infty]=0$ für alle einfachen Prozesse $H$, sodass $S^{\tau_n}$ beschränkt ist.
@@ -119,8 +119,12 @@ Wir wollen zeigen, dass $S$ ein lokales Martingal ist, also eine Folge von Stopp
 Da $S$ lokal beschränkt ist gibt es eine Folge $(T_n)_{n\in\mathbb{N}}$, sodass $S^{T_n}$ beschränkt ist.
 Gilt nun $E[S_{\sigma_2}^{T_n}\mid \mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $\sigma_1\leq\sigma_2\leq T_n$, so gilt auch $E[S^{T_n}_t\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ für alle $t>T_n$, denn hier gilt $S^{T_n}_t=S_{T_n}$.
 Somit ist $S^{T_n}$ dann ein Martingal.
-\emph{Es sollte noch gezeigt werden, dass $S^{T_n}$ Prozess gleichgradig integrierbar ist.}
-\emph{Außerdem sollte noch gezeigt werden, dass wenn für alle einfachen Prozesse $H$ sodass $S^{\tau_n}$ beschränkt ist gilt $E[(H\cdot S)_\infty]=0$, wir $E[S^{T_n}_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ erhalten.}
+\emph{Es sollte noch gezeigt werden, dass der Prozess $S^{T_n}$ gleichgradig integrierbar ist.}
+Um zu zeigen, dass $S^{T_n}$ ein Martingal ist, reicht es also zu zeigen, dass für alle $\sigma_1\leq\sigma_2\leq T_n$ gilt $E[S_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S_{\sigma_1}$.
+Hierzu gehen wir wie in der Rückrichtung des Beweises von Theorem 159, dem Fundamental Theorem of Asset Pricing, vor.
+Wählen wir für $F\in\mathscr{F}_{\sigma_1}$ $H_t=\mathbbm{1}_F\mathbbm{1}_{(\sigma_1,\sigma_2]}(t)$, sodass $(H\cdot S)_\infty=\mathbbm{1}_F(S_{\sigma_2}-S_{\sigma_1})$, dann erhalten wir nach Voraussetzung $0=E[(H\cdot S)_\infty]=E[\mathbbm{1}_F(S_{\sigma_2}-S_{\sigma_1})]=E[\mathbbm{1}_FS_{\sigma_2}]-E[\mathbbm{1}_FS_{\sigma_1}]$, was uns die definierende Eigenschaft der Bedingten Erwartung $E[S_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]$ nachrechnet.
+Somit ist $E[S_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S_{\sigma_1}$, was wir zeigen wollten.
+%\emph{Außerdem sollte noch gezeigt werden, dass wenn für alle einfachen Prozesse $H$ sodass $S^{\tau_n}$ beschränkt ist gilt $E[(H\cdot S)_\infty]=0$, wir $E[S^{T_n}_{\sigma_2}\mid\mathscr{F}_{\sigma_1}]=S^{T_n}_{\sigma_1}$ erhalten.}
 
 \bibliography{../../../books/wt}
 \end{document}
