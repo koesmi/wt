@@ -44,6 +44,22 @@ Mit $f'(Y_t)=f''(Y_t)=e^{Y_t}=X_t$ erhalten wir
 \end{align*}
 Nach Definition 1 von Blatt 9 mit $H_t=\mu X_t$ und $K_t=\sigma X_t$ besitzt $X_t$ dann die angegebene Darstellung.
 
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Wir betrachten das zweidimensionale Semimartingal $\tilde{S}=(\tilde{S}^0_t,\tilde{S}^1_t)_{t\geq0}\in\mathscr{S}$, welches für $r>-1,\mu\in\mathbb{R},\sigma\in\mathbb{R}_+$ und einer (bezüglich dem Maß $P$) Standard Brown'schen Bewegung $W$ folgende Darstellung besitzt
+\[d\tilde{S}^0_t=r\tilde{S}^0_tdt\]
+und
+\[d\tilde{S}^1_t=\mu\tilde{S}^1_tdt+\sigma\tilde{S}^1_tdW_t\,.\]
+Geben Sie eine explizite Form von $\tilde{S}$ an.
+
+\noindent\emph{Lösung:} Für $\tilde{S}^0_t$ gilt nach Umstellen $\frac{d\tilde{S}^0_t}{dt}=r\tilde{S}^0_t$, was durch $\tilde{S}^0_t=\tilde{S}^0_0e^{rt}$ erfüllt wird.
+Die differentielle Darstellung von $\tilde{S}^1_t$ ist die gleiche wie die von $X_t$ in Aufgabe 1.
+Damit hat $\tilde{S}^1_t$ die explizite Form $\tilde{S}^1_t=\tilde{S}^1_0e^{\sigma W_t+t(\mu-\sigma^2/2)}$.
+
+Zeigen Sie, dass es zu fixem $T>0$ ein zu $P_T$ äquivalentes Maß $Q_T$ gibt, sodass der Prozess $S$ gegeben durch $S=\tilde{S}/\tilde{S}^0=(1,\tilde{S}^1/\tilde{S}^0)$ ein lokales Martingal bis $T$ ist.
+
+\noindent\emph{Hinweis: Verwenden Sie die Aussage aus Aufgabe 16 aus dem Skript (ohne Beweis).}
+
+\noindent\emph{Lösung:} die 1 in der ersten Komponente ist schon mal ein lokales Martingal bezüglich jedem Maß, betrachte also $\tilde{S}^1/\tilde{S}^0\sim e^{\sigma W_t+t[(\mu-r)-\sigma^2/2]}$
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Sei $S$ ein lokal beschränkter càdlàg Prozess.
 Die Menge $K^\text{simple}\subset L^\infty(\Omega,\mathscr{A},P)$ sei gegeben durch
