@@ -30,20 +30,31 @@ für $\mu\in\mathbb{R}$, $\sigma\in\mathbb{R}_+$ und einer Standard Brown'schen 
 \[dX_t=\mu X_tdt+\sigma X_tdW_t=X_td(\mu t+\sigma W_t)\,.\]
 
 Wir wenden die Itô-Formel auf $f(Y_t)=e^{Y_t}$ mit $Y_t=\sigma W_t+t(\mu-\sigma^2/2)$ an
-Da $Y_t$ stetig ist, gilt $Y_-=Y$ und $\langle Y^c,Y^c\rangle=\langle Y\rangle=\sigma^2t$.
-% Außerdem ist $\operatorname{Var}(Y_t)=\sigma^2\operatorname{Var}(W_t)=\sigma^2t$.
-Zunächst ist nämlich $\sigma^2t$ stetig, verschwindet für $t=0$ und ist wachsend, also ist $\sigma^2t\in\mathscr{V}$.
-\emph{Es müsste noch gezeigt werden, dass $Y_t^2-\sigma^2t$ ein Martingal ist.}
+Da $Y_t$ stetig ist, gilt $Y_-=Y$ und $\langle Y^c,Y^c\rangle_t=\langle Y\rangle_t=[Y,Y]_t$ nach Satz 129, sodass nach Definition der quadratischen Variation
+\begin{align*}
+  d\langle Y\rangle_t
+  &=d(Y^2_t)-2Y_tdY_t\\
+  &=2\sigma^2W_tdW_t+2(\mu-\sigma^2/2)W_tdt+2(\mu-\sigma^2/2)tdW_t+2t(\mu-\sigma^2/2)dt\\
+  &\quad-2(\sigma W_t+t(\mu-\sigma^2/2)(\sigma dW_t+(\mu-\sigma^2/2)dt)\,.
+    \intertext{mit ausmultiplizieren der letzten Klammer folgt}
+  &=2\sigma^2W_tdW_t+2(\mu-\sigma^2/2)W_tdt+2(\mu-\sigma^2/2)tdW_t+2t(\mu-\sigma^2/2)dt\\
+  &\quad-2\sigma^2W_tdW_t-2\sigma W_t(\mu-\sigma^2/2)dt-2t\sigma(\mu-\sigma^2/2)dW_t-2\sigma W_t(\mu-\sigma^2/2)dt\,,
+    \intertext{sowie durch Kürzen}
+  &=\sigma^2dt\,,
+\end{align*}
+\emph{Wobei der letzte Schritt genauer gezeigt werden sollte}.
+Alternativ ist außerdem $\operatorname{Var}(Y_t)=\sigma^2\operatorname{Var}(W_t)=\sigma^2t$, denn $\sigma^2t$ ist stetig, verschwindet für $t=0$ und ist wachsend, also ist $\sigma^2t\in\mathscr{V}$.
+\emph{Hier müsste allerdings noch gezeigt werden, dass $Y_t^2-\sigma^2t$ ein Martingal ist.}
 Mit $f'(Y_t)=f''(Y_t)=e^{Y_t}=X_t$ erhalten wir
 \begin{align*}
   X_t
   &=X_0+\int_0^t X_sdY_s+\frac{1}{2}\int_0^tX_sd\langle Y\rangle_s\,.
     \intertext{Durch Nachdifferenzieren, sowie $d\langle Y\rangle_s=\sigma^2ds$, erhalten wir}
-  &=X_0+\int_0^tX_s\sigma dW_s+\int_0^s\Bigl(\mu-\frac{\sigma^2}{2}\Bigr)ds+\frac{1}{2}\int_0^tX_s\sigma^2ds\\
-  &=X_0+\int_0^tX_s\sigma dW_s+\int_0^s X_s\mu ds\,.
+  &=X_0+\int_0^tX_s\sigma dW_s+\int_0^t\Bigl(\mu-\frac{\sigma^2}{2}\Bigr)ds+\frac{1}{2}\int_0^tX_s\sigma^2ds\\
+  &=X_0+\int_0^tX_s\sigma dW_s+\int_0^t X_s\mu ds\,.
 \end{align*}
 Nach Definition 1 von Blatt 9 mit $H_t=\mu X_t$ und $K_t=\sigma X_t$ besitzt $X_t$ dann die angegebene Darstellung.
-
+\pagebreak
 \paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
 Wir betrachten das zweidimensionale Semimartingal $\tilde{S}=(\tilde{S}^0_t,\tilde{S}^1_t)_{t\geq0}\in\mathscr{S}$, welches für $r>-1,\mu\in\mathbb{R},\sigma\in\mathbb{R}_+$ und einer (bezüglich dem Maß $P$) Standard Brown'schen Bewegung $W$ folgende Darstellung besitzt
 \[d\tilde{S}^0_t=r\tilde{S}^0_tdt\]
@@ -55,17 +66,31 @@ Geben Sie eine explizite Form von $\tilde{S}$ an.
 Die differentielle Darstellung von $\tilde{S}^1_t$ ist die gleiche wie die von $X_t$ in Aufgabe 1.
 Damit hat $\tilde{S}^1_t$ die explizite Form $\tilde{S}^1_t=\tilde{S}^1_0e^{\sigma W_t+t(\mu-\sigma^2/2)}$.
 
+\pagebreak
 Zeigen Sie, dass es zu fixem $T>0$ ein zu $P_T$ äquivalentes Maß $Q_T$ gibt, sodass der Prozess $S$ gegeben durch $S=\tilde{S}/\tilde{S}^0=(1,\tilde{S}^1/\tilde{S}^0)$ ein lokales Martingal bis $T$ ist.
 
 \noindent\emph{Hinweis: Verwenden Sie die Aussage aus Aufgabe 16 aus dem Skript (ohne Beweis).}
 
 \noindent\emph{Lösung:} die 1 in der ersten Komponente ist schon mal ein lokales Martingal bezüglich jedem Maß, betrachte also $\tilde{S}^1/\tilde{S}^0=\tilde{S}^1_0/\tilde{S}^0_0e^{\sigma W_t+t[(\mu-r)-\sigma^2/2]}=:\tilde{S}^1_0/\tilde{S}^0_0 X_t$.
 Wählen wir $\theta=-(\mu-r)/\sigma$ in Aufgabe 16 (und $W=B$), dann kommt heraus, dass $M'_t=B_t+\frac{\mu-r}{\sigma}t$ eine Brown'sche Bewegung unter $Q$ ist.
-Somit ist $X_t=e^{\sigma M'_t-\frac{\sigma^2}{2}t}$ mit $M'_t$ einer Brown'schen Bewegung bezüglich $Q$, also eine geometrische Brown'sche Bewegung ohne Drift.
-In diesem Fall ist $X_t$ ein Martingal \emph{was noch gezeigt werden sollte.}
+Somit ist $X_t=e^{\sigma M'_t-\frac{\sigma^2}{2}t}$ mit $M'_t$ einer Brown'schen Bewegung bezüglich $Q$.
+Wir wollen noch prüfen, dass $X_t$ in dem Fall ein Martingal ist.
+Durch ergänzen der bedingten Erwartung $E[X_t\mid\mathscr{F}_s]$ mit $\sigma(M'_s-M'_s)$, erhalten wir, dass
+\begin{align*}
+  E[X_t\mid \mathscr{F}_s]
+  &=E\Bigl[e^{\sigma (M'_t-M'_s)+\sigma M'_s-\sigma^2t/2}\mid\mathscr{F}_s]\,.
+    \intertext{Da $\operatorname{exp}$ stetig und $\sigma M'_s-\sigma^2t/2$ messbar bezüglich $\mathscr{F}_s$ sind, folgt}
+  &=e^{\sigma M'_s-\sigma^2t/2}E[e^{\sigma(M'_t-M'_s)}\mid \mathscr{F}_s]\,.
+    \intertext{Da $M'$ eine Brown'sche Bewegung ist, ist $M'_t-M'_s$ und damit auch $e^{M'_t-M_s}$ unabhängig von $\mathscr{F}_s$, sodass}
+  &=e^{\sigma M'_s-\sigma^2t/2}E[e^{\sigma(M'_t-M'_s)}]\,.
+    \intertext{Da $M'_t-M'_s$ unabhängige Zuwächse hat und nach Aufgabe 4 aus dem Skript $\mathscr{N}(0,t-s)$-verteilt ist, ist der zweite Faktor die momenterzeugende Funktion der Normalverteilung mit Mittelwert 0 und Varianz $t-s$, sodass}
+  &=e^{\sigma M'_s-\sigma^2t/2}e^{\sigma^2(t-s)/2}=e^{\sigma M'_s-\sigma^2(s)/2}=X_s\,.
+\end{align*}
+Also ist der diskontierte Prozess $X_t$ und damit auch $S$ ein $Q$-Martingal.
+%In diesem Fall ist $X_t$ ein Martingal \emph{was noch gezeigt werden sollte.}
 % , insbesondere ist $M'_t-M'_s$ unabhängig von $\mathscr{F}_s$.
 %Sei für $T\geq0$ und $0\leq t\leq T$ $Z_t=\exp(\theta W_t-\theta^2t/2)$.
-
+\pagebreak
 \paragraph{Aufgabe 4 \textnormal{(4 Punkte)}.}
 Sei $S$ ein lokal beschränkter càdlàg Prozess.
 Die Menge $K^\text{simple}\subset L^\infty(\Omega,\mathscr{A},P)$ sei gegeben durch
@@ -92,7 +117,7 @@ Nach Aufgabe 5 gilt dann $E_Q[(H\cdot S)_\infty]=0$.
 Da $(H\cdot S)_\infty\in L_+^\infty(\Omega,\mathscr{A},P)$ gilt außerdem $(H\cdot S)_\infty\geq0$.
 Somit muss schon $(H\cdot S)_\infty=0$ gelten.
 Das ist eine Richtung des Fundamental Theorem of Asset Pricing -- Existiert ein äquivalentes Martingalmaß $Q$, so ist der Markt frei von Arbitrage.
-
+\pagebreak
 \paragraph{Aufgabe 5 \textnormal{(Bonus 4 Punkte)}.}
 Zeigen Sie: Ein lokal beschränkter càdlàg Prozess $S$ ist ein lokales Martingal genau dann, wenn
 \[
