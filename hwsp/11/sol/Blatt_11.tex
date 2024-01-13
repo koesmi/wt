@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 11 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 3 \textnormal{(Binomiales Modell; 6 Punkte)}.}
+Sei $(\Omega,\mathscr{F},P)$ ein Wahr\-schein\-lich\-keits\-raum, so dass $\Omega=\{\omega_u,\omega_d\}$, $\mathscr{F}=2^\Omega$ und $P[\omega_u]=p=1-P[\omega_d]$.
+Die gehandelten Vermögenswerte werden durch den zweidimensionalen Pro\-zess $S=(S^0,S^1)$ gegeben, mit
+\begin{equation}
+  \label{eq:a3s}
+  S_0^0\equiv1,\quad S^0_1\equiv1+r,\quad S^1_0\equiv s_0,\quad S^1_1(\omega_u)=s_0(1+u),\quad S_1^1(\omega_d)=s_0(1+d).
+\end{equation}
+\begin{itemize}
+\item [i)] Zeige, dass es ein Maß $Q\sim P$ auf $(\Omega,\mathscr{F})$ gibt, so dass der dis\-kon\-tier\-te Preisprozess ein Martingal ist.
+  Ist dieses Marktmodell arbitragefrei?
+\end{itemize}
+
+Wir folgen der Argumentation von Beispiel 3.3.1 in \cite{Delbaen2006}.
+Der dis\-kon\-tier\-te Prozess $X_t=(1,S^1_t/S^0_t)$ ergibt sich zu
+\[
+  X^0_0\equiv 1,\quad X^0_1\equiv 1,\quad X^1_0\equiv s_0,\quad X^1_1(\omega_u)=s_0(1+\tilde{u}),\quad X^1_1=s_0(1+\tilde{d})\,,
+\]
+mit $1+\tilde{u}=\frac{1+u}{1+r}$ und $1+\tilde{d}=\frac{1+d}{1+r}$.
+Damit $X$ ein Martingal unter $Q$ ist, muss gelten $E_Q[X^i_1]=X^i_0$, also $Q[\omega_u]+Q[\omega_d]=1$ und $s_0(1+\tilde{u})Q[\omega_u]+s_0(1+\tilde{d})Q[\omega_d]=s_0$.
+Schreiben wir $Q[\omega_u]=q$ gilt nach der ersten Gleichung $Q[\omega_d]=1-q$.
+Wenn wir das in die zweite Gleichung einsetzen ergibt sich $(1+\tilde{u})q+(1+\tilde{d})(1-q)=1$, sodass $Q[\omega_u]=q=\frac{\tilde{d}}{\tilde{d}-u}=\frac{r-d}{u-d}$ und $Q[\omega_d]=1-q=\frac{\tilde{u}}{\tilde{u}-\tilde{d}}=\frac{u-r}{u-d}$.
+Da $Q(A)=0$ nur für $A=\emptyset$ gilt ist $Q\sim P$, sodass $Q$ ein äquivalentes Martingalmaß ist.
+\emph{Es sollte noch geprüft werden, ob das Modell damit arbitragefrei ist.}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
