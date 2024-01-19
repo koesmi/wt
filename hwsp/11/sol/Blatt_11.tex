@@ -45,7 +45,30 @@ Damit $X$ ein Martingal unter $Q$ ist, muss gelten $E_Q[X^i_1]=X^i_0$, also $Q[\
 Schreiben wir $Q[\omega_u]=q$ gilt nach der ersten Gleichung $Q[\omega_d]=1-q$.
 Wenn wir das in die zweite Gleichung einsetzen ergibt sich $(1+\tilde{u})q+(1+\tilde{d})(1-q)=1$, sodass $Q[\omega_u]=q=\frac{\tilde{d}}{\tilde{d}-u}=\frac{r-d}{u-d}$ und $Q[\omega_d]=1-q=\frac{\tilde{u}}{\tilde{u}-\tilde{d}}=\frac{u-r}{u-d}$.
 Da $Q(A)=0$ nur für $A=\emptyset$ gilt ist $Q\sim P$, sodass $Q$ ein äquivalentes Martingalmaß ist.
-\emph{Es sollte noch geprüft werden, ob das Modell damit arbitragefrei ist.}
+Nach dem Fundamental Theorem of Asset Pricing ist dieses Marktmodell arbitragefrei.
+\pagebreak
+\begin{itemize}
+\item [ii)] Angenommen, $p=0{,}7$, $s_0=100$, $r=0$, $1+d=0{,}8$ und $1+u=1{,}2$.
+  Was ist das entsprechende risikoneutrale Maß?
+  Zeige, dass $E_P[(S_1-100)^+]$ kein arbitragefreier Preis für $H=(S_1-100)^+$ (Kaufoption mit Ausübungspreis $K=100$) ist.
+\end{itemize}
+Das risikoneutrale Maß ist das Martingalmaß $Q$ aus Teilaufgabe (i).
+Durch Einsetzen der Werte erhalten wir $d=0{,}8-1=-0{,}2$ und $u=1{,}2-1=0{,}2$, sodass $Q[\omega_u]=\frac{r-d}{u-d}=\frac{-(-0{,}2)}{0{,}4}=\frac{1}{2}=1-Q[\omega_d]=Q[\omega_d]$.
+Das Maß $P$ gegeben durch $P[\omega_u]=0{,}7$ und $P[\omega_d]=0{,}3$ ist kein äquivalentes Martingalmaß für $H$.
+Durch Einsetzen erhalten wir nämlich $S_1(\omega_u)=s_0(1+u)=120$ und $S_1(\omega_d)=80$, sodass $H(\omega_u)=20$ und $H(\omega_d)=0$ und damit $E_P[H]=0{,}7\cdot20+0{,}3\cdot0=14\neq S^1_0=100$.
+Nach dem Fundamental Theorem of Asset Pricing ist der Preis damit auch nicht arbitragefrei.
+\pagebreak
+\begin{itemize}
+\item [iii)] Finden Sie einen Wert $\xi_1$, so dass $x+\xi_1(S_1-S_0)=H$.
+  Was ist der anfängliche Preis $x$?
+  Berechnen Sie $E_Q[H]$.
+  Diskutieren Sie Ihre Ergebnisse.
+\end{itemize}
+Um $\xi_1$ und $x$ herauszufinden, lösen wir das lineare Gleichungssystem gegeben durch $x+\xi_1(S_1(\omega_u)-s_0)=H(\omega_u)$ und $x+\xi_1(S_1(\omega_d)-s_0)=H(\omega_d)$.
+Durch Einsetzen erhalten wir $x+20\xi_1=20$ und $x-20\xi_1=0$.
+Durch addieren der beiden Gleichungen erhalten wir $2x=20$, sodass $x=10$ und durch abziehen der zweiten Gleichung von der ersten $40\xi_1=20$, sodass $\xi_1=\frac{1}{2}$.
+Schließlich berechnen wir durch Einsetzen $E_Q[H]=0{,}5\cdot20+0{,}5\cdot0=10$.
+Damit ist $Q$ ein risikoneutrales Maß für die Kaufoption mit Ausübungspreis $K=100$, falls der anfängliche Preis $x=10$ ist.
 \bibliography{../../../books/wt}
 \end{document}
 
