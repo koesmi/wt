@@ -23,6 +23,28 @@
 
 \begin{document}
 
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.} Sei $(B_t)_{t\geq0}$ eine Standard Brown'sche Bewegung.
+Finden Sie Funktionen $a,b\colon \mathbb{R}_+\times\mathbb{R}\to\mathbb{R}$, sodass der Prozess $X$ gegeben durch \[X_t=X_0+\int_0^ta(s,B_s)ds+\int_0^tb(s,B_s)dB_s\]
+folgende Darstellungen besitzt:
+\begin{itemize}
+\item[(i)] $X_t=B_t^3$.
+\end{itemize}
+Wir gehen wie in Aufgabe 1 von Blatt 10 vor.
+Die Itô-Formel sagt uns $f(B_t,t)=X_0+\int_0^t\partial_xf(B_s,s)dB_s+\frac{1}{2}\int_0^t\partial_xf(B_s,s)d\langle B_s\rangle+\int_0^t\partial_t f(B_s,s)ds$.
+Mit $\langle B_t\rangle=t$ und Koeffizientenvergleich ergibt sich $a(x,t)=\frac{1}{2}\partial_x^2f+\partial_tf$ und $b(x,t)=\partial_xf$.
+
+Sei $f(x,t)=x^3$, dann ist $\partial_x f=3x^2$, $\partial^2_xf=6x$ und $\partial_tf=0$.
+Somit ist $a(B_t,t)=3B_t$ und $b(B_t,t)=3B_t^2$.
+\begin{itemize}
+\item [(ii)] $e^{B_t}$.
+\end{itemize}
+Sei $f(x,t)=e^x$.
+Dann gilt $\partial_x f=\partial_x^2f=e^x$ und $\partial_tf=0$, sodass $a=\frac{1}{2}e^{B_t}$ und $b=e^{B_t}$.
+\begin{itemize}
+\item [(iii)] $tB_t^2e^{B_t}$.
+\end{itemize}
+Sei $f(x,t)=tx^2e^x$.
+Dann gilt $\partial_xf=t(2x+x^2)e^x$, $\partial_x^2f=t[(2+2x)e^x+(2x+x^2)e^x]=t(x^2+4x+2)e^x$ und $\partial_tf=x^2e^x$, sodass $a=e^{B_t}\Bigl(\frac{1}{2}B_t^2t+2B_tt+t+B_t^2\Bigr)$ und $b=t(2B_t+B_t^2)e^{B_t}$.
 \paragraph{Aufgabe 3 \textnormal{(Binomiales Modell; 6 Punkte)}.}
 Sei $(\Omega,\mathscr{F},P)$ ein Wahr\-schein\-lich\-keits\-raum, so dass $\Omega=\{\omega_u,\omega_d\}$, $\mathscr{F}=2^\Omega$ und $P[\omega_u]=p=1-P[\omega_d]$.
 Die gehandelten Vermögenswerte werden durch den zweidimensionalen Pro\-zess $S=(S^0,S^1)$ gegeben, mit

@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 12 Nicole und Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Aufgabe 3 \textnormal{(6 Punkte)}.}
+Das Cox-Ross-Rubenstein (CRR)-Modell ist wie folgt spezifiziert.
+Fixiere Zahlen $N\in\mathbb{N}$, $-1<a<b$ und $r\geq0$.
+Der Wahrscheinlichkeitsraum $(\Omega,{\cal F},P)$ ist gegeben durch
+\begin{align*}
+  \Omega&=\{1+a,1+b\}^N\,,\\
+  {\cal F}={\cal P}(\Omega)
+\end{align*}
+und ein Wahrscheinlichkeitsmaß $P$ auf $(\Omega,{\cal F})$, so dass $P(\{\omega\})>0$ für alle $\omega\in\Omega$.
+Der Numéraire-Prozess $(\widetilde{S_n^0})_{n=0,\dots,N}$ ist gegeben durch
+\[
+  \widetilde{S}_n^0:=(1+r)^n
+\]
+und der Preis eines Finanzinstruments $(\widetilde{S}_n)_{n=0,\dots,N}$ ist definiert als $\widetilde{S}_0:=1$ und
+\[
+  \widetilde{S}_n(\omega):=\omega_1\cdots\omega_n\quad\text{für}n=1,\dots,N\,.
+\]
+Die Filtration ${\cal F}=({\cal F}_n)_{n=0,\dots,N}$ ist gegeben durch
+\[
+{\cal F}_n:=\sigma(\widetilde{S}_0,\dots,\widetilde{S}_n)\,.
+\]
+Das Ziel dieser Aufgabe ist es zu beweisen, dass das CRR-Modell arbitragefrei ist, genau dann wenn $r\in(a,b)$ ist und, dass es in diesem Fall sogar vollständig ist.
+\begin{itemize}
+\item [1.] Ein äquivalentes Wahrscheinlichkeitsmaß $Q\sim P$ wird als \emph{Martingalmaß} bezeichnet, wenn der Prozess
+  \[\biggl(\frac{\widetilde{S}_n}{\widetilde{S}_n^0}\biggr)_{n=0,\dots,N}\]
+  ein $Q$-Martingal ist.
+  Wir führen die Renditen $(T_i)_{i=1,\dots,N}$ ein als
+  \[
+    T_i:=\frac{\widetilde{S}_i}{\widetilde{S}_{i-1}}\,.
+  \]
+  Zeigen Sie, dass ein äquivalentes Wahrscheinlichkeitsmaß $Q\sim P$ ein Martingalmaß ist, genau dann wenn
+  \[
+    E_Q[T_{i+1}|{\cal F}_i]=1+r\quad\text{für alle }i=0,\dots,N-1\,.
+  \]
+\end{itemize}
+
+\noindent\emph{Lösung: }$Q$ ist genau dann ein Martingalmaß, wenn $(\widetilde{S}_n/\widetilde{S}_n^0)$ ein $Q$-Martingal ist, also genau dann, wenn $E_Q[\widetilde{S}_{i+1}/\widetilde{S}^0_{i+1}|{\cal F}_i]=\widetilde{S}_i/\widetilde{S}^0_i$ oder mit der Definition von $\widetilde{S}^0_n$ genau dann, wenn $E_Q[\widetilde{S}_{i+1}|{\cal F}_i]=(1+r)\widetilde{S}_i$.
+Da $-1<a<b$ gilt $\widetilde{S}_i>0$ und wir können dadurch teilen, sodass wir erhalten, dass $E_Q[\widetilde{S}_{i+1}|{\cal F}_i]/\widetilde{S}_i=1+r$.
+Außerdem ist $\widetilde{S}_n$ nach Definition von ${\cal F}$ ${\cal F}_n$-messbar.
+Als Verkettung von messbaren Funktionen ist auch $1/\widetilde{S}_n$ ${\cal F}_n$-messbar.
+Mit den Rechenregeln für die bedingte Erwartung können wir $1/\widetilde{S}_n$ ${\cal F}_n$ in die bedingte Erwartung reinziehen.
+Mit der Definition der Renditen $T_i$ erhalten wir $E_Q[T_{i+1}|{\cal F}_i]=1+r$ und somit die zu zeigende Aussage.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
