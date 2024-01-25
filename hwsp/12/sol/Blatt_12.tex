@@ -67,10 +67,6 @@ Außerdem ist $\widetilde{S}_n$ nach Definition von ${\cal F}$ ${\cal F}_n$-mess
 Als Verkettung von messbaren Funktionen ist auch $1/\widetilde{S}_n$ ${\cal F}_n$-messbar.
 Mit den Rechenregeln für die bedingte Erwartung können wir $1/\widetilde{S}_n$ ${\cal F}_n$ in die bedingte Erwartung reinziehen.
 Mit der Definition der Renditen $T_i$ erhalten wir $E_Q[T_{i+1}|{\cal F}_i]=1+r$ und somit die zu zeigende Aussage.
-%\begin{itemize}
-%\item [2.] Angenommen, es existiert ein äquivalentes Martingalmaß $Q\sim P$.
-%  Zeigen Sie, dass $r\in(a,b)$ ist.
-%\end{itemize}
 \begin{itemize}
 \item [3.] Angenommen, $Q\sim P$ ist ein äquivalentes Martingalmaß.
   Zeigen Sie, dass die Renditen $(T_i)_{i=1,\dots,N}$ unabhängig und identisch verteilt sind mit
@@ -80,10 +76,28 @@ Mit der Definition der Renditen $T_i$ erhalten wir $E_Q[T_{i+1}|{\cal F}_i]=1+r$
     q=\frac{r-a}{b-a}\,.
   \]
 \end{itemize}
-Aus Teilaufgabe 1 wissen wir, dass $E_Q[T_{i+1}|{\cal F}_i]=1+r$, wobei $T_{i+1}\in\{1+a,1+b\}$, also $(1+a)(1-E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i])+(1+b)E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i]=1+r$.
+Aus Teilaufgabe 1 folgt, dass $E_Q[T_{i+1}|{\cal F}_i]=1+r$, wobei $T_{i+1}\in\{1+a,1+b\}$, also $(1+a)(1-E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i])+(1+b)E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i]=1+r$.
 Durch Einsetzen von $q=E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i]$ und auflösen nach $q$ ergibt sich $E_Q[\mathbbm{1}_{\{T_{i+1}=1+b\}}|{\cal F}_i]=q=\frac{r-a}{b-a}$.
 Das heißt, allerdings, die $T_i$ sind unabhängig und identisch verteilt, \emph{was noch genauer gezeigt werden sollte}.
 Für $i=0$ erhalten wir außerdem $q=Q(T_1=1+b)$.
+\begin{itemize}
+\item[2.] Angenommen, es existiert ein äquivalentes Martingalmaß $Q\sim P$.
+  Zeigen Sie, dass $r\in(a,b)$ ist.
+\end{itemize}
+Da $Q\sim P$ und $P(\{\omega\})>0$ gilt $0<q<1$, also $0<\frac{r-a}{b-a}<1$ und somit $a<r<b$.
+\begin{itemize}
+\item [4.] Folgern Sie, dass ein äquivalentes Martingalmaß $Q\sim P$ eindeutig ist, sofern es existiert.
+\end{itemize}
+Gibt es ein anderes äquivalentes Martingalmaß $Q'\sim P$, so muss nach Teil\-auf\-ga\-be 3 auch hierfür gelten, dass $Q'(\omega_i=1+b)=q=1-Q'(\omega_i=1+a)$.
+Da die Mengen $\{\omega_i\}$ unabhängig sind, muss für alle $\omega\in\Omega$ gelten, dass $Q'(\{\omega\})=\prod_{i=1}^NQ'(\{\omega_i\})=q^k(1-q)^{N-k}=Q(\{\omega\})$, wobei $k$ zählt, wie oft sich der Preis erhöht hat.
+Somit gilt auf ganz $\Omega$, dass $Q'=Q$, also ist das Martingalmaß eindeutig.
+\begin{itemize}
+\item [5.] Nehmen Sie nun an, dass $r\in(a,b)$ ist.
+  Zeigen Sie, dass ein äquivalentes Martingalmaß $Q\sim P$ existiert.
+\end{itemize}
+Sei $r\in(a,b)$ und $Q$ wie in Teilaufgabe 4, also $Q(\{\omega\})=q^k\cdot (1-q)^{N-k}$.
+Wieder gilt für alle $i=1,\dots,N$, dass $Q(\{\omega_i=1+b\})=q$, sodass die Renditen $T_i$ unter $Q$ unabhängig und identisch verteilt sind.
+Nach Teilaufgabe 2 ist $Q$ hierdurch ein Martingalmaß.
 \bibliography{../../../books/wt}
 \end{document}
 
