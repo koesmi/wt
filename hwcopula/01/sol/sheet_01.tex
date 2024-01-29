@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Sheet 1 Evgenij}\rhead{Page \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Exercise 1 \textnormal{(Fréchet-Hoeffding bounds inequality; 4 Points)}.}
+Let $C$ be a 2-dimensional copula.
+Prove that for every $(u,v)$ in $[0,1]^2$,
+\[
+\max(u+v-1,0)\leq C(u,v)\leq\min(u,v)\,.
+\]
+\emph{Hint. Use the monotonicity in each component for the upper bound.
+  For the lower bound use the inclusion--exclusion principle.}
+
+We follow the proof of Theorem 2.2.3 in \cite{nelsen2006introduction}.
+Let $(u,v)$ be an arbitrary point in $[0,1]^2$.
+By proposition 1.10.iii $C$ is $2$-increasing, so for $\varepsilon=1-u$ we get $C\bigl((u,v)+\varepsilon(1,0)\bigr)=C(1,v)\geq C(u,v)$ and accordingly $C(u,1)\geq C(u,v)$.
+By proposition 1.10.ii $C$ has uniform univariate marginals, so $C(1,v)=v$ and $C(u,1)=u$.
+All together $C(u,v)\leq\min(u,v)$.
+Also by proposition 1.10.i $C$ is grounded, so $0=C(0,v)\leq C\bigl((0,v)+u(1,0)\bigr)=C(u,v)$, again because $C$ is $2$-increasing.
+Finally, because $C$ is 2-increasing, the volume $V_C([u,1]\times[v,1])=C(1,1)-C(1,v)-C(u,1)+C(u,v)=1-u-v+C(u,v)\geq0$, \emph{where however I don't understand how we can derive this from $C$ being 2-increasing}.
+Solving for $C(u,v)$ yields $C(u,v)\geq u+v-1$.
+All together we get $C(u,v)\geq\max(u+v-1,0)$.
+\paragraph{Exercise 2 \textnormal{(Survival Copula; 4 Points)}.}
+For a pair $(X,Y)$ of real-valued random variables with joint distribution function $H$, the joint survival function is given by $\overline{H}(x,y)=P[X>x,Y>y]$.
+The marginal distribution functions of $X$ and $Y$ are denoted by $F$ and $G$, respectively.
+The corresponding survival functions are given by $\overline{F}=1-F$ and $\overline{G}=1-G$, respectively.
+Let $C$ be a copula for $(X,Y)$, i.e, $C$ is a copula such that $H(x,y)=C(F(x),G(y))$.
+Define the survival copula $\hat{C}(u,v)=u+v-1+C(1-u,1-v)$ and show that
+\[
+  \overline{H}(x,y)=\hat{C}(\overline{F}(x),\overline{G}(y))\,.
+\]
+Moreover, prove that $\hat{C}$ is indeed a copula.
+
+We follow the explanation in the beginning of section 2.6 of \cite{nelsen2006introduction}.
+We use the fact that $P(X>x,Y>y)=P(X>x)+P(Y>y)-P(\{X>x\}\cup\{Y>y\})$ so that
+\begin{align*}
+  \overline{H}(x,y)
+  &=P(X>x)+P(Y>y)-1+P(X\leq x, Y\leq y)\,.
+    \intertext{by definitions of $\overline{F}$ and $\overline{G}$ and the fact that $H(x,y)=C(F(x),G(y))$ we get}
+  &=\overline{F}(x)+\overline{G}(y)-1+C(F(x),G(y))\,.
+    \intertext{Finally, again by definition of $\overline{F}$ and $\overline{G}$, we get}
+    &=\overline{F}(x)+\overline{G}(y)-1+C(1-\overline{F}(x),1-\overline{G}(y))\,.
+\end{align*}
+Now if we define the survival copula $\hat{C}$ as above, we arrive at $\overline{H}(x,y)=\hat{C}(\overline{F}(x),\overline{G}(y))$.
+To see that $\hat{C}$ is a copula, we prove that it is grounded, has uniform univariate marginals and is 2-increasing.
+Because $\hat{C}(u,0)=u-1+C(1-u,1)=0$ and analogously $\hat{C}(0,v)=0$, $\hat{C}$ is grounded.
+Also $\hat{C}(u,1)=u+C(1-u,0)=u$ and accordingly for $v$, so that it has uniform univariate marginals.
+Finally we want to see whether $\hat{C}$ is $2$-increasing.
+Also here because of the symmetry of $\hat{C}$ is suffices to consider only $u$.
+For all $u\in[0,1]$ and $\varepsilon\in(0,1-u]$ we get $\hat{C}((u+\varepsilon,v))-\hat{C}((u,v))=u+\varepsilon+v-1+C(1-u-\varepsilon,1-v)-u-v+1-C(1-u,1-v)=\varepsilon+C(1-u-\varepsilon,1-v)-C(1-u,1-v)$.
+\emph{Here it is unclear, why this should be greater or equal than zero.}
+\paragraph{Exercise 3 \textnormal{(Invariance properties; 4 Points)}.}
+Let $X$ and $Y$ be random variables with distribution function $F_X$ and $F_Y$, respectively.
+Let $F_{XY}$ be the joint distribution function of $(X,Y)$ and $C_{XY}$ be a copula for $(X,Y)$, i.e, $F_{XY}(x,y)=C_{XY}(F_X(x),F_Y(y))$.
+If $a$ and $b$ are strictly increasing and continuous on $\operatorname{Ran}(X)$ and $\operatorname{Ran}(Y)$, respectively, then $C_{XY}$ is also a copula for the random vector $(a(X),b(Y))$, i.e, the joint distribution function of $(a(X),b(Y))$ fulfills $F_{a(X)b(Y)}(x,y)=C_{XY}(F_{a(X)}(x),F_{b(Y)(Y)})$.
+Thus, $C_{XY}$ is invariant under strictly increasing transformations of $X$ and $Y$.
+
+We follow the proof of theorem 2.4.3 in \cite{nelsen2006introduction}.
+Because $a$ and $b$ are strictly increasing, we can apply $a^{-1}$ inside of $P$.
+That is, $F_{a(X)}(x)=P(a(X)\leq x)=P(X\leq a^{-1}(x))=F_X(a^{-1}(x))$ and accordingly $F_{b(Y)}(y)=F_Y(b^{-1}(y))$ so that for every $x,y\in\overline{\mathbb{R}}$ by Sklar's theorem we get
+\begin{align*}
+  C_{a(X)b(Y)}(F_{a(X)}(x),F_{b(Y)}(y))
+  &=P(a(X)\leq x,b(Y)\leq y)\,,\\
+  &=P(X\leq a^{-1}(x),Y\leq b^{-1}(y))\,,
+    \intertext{with the same trick as above.
+    Using Sklar's theorem again, we can rewrite this to}
+  &=C_{XY}(F_X(a^{-1}(x)),F_Y(b^{-1}(y))\,,\\
+  &=C_{XY}(F_{a(X)}(x),F_{b(Y)}(y))\,,
+\end{align*}
+by the relation we found out in the beginning.
+Now $X$ and $Y$ are continuous.
+That means that $\operatorname{Ran} F_{a(X)}=F_{b(Y)}=[0,1]$ so we get the equality indeed for every $(x,y)\in[0,1]^2$ and together with $F_{a(X)b(Y)}(x,y)=C_{a(X)b(Y)}(F_{a(X)}(x),F_{b(Y)}(y))$ we get $F_{a(X)b(Y)}(x,y)=C_{XY}(F_X(x),F_Y(y))$.
+
+\paragraph{Exercise 4 \textnormal{(Distributional transform; 4 Points)}.}
+Let $X$ be a real-valued random variable with distribution function $F$, and let $V\sim \operatorname{U}(0,1)$ be an independent random variable uniformly distributed on $(0,1)$.
+The \emph{generalized distribution function} of $X$ is defined by
+\[
+F(x,\lambda)=P(X<x)+\lambda P(X=x)\quad\text{or equivalently}\quad F(x,\lambda)=F(x{-})+\lambda\bigl(F(x)-F(x{-})\bigr)\,,
+\]
+and the \emph{generalized distribution transform} $U$ of $X$ is given by $U=F(X,V)$.
+
+\noindent Show that $U\sim\operatorname{U}(0,1)$.
+
+\noindent\emph{Hint: Define $p=P\bigl(X<F^{-1}(\alpha)\bigr)$ and $q=P\bigl(X=F^{-1}(\alpha)\bigr)$ and show the equality
+\[
+  \{U\leq \alpha\}=\{X<F^{-1}(\alpha)\}\cup\{X=F^{-1}(\alpha),p+Vq\leq \alpha\}\,.
+\]
+\noindent You can use without proof that $F(F^{-1}(\alpha))\leq\alpha$ and if $F$ is continuous at $F^{-1}(\alpha)$ that it holds that $F(F^{-1}(\alpha))=\alpha$.}
+
+We follow the proof of proposition 2.1 in \cite{RUSCHENDORF20093921}.
+By definition of $F$ we have $U=F(X,V)\leq\alpha$ if and only if $(X,V)\in\{(x,\lambda)\colon P(X<x)+\lambda P(X=x)\leq\alpha\}$.
+Now consider the case that $0=q=P(X=F^{-1}(\alpha))$.
+Then $P(\{U\leq \alpha\})=P(\{P(X<x)\leq\alpha\})=P(\{X<F^{-1}(\alpha)\})=P(X\leq F^{-1}(\alpha))=\alpha$ since $F$ is continuous at $\alpha$.
+Now if $q>0$, then $(X,V)\in\{(x,\lambda)\colon P(X<x)+\lambda P(X=x)\leq\alpha\}$ is equivalent to $(X,V)\in\{X<F^{-1}(\alpha)\}\cup\{X=F^{-1}(\alpha),p+Vq\leq\alpha\}$, \emph{however I don't really see how this works.}
+Employing we again get
+\begin{align*}
+  P(U\leq\alpha)
+  &=P(F(X,V)\leq\alpha)\,.
+    \intertext{Solving $q+V\beta\leq\alpha$ for $V$ we get}
+  &=q+\beta P(V\leq(\alpha-q)/\beta)\,.
+    \intertext{\emph{However I don't quite get how this works}.
+    Since $V\sim\operatorname{U}(0,1)$ we get}
+  &=q+\beta\frac{\alpha-q}{\beta}=\alpha\,.
+\end{align*}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
