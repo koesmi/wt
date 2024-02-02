@@ -23,9 +23,71 @@
 
 \begin{document}
 
-\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
-Wir folgen dem Beweis von Proposition 2.5.1. in \cite{brigo2006interest}.
-\bibliography{../../../books/wt}
+\paragraph{}
+
+\paragraph{\normalfont{{\itshape Definition} 1 ($T$-Forward-Measure).}}
+Sei $(B_t)_{t\leq T}$, $B_t=e^{\int_0^tr_sds}$ der Bankkonto/Numéraire in einem Finanzmarkt.
+Wenn $\mathbb{Q}$ ein risikoneutrales Maß ist, dann ist das Forward measure $\mathbb{Q}^T$ auf $\mathscr{F}_T$ definiert durch den Radon-Nikodym-Dichteprozess $Z$ bezüglich $\mathbb{Q}$, gegeben durch
+\[
+  Z_t=\frac{P_t(T)}{P_0(T)B_t}\,.
+\]
+\paragraph{\normalfont{{\itshape Definition} 2 (Zero-Coupon Bond).}}
+Der Prozess $(P_t(T))_{t\geq T}$ bezeichne den Preis einer Geldeinheit bei $T$ am Zeitpunkt $t\leq T$.
+Dieser wird zero-coupon bond (Nullkuponanleihe) genannt.
+
+% \paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+%Sei $F_t(T,S)$ die einfache Forward Rate für $[T,S]$ zum Zeitpunkt $t$ gegeben durch
+%\[
+%F_t(T,S)=\frac{1}{S-T}\left(\frac{P_t(T)}{P_t(S)}-1\right),\quad t\in[0,T]\,.
+%\]
+%Erklären Sie die Forward Rate in eigenen Worten.
+%Zeigen Sie, dass $(F_t(T,S))_{t\in[0,T]}$ ein Martingal bezüglich $Q^S$ ist; das heißt
+%\[
+%  F_t(T,S)=E_{Q^S}[F_T(T,S)|\mathscr{F}_t]\quad\text{für alle }t\in[0,T]\,.
+%\]
+%\textsc{Hinweis.} Verwenden Sie die Identität
+%\[
+%  P_t(T)=B_tE_Q\left[\frac{1}{B_T}\middle|\mathscr{F}_t\right],\quad t\in[0,T]\,.
+%\]
+
+%Wir kamen auf keinen grünen Zweig und folgen deshalb dem Beweis von Proposition 2.5.1. in \cite{brigo2006interest}.
+%Multiplizieren wir die Forward Rate mit $P_t(S)$, erhalten wir $F_{t(T,S)}=\frac{1}{S-T}\bigl(P_t(T)-P_t(S)\bigr)$.
+%Laut Hinweis gilt $P_t(T)=B_tE_Q\bigl(\frac{1}{B_T}\big|\mathscr{F}_t\bigr)=E_Q\bigl(e^{-\int_t^Tr_sds}\big|\mathscr{F}_t\bigr)$.
+%Wir leiten nach $T$ ab und erhalten
+%\begin{align*}
+%  -\frac{\partial P_t(T)}{\partial T}
+%  &=E_Q[e^{-\int_t^Tr_sds}r_T\big|\mathscr{F}_t\bigr].
+%\intertext{Nun wechseln wir zum Forward-Measure.
+%    Nach Definition 1 ist $\frac{d Q}{d Q^T}=Z_t=\frac{P_t(T)}{e^{-\int_t^Tr_sds}}$, sodass}
+%  &=E_{Q^T}\biggl(e^{-\int_t^Tr_sds}r_T\frac{P_t(T)}{e^{-\int_t^Tr_sds}}\bigg|\mathscr{F}_t\biggr)\,.\,.
+%  &=P_t(T)E_{Q^T}[r_T|\mathscr{F}_t]\,.
+     %  \end{align*}
+\paragraph{Aufgabe 2 \textnormal{(12 Punkte)}.}
+Betrachten Sie das Modell für die Instantaneous Forward Rate
+\[
+  f_t(T)=f_0(T)+\int_0^t\alpha_s(T)ds+\int_0^t\sigma_s(T)dW_s
+\]
+mit einem Standard-$Q$-Wienerprozess $W$.
+Hierbei gilt folgende Gleichheit:
+\[
+  P_t(T)=\operatorname{exp}\left({-}\int_t^Tf(t,s)ds\right)\,.
+\]
+Wir fixieren $T$ und $S$.
+\begin{itemize}
+\item [1.] Zeigen Sie, dass der Dichteprozess von $Q^S$ bezüglich $Q^T$ gegeben ist durch
+\[
+  \frac{P_0(T)}{P_0(S)}\frac{P(S)}{P(T)}\,.
+\]
+\end{itemize}
+
+Nach Definition 1 gilt
+\begin{align*}
+  \frac{d Q^S}{d Q^T}=\frac{d Q^S}{d Q}\frac{dQ}{dQ^T}
+  =\frac{P(S)}{P_0(S)B_t}\frac{P_0(T)B_t}{P_t(T)}=\frac{P_0(T)}{P_0(S)}\frac{P(S)}{P(T)}\,.
+\end{align*}
+
+
+%\bibliography{../../../books/wt}
 \end{document}
 
 %%% Local Variables:
