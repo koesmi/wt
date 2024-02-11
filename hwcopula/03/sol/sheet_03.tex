@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage{amsmath,mathtools,bbm,amssymb,stmaryrd,wasysym}
+\usepackage{mathrsfs}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Sheet 3 Evgenij}\rhead{Page \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\paragraph{Exercise 1 \textnormal{(4 Points)}.}
+The Clayton Copula with parameter $\theta>0$ is given by
+\[
+C_\theta(u,v)=(u^{-\theta}+v^{-\theta}-1)^{-1/\theta}\,.
+\]
+Show that the Clayton copula is an archimedian copula.
+
+We need to find a 2-monotone or convex $\varphi$ so that $(u^{-\theta}+v^{-\theta}-1)^{-1/\theta}=\phi(\varphi^{-1}(u)+\varphi^{-1}(v))$.
+If we set the pseudo-inverse of the generator to $\varphi^{-1}(t)=t^{-\theta}-1$ for $t\in(0,1]$ and $t_0$ for $t=0$, then we get that $\varphi^{-1}(C_\theta(u,v))=u^{-\theta}+v^{-\theta}-2=\varphi^{-1}(u)+\varphi^{-1}(v)$.
+That is, the Clayton copula is an archimedian copula with generator $\varphi(t)=(t+1)^{-1/\theta}$.
+
+Let $U_1,U_2\sim\operatorname{U}[0,1]$ independent random variables.
+Determine the function $f_\theta$ such that $(U_1,f_\theta(U_1,U_2))\sim C_\theta$.
+
+\paragraph{Exercise 3 \textnormal{(4 Points)}.}
+Prove Proposition 3.4:
+Let $X=(X_1,\dots,X_d)$ and $Y=(Y_1,\dots,Y_d)$ be $d$-dimensional random vectors.
+Then
+\begin{itemize}
+\item [(i)] $X\leq_{st} Y\quad\implies\quad X\leq_{icx}Y,\quad X\leq_{uo}Y\quad\text{and}\quad X\geq_{lo}Y$
+\end{itemize}
+If $X\leq_{st}Y$, then
+\begin{itemize}
+\item [(iii)] $X\leq_{sm}Y \quad\implies\quad X\leq_c Y\quad\implies\quad X\leq_{lo}Y\quad\text{and}\quad X\leq_{uo}Y$
+\end{itemize}
+
+Since we don't have the script at hand, we use the definition 6.1 from \cite{ruschendorf2013mathematical}.
+First, $X\leq_c Y$ is defined by $X\leq_{uo}Y$ and $X\leq_{lo}Y$, so it is enough to that $X\leq_{sm}Y\implies X\leq_{lo}Y$ and $X\leq_{sm}\implies X\leq_{uo}Y$.
+To this end we follow Theorem 6.15. from \cite{ruschendorf2013mathematical}.
+If $X\leq_{sm}Y$, then for all $\varphi$ with for all $\epsilon,\delta>0$ and $x\in\mathbb{R}^n$ $\Delta^\varepsilon_i\Delta^\delta_j\varphi(x)\geq0$ it holds that $E\varphi(X)\leq E\varphi(Y)$
+\emph{Here proof is missing.}
+
+\begin{itemize}
+\item [(iv)] $X\leq_{sm}Y\quad\implies\quad X\leq_{dcx}Y\implies\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$
+\end{itemize}
+See Remark 6.27.b in \cite{ruschendorf2013mathematical}.
+
+\paragraph{Exercise 5 \textnormal{(4 Points; Bonus)}.} Show that the Markov product $A\times B$ is a bivariate copula.
+Moreover, show that for a bivariate copula $C$ it holds that
+$\pi^2*C=C*\Pi^2=\Pi^2$.
+
+The Markov product is defined by $\Pi*C=\int_0^1\partial_2\Pi(u,t)\partial_1 C(t,v)dt=\int_0^1 u\partial_1 C(t,v)dt=u(C(1,v)-C(0,v))=uv$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
