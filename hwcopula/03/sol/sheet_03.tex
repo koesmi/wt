@@ -48,7 +48,6 @@ If $X\leq_{st}Y$, then
 \item [(iii)] $X\leq_{sm}Y \quad\implies\quad X\leq_c Y\quad\implies\quad X\leq_{lo}Y\quad\text{and}\quad X\leq_{uo}Y$
 \end{itemize}
 
-Since we don't have the script at hand, we use the definition 6.1 from \cite{ruschendorf2013mathematical}.
 First, $X\leq_c Y$ is defined by $X\leq_{uo}Y$ and $X\leq_{lo}Y$, so it is enough to that $X\leq_{sm}Y\implies X\leq_{lo}Y$ and $X\leq_{sm}\implies X\leq_{uo}Y$.
 To this end we follow Theorem 6.15. from \cite{ruschendorf2013mathematical}.
 If $X\leq_{sm}Y$, then for all $\varphi$ with for all $\epsilon,\delta>0$ and $x\in\mathbb{R}^n$ $\Delta^\varepsilon_i\Delta^\delta_j\varphi(x)\geq0$ it holds that $E\varphi(X)\leq E\varphi(Y)$
@@ -59,11 +58,33 @@ If $X\leq_{sm}Y$, then for all $\varphi$ with for all $\epsilon,\delta>0$ and $x
 \end{itemize}
 See Remark 6.27.b in \cite{ruschendorf2013mathematical}.
 
-\paragraph{Exercise 5 \textnormal{(4 Points; Bonus)}.} Show that the Markov product $A\times B$ is a bivariate copula.
-Moreover, show that for a bivariate copula $C$ it holds that
-$\pi^2*C=C*\Pi^2=\Pi^2$.
+\paragraph{Exercise 5 \textnormal{(4 Points; Bonus)}.} Show that the Markov product $A*B$ is a bivariate copula.
 
-The Markov product is defined by $\Pi*C=\int_0^1\partial_2\Pi(u,t)\partial_1 C(t,v)dt=\int_0^1 u\partial_1 C(t,v)dt=u(C(1,v)-C(0,v))=uv$.
+To this end we use proposition 1.10.
+To see that $A*B$ is a bivariate copula, we need to show that it is grounded, has uniform univariate marginals and is 2-increasing.
+Since $A$ and $B$ are grounded, $\int_0^1\partial_2A(0,t)\partial_1B(t,v)dt=\int_0^1\partial_2A(0,t)\partial_1B(t,v)dt=\int_0^1\partial_2A(u,t)\partial_1B(t,0)dt=0$, so $A*B$ is grounded.
+To see that $A*B$ has uniform univariate marginals, we calculate $A*B(u,1)=\int_0^1\partial_2A(u,t)\partial_1B(t,1)dt=\int_0^1\partial_2A(u,t)dt=A(u,1)-A(u,0)=u$.
+An analogous calculation yields ${A*B}(1,v)=v$.
+
+To see that $A*B$ is 2-increasing, according to equation (1.14) we need to see that for all $0\leq u,v\leq 1$, $0\leq\varepsilon\leq1-u$ and $0\leq\delta\leq1-v$ we get $A*B(u+\varepsilon,v+\delta)-A*B(u,v+\delta)-A*B(u+\varepsilon,v)+A*B(u,v)\geq0$.
+Employing yields
+\begin{align*}
+  &A*B(u+\varepsilon,v+\delta)-A*B(u,v+\delta)-A*B(u+\varepsilon,v)+A*B(u,v)\\
+  =&\int_0^1\bigl(\partial_2A(u+\varepsilon,t)\partial_1B(t,v+\delta)-\partial_2A(u,t)\partial_1B(t,v+\delta)\\
+  \qquad&-\partial_2A(u+\varepsilon,t)\partial_1B(t,v)+\partial_2A(u,t)\partial_1B(t,v)\bigr)dt\\
+  =&\int_0^1\bigl[\partial_2\bigl(A(u+\varepsilon,t)-A(u,t)\bigr)\partial_1B(t,v+\delta)-\partial_2\bigl(A(u+\varepsilon,t)-A(u,t)\bigr)\partial_1B(t,v)\bigr]dt\\
+  =&\int_0^1\bigl[\partial_2\bigl(A(u+\varepsilon,t)-A(u,t)\bigr)\partial_1\bigl(B(t,v+\delta)-B(t,v)\bigr)\bigr]dt\,.
+     \intertext{
+However, $\partial_2\bigl(A(u+\varepsilon,t)-A(u,t)\bigr)=\lim_{h\to0}\frac{1}{h}\bigl(A(u+\varepsilon,t+h)-A(u,t+h)-A(u+\varepsilon,t)+A(u,t)\bigr)\geq0$, because $A$ is 2-increasing.
+Analogously $\partial_1\bigl(B(t,v+\delta)-B(t,v)\bigr)\geq0$.
+     Thus, the integrand is positive for every $0\leq t\leq1$ so that we get}
+     \geq&0\,.
+\end{align*}
+All together $A*B$ is a bivariate copula.
+
+Moreover, show that for a bivariate copula $C$ it holds that $\pi^2*C=C*\Pi^2=\Pi^2$.
+
+The Markov product is defined by $\Pi*C=\int_0^1\partial_2\Pi(u,t)\partial_1 C(t,v)dt=\int_0^1 u\partial_1 C(t,v)dt=u(C(1,v)-C(0,v))=uv=\Pi$ \emph{which however is not $\Pi^2*C$}.
 \bibliography{../../../books/wt}
 \end{document}
 
