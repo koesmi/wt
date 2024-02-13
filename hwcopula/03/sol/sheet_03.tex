@@ -32,32 +32,17 @@ Show that the Clayton copula is an archimedian copula.
 We need to find a 2-monotone or convex $\varphi$ so that $(u^{-\theta}+v^{-\theta}-1)^{-1/\theta}=\phi(\varphi^{-1}(u)+\varphi^{-1}(v))$.
 If we set the pseudo-inverse of the generator to $\varphi^{-1}(t)=t^{-\theta}-1$ for $t\in(0,1]$ and $t_0$ for $t=0$, then we get that $\varphi^{-1}(C_\theta(u,v))=u^{-\theta}+v^{-\theta}-2=\varphi^{-1}(u)+\varphi^{-1}(v)$.
 That is, the Clayton copula is an archimedian copula with generator $\varphi(t)=(t+1)^{-1/\theta}$.
-
-Let $U_1,U_2\sim\operatorname{U}[0,1]$ independent random variables.
-Determine the function $f_\theta$ such that $(U_1,f_\theta(U_1,U_2))\sim C_\theta$.
-
+\pagebreak
 \paragraph{Exercise 3 \textnormal{(4 Points)}.}
 Prove Proposition 3.4:
 Let $X=(X_1,\dots,X_d)$ and $Y=(Y_1,\dots,Y_d)$ be $d$-dimensional random vectors.
 Then
-\begin{itemize}
-\item [(i)] $X\leq_{st} Y\quad\implies\quad X\leq_{icx}Y,\quad X\leq_{uo}Y\quad\text{and}\quad X\geq_{lo}Y$
-\end{itemize}
-If $X\leq_{st}Y$, then
-\begin{itemize}
-\item [(iii)] $X\leq_{sm}Y \quad\implies\quad X\leq_c Y\quad\implies\quad X\leq_{lo}Y\quad\text{and}\quad X\leq_{uo}Y$
-\end{itemize}
-
-First, $X\leq_c Y$ is defined by $X\leq_{uo}Y$ and $X\leq_{lo}Y$, so it is enough to that $X\leq_{sm}Y\implies X\leq_{lo}Y$ and $X\leq_{sm}\implies X\leq_{uo}Y$.
-To this end we follow Theorem 6.15. from \cite{ruschendorf2013mathematical}.
-If $X\leq_{sm}Y$, then for all $\varphi$ with for all $\epsilon,\delta>0$ and $x\in\mathbb{R}^n$ $\Delta^\varepsilon_i\Delta^\delta_j\varphi(x)\geq0$ it holds that $E\varphi(X)\leq E\varphi(Y)$
-\emph{Here proof is missing.}
 
 \begin{itemize}
 \item [(iv)] $X\leq_{sm}Y\quad\implies\quad X\leq_{dcx}Y\implies\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$
 \end{itemize}
 See Remark 6.27.b in \cite{ruschendorf2013mathematical}.
-
+\pagebreak
 \paragraph{Exercise 5 \textnormal{(4 Points; Bonus)}.} Show that the Markov product $A*B$ is a bivariate copula.
 
 To this end we use proposition 1.10.
@@ -82,9 +67,6 @@ Analogously $\partial_1\bigl(B(t,v+\delta)-B(t,v)\bigr)\geq0$.
 \end{align*}
 All together $A*B$ is a bivariate copula.
 
-Moreover, show that for a bivariate copula $C$ it holds that $\pi^2*C=C*\Pi^2=\Pi^2$.
-
-The Markov product is defined by $\Pi*C=\int_0^1\partial_2\Pi(u,t)\partial_1 C(t,v)dt=\int_0^1 u\partial_1 C(t,v)dt=u(C(1,v)-C(0,v))=uv=\Pi$ \emph{which however is not $\Pi^2*C$}.
 \bibliography{../../../books/wt}
 \end{document}
 
