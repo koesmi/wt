@@ -42,9 +42,25 @@ Then
 \item [(iv)] $X\leq_{sm}Y\quad\implies\quad X\leq_{dcx}Y\implies\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$
 \end{itemize}
 We follow remark 6.27.b in \cite{ruschendorf2013mathematical} to show that if $X\leq_{dcx}Y$ then $\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$.
-So let $X$, $Y$ so that $X\leq_{dcx}Y$, $f$ convex.
-Then $x\mapsto f\bigl(\sum_{i=1}^dx_i\bigr)$ is directionally convex, \emph{which still remains to be shown.}
-That means that $\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$ as wanted.
+So let $X$, $Y$ so that $X\leq_{dcx}Y$ and $f$ convex.
+We want to show that  $x\mapsto f\bigl(\sum_{i=1}^dx_i\bigr)$ is directionally convex, because then $\sum_{i=1}^dX_i\leq_{cx}\sum_{i=1}^dY_i$ as wanted.
+To this end let $x\in\mathbb{R}^d$, $\varepsilon,\delta>0$ and $0\leq i,j\leq d$.
+Because $f$ is convex, for $a,b\in\mathbb{R}$ and $0<\theta<1$ we know that
+\begin{align*}
+  \theta f(a)+(1-\theta)f(b)-f(\theta a+(1-\theta)b)
+  &\geq0\,,
+    \intertext{and also that}
+    (1-\theta) f(a)+(1-\theta)f(b)-f(\theta a+(1-\theta)b)
+  &\geq0\,.
+    \intertext{adding both inequalities and setting $a=\sum x_i$, $b=a+\varepsilon+\delta$ and $\theta=\frac{\varepsilon}{b-a}$ yields}
+    f\Bigl(\sum x_i+\varepsilon+\delta\Bigr)-f\Bigl(\sum x_i+\varepsilon\Bigr)-f\Bigl(\sum x_i+\delta\Bigr)+f\Bigl(\sum x_i\Bigr)
+  &\geq0\,.
+    \intertext{By definition of $\Delta^\epsilon_j$ this means}
+    \Delta^\varepsilon_j\Delta^\delta_k f\Bigl(\sum x_i\Bigr)
+    &\geq0\,,
+\end{align*}
+so indeed $x\mapsto f(\sum x_i)$ is directionally convex.
+Now since $X\leq_{dcx}Y$ this means $Ef(\sum x_i)\leq Ef(\sum Y_k)$, so that $\sum x_i\leq_{cx}\sum Y_k$, since $f\in{\cal F}_{cx}$ was chosen arbitrarily.
 \pagebreak
 \paragraph{Exercise 5 \textnormal{(4 Points; Bonus)}.} Show that the Markov product $A*B$ is a bivariate copula.
 
