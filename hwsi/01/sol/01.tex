@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.3in,bottom=1.3in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{babel}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 1 Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+
+Suche eine Dichte $Y=\frac{\mathrm{d}Q}{\mathrm{d}P}$ und nehme an, dass $Y=\prod_{i=1}^t Y_i$
+\emph{weiter aus \url{https://math.stackexchange.com/questions/2741575/constructing-equivalent-martingale-measure-lognormal-distribution}}
+$E_Q[A]=\frac{1}{E[Y]}E[1_A Y]$ nach Proposition A.16.
+\paragraph{Aufgabe 2 \textnormal{(4 Punkte)}.}
+Zeigen Sie, dass jedes Supermartingal $(X_n)_{n\in\mathbb{N}_0}$ mit $E[X_n]=E[X_0]$ für alle $n$ bereits ein Martingal ist.
+
+Sei $Y_n=X_n-E[X_{n+1}|\mathscr{F}_n]$.
+Dann gilt nach Turmeigenschaft $E[Y_n]=E[X_n]-E[E[X_{n+1}]|\mathscr{F}_n]=0$.
+Da $X$ ein Supermartingal ist, ist $Y$ nichttegativ.
+Somit ist auch $Y_n=0$ und $X$ ein Martingal.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
