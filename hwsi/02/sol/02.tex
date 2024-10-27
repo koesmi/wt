@@ -63,28 +63,67 @@ Zeigen Sie, dass die Menge der arbitragefreien Preise nicht leer ist und gegeben
 \Pi(H)=\{E_Q[H]\mid Q\in{\cal M}_e,E_Q[H]<\infty\}\,.\label{eq:pih}
 \end{equation}
 Zeigen Sie weiter, dass
-\[
+\begin{equation}
   \pi_{\text{inf}}:=\inf\Pi(H)=\inf_{Q\in{\cal M}_e}E_Q[H]\,,\quad
-  \pi_{\text{sup}}:=\sup\Pi(H)=\sup_{Q\in{\cal M}_e}E_Q[H]\,.
-\]
+  \pi_{\text{sup}}:=\sup\Pi(H)=\sup_{Q\in{\cal M}_e}E_Q[H]\,.\label{eq:piinfsup}
+\end{equation}
 
 Das ist Theorem 5.29 in \cite{foellmer2016}.
 Zunächst wollen wir zeigen, dass für jeden Arbitragefreien Preis $\pi^H$ gilt, dass $\pi^H=E_Q[H]<\infty$ mit $Q\in{\cal M}_e$.
 Wenn $\pi^H$ ein arbitragefreier Preis ist, so ist der Markt mit dem Prozess $(X^0,X^1,\dots,X^d,X^{d+1})$ arbitragefrei.
-Nach dem Fundamental Theorem of Asset Pricing gibt es dann ein $Q\in{\cal M}_e$, sodass $X^i_t=E_Q[X^i_T|\mathscr{F}_t]$.
+Nach dem Fundamentalsatz der Wertpapierbewertung gibt es dann ein $Q\in{\cal M}_e$, sodass $X^i_t=E_Q[X^i_T|\mathscr{F}_t]$.
 Insbesondere gilt dann für $i=0$, dass $\pi^H=E_Q[H]$, also ist $\Pi(H)\subset\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}$.
 
 Sei nun andersherum $\pi^H=E_Q[H]$ für ein $Q\in{\cal M}_e$.
 Wir können dann $X$ durch $X^{d+1}_t:=E_Q[H|\mathscr{F}_t]$ erweitern.
-Für den erweiterten Prozess gilt dann mit $\mathscr{F}_0=\{\emptyset,\frac{1}{2}\}$, dass $X^{d+1}_0=\pi^H$.
+Für den erweiterten Prozess gilt dann mit $\mathscr{F}_0=\{\emptyset,\Omega\}$, dass $X^{d+1}_0=\pi^H$.
 Weiterhin ist $H\geq0$, sodass $X^{d+1}_t\geq0$.
 Schließlich ist $H$ replizierbar, also $H=V_T$ für irgendeinen Wertprozess $V_T$.
 Somit ist $H$ $\mathscr{F}_T$-messbar und $H=E_Q[H|\mathscr{F}_T]$.
 Der erweiterte Prozess ist also so, wie in Definition 1.
 Da auch $X^{d+1}$ so, wie wir es definiert haben, ein $Q$-Martingal ist, ist der um $X^{d+1}$ erweiterte Markt arbitragefrei.
 Alle Bedingungen von Definition 1 sind also erfüllt und $\pi^H\in \Pi(H)$, sodass auch $\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}\subset\Pi(H)$.
+Insgesamt gilt also Gleichung (\ref{eq:pih}).
 
-Insgesamt ist also 
+Nun wollen wir noch zeigen, dass $\Pi(H)$ nicht leer ist.
+Wähle hierfür wie in Lemma 22 ein $\widetilde{P}\sim P$ so, dass $E_{\widetilde{P}}[H]<\infty$, also zum Beispiel mit
+\[\frac{d\widetilde{P}}{dP}=\frac{c}{1+H}\,.\]
+Nach Theorem 14 ist der Markt unter $\widetilde{P}$ arbitragefrei und es gibt ein $Q\in{\cal M}_e$, sodass $\frac{d Q}{d\widetilde{P}}$ beschränkt ist. Dann ist aber auch $E_Q[H]=E_{\widetilde{P}}\left[\frac{d Q}{d\widetilde{P}}H\right]<\infty$.
+Somit ist $E_Q[H]\in\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}=\Pi(H)$.
+
+Nun wollen wir noch Gleichung (\ref{eq:piinfsup}) zeigen.
+Für $\inf_{Q\in{\cal M}_e}E_Q[H]$ gilt, dass $\inf_{Q\in{\cal M}_e}E_Q[H]<\infty$, also ist $\inf_{Q\in{\cal M}_e}E_Q[H]=\inf \Pi(H)=\pi_\text{inf}$.
+Bei $\sup_{Q\in{\cal M}_e}$ kann es sein, dass es ein $P^\infty$ gibt, sodass $E_{P^\infty}[H]=\infty$.
+Dann wäre $\{E_Q[H]\mid Q\in{\cal M}_e\}$ nach oben nicht beschränkt.
+Damit Gleichung (\ref{eq:piinfsup}) für $\pi_\text{sup}$ gilt, muss also auch $\Pi(H)$ nach oben nicht beschränkt sein.
+Für jedes $c>0$ muss somit ein $\pi\in \Pi(H)$ existierten, sodass $\pi>c$.
+Wir wollen so ein $\pi$ konstruieren.
+Nehme also an, es gibt ein $P^\infty\in{\cal M}_e$ so, dass $E_{P^\infty}[H]=\infty$ und wähle dafür $n\geq0$ so, dass $E_{P^\infty}[H\wedge n]>c$.
+Sei dann $\widetilde{\pi}=E_{P^\infty}[H\wedge n]$ und $X^{d+1}_t=E_{P^\infty}[H\wedge n|\mathscr{F}_t]$.
+Da $\wedge$ messbar ist, ist, wie zuvor, $X^{d+1}_t$ ein Martingal und somit der erweiterte Markt arbitragefrei.
+Nach Gleichung (\ref{eq:pih}) ist dann $\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}$ für den erweiterten Markt nicht leer, wir erhalten also ein äquivalentes Martingalmaß $Q$ unter dem der erweiterte Prozess $(X^0,\dots,X^d,X^{d+1})$ ein Martingal ist, mit $E_Q[H]<\infty$.
+Insbesondere ist der Prozess $(X^0,\dots,X^d)$ ein Martingal und $E_Q[H]\in\Pi(H)$.
+Für $\pi=E_Q[H]$ gilt nun schon, dass $\pi>c$, denn nach Definition unseres erweiterten Prozesses $X^{d+1}_t$ gilt
+\begin{align*}
+  \pi=E_Q[H]\geq E_Q[H\wedge n]
+  &=E_Q[X^{d+1}_T]\,.
+    \intertext{Da $X^{d+1}_t$ ein $Q$-Martingal ist, erhalten wir}
+  &=X^{d+1}_0\,.
+    \intertext{wieder nach der Definition von $X^{d+1}_t$ und $\widetilde{\pi}$ ist}
+  &=\widetilde{\pi}\,,
+    \intertext{und es galt mit der Wahl von $n$, dass}
+  &>c\,.
+\end{align*}
+Somit gibt es für jedes $c>0$ ein $\pi\in\Pi(H)$ mit $\pi>c$ und $\sup \Pi(H)=\sup_{Q\in{\cal M}_e} E_Q[H]$.
+
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Zeigen Sie, ist ein diskontierter claim $H$ replizierbar, dann besteht die Menge $\Pi(H)$ aus einem Element gegeben durch $V_0$, wobei $V$ der Value Prozess jeder replizierbaren Strategie ist.
+Insbesondere ist $V$ ein Martingal unter jedem äquivalenten Martingalmaß.
+
+Nach Aufgabe 2 gilt, dass $\Pi(H)=\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}$.
+Da $H$ replizierbar ist, gibt es nach Definition eine Handelsstrategie mit Werteprozess $V$, sodass $H=V_T$.
+Da $Q$ ein Martingalmaß ist, gilt nach Satz 11 $(i)\implies(iv)$, dass $E_Q[H]=E_Q[V_T]=V_0$, unabhängig von $Q$, sodass $\Pi(H)$ tatsächlich nur aus $V_0$ besteht.
+Nach Satz 11 $(i)\implies(ii)$ ist $V$ ein Martingal unter jedem äquivalenten Martingalmaß.
 \bibliography{../../../books/wt}
 \end{document}
 
