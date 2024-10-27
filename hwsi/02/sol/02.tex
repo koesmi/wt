@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.3in,bottom=1.3in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 2 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+Wir nehmen an, dass $Q\ll P$ auf $\mathscr{F}$ mit Dichte $\varphi$ und $\mathscr{F}_0\subseteq\mathscr{F}$.
+Dann gilt für jedes $\mathscr{F}$-messbare $X$, dass
+\[E_Q[X|\mathscr{F}_0]=\frac{1}{E_P[\varphi|\mathscr{F}_0]}E_P[X\varphi|\mathscr{F}_0].\]
+
+Das ist Proposition A.16 in \cite{foellmer2016}.
+$\frac{1}{E_P[\varphi|\mathscr{F}_0]}E_P[X\varphi|\mathscr{F}_0]$ ist als Kombination von $\mathscr{F}_0$-messbaren Funktionen $\mathscr{F}_0$-messbar.
+Wir müssen noch zeigen, dass für alle $\mathscr{F}_0$-messbaren $Y$ gilt
+\begin{equation}
+E_Q[YX]=E_Q\left[Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\right]\,.\label{eq:bederw}
+\end{equation}
+Wir bringen die linke und die rechte Seite auf die gleiche Form und sehen dadurch, dass sie gleich sind.
+Mit dem Satz von Radon--Nikodym haben wir für die linke Seite
+\begin{align}
+  E_Q[YX]
+  &=E[YX\varphi]\,.\nonumber
+    \intertext{Mit der Turmeigenschaft können wir auch schreiben, dass}
+  &=E\bigl[E[YX\varphi|\mathscr{F}_0]\bigr]\,,\nonumber
+    \intertext{und da $Y$ $\mathscr{F}_0$-messbar ist, dass}
+  &=E\bigl[YE[X\varphi|\mathscr{F}_0]\bigr]\,.\label{eq:lhs}
+\end{align}
+Für die rechte Seite gilt mit dem Satz von Radon--Nikodym
+\begin{align}
+  E_Q\left[Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\right]
+  &=E\left[\varphi Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\right]\,.\nonumber
+    \intertext{Mit der Turmeigenschaft können wir schreiben}
+  &=E\left[E\Bigl[\varphi Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\Big|\mathscr{F}_0\Bigr]\right]\,.\nonumber
+    \intertext{Da $Y$, $\frac{1}{\varphi_0}$ und $E[X\varphi|\mathscr{F}_0]$ $\mathscr{F}_0$-messbar sind, erhalten wir}
+  &=E\left[E[\varphi|\mathscr{F}_0]Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\right]\,.\nonumber
+    \intertext{Mit der Definition von $\varphi_0$ kriegen wir dann, dass }
+  &=E\left[\varphi Y\frac{1}{\varphi_0}E[X\varphi|\mathscr{F}_0]\right]\,.\label{eq:rhs}
+\end{align}
+In Gleichung (\ref{eq:lhs}) und Gleichung (\ref{eq:rhs}) kommt jeweils das Gleiche raus, was Gleichung (\ref{eq:bederw}) zeigt.
+
+\paragraph{Aufgabe 2 \textnormal{(4  Punkte)}.}
+Zeigen Sie, dass die Menge der arbitragefreien Preise nicht leer ist und gegeben ist durch
+\begin{equation}
+\Pi(H)=\{E_Q[H]\mid Q\in{\cal M}_e,E_Q[H]<\infty\}\,.\label{eq:pih}
+\end{equation}
+Zeigen Sie weiter, dass
+\[
+  \pi_{\text{inf}}:=\inf\Pi(H)=\inf_{Q\in{\cal M}_e}E_Q[H]\,,\quad
+  \pi_{\text{sup}}:=\sup\Pi(H)=\sup_{Q\in{\cal M}_e}E_Q[H]\,.
+\]
+
+Das ist Theorem 5.29 in \cite{foellmer2016}.
+Zunächst wollen wir zeigen, dass für jeden Arbitragefreien Preis $\pi^H$ gilt, dass $\pi^H=E_Q[H]<\infty$ mit $Q\in{\cal M}_e$.
+Wenn $\pi^H$ ein arbitragefreier Preis ist, so ist der Markt mit dem Prozess $(X^0,X^1,\dots,X^d,X^{d+1})$ arbitragefrei.
+Nach dem Fundamental Theorem of Asset Pricing gibt es dann ein $Q\in{\cal M}_e$, sodass $X^i_t=E_Q[X^i_T|\mathscr{F}_t]$.
+Insbesondere gilt dann für $i=0$, dass $\pi^H=E_Q[H]$, also ist $\Pi(H)\subset\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}$.
+
+Sei nun andersherum $\pi^H=E_Q[H]$ für ein $Q\in{\cal M}_e$.
+Wir können dann $X$ durch $X^{d+1}_t:=E_Q[H|\mathscr{F}_t]$ erweitern.
+Für den erweiterten Prozess gilt dann mit $\mathscr{F}_0=\{\emptyset,\frac{1}{2}\}$, dass $X^{d+1}_0=\pi^H$.
+Weiterhin ist $H\geq0$, sodass $X^{d+1}_t\geq0$.
+Schließlich ist $H$ replizierbar, also $H=V_T$ für irgendeinen Wertprozess $V_T$.
+Somit ist $H$ $\mathscr{F}_T$-messbar und $H=E_Q[H|\mathscr{F}_T]$.
+Der erweiterte Prozess ist also so, wie in Definition 1.
+Da auch $X^{d+1}$ so, wie wir es definiert haben, ein $Q$-Martingal ist, ist der um $X^{d+1}$ erweiterte Markt arbitragefrei.
+Alle Bedingungen von Definition 1 sind also erfüllt und $\pi^H\in \Pi(H)$, sodass auch $\{E_Q[H]\mid Q\in{\cal M}_e, E_Q[H]<\infty\}\subset\Pi(H)$.
+
+Insgesamt ist also 
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
