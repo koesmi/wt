@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.3in,bottom=1.3in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 2 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 5 \textnormal{(2 Punkte)}.}
+Betrachten Sie das Modell aus Aufgabe 3 und die Funktion $v_t$ aus Aufgabe 4.
+Geben Sie eine explizite Darstellung für $v_t$ an, falls $H=h(S_T)$.
+
+Das wurde in Beispiel 5.42. in \cite{foellmer2016} gemacht.
+Nach Aufgabe 4 ist für $t=T-1,\dots,0$
+\begin{align*}
+  v_T(x_0,\dots,x_T)
+  &=h(x_0,\dots,x_T)\,,\\
+  v_t(x_0,\dots,x_t)
+  &=q v_{t+1}(x_0\dots,x_t,x_t(1+b))+(1-q)v_{t+1}(x_0,\dots,x_t,x_t(1+a))\,.
+\end{align*}
+Wenn man nun $H=h(S_T)$ verwendet, so gilt mit $\bar{q}=1-q$, $\hat{a}=1+a$ und $\hat{b}=1+b$
+%\begin{align*}
+%v_t(x_0,\dots,x_t)
+%&=\mathbb{E}^*\left[h\left(x_0,\dots,x_t,x_t\frac{S_1}{S_0},\dots,x_t\frac{S_{T-t}}{S_0}\right)\right]
+%\end{align*}
+%Sodass $v_t(x_t)=\mathbb{E}^*[h(x_t\frac{S_{T-t}}{S_0})]$
+\begin{align*}
+  v_T(x_T)
+  &=h(x_T)\,\\
+    v_{T-1}(x_{T-1})
+  &=q h(x_{T-1}\hat{b})+\bar{q}h(x_{T-1}\hat{a})\\
+  v_{T-2}(x_{T-2})
+  &=qv_{T-1}(x_{T-2}\hat{b})+\bar{q}v_{T-1}(x_{T-2}\hat{a})\\
+  &=q\Bigl(q h(x_{T-2}\hat{b}\hat{b})+\bar{q}h(x_{T-2}\hat{b}\hat{a})\Bigr)\\
+  &\quad+\bar{q}\Bigl(q h(x_{T-2}\hat{a}\hat{b})+\bar{q}h(x_{T-2}\hat{a}\hat{a})\Bigr)\\
+  &=q^2\bar{q}^0h(x_{T-2}\hat{b}^2\hat{a}^0)+2q^1\bar{q}^1h(x_{T-2}\hat{b}^1\hat{a}^1)+q^0\bar{q}^2h(x_{T-2}\hat{b}^0\hat{a}^2)\,.
+    \intertext{Dementsprechend ergibt sich für $v_{T-3}(x_{T-3})$}
+    v_{T-3}(x_{T-3})
+  &=q^3\bar{q}^0h(x_{T-3}\hat{b}^3\hat{a}^0)+3q^2\bar{q}^1h(x_{T-3}\hat{b}^2\hat{a}^1)\\
+  &\quad+3q^1\bar{q}^2h(x_{T-3}\hat{b}^1\hat{q}^2)+q^0\bar{q}^3h(x_{T-3}\hat{b}^0\hat{a}^3)\,,
+    \intertext{und insgesamt mit dem Pascalschen Dreieck}
+    v_t(x_t)
+  &=\sum_{k=0}^{T-t}h
+    \bigl(\!\begin{smallmatrix}
+      T-t\\k
+    \end{smallmatrix}\!\bigr)
+  q^k\bar{q}^{T-t-k}h(x_t\hat{b}^k\hat{a}^{T-t-k})\,.
+\end{align*}
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
