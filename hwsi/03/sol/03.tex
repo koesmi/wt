@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.3in,bottom=1.3in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.0in,bottom=1.0in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage{mathrsfs}
@@ -63,7 +63,51 @@ Wenn man nun $H=h(S_T)$ verwendet, so gilt mit $\bar{q}=1-q$, $\hat{a}=1+a$ und 
     \end{smallmatrix}\!\bigr)
   q^k\bar{q}^{T-t-k}h(x_t\hat{b}^k\hat{a}^{T-t-k})\,.
 \end{align*}
+\pagebreak
+\paragraph{Aufgabe 6 \textnormal{(2 Punkte)}.}
+Betrachten Sie das Modell aus Aufgabe 3.
+Geben Sie die zu Aufgabe 4 korrespondierende replizierende Strategie explizit an.
 
+Das ist Proposition 5.44 aus \cite{foellmer2016}.
+Wir behaupten, die replizierende Strategie hat die Form
+\[
+\xi_t(\omega)=\Delta_t(S_0,S_1(\omega),\dots,S_{t-1}(\omega))\,,
+\]
+wobei
+\begin{equation}
+  \begin{split}
+  &\Delta_t(x_0,\dots,x_{t-1})\\
+  &:=(1+r)^t\frac{v_t(x_0,\dots,x_{t-1},x_{t-1}\hat{b})-v_t(x_0,\dots,x_{t-1},x_{t-1}\hat{a})}{x_{t-1}\hat{b}-x_{t-1}\hat{a}}\,.
+\end{split}
+\label{eq:deltat}
+\end{equation}
+Damit $\xi_t$ eine replizierende Strategie ist, muss gelten,
+\begin{equation}
+  \label{eq:xit}
+  \xi_t(\omega)(X_t(\omega)-X_{t-1}(\omega))=V_t(\omega)-V_{t-1}(\omega)
+\end{equation}
+\emph{wobei nach Definition einer replizierenden Strategie zu erwarten wäre, dass gilt $\xi_t(\omega)X_t(\omega)=V_t(\omega)$.}
+Nach Definition von $X_t$ und $V_t$ hängen $X_{t-1}$ und $V_{t-1}$ nur von den ersten $t-1$ Komponenten von $\omega$ ab.
+Auch $\xi_t$ hängt nur von den ersten $t-1$ Komponenten von $\omega$ ab (\emph{wobei unklar ist, warum}).
+Für ein festes $t$ seien
+\[
+  \omega^\pm:=(y_1,\dots,y_{t-1},\pm1,y_{t+1},\dots,y_T)\,,
+\]
+Sodass $R_t(\omega^+)=b$ und $R_t(\omega^-)=a$.
+Einsetzen in (\ref{eq:xit}) liefert
+\begin{align*}
+  \xi_t(\omega)\bigl(X_{t-1}(\omega)\hat{b}/(1+r)-X_{t-1}(\omega)\bigr)
+  &=V_t(\omega^+)-V_{t-1}(\omega)\,,\\
+    \xi_t(\omega)\bigl(X_{t-1}(\omega)\hat{a}/(1+r)-X_{t-1}(\omega)\bigr)
+  &=V_t(\omega^-)-V_{t-1}(\omega)
+\end{align*}
+und mit Umstellen nach $\xi_t$ erhalten wir
+\begin{align*}
+  \xi_t(\omega)
+  &=(1+r)\frac{V_t(\omega^+)-V_t(\omega^-)}{X_{t-1}(\omega)(\hat{b}-\hat{a})}
+  \intertext{Nach der Definition $X_t$ aus Aufgabe 3 und von $V_t(\omega)$ aus Aufgabe 4 hat dann $\xi_t$ unter Verwendung von $\Delta_t$ aus (\ref{eq:deltat}) die Form}
+  &=\Delta\bigl(S_0,S_1(\omega),\dots,S_{t-1}(\omega)\bigr)
+\end{align*}
 \bibliography{../../../books/wt}
 \end{document}
 
