@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 4 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(6 Punkte)}.}
+Gegeben seien die Marktmodelle, deren Preise $S^{(N)}_k$ auf einem Wahrscheinlichkeitsraum $(\Omega^{(N)},{\cal F}^{(N)},P^*_N)$ definiert sind.
+Dabei ist $P^*_N$ ein Martingalmaß für jedes der Marktmodelle, das heißt, die diskontierten Preisprozesse
+\[
+X^{(N)}_k:=\frac{S^{(N)}_k}{(1+r_N)^k},\quad k=0,\dots,N
+\]
+bilden Martingale bezüglich der Filtration ${\cal F}^{(N)}_k:=\sigma(S^{(N)}_1,\dots,S^{(N)}_k)$.
+Wir nehmen weiter an:
+\begin{enumerate}
+\item Die Anfangspreise $S^{(N)}_0$ sind für alle $N$ gleich und konstant, also $S_0^{(N)}=S_0>0$.
+\item Die Renditen $R^{(N)}_k:=\frac{S^{(N)}_k-S^{(N)}_{k-1}}{S^{(N)}_{k-1}}$ für $k=1,\dots,N$ sind unabhängig unter $P_N^*$ und erfüllen
+  \[
+    -1<a_N\leq R^{(N)}_k\leq b_N\,,\quad\text{für alle }k=1,\dots,N\,,
+  \]
+  wobei $a_N\to 0$ und $b_N\to 0$ für $N\to\infty$ gilt.\label{rend}
+\item Die Varianzen $\operatorname{var}_N(R^{(N)}_k)$ unter $P^*_N$ sind so, dass
+  \[
+    \sigma_N^2:=\frac{1}{T}\sum_{k=1}^N\operatorname{var}_N(R^{(N)}_k)\to\sigma^2\in(0,1)
+  \]
+  für $N\to\infty$ konvergiert.\label{var}
+\end{enumerate}
+Zeigen Sie unter diesen Annahmen, dass die Verteilungen der Endwerte $S^{(N)}_N$ unter $P^*_N$ schwach gegen eine log-normal verteilte Zufallsvariable $S_T$ mit den Parametern
+\[
+  \log S_0+rT-\frac{1}{2}\sigma^2T\quad\text{und}\quad \sigma\sqrt{T}
+\]
+konvergieren.
+Die Verteilung der Grenzzufallsvariablen $S_T$ lässt sich darstellen als
+\[
+  S_T:=S_0\exp\left(\sigma W_T+\left(r-\frac{1}{2}\sigma^2\right)T\right)\,,
+\]
+wobei $W_T$ eine normalverteilte Zufallsvariable $N(0,T)$ mit Erwartungswert 0 und Varianz $T$ ist.
+\paragraph{\textnormal{\textit{Hinweis:}}}
+\emph{Verwenden Sie Theorem A.41. in \cite{foellmer2016}.
+Dazu betrachten Sie die Taylorentwicklung von $\log(1+x)$ und erhalten damit eine geeignete Darstellung für $\log(S^{(N)})$.}
+\paragraph{\textnormal{\textit{Lösung:}}}
+Das ist Theorem 5.54 in \cite{foellmer2016}.
+Nehme zunächst ohne Beschränkung der Allgemeinheit an, dass $S_0=1$.
+Das Resultat für beliebiges $S_0$ folgt dann durch Reskalierung.
+Wie im Hinweis steht, bestimmen wir die Taylorentwicklung von $\log(1+x)$.
+Es gilt
+\[
+  \log(1+x)'=\frac{1}{1+x}\,,\quad\log(1+x)''=\frac{-1}{(1+x)^2}\,,\quad\text{und}\quad\log(1+x)'''=\frac{2}{(1+x)^3}\,,
+\]
+sodass
+\[
+  \log(1+x)\Big|_{x=0}=0+1\cdot x-\frac{1}{2}x^2+\rho(x)x^2\,.
+\]
+Hierbei gilt, vergleiche \cite{enwiki:1254088858}, für
+\[M\geq\left|\frac{2}{(1+x)^3}\right|\]
+auf $-1<\alpha\leq x\leq \beta$, dass
+\[
+|\rho(x)|x^2\leq \frac{M}{6}|\beta-\alpha|^3
+\]
+und entsprechend
+\[
+  |\rho(x)|\leq\frac{M}{6}|\beta-\alpha|=:\delta(\alpha,\beta)\,.
+\]
+Hierbei gilt $\delta(\alpha,\beta)\to0$ für $\alpha,\beta\to0$\,.
+Stellt man die Bedingung unter Punk \ref{rend} für die Renditen nach $S^{(N)_k}$ um, so erhält man $S^{(N)}_k=(1+R^{(N)}_k)S^{(N)}_{k-1}$, also mit $S_0=1$
+\[
+S^{(N)}_N=\prod_{k=1}^N(1+R^{(N)}_k)\,.
+\]
+Wir setzen das in unsere Taylorformel für $\log(1+x)$ ein, sodass mit $\log(ab)=\log(a)+\log(b)$
+\begin{align}
+  \log S^{(N)}_N
+  &=\sum_{k=1}^N\log(1+R_k^{(N)})\\
+  &=\sum_{k=1}^NR^{(N)}_k-\frac{1}{2}(R^{(N)}_k)^2+\Delta_N\,,\label{eq:delta}
+\end{align}
+wobei so, wie vorher $\rho(x)$,
+\[
+|\Delta_N|\leq\delta(\alpha_N,\beta_N)\sum_{k=1}^N(R^{(N)}_k)^2\,.
+\]
+$P^*_N$ ist nach Aufgabenstellung ein Martingalmaß.
+Da die $R^{(N)}_k$ unabhängig sind, können wir schreiben
+\[
+  1=
+  E^*_N[X^{(N)}_k]=E^*_N\left[\prod_{l=1}^k\frac{1+R^{(N)}_l}{1+r_N}\right]=\prod_{l=1}^kE^*_N\left[\frac{1+R^{(N)}_l}{1+r_N}\right]\,,
+\]
+sodass $E_N^*[R^{(N)}_k]=r_N$.
+Weiterhin gilt $E_N^*[(R^{(N)}_k)^2]=\operatorname{var}_N(R^{(N)}_k)^2+E_N^*[R^{(N)}_k]^2$, sodass
+\[
+E_N^*[|\Delta_N|]\leq\delta(\alpha_N,\beta_N)\sum_{k=1}^N(\operatorname{var}_N(R^{(N)}_k)+_N^2)\to0
+\]
+nach der Bedingung an die Varianz unter Punkt \ref{var}.
+Damit konvergiert $\Delta_N\to0$ in Verteilung.
+Nach dem Theorem von Slutsky aus Wahrscheinlichkeitstheorie 1 reicht es mit Gleichung (\ref{eq:delta}) also, die schwache Konvergenz von
+\[
+Z_N:=\sum_{k=1}^N(R^{(N)}_k-\frac{1}{2}(R^{(N)}_k)^2)=:\sum_{k=1}^NY^{(N)}_k
+\]
+gegen eine ${\cal N}(rT-\frac{1}{2}\sigma^2T,\sigma^2T)$-verteilte Zufallsvariable zu zeigen, dann konvergiert auch $S^{(N)}_N$ schwach gegen $S_T$.
+Hierfür folgen wir dem Hinweis und prüfen die Bedingungen von Theorem A.41 aus \cite{foellmer2016}.
+Seien $\gamma_N:=|\alpha_N|\vee|\beta_N|$, also $\gamma_N\to0$, so gilt mit der Abschätzung in Punkt \ref{rend}, dass
+\[
+  \max_{1\leq k\leq N}|Y^{(N)_k}|\leq\gamma_N+\frac{1}{2}\gamma_N^2\to0\,.
+\]
+Weiterhin gilt
+\begin{align*}
+  E^*_N[Z_N]
+  &=\sum_{k=1}^NE^*_N[R^{(N)}_k]-\frac{1}{2}\sum_{k=1}^N(\operatorname{var}(R^{(N)}_k)+E_N^*[R^{(N)}_k]^2)\,,
+  \intertext{also mit Punkt \ref{var}}
+  &=Nr_N-\frac{1}{2}(\sigma_N^2T+Nr_n^2)\to rT-\frac{1}{2}\sigma^2T\,.
+\end{align*}
+%Das obere ist nicht so ganz geprueft
+Schließlich gilt, ebenfalls mit Punkt \ref{var}, dass
+\[
+  \operatorname{var}_N(Z_N)\to\sigma^2T\,,
+\]
+da für $p>2$
+\[
+  \sum_{k=1}^NE^*_N\bigl[\bigl|R_k^{(N)}\bigr|^p\bigr]
+  \leq\gamma_{N}^{p-2}\sum_{k=1}^NE^*_N\bigl[\bigl(R^{(N)}_k\bigr)^2\bigr]\to0\,.
+\]
+% Das obere ebenfalls nicht geprueft.
+Somit kann Theorem A.41 angewendet werden und wir erhalten die schwache Konvergenz der Verteilung von $Z_N$ gegen ${\cal N}(rT-\frac{1}{2}\sigma^2T,\sigma^2T)$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
