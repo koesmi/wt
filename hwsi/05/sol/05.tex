@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 5 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+Es seien $F$ und $G$ stetige Funktionen und $f$ die Lösung der gewöhnlichen Differentialgleichung $f'(t)=F(s)f(s)$ mit $f(0)=1$.
+Ferner sei $W$ eine Brownsche Bewegung.
+Zeigen Sie, dass der Prozess $X$ gegeben durch
+\[
+X_t:=f(t)(x+\int_0^tf(s)^{-1}G(s)dW_s)
+\]
+folgende Darstellung besitzt
+\[
+  dX_t=F(t)X_tdt+G(t)dW_t,\quad X_0=x\,.
+\]
+
+\paragraph{\textnormal{\emph{Lösung.}}}
+Mit $A_t=f(t)$ und $B_t=x+\int_0^t f(s)^{-1} G(s)dW_s$ und partieller Integration
+\[
+  AB=A_0B_0-A_-\cdot B-B_-\cdot A-[A,B]=A_0B_0-A\cdot B-B\cdot A
+\]
+folgt
+\begin{align*}
+  &f(t)(x+\int_0^tf(s)^{-1}G(s)dW_s)\\
+  &=f(0)x+\int_0^tf(s)d(\int_0^sf(u)^{-1}G(u)dW_u)+\int_0^t (x+\int_0^sf(u)^{-1} G(u)dW_u)df(s)
+    \intertext{und mit dem Hauptsatz der Differential- und Integralrechnung sowie der Differentialgleichung $f'(t)=F(s)f(s)$ aus der Aufgabenstellung}
+  &=x+\int_0^tG(s)dW_s+\int_0^tF(s)f(s)(x+\int_0^sf^{-1}(u)G(u)dW_u)ds\,.
+    \intertext{Mit der Definition von $X_t$ kriegen wir schließlich}
+  &=x+\int_0^tG(s)dW_s+\int_0^tF(s)X_sds\,.
+\end{align*}
+
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
