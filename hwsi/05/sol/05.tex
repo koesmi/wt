@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+\usepackage[a4paper,margin=1.875in,top=1.4in,bottom=1.4in]{geometry}
 
 \usepackage{amsmath,mathtools,bbm,amssymb}
 \usepackage{mathrsfs}
@@ -21,6 +21,8 @@
 \bibliographystyle{alphadin}
 \usepackage{url}
 \usepackage{hyperref}
+
+\usepackage{eurosym}
 
 \begin{document}
 \paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
@@ -49,7 +51,43 @@ folgt
     \intertext{Mit der Definition von $X_t$ kriegen wir schließlich}
   &=x+\int_0^tG(s)dW_s+\int_0^tF(s)X_sds\,.
 \end{align*}
-
+\pagebreak
+\paragraph{Aufgabe 2 \textnormal{(Siegels Paradoxon; 4 Punkte)}.} Bezeichne mit $\$_t$ den Preis eines US-Dollars in Euro zum Zeitpunkt $t$ und mit $\text{\euro}_t$ den Preis eines Euros in US-Dollar.
+Angenommen, es gilt
+\[
+  \$_0=1,\quad d\$_t=\$_t(\mu dt+\sigma dW_t)
+\]
+für einen Wiener-Prozess $W_t$.
+\begin{enumerate}
+\item [1.] Leite die SDE für $\text{\euro}$ ab.
+\end{enumerate}
+Aus der Definition von $\text{\euro}_t$ und $\$_t$ folgt, dass $\text{\euro}_t=1/\$_t$, also
+\[
+  d\text{\euro}_t=\frac{d\text{\euro}_t}{d\$_t}d\$_t=-\frac{1}{\$_t^2}\$_t(\mu dt+\sigma dW_t)=-\text{\euro}_t(\mu dt+\sigma dW_t)\,.
+\]
+\begin{enumerate}
+\item [2.] Sei $\sigma^2>\mu$.
+  Berechne $E[\$_t-\$_0]$, d.h. den erwarteten Gewinn in Euro aus einer Investition von 1 US-Dollar.
+  Ist der US-Dollar aus dieser Perspektive eine attraktive Investition?
+  Berechne außerdem $E[\text{\euro}_t-\text{\euro}_0]$, d.h. den erwarteten Gewinn in US-Dollar aus der Sicht eines US-Investors.
+  Ist der Euro aus letzterer Sicht eine attraktive Investition?
+\end{enumerate}
+In Beispiel 16 hatten wir die Lösung des Black--Scholes-Modells gegeben.
+Setzen wir sie ein, erhalten wir
+\begin{align*}
+  E[\$_t-\$_0]
+  &=\$_0 E\Bigl[\exp\Bigl(\mu t+\sigma W_t-\frac{1}{2}\sigma^2 t\Bigr)-1\Bigr]\,.
+    \intertext{Mit dem Erwartungswert der Log-Normalverteilung erhalten wir}
+  &=\$_0\bigl(\exp(\mu t)-1\bigr)\,.
+\end{align*}
+Ist $\mu>0$, so ist dieser Wert positiv, also eine attraktive Investition.
+Analog rechnen wir
+\begin{align*}
+  E[\text{\euro}_t-\text{\euro}_0]
+  &=\text{\euro}_0E\Bigl[\exp\bigl((-\mu)t+(-\sigma)W_t-\frac{1}{2}\sigma^2t\bigr)-1\Bigr]\\
+  &=\text{\euro}_0\Bigl(\exp\Bigl(-\mu t+\frac{1}{2}\sigma^2t\Bigr)-1\Bigr)
+\end{align*}
+Für $\mu>\frac{1}{2}\sigma^2$ ist das eine attraktive Investition.
 \bibliography{../../../books/wt}
 \end{document}
 
