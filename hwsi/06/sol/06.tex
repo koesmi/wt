@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.875in,bottom=1.875in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 6 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Sei $W$ eine Standard Brown'sche Bewegung.
+Zeigen Sie, dass der Prozess
+\[
+B_t=(1-t)\int_0^t\frac{1}{1-s}dW_s
+\]
+folgende Gleichung erfüllt
+\[
+dB_t=-\frac{B_t}{1-t}dt+dW_t
+\]
+und zeigen Sie, dass $\lim_{t\nearrow 1}E[B_t]=0$.
+
+\paragraph{\textnormal{\emph{Lösung.}}}
+Wir definieren $Y_t:=(1-t)$.
+Dann gilt mit der Definition des stochastischen Integrals, mit $W_0=0$ und mit der partiellen Integration
+\[
+B_t=Y_t(1/Y\cdot W)_t=\bigl(Y\cdot(1/Y\cdot W)\bigr)_t+\bigl((1/Y\cdot W)\cdot Y\bigr)_t+\bigl[Y,(1/Y\cdot W)\bigr]_t
+\]
+denn $Y$ und $1/Y\cdot W$ sind stetig.
+Da $Y$ stetig ist, gilt mit Theorem 81.iv, dass $\bigl[Y,(1/Y\cdot W)\bigr]=0$.
+Mit der Kettenregel folgt dann \emph{wobei ich nicht ganz weiß, wie die Kettenregel funktioniert,}
+\[
+\bigl(Y\cdot (1/Y\cdot W)\bigr)_t=W_t
+\]
+und da $dY=Y'dt$ folgt
+\[
+\bigl((1/Y\cdot W)\cdot Y\bigr)_t=-\int_0^t1/Y\cdot W_s ds\,.
+\]
+Insgesamt erhält man die Darstellung
+\[
+dB_t=-\frac{B_t}{1=t}dt+dW_t\,.
+\]
+
+Für den zweiten Teil gilt, weil $Y$ deterministisch ist
+\begin{align*}
+  E\bigl[Y_t^2(1/Y\cdot W)_t^2\bigr]
+  &=Y_t^2E\bigl[(1/Y\cdot W)_t^2\bigr]\,.
+    \intertext{Mit der Itô-Isometrie können wir schreiben}
+  &=Y_t^2\left[\int\nolimits_0^t(1/Y_s)^2d\langle W\rangle_s\right]
+    \intertext{Nun ist $\langle W\rangle_t=t$ und $(1/Y_t)'=(1/Y_t)^2$, sodass}
+  &=(1-t)^2E\left[\left.\frac{1}{1-s}\right|_{s=0}^t\right]=t(1-t)\,,
+\end{align*}
+wodurch
+\[
+  \lim_{t\nearrow1}E[B_t]=\lim_{t\nearrow1}t(1-t)=0\,.
+\]
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
