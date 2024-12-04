@@ -25,6 +25,25 @@
 \usepackage{eurosym}
 
 \begin{document}
+\paragraph{Aufgabe 2 \textnormal{(CIR-Prozess; 4 Punkte)}.}
+\begin{enumerate}
+\item [1.] Überprüfen Sie die Zulässigkeitsbedingungen in \cite{duffie}, um herauszufinden, unter welchen Bedingungen an $b,\beta, \sigma\in\mathbb{R}$ ein affinierter Prozess $X$ auf $\mathbb{R}_+$ existiert, der
+  \[
+    dX_t=(b+\beta X_t)dt+\sigma\sqrt{X_t}dW_t
+  \]
+  für eine Brownsche Bewegung $W$ erfüllt.
+\item [2.] Schreiben Sie die Funktionen $F$ und $R$ auf, die diesen Parametern gemäß \cite[Theorem 7]{cuchiero2013path} oder \cite[Theorem 2.7]{duffie} zugeordnet sind und finden Sie Lösungen $\phi,\psi\colon \mathbb{R}_+\times \mathbb{C}_-\to\mathbb{C}$ der Riccati-Gleichungen
+  \[
+    \partial_t\phi(t,u)=F\bigl(\psi(t,u)\bigr),\quad \partial_t\psi(t,u)= R\bigl(\psi(t,u)\bigr)\,.
+  \]
+  \emph{Hinweis: Sie können die Lösungen $\phi$, $\psi$ in der Literatur finden und überprüfen, dass sie die Riccati-Gleichungen erfüllen.}
+  Nach \cite[Theorem 2.7]{duffie} gilt
+  \[
+    F(u)=au^2+bu-c+\int_{\mathbb{R}\setminus\{0\}}\bigl(e^{u\xi}-1-\xi\bigr)
+    %was is \xi in einer Dimension?
+  \]
+\end{enumerate}
+
 \paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
 Sei $W$ eine Standard Brown'sche Bewegung.
 Zeigen Sie, dass der Prozess

@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.4in,bottom=1.4in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 7 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 3 \textnormal{(4 Punkte)}.}
+Zeige, dass der Prozess $\rho$, gegeben durch
+\[
+  \rho_t=e^{(t-t_0)\beta}x+\int_{t_0}^te^{(t-s)\beta}\alpha(s)ds+\int_{t_0}^te^{(t-s)\beta}\sigma dW_s\,,
+\]
+für $\rho_{t_0}=x$, eine Lösung des \emph{Hull-White-extended Vasicek-Modells} ist, das durch die SDE
+\[
+  d\rho_t=(\alpha(t)+\beta \rho_t)dt+\sigma dW_t
+\]
+gegeben ist, wobei $W$ eine Brownsche Bewegung, $\beta\in\mathbb{R}$ der Drift, $\sigma\in\mathbb{R}_+$ die Volatilität und $\alpha\in{\cal C}(\mathbb{R}_+)$ die Hull-White-Erweiterung ist.
+\paragraph{\textnormal{\emph{Lösung:}}} Definiere $h(t,\rho_t)=e^{(t_0-t)\beta}\rho_t$ und berechne die Ableitungen
+\[
+  \frac{\partial h}{\partial t}=-\beta e^{(t_0-t)\beta}\rho_t\,,\quad
+  \frac{\partial h}{\partial \rho_t}=e^{(t_0-t)\beta}\,,\quad
+  \frac{\partial^2 h}{\partial\rho_t^2}=0\,.
+\]
+Mit der Ito-Formel ergibt sich
+\begin{align*}
+  dh(t,\rho_t)
+  &=d(e^{(t_0-t)\beta}\rho_t)\\
+  &=\frac{\partial h}{\partial t}+\frac{\partial h}{\partial \rho_t}\left((\alpha(t)+\beta \rho_t)+\frac{1}{2}\frac{\partial^2h}{\partial \rho_t^2} \sigma^2\right)dt+\frac{\partial h}{\partial \rho_t}\sigma dW_t\\
+  &=\bigl(-\beta e^{(t_0-t)\beta}\rho_t+(\alpha(t)+\beta \rho_t)e^{(t_0-t)\beta}\bigr)dt+\sigma e^{(t_0-t)\beta}dW_t\\
+  &=\alpha(t)e^{(t_0-t)\beta}dt+\sigma e^{(t_0-t)\beta}dW_t
+    \intertext{wodurch wir in integraler Schreibweise haben, dass}
+    h(t,\rho_t)
+  &=h(t_0,\rho_{t_0})+\int_{t_0}^te^{(t_0-t+s)\beta}\alpha(s)ds+\int_{t_0}^te^{(t_0-t+s)}\sigma dW_s\,,
+    \intertext{wobei $h(t_0,\rho_{t_0})=\rho_{t_0}$ Durch Multiplizieren der Gleichung mit $e^{(t_0-t)\beta}$ kriegen wir schließlich}
+    \rho_t
+  &=e^{(t-t_0)\beta}x+\int_{t_0}^te^{(t-s)\beta}\alpha(s)ds+\int_{t_0}^te^{(t-s)\beta}\sigma dW_s\,,
+\end{align*}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
