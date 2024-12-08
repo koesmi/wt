@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.7in,bottom=1.7in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 7 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{Komlós Lemma für $L^0$; 6 Punkte)}.}
+Sei $(f_n)_{n\in\mathbb{N}}$ eine Folge nicht-negativer Zufallsvariablen. Zeigen Sie:
+\begin{enumerate}
+\item [i)] Es existieren $g\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}$, sodass $(g_n)_{n\in\mathbb{N}}$ fast sicher gegen eine Zufallsvariable mit Werten in $[0,\infty]$ konvergiert.
+\item [ii)] Es gilt $P[g<\infty]=1$, falls $\langle f_n,f_{n+1},\dots\rangle_\text{conv}$ in $L^0$ beschränkt ist.
+
+  \emph{Hinweis: Eine Familie $F\subset L^0$ heißt beschränkt, wenn für jedes $\varepsilon>0$ eine Konstante $C>0$ existiert, sodass $P[|X|\geq C]<\varepsilon$ für alle $X\in F$.}
+  
+\item [iii)] Es gilt $P[g>0]>0$, falls ein $\alpha>0$ existiert, sodass $P[f_n\geq \alpha]\geq a>0$.
+\end{enumerate}
+\emph{Hinweis:}
+\begin{enumerate}
+\item [i)] Das Resultat folgt, falls es eine Folge $g_n\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}$ gibt, sodass $e^{-g_n}$ in $L^1$ konvergiert.
+  Definieren Sie
+  \[
+    J_n:= \inf\{E[g^{-g}]|g\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}\}.
+  \]
+  Setzen Sie
+  \begin{align*}
+    A_\varepsilon
+    &=\{(x,y)\in\mathbb{R}_+^2\big||x-y|\leq\varepsilon\}\,,\\
+    B_\varepsilon
+    &=\{(x,y)\in\mathbb{R}_+^2\big| x\wedge y\geq 1/\varepsilon\}\,,\\
+    C_\varepsilon
+    &=\mathbb{R}_+^2\setminus(A_\varepsilon \cup B_\varepsilon)\,.
+  \end{align*}
+Für $(x,y)\in\mathbb{R}_+^2$ existiert für jedes $\varepsilon$ ein $\delta$, sodass
+\begin{equation}
+  e^{-(x+y)/2}\leq\left(\frac{e^{-x}+e^{-y}}{2}\right)-\delta\mathbf{1}_{C_\varepsilon}(x,y)\,.\label{eq:ceineq}
+\end{equation}
+\item [iii)] Zeigen Sie, dass $g_n=\sum_{n\leq k\leq N}\lambda_k f_k\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}$ die Ungleichung
+  \[
+    E[e^{-g_n}]\leq(1-\alpha)+e^{-\alpha}
+  \]
+  erfüllt.
+\end{enumerate}
+\paragraph{\textnormal{\emph{Lösung:}}} Nach \cite{schweizer}.
+$J_n$ wächst bis zu einem $J\leq 1$.
+Sei $(g'_n)_{n\in\mathbb{N}}$ mit $g'_n\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}$ und $E[e^{-g_n'}]\leq J_n+\frac{1}{n}$.
+Da $z\mapsto e^{-z}$ konvex ist, haben wir immer
+\[
+  e^{-(x+y)/2}\leq\frac{1}{2}(e^{-x}+e^{-y})\,.
+\]
+Für $(x,y)\in C_\varepsilon$ gilt für ein $\delta=\delta(\varepsilon)>0$, dass
+\[
+  e^{-(x+y)/2}-\frac{1}{2}(e^{-x}+e^{-y})\leq-\delta\,,
+\]
+\emph{was noch überprüft werden sollte}.
+Hierdurch erhalten wir Gleichung \ref{eq:ceineq}.
+Wenn wir nun $x:=g'_m$ und $y:= g'_n$ setzen, ergibt sich für $n\neq m$ mit der Definition von $J_n$, dass
+\begin{align*}
+  J_m
+  &\leq E\left[ e^{(-g'_m+g'_n)/2}\right]\,.
+    \intertext{Mit Gleichung \ref{eq:ceineq} erhalten wir}
+  &\leq\frac{1}{2}\left(E[e^{-g'_m}]+E[e^{-g'_n}]\right)-\delta P[(g'_m,g'_n)\in C_\varepsilon]\,.
+    \intertext{Mit der Definition von $g'$ erhalten wir}
+  &\leq \frac{1}{2}\bigl(J_m+\frac{1}{m}+J_n+\frac{1}{n}\bigr)-\delta P[(g'_m,g'_n)\in C_\varepsilon]\,,
+\end{align*}
+sodass $\lim_{n,m\to\infty}P[(g'_m,g'_n)\in C_\varepsilon]=0$, \emph{was auch nicht so ganz klar ist.}
+
+Für $(x,y)\in A_\varepsilon$ und $(x,y)\in B_\varepsilon$ erhalten wir die Abschätzung
+\[
+  |e^{-x}-e^{-y}|\leq\varepsilon+2e^{-1/\varepsilon}+2\mathbf{1}_{C_\varepsilon}(x,y).
+\]
+Eine analoge Rechnung wie oben ergibt
+\[\left|E[e^{-g'_m}-e^{-g'_n}]\right|\leq \varepsilon+2e^{-1/\varepsilon}+2P[(g'_m,g'_n)\in C_\varepsilon]\,,\]
+\emph{was ebenfalls überprüft werden sollte}.
+Damit ist $(e^{-g'_n})_{n\in\mathbb{N}}$ eine Cauchyfolge in $L^1(P)$ und somit konvergiert sie in $L^1(P)$.
+Deswegen hat die seine Teilfolge $(e^{-g_n})_{n\in\mathbb{N}}$, die $P$-fast sicher konvergiert.
+Hierdurch konvergiert $(g_n)_{n\in\mathbb{N}}$ schon selbst und wie für $g'_n$ gilt auch $g_n\in\langle f_n,f_{n+1},\dots\rangle_\text{conv}$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
