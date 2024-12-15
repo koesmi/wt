@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.7in,bottom=1.7in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 7 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{4 Punkte)}.}
+Sei $W$ eine Standard-Brown'sche Bewegung auf $(\Omega,\mathscr{F},\mathbf{F},P)$ und $H$ ein beschränkter, previsibler Prozess.
+Sei $X$ ein stochastischer Prozess definiert durch
+\[
+  X_t=\int_0^tH_sds+W_t\,.
+\]
+Definiere das Wahrscheinlichkeitsmaß $Q$ durch
+\[
+  \frac{dQ}{dP}=e^{-\int_0^TH_sdW_s-\frac{1}{2}\int_0^TH_s^2ds}\,,
+\]
+mit $T>0$.
+Zeigen Sie, dass $X$ unter $Q$ eine Standard-Brown'sche Bewegung bis zum Zeitpunkt $T$ ist.
+
+\paragraph{\textnormal{\emph{Lösung.}}}
+Vergleiche \cite[Theorem 42]{Protter2005}.
+Schreibe $Z_t=E[\frac{dQ}{dP}|\mathscr{F}_t]$.
+Nach Theorem 86 löst $Z$
+\[
+Z_t=1-\int_0^tZ_{s-}H_sdW_s\,.
+\]
+Nach dem Satz von Girsanov ist
+\begin{equation}
+  N_t=W_t-\int_0^t\frac{1}{Z_s}d[Z,W]_s\label{eq:nt}
+\end{equation}
+
+ein $Q$-lokales Martingal.
+Allerdings gilt mit der Definition von $Z$
+\begin{align*}
+  [Z,W]_t
+  &=[-Z_-H\cdot W,W]_t\,.
+    \intertext{Mit der Definition der quadratischen Kovariation und den  Rechenregeln für das stochastische Integral erhalten wir, \emph{wobei noch nicht ganz klar ist, wie},}
+  &=\int_0^t-Z_sH_sd[W,W]_s=-\int_0^tZ_sH_sds\,,
+\end{align*}
+denn für eine Brown'sche Bewegung gilt $[W,W]_t=t$.
+Deshalb gilt mit Einsetzen in Gleichung (\ref{eq:nt})
+\begin{align*}
+  N_t
+  &=W_t-\int_0^t-\frac{1}{Z_s}Z_sH_sds=W_t+\int_0^tH_sds=X_t\,,
+\end{align*}
+wie in der Aufgabenstellung gegeben.
+Damit ist auch $X$ ein $Q$-lokales Martingal.
+Da $\left(\int_0^tH_sds\right)_{t\geq0}$ ein stetiger Prozess endlicher Variation ist, gilt $[X,X]_t=[W,W]_t=t$.
+Mit Theorem 2.1 aus Moritz' Skript kriegen wir schließlich, dass $X$ eine Standard Brown'sche Bewegung ist.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
