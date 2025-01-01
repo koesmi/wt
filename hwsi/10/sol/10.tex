@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.7in,bottom=1.7in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 10 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Punkte)}.}
+Beweisen Sie Theorem 3.3.
+
+\emph{Hinweis: Verwenden Sie Lemma 3.5.}
+
+Das Theorem 3.3. sagt aus, die folgenden Aussagen sind äquivalent
+\begin{enumerate}
+\item [(i)] es gilt $\mathrm{NA}({\cal P})$;
+\item [(ii)] für alle $P\in{\cal P}$ gibt es ein $Q\in{\cal Q}$, sodass $P\ll Q$.
+\end{enumerate}
+Das wird in \cite[Seite 15]{Bouchard_2015} bewiesen.
+Es gelte zunächst $\operatorname{NA}({\cal P})$.
+Sei $P\in{\cal P}$ gegeben. Mit der zweiten Aussage aus dem Fundamentallemma gilt $0\in\operatorname{ri}\{E_R[\Delta S]\colon R\in\mathfrak{P}(\Omega), P\ll R\lll {\cal P}, E_R[|\Delta S|]<\infty\}\subseteq \mathbb{R}^d$.
+Es gibt also ein $Q\in\mathfrak{P}(\Omega)$ mit  $Q\lll {\cal P}$, sodass $E_Q[\Delta S]=0$, also mit der Definition von $\mathcal{Q}$, ein $Q\in{\cal Q}$, aber auch $P\ll Q$.
+\emph{Hier ist noch nicht so ganz klar, ob es sein kann, dass $0\in\operatorname{ri}\{E_R[\Delta S]\}$, aber nicht $0\in\{E_R[\Delta S]\}$.}
+
+Es gebe nun anders herum für alle $P\in {\cal P}$ ein $Q\in{\cal Q}$, sodass $P\ll Q$.
+Sei $H\in\mathbb{R}^d$ so, dass $H\Delta S\geq 0$ ${\cal P}$-quasi sicher.
+Angenommen, es gibt nun ein $P\in{\cal P}$, sodass $P\{H\Delta S>0\}>0$.
+Dann gibt es nach Annahme auch ein Martingalmaß $Q$, sodass $P\ll Q\lll {\cal P}$.
+Damit gilt aber auch $Q\{H\Delta S>0\}>0$.
+Dies steht aber im Widerspruch zu $E_Q[H\Delta S]=0$.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
