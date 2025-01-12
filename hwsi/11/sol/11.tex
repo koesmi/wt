@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.7in,bottom=1.7in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 11 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+\paragraph{Aufgabe 1 \textnormal{(4 Points)}.}
+\paragraph{\normalfont{{\itshape Definition} 1 ($T$-Forward-Measure).}}
+Let $(B_t)_{t\leq T}$, $B_t=e^{\int_0^tr_sds}$ be the bank account/numeraire in a financial market.
+If $\mathbb{Q}$ is a risk-neutral measure, then the forward measure $\mathbb{Q}^T$ on $\mathscr{F}_T$ is defined via the Radon Nikodym density process $Z$ with respect to $\mathbb{Q}$, given by
+\[
+  Z_t=\frac{P_t(T)}{P_0(T)B_t}\,.
+\]
+\paragraph{Aufgabe 1 \textnormal{(4 Points)}.}
+Let $F_t(T,S)$ be the simple forward rate for $[T,S]$ prevailing at $t$ which is given by
+\[
+F_t(T,S)=\frac{1}{S-T}\left(\frac{P_t(T)}{P_t(S)}-1\right),\quad t\in[0,T]\,.
+\]
+Show that $(F_t(T,S))_{t\in[0,T]}$ is a martingale with respect to some forward measure $Q^U$; that is
+\[
+  F_t(T,S)=E_{Q^U}[F_T(T,S)|\mathscr{F}_t]\quad\text{für alle }t\in[0,T]\,.
+\]
+What is $U$?
+
+\paragraph{\normalfont{{\scshape Hint.}}} Use the identity
+\[
+  P_t(T)=B_tE_Q\left[\frac{1}{B_T}\middle|\mathscr{F}_t\right],\quad t\in[0,T]\,.
+\]
+
+\paragraph{\normalfont{{\itshape Solution.}}} this is Exercise 1 from sheet 13 form Probability Theory 2.
+We claim that $U=S$.
+According to Definition 1, the forward measure $\mathbb{Q}^S$ with respect to $\mathbb{Q}$ is given by
+\begin{equation}
+Z=\frac{1}{P_0(S)}\frac{P(S)}{B}\,.\label{eq:z}
+\end{equation}
+We use the definition of $F_T(T,S)$ to get
+\begin{align*}
+  E_{Q^S}[F_T(T,S)|\mathscr{F}_t]
+  &=\frac{1}{S-T}\left(E_{Q^S}\left[\frac{1}{P_T(S)}\middle|\mathscr{F}_t\right]-1\right)\,.
+    \intertext{By measure change with $Z$ from equation (\ref{eq:z}) we get}
+  &=\frac{1}{S-T}\left(\frac{1}{Z_t}E_{Q}\left[\frac{1}{P_T(S)}\middle|\mathscr{F}_t\right]-1\right)\,.
+    \intertext{Employing the definition of $Z$ in equation (\ref{eq:z}) we get}
+  &=\frac{1}{S-T}\left(\frac{B_t}{P_t(S)}E_{Q}\left[\frac{1}{B_T}\middle|\mathscr{F}_t\right]-1\right)\,.
+    \intertext{Finally, we use the hint to arrive at}
+  &=\frac{1}{S-T}\left(\frac{P_t(T)}{P_t(S)-1}\right)=F_t(T,S).
+\end{align*}
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
