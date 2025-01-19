@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1.875in,top=1.2in,bottom=1.0in]{geometry}
+
+\usepackage{amsmath,mathtools,bbm,amssymb}
+\usepackage{mathrsfs}
+\usepackage{german}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} 
+\pagestyle{fancy}
+\lhead{Blatt 12 Nikolaus, Lukas, Evgenij}\rhead{Seite \thepage}
+\fancyfoot{}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows}
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{eurosym}
+
+\begin{document}
+Wir betrachten ein stetiges Finanzmarktmodell
+\[
+{\cal M}=\{(\Omega,{\cal F},\mathbb{F},P),T,(S,B)\}
+\]
+mit dem gefilterten Wahrscheinlichkeitsraum $(\Omega,{\cal F},\mathbb{F},P)$ und einem Endzeitpunkt $0<T<\infty$.
+Es sei $(S_t)_{t\in[0,T]}$ ein Semimartingal und $(B_t)_{t\in[0,T]}$ ein Prozess gegeben durch $B_t=e^{-\int_t^T r_s ds}$, wobei $r_s$ die Shortrate darstellt.
+Wir nehmen an, dass ein äquivalentes Martingalmaß $Q$ existiert, das den diskontierten Preisprozess zu einem Martingal macht.
+
+Der Preis einer Call-Option  ist dann gegeben durch
+\[
+C_t=E_Q\left(e^{-\int_t^Tr_sds}C_T|\mathscr{F}_t\right)\,,
+\]
+wobei $C_t=\max[S_T-K,0]$ für einen Strike $K>0$.
+Im Folgenden werden wir einen Fourier basierten Ansatz untersuchen, mit welchem wir in der Lage sind den Wert $C_0$ zu berechnen.
+\paragraph{\normalfont{{\itshape Definition} 1 (Fourier Transformierte).}}
+Die Fourier Transformation einer integrierbaren Zufallsvariablen ist gegeben durch
+\begin{equation}
+  \hat{f}(u)=\int_{-\infty}^\infty e^{iux}f(x)dx\,.\label{eq:fourier}
+\end{equation}
+Durch die Fourier-Inversion erhält man
+\[
+f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-iux}\hat{f}(u)du
+\]
+für $u\in\mathbb{R}$ und
+\[
+  f(x)=\frac{1}{2\pi}\int_{-\infty+iu_i}^{\infty+iu_i}e^{-iux}\hat{f}(u)du\,,
+\]
+für $u\in\mathbb{C}$ mit $u=u_r+iu_i$, wobei $u_r$ und $u_i$ den Real- bzw. Imaginärteil von $u$ bezeichnen.
+\paragraph{\normalfont{{\itshape Definition} 2 (Charakteristische Funktion).}}
+Sei $X$ eine Zufallsvariable mit der Wahrscheinlichkeitsdichtefunktion $q(x)$.
+Die charakteristische Funktion $\hat{q}$ von $X$ ist die Fourier-Transformierte ihrer Dichte:
+\[
+\hat{q}(u)\equiv\int_{-\infty}^\infty e^{iux}q(x)dx=\mathbb{E}_Q\bigl(e^{iuX}\bigr)\,.
+\]
+\paragraph{Aufgabe 1 \textnormal{(all-Option-Transformation; 4 Punkte)}.}
+Zeigen Sie, für $u\in\mathbb{R}$ ist die Fourier-Transformierte von $C_T(u)=\max[e^u-K,0]$ gegeben durch
+\begin{equation}
+  \label{eq:chat}
+  \hat{C}_T(u)=-\frac{K^{iu+1}}{u^2-iu}\,.
+\end{equation}
+\paragraph{\normalfont{\itshape Lösung:}} aus \cite[Abschnitt 4.5]{schmelzle2010option}.
+Die Fourier-transformierte von $C_T(u)$ ist nach Gleichung (\ref{eq:fourier}) gegeben durch
+\begin{align*}
+  \hat{C}_T(u)
+  &=\int_{-\infty}^\infty e^{iux}\max[e^u-K,0]dx\,.
+  \intertext{Hierbei verschwindet der Integrand, sobald $e^u-K<0$ gilt, oder umgestellt für alle $x<\operatorname{ln}K$, sodass wir schreiben können}
+  &=\int_{\operatorname{ln}K}^\infty e^{iux}(e^x-K)dx\,.
+    \intertext{Aufleiten ergibt}
+  &=\left.\left(\frac{e^{(iu+1)x}}{iu+1}-K\frac{e^{iux}}{iu}\right)\right|_{\operatorname{ln}K}^{x=\infty}\,.
+    \intertext{Durch Einsetzen von $x=\infty$ verschwindet der Term \emph{wobei nicht ganz klar ist, warum}.
+    Einsetzten der unteren Grenze liefert}
+  &=-\left(\frac{K^{iu+1}}{iu+1}-K\frac{K^{iu}}{iu}\right)\,.
+    \intertext{Erweitern mit $iu$ beziehungsweise $iu+1$ führt zu}
+  &=-\frac{K^{iu+1}}{u^2-iu}\,,
+\end{align*}
+wie in Gleichung \ref{eq:chat}.
+\bibliography{../../../books/wt}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% ispell-local-dictionary: "german"
+%%% TeX-master: t
+%%% End:
